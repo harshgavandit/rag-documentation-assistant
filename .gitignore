@@ -1,0 +1,23 @@
+chroma_data/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.cache/
+.verification_data/
+*.log
+
+# Local environment variants (keep the credential-free template)
+.env.*
+!.env.example
+
+# Generated verification output; retain the verifier and curated record
+verification/*.json
+verification/*.txt
+
+# Tool and operating-system output
+.pytest_cache/
+.coverage
+htmlcov/
+Thumbs.db
