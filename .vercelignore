@@ -1,0 +1,11 @@
+.venv
+.cache
+chroma_data
+.git
+.env*
+**/.env*
+**/__pycache__
+verification
+web/models
+web/tests
+*.pdf

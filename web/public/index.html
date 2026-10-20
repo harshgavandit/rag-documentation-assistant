@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ask questions about MCP and AI agent documentation. Explore grounded answers, source citations, and retrieved passages.">
+<meta name="theme-color" content="#f6f8fb"><title>Docwise — RAG Documentation Assistant</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script src="/assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to assistant</a>
+<div class="app-shell">
+<aside class="sidebar" aria-label="Documentation library">
+<a class="brand" href="/" aria-label="Docwise home"><span class="brand-icon">D<span>·</span></span><span>docwise<small>DOCUMENTATION ASSISTANT</small></span></a>
+<div class="workspace-label">YOUR WORKSPACE</div>
+<button class="nav-item active" id="new-question"><span aria-hidden="true">✧</span> Ask documentation <span class="nav-arrow" aria-hidden="true">↗</span></button>
+<div class="library-head"><span>DOCUMENT LIBRARY</span><span class="count" id="doc-count">2</span></div>
+<div id="document-library"><p class="muted">Loading documents…</p></div>
+<div class="library-note"><span aria-hidden="true">ⓘ</span><p>Answers use only these documents. Expand a source to see the passage behind an answer.</p></div>
+<div class="sidebar-bottom"><div class="mini-mark" aria-hidden="true">⌘</div><div><strong>Built to be traceable</strong><p>Hybrid retrieval. Cited answers.</p></div></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><div class="breadcrumb"><span>Workspace</span><span aria-hidden="true">/</span><strong>Ask documentation</strong></div><a class="github-link" href="https://github.com/harshgavandit/rag-documentation-assistant" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a></header>
+<main id="main">
+<section class="intro" id="intro"><div class="eyebrow"><span></span> YOUR KNOWLEDGE, WITH CONTEXT</div><h1>Good questions.<br><span>Grounded answers.</span></h1><p class="intro-copy">Make sense of your documentation. Ask about MCP servers, agent tools, and architecture—and follow every answer back to its source.</p>
+<div class="corpus-chips"><span><i aria-hidden="true">▤</i> <b id="document-total">2</b> documents</span><span><i aria-hidden="true">◈</i> <b id="chunk-total">39</b> indexed passages</span><span><i class="dot" aria-hidden="true"></i> Source citations</span></div>
+</section>
+<section class="conversation" id="conversation" aria-label="Question and answer" hidden>
+<div class="question-heading"><span class="question-icon" aria-hidden="true">Q</span><h2 id="asked-question"></h2></div>
+<div class="answer-card"><div class="answer-header"><span class="answer-label"><span aria-hidden="true">✧</span> DOCUMENTATION ANSWER</span><button id="copy-answer" class="text-button" hidden>Copy answer</button></div><div id="answer-content" class="answer-content"></div><div id="answer-meta" class="answer-meta" hidden></div></div>
+<div id="sources-section" hidden><div class="sources-heading"><h3>Retrieved sources</h3><span id="source-count"></span></div><p class="sources-description">The passages used as context for this answer. Citation labels are checked against these sources.</p><div id="sources"></div></div>
+</section>
+<section class="composer-section" aria-label="Ask a question"><form id="question-form"><label class="sr-only" for="question">Your documentation question</label><div class="composer"><textarea id="question" name="question" maxlength="2000" rows="3" placeholder="Ask a question about the documentation…" required></textarea><div class="composer-bottom"><span id="composer-hint">Be specific. The details help find the right passage.</span><button class="submit-button" type="submit" id="submit-button">Ask a question <span aria-hidden="true">↑</span></button></div></div></form><p id="status" class="status" role="status" aria-live="polite">Public demo · 3 questions per minute per visitor · 100 questions per day shared</p></section>
+<section class="suggestions" id="suggestions"><div class="suggestions-title">A FEW PLACES TO START</div><div class="suggestion-grid"><button class="suggestion" data-question="How does FastMCP register a tool with the MCP server?"><span class="suggestion-icon" aria-hidden="true">⌘</span><strong>Register your first tool</strong><span>How does FastMCP register a tool?</span><i aria-hidden="true">↗</i></button><button class="suggestion" data-question="What is the difference between Stdio and Streamable HTTP transports?"><span class="suggestion-icon" aria-hidden="true">⇄</span><strong>Compare MCP transports</strong><span>Stdio or Streamable HTTP?</span><i aria-hidden="true">↗</i></button><button class="suggestion" data-question="How does the MCP approach differ from traditional function tools?"><span class="suggestion-icon" aria-hidden="true">◇</span><strong>Understand the architecture</strong><span>MCP vs. traditional function tools</span><i aria-hidden="true">↗</i></button></div></section>
+<footer class="main-footer"><span><span aria-hidden="true">◈</span> BM25 + semantic search</span><span>Grounded in documents. Clear about limits.</span></footer>
+<p class="privacy-note">Questions and retrieved passages are sent to OpenAI to generate an answer. Answers may contain errors; review the sources. Questions are not saved by this application.</p>
+</main>
+</div></div>
+</body></html>

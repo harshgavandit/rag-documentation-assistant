@@ -4,6 +4,37 @@ Ask questions about Markdown documentation and receive answers with traceable so
 
 The project includes a character-splitting baseline so you can compare fragmented chunks against complete Markdown sections using the same documents.
 
+**Live demo:** [rag-documentation-assistant.vercel.app](https://rag-documentation-assistant.vercel.app)
+
+## Web application
+
+The `web/` directory adds a responsive browser interface and FastAPI backend for Vercel. It uses the same 39 heading-based document chunks with a pinned, quantized MiniLM ONNX model, BM25 keyword search and Reciprocal Rank Fusion. It serves a read-only corpus without requiring a writable Chroma database or PyTorch in the hosted runtime. The original CLI remains available below.
+
+The hosted UI supports example questions, cited answers, expandable retrieved passages, loading/error states and answer copying. OpenAI and Upstash credentials remain server-side.
+
+### Deploy on Vercel
+
+1. Import this repository and set the Root Directory to `web`.
+2. Keep the FastAPI framework preset and Build Command `python prepare.py`.
+3. Add `OPENAI_API_KEY`, `OPENAI_MODEL`, `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` as production environment variables. Store the key and token as sensitive values.
+4. Deploy. The build downloads the embedding model and tokenizer at the immutable revision in `web/model_manifest.json` and verifies their SHA-256 checksums.
+
+The default public-demo limits are 3 requests per minute per client, 20 requests per minute shared and 100 admitted requests per 24-hour window shared. The daily window begins with its first admission. Each Redis check is atomic; rejected requests never reach the model. These are request limits, not a provider billing cap. Set `RATE_LIMIT_PREFIX` separately for each deployment.
+
+To refresh the bundled corpus after editing `docs/`, run `python scripts/export_web_corpus.py` and redeploy. Model files, Vercel login metadata and local environment files are ignored by Git.
+
+### Run the web app locally
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r web/requirements.txt
+.\.venv\Scripts\python.exe web/prepare.py
+# Export the required variables into your shell, or use uvicorn --env-file .env with python-dotenv installed.
+.\.venv\Scripts\python.exe -m uvicorn app:app --app-dir web --env-file .env --port 8000
+.\.venv\Scripts\python.exe -m unittest discover -s web/tests -v
+```
+
+Visit `http://localhost:8000`. Public endpoints are `GET /api/health`, `GET /api/documents` and `POST /api/query` with a JSON `question` field. Questions are limited to 2,000 characters; request bodies are bounded. The application does not persist question history.
+
 ## Features
 
 - **Structure-aware ingestion:** Split Markdown at H2/H3 headings while preserving fenced code examples.
@@ -156,7 +187,7 @@ Generation honors the configured model and uses `max_completion_tokens`. Respons
 - `tests/`: regression checks for errors, boundaries, citation handling and ingestion.
 - `verification/`: real-service verification and evidence.
 
-This checkout provides a local CLI. It has no HTTP service, browser interface, authentication layer or deployment configuration. A hosted service would require those components plus trusted user identity if per-user limiting is needed. Replacing Chroma with another database requires implementing the collection operations used by storage and retrieval; it is not a drop-in one-file configuration switch.
+The root application provides the original CLI. The `web/` subdirectory provides the hosted HTTP service and browser interface. It is a public educational demo without user accounts; its client limiter uses the hosting edge client address and is not an authenticated per-user quota. Replacing Chroma with another database requires implementing the collection operations used by storage and retrieval; it is not a drop-in one-file configuration switch.
 
 `requirements.md`, `Project_Documentation.md` and `Project_Documentation.pdf` describe the original teaching specification. This README documents the runnable implementation and commands.
 
@@ -192,7 +223,7 @@ These are dated local results, not a hosted service status or a capacity benchma
 
 ## Scope and limitations
 
-- This application runs as a CLI. It does not provide a hosted HTTP API or web interface.
+- The CLI and Vercel web runtime share the corpus and retrieval approach. The web runtime uses ONNX and an immutable in-memory index; the CLI retains SentenceTransformer, ChromaDB and LangGraph.
 - Source-label validation checks that citations name retrieved sections; it does not independently verify every generated claim.
 - The rate limit applies to application queries. It does not model provider token quotas or identify individual users.
 - Heading-based chunking preserves section boundaries. The word threshold triggers H3 splitting and does not impose a hard size limit on sections without usable subheadings.

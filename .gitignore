@@ -21,3 +21,5 @@ verification/*.txt
 .coverage
 htmlcov/
 Thumbs.db
+.vercel/
+web/models/

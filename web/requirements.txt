@@ -1,0 +1,6 @@
+fastapi>=0.117,<1
+uvicorn>=0.35,<1
+numpy>=2,<3
+onnxruntime>=1.23,<2
+tokenizers>=0.22,<1
+rank-bm25==0.2.2
