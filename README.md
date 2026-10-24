@@ -2,7 +2,7 @@
 
 A Python documentation assistant that combines keyword and vector retrieval, fuses their rankings, and generates answers with document/section citations. The repository contains a ChromaDB/LangGraph command-line pipeline and a lighter FastAPI/ONNX deployment of the same documentation workflow.
 
-[Live app](https://rag-documentation-assistant.vercel.app/) · [Web implementation](web/app.py) · [Hosted verification](verification/VERCEL_DEPLOYMENT.md)
+[Live app](https://rag-documentation-assistant.vercel.app/) · [Web implementation](web/app.py) · [Evaluation](evaluation/README.md) · [Tests](https://github.com/harshgavandit/rag-documentation-assistant/actions/workflows/evaluation.yml)
 
 **Stack:** Python, FastAPI, LangGraph, ChromaDB, BM25, MiniLM, ONNX Runtime, OpenAI, Upstash Redis, Vercel.
 
@@ -115,7 +115,13 @@ python -m compileall -q web
 
 The deterministic tests cover chunk boundaries, RRF behavior, idempotent indexing, early rate denial, Redis failure, citation guards, payload/origin bounds, and public routes. `check --live` checks configured service connectivity/model access; it is not a generation evaluation. `python verification/verify_live.py` separately makes real generation requests and checks Redis admission using isolated expiring counters. That command consumes provider quota.
 
-The [CLI verification record](verification/VERIFICATION.md) and [hosted verification record](verification/VERCEL_DEPLOYMENT.md) describe the dated checks and their limits. There is currently **no GitHub Actions workflow** in this repository; these commands are available to reproduce the checks locally.
+The [CLI verification record](verification/VERIFICATION.md) and [hosted verification record](verification/VERCEL_DEPLOYMENT.md) describe the dated checks and their limits. [GitHub Actions](.github/workflows/evaluation.yml) runs the offline web tests and source-labelled retrieval evaluation on Python 3.12 without paid provider calls.
+
+## Retrieval and answer measurements
+
+The [evaluation guide](evaluation/README.md) includes the dataset, commands and retained JSON results. Fifty authored questions cover the bundled guides: 44 answerable and six unsupported. All three retrieval methods found labelled evidence in their top five for **42/44** answerable questions. BM25 led the current hybrid ranking on this set (MRR@5 **0.9318 vs 0.9205**); the report preserves that result and both hybrid misses.
+
+A separate **18-request real model run** returned cited answers for 12 answerable questions and refusals for all six unsupported questions. **17/18** combined fixture checks passed; the remaining check was a regex false negative on a valid paraphrase, retained and explained. Provider usage totalled **28,631 tokens**. These are small public-document diagnostic runs, not a general accuracy or production-latency claim.
 
 ## Scope and tradeoffs
 

@@ -1,0 +1,11 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+# This existing corpus is fingerprinted as bytes by the evaluation dataset.
+web/data/corpus.json -text whitespace=cr-at-eol
+# Retain exact Windows-run source bytes, including their original line endings.
+evaluation/results/sources/* -text whitespace=cr-at-eol

@@ -1,0 +1,1294 @@
+{
+  "schema_version": 1,
+  "dataset_id": "docwise-authored-retrieval-v1",
+  "label": "Synthetic, repository-authored diagnostic evaluation; not an external benchmark or held-out research test",
+  "frozen_on": "2026-10-24",
+  "authorship": "Questions and initial binary relevance labels authored from the bundled corpus before retrieval runs. An independent source audit corrected omitted evidence in annotation revision2 before generation-provider evaluation. No production retrieval parameters were changed.",
+  "scope": "Retrieval only: supporting chunks, not factual correctness of the underlying educational documents, generated answer quality, safety, production traffic, or latency SLA.",
+  "gold_policy": "A chunk is relevant when it directly supports at least one requested answer component. Multi-section cases may require multiple chunks. Duplicate supporting excerpts share a single relevant ID. Equivalent supporting summaries are labeled when applicable; heading-only and table-of-contents chunks are not answer evidence. Relevance judgments remain subjective and may omit alternative valid evidence.",
+  "corpus": {
+    "path": "web/data/corpus.json",
+    "sha256": "9a8242dcc4309057921dcc635783cf8415b4012155704878ad58ad15329620a7",
+    "chunk_count": 39,
+    "chunk_id_format": "<metadata.doc_title>::<metadata.chunk_index padded to 3 digits>"
+  },
+  "cases": [
+    {
+      "id": "docwise-001",
+      "question": "Which toolkit and model power both Maps agents?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::002",
+        "DOCUMENTATION.md::008",
+        "DOCUMENTATION.md::013",
+        "DOCUMENTATION.md::015"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::002",
+          "excerpt": "Both agents use Google's Agent Development Kit (ADK) and the Gemini 2.0 Flash model."
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::008",
+          "excerpt": "model=\"gemini-2.0-flash\""
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::013",
+          "excerpt": "model=\"gemini-2.0-flash\""
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::015",
+          "excerpt": "from google.adk.agents import LlmAgent"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::015",
+          "excerpt": "model=\"gemini-2.0-flash\""
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "ADK|Agent Development Kit",
+        "Gemini\\s*2(?:\\.0)?\\s*Flash"
+      ]
+    },
+    {
+      "id": "docwise-002",
+      "question": "In the architecture diagrams, which side handles response parsing with MCP?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::003"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::003",
+          "excerpt": "Response Parsing"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-003",
+      "question": "How is MAPS_API_KEY loaded in the traditional agent?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::005"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::005",
+          "excerpt": "MAPS_API_KEY = os.getenv(\"MAPS_API_KEY\")"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-004",
+      "question": "Which Python library wraps a function so the Google ADK agent can call it?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::005",
+        "DOCUMENTATION.md::007",
+        "DOCUMENTATION.md::012"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::005",
+          "excerpt": "`FunctionTool`: Wrapper to convert Python functions into agent-callable tools"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::007",
+          "excerpt": "`FunctionTool` wraps your Python function"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::012",
+          "excerpt": "places_tool = FunctionTool(search_places_on_route)"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-005",
+      "question": "What default travel mode and request timeout does get_directions use?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::006"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::006",
+          "excerpt": "mode: str = \"driving\""
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::006",
+          "excerpt": "timeout=20"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "driving",
+        "20"
+      ]
+    },
+    {
+      "id": "docwise-006",
+      "question": "What route fields does get_directions return?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::006"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::006",
+          "excerpt": "\"distance\": leg[\"distance\"][\"text\"]"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::006",
+          "excerpt": "\"duration\": leg[\"duration\"][\"text\"]"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-007",
+      "question": "How are a function name, type hints and docstring used by FunctionTool?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::007",
+        "DOCUMENTATION.md::006"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::007",
+          "excerpt": "Function name → Tool name"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::007",
+          "excerpt": "Type hints → Parameter schema"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::007",
+          "excerpt": "Docstring → Tool description"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::006",
+          "excerpt": "Parameters become the tool's input schema that LLM understands"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::006",
+          "excerpt": "becomes the tool's description for the LLM"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "name",
+        "type hint|schema|parameter",
+        "docstring|description"
+      ]
+    },
+    {
+      "id": "docwise-008",
+      "question": "What must Maps_Agent include when returning directions?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::008",
+        "DOCUMENTATION.md::013"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::008",
+          "excerpt": "Always return a short answer + the Google Maps link when directions are requested."
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::013",
+          "excerpt": "Always return a short answer + the Google Maps link."
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-009",
+      "question": "Why could the original directions-only agent not find gas stations on a route?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::009"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::009",
+          "excerpt": "Our current agent can't help—it only knows how to get directions."
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-010",
+      "question": "What seven steps are required to add a second traditional tool?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::010"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::010",
+          "excerpt": "That's 7 steps just to add ONE new tool!"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-011",
+      "question": "How does search_places_on_route choose its search location and radius?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::011"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::011",
+          "excerpt": "mid = steps[len(steps) // 2][\"end_location\"]"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::011",
+          "excerpt": "\"radius\": 5000"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "midpoint|middle|mid",
+        "5000|5,000|5\\s*(?:km|kilomet)"
+      ]
+    },
+    {
+      "id": "docwise-012",
+      "question": "How many places does the route search return, and which details are included?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::011"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::011",
+          "excerpt": "for p in places_data[\"results\"][:5]:"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::011",
+          "excerpt": "\"address\": p.get(\"vicinity\")"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-013",
+      "question": "How are both directions_tool and places_tool added to Maps_Agent?",
+      "answerable": true,
+      "tags": [
+        "multi_section",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::012",
+        "DOCUMENTATION.md::013"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::012",
+          "excerpt": "places_tool = FunctionTool(search_places_on_route)"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::013",
+          "excerpt": "tools=[directions_tool, places_tool]"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-014",
+      "question": "What happens to code complexity as traditional tools are added?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::014",
+        "DOCUMENTATION.md::023"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::014",
+          "excerpt": "**complexity grows linearly** with each new tool."
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::023",
+          "excerpt": "Complexity grows with each tool"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-015",
+      "question": "What URL and authentication header are used by MCP_Maps_Agent?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::015",
+        "DOCUMENTATION.md::020"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::015",
+          "excerpt": "https://mapstools.googleapis.com/mcp"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::015",
+          "excerpt": "\"X-Goog-Api-Key\": MAPS_API_KEY"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::020",
+          "excerpt": "https://mapstools.googleapis.com/mcp"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "https://mapstools\\.googleapis\\.com/mcp",
+        "X-Goog-Api-Key"
+      ]
+    },
+    {
+      "id": "docwise-016",
+      "question": "How does MCPToolset discover tools without manually registering every function?",
+      "answerable": true,
+      "tags": [
+        "multi_section",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::015",
+        "DOCUMENTATION.md::019"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::015",
+          "excerpt": "Automatically discovers and registers all tools from the server"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::019",
+          "excerpt": "it sends a `tools/list` request"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-017",
+      "question": "Which standard is described as USB-C for AI?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::017"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::017",
+          "excerpt": "**\"USB-C for AI\"**"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-018",
+      "question": "Which JSON-RPC methods list MCP tools and invoke one?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::019",
+        "MCP_Documentation.md::011"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::019",
+          "excerpt": "\"method\": \"tools/list\""
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::019",
+          "excerpt": "\"method\": \"tools/call\""
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::011",
+          "excerpt": "tool listing (`tools/list`), and tool calling (`tools/call`)"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "tools/list",
+        "tools/call"
+      ]
+    },
+    {
+      "id": "docwise-019",
+      "question": "Which Google Maps MCP tool converts an address into coordinates?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::020",
+        "DOCUMENTATION.md::019"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::020",
+          "excerpt": "`geocode` | Convert address to lat/lng coordinates | `address`"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::019",
+          "excerpt": "\"name\": \"maps_geocode\""
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::019",
+          "excerpt": "\"description\": \"Convert address to coordinates\""
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-020",
+      "question": "When does the comparison recommend traditional tools rather than MCP?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::021",
+        "DOCUMENTATION.md::023"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::021",
+          "excerpt": "Need custom, complex logic"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::023",
+          "excerpt": "Custom/unique tools"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-021",
+      "question": "Which environment variables and commands run the two Maps agents?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::022"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::022",
+          "excerpt": "MAPS_API_KEY=your_google_maps_api_key"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::022",
+          "excerpt": "adk run Maps_Agent"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::022",
+          "excerpt": "adk run MCP_Maps_Agent"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-022",
+      "question": "Compare the number of lines shown for the traditional two-tool agent and MCP agent.",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "maps"
+      ],
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::021",
+        "DOCUMENTATION.md::023",
+        "DOCUMENTATION.md::014"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "DOCUMENTATION.md::021",
+          "excerpt": "~100 lines | ~30 lines"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::023",
+          "excerpt": "~100 lines for 2 tools | ~30 lines for 3+ tools"
+        },
+        {
+          "chunk_id": "DOCUMENTATION.md::014",
+          "excerpt": "| Lines of code | ~50 | ~100 | ~250+ | ~500+ |"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-023",
+      "question": "What is an MCP client and what is an MCP server?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::001"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::001",
+          "excerpt": "**MCP Server** | Your code that exposes tools, resources, or prompts"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::001",
+          "excerpt": "**MCP Client** | The AI application"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-024",
+      "question": "Why build a custom MCP server around a proprietary healthcare database?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::002"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::002",
+          "excerpt": "Query a **proprietary database**"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::002",
+          "excerpt": "Apply **domain-specific logic**"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-025",
+      "question": "How do Stdio and Streamable HTTP differ for local versus shared deployments?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::003"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::003",
+          "excerpt": "Server and client run on the same machine"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::003",
+          "excerpt": "Supports multiple concurrent clients"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-026",
+      "question": "Why did the healthcare project choose Streamable HTTP instead of the older SSE transport?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::003"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::003",
+          "excerpt": "It allows the server to run independently and be shared across multiple AI clients"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::003",
+          "excerpt": "replacing the older SSE-based transport"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-027",
+      "question": "Which files implement the four healthcare tools?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::004"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::004",
+          "excerpt": "risk_summary.py"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::004",
+          "excerpt": "readmission.py"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::004",
+          "excerpt": "schema_tool.py"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::004",
+          "excerpt": "query_tool.py"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-028",
+      "question": "Why can the healthcare tools be tested without the MCP server?",
+      "answerable": true,
+      "tags": [
+        "multi_section",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::004",
+        "MCP_Documentation.md::012"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::004",
+          "excerpt": "Every tool function is independently testable."
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::012",
+          "excerpt": "Test each with `python tools/risk_summary.py`"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-029",
+      "question": "Which five tables are in patients.db and how are visits related to lab results?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::005"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::005",
+          "excerpt": "patients (1)"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::005",
+          "excerpt": "visits   (1) ──── (many) lab_results"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "patients",
+        "visits",
+        "diagnoses",
+        "medications",
+        "lab_results"
+      ]
+    },
+    {
+      "id": "docwise-030",
+      "question": "What do is_active and is_abnormal mean in the healthcare schema?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::005"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::005",
+          "excerpt": "`is_active = 1` means the medication is currently being taken."
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::005",
+          "excerpt": "`is_abnormal = 1` means the result is outside the reference range."
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-031",
+      "question": "How are chronic conditions, medications and abnormal labs counted in risk scoring?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::007"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "Chronic conditions | 1 point each, capped at 3"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "Polypharmacy | 1 point per every 2 meds beyond the first 2"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "Abnormal labs | 1 point each (no cap)"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-032",
+      "question": "Why does an old abnormal lab result not continue penalizing a patient after improvement?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::007"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "we only consider the *most recent* result per test type."
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "most recent|latest",
+        "test(?:\\s+type)?"
+      ]
+    },
+    {
+      "id": "docwise-033",
+      "question": "What signal totals produce LOW, MEDIUM and HIGH patient risk tiers?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::007"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "0–2 | LOW"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "3–4 | MEDIUM"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::007",
+          "excerpt": "5+ | HIGH"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "0\\s*[–—-]\\s*2",
+        "3\\s*[–—-]\\s*4",
+        "5"
+      ]
+    },
+    {
+      "id": "docwise-034",
+      "question": "Which time windows and recurring diagnoses does get_readmission_insights compute?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::008"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::008",
+          "excerpt": "Visit counts for 30, 90, and 180-day windows"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::008",
+          "excerpt": "List of diagnoses that appear in 2+ separate visits"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "30",
+        "90",
+        "180",
+        "recurr"
+      ]
+    },
+    {
+      "id": "docwise-035",
+      "question": "Under what conditions is readmission risk HIGH or MODERATE?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::008"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::008",
+          "excerpt": "3+ visits in last 90 days OR discharged <30 days ago with recurring dx | HIGH"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::008",
+          "excerpt": "2 visits in 90 days OR any recurring diagnosis | MODERATE"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-036",
+      "question": "What should an AI call before issuing SQL and what SQLite metadata operation is used?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::009"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::009",
+          "excerpt": "SQLite's `PRAGMA table_info()`"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::009",
+          "excerpt": "always call this tool first before `query_database`"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "get_database_schema|database_schema",
+        "PRAGMA\\s+table_info"
+      ]
+    },
+    {
+      "id": "docwise-037",
+      "question": "What SQL statements does query_patient_database allow or reject?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::010"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::010",
+          "excerpt": "starts with `SELECT` (case-insensitive)"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::010",
+          "excerpt": "`INSERT`, `UPDATE`, `DELETE`, `DROP` — is rejected"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-038",
+      "question": "What fields and result shape does the safe SQL tool return?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::010"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::010",
+          "excerpt": "\"row_count\": 5"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::010",
+          "excerpt": "Results are returned as a list of dictionaries"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-039",
+      "question": "How do type hints and docstrings become a tool schema in FastMCP?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::011"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::011",
+          "excerpt": "generates a JSON Schema for tool parameters"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::011",
+          "excerpt": "Reads the **docstring** to create the tool's description"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-040",
+      "question": "How is the FastMCP ASGI app created and on which host and port does it run?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::011",
+        "MCP_Documentation.md::003",
+        "MCP_Documentation.md::013"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::011",
+          "excerpt": "mcp.streamable_http_app()"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::011",
+          "excerpt": "host=\"0.0.0.0\", port=8000"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::003",
+          "excerpt": "MCP Server (http://0.0.0.0:8000/mcp)"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::013",
+          "excerpt": "Starting Healthcare MCP Server on http://0.0.0.0:8000/mcp"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-041",
+      "question": "In which order are db.py, seed_data.py, tools and server.py built?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::012"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::012",
+          "excerpt": "**Step 2 — `db.py`**"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::012",
+          "excerpt": "**Step 3 — `seed_data.py`**"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::012",
+          "excerpt": "**Step 4 — Tool files (independently)**"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::012",
+          "excerpt": "**Step 5 — `server.py`**"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-042",
+      "question": "How can MCP Inspector verify the server and how is Claude Desktop pointed at it?",
+      "answerable": true,
+      "tags": [
+        "exact",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::013"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::013",
+          "excerpt": "npx @modelcontextprotocol/inspector http://localhost:8000/mcp"
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::013",
+          "excerpt": "\"url\": \"http://localhost:8000/mcp\""
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-043",
+      "question": "Does the documented healthcare server already authenticate requests, and how could it be added?",
+      "answerable": true,
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::014"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::014",
+          "excerpt": "The current server has no authentication."
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::014",
+          "excerpt": "add an API key check or OAuth token validation"
+        }
+      ],
+      "live_sample": true,
+      "required_fact_patterns": [
+        "no authentication|not\\s+(?:currently\\s+)?authenticat|doesn.t\\s+(?:currently\\s+)?(?:have|implement)\\s+authenticat",
+        "API key|OAuth"
+      ]
+    },
+    {
+      "id": "docwise-044",
+      "question": "Where would replacing SQLite with PostgreSQL be implemented, and how do resources differ from tools?",
+      "answerable": true,
+      "tags": [
+        "multi_section",
+        "healthcare"
+      ],
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::014"
+      ],
+      "evidence": [
+        {
+          "chunk_id": "MCP_Documentation.md::014",
+          "excerpt": "The `db.py` module is the only place database connection logic lives."
+        },
+        {
+          "chunk_id": "MCP_Documentation.md::014",
+          "excerpt": "**Resources** (read-only data like files or database records exposed as URIs)"
+        }
+      ],
+      "live_sample": false,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-045",
+      "question": "How do I configure Stripe subscriptions and refund a payment?",
+      "answerable": false,
+      "tags": [
+        "unsupported"
+      ],
+      "relevant_chunk_ids": [],
+      "evidence": [],
+      "unsupported_reason": "Neither document describes billing integrations or payment operations.",
+      "live_sample": true,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-046",
+      "question": "What is the current weather in Mumbai?",
+      "answerable": false,
+      "tags": [
+        "unsupported"
+      ],
+      "relevant_chunk_ids": [],
+      "evidence": [],
+      "unsupported_reason": "No live weather data or weather tool is supplied in this fixed documentation corpus.",
+      "live_sample": true,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-047",
+      "question": "What was Docwise production p95 latency last week?",
+      "answerable": false,
+      "tags": [
+        "unsupported"
+      ],
+      "relevant_chunk_ids": [],
+      "evidence": [],
+      "unsupported_reason": "The corpus contains no Docwise production telemetry.",
+      "live_sample": true,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-048",
+      "question": "What is the actual HbA1c value of patient 4 in the running hospital database?",
+      "answerable": false,
+      "tags": [
+        "unsupported"
+      ],
+      "relevant_chunk_ids": [],
+      "evidence": [],
+      "unsupported_reason": "The documentation gives schema and examples, not a complete patient record or access to the live database.",
+      "live_sample": true,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-049",
+      "question": "What OAuth issuer URL and client secret does the healthcare server use in production?",
+      "answerable": false,
+      "tags": [
+        "unsupported"
+      ],
+      "relevant_chunk_ids": [],
+      "evidence": [],
+      "unsupported_reason": "Authentication is proposed as future work; no deployed issuer or client credentials are documented.",
+      "live_sample": true,
+      "required_fact_patterns": []
+    },
+    {
+      "id": "docwise-050",
+      "question": "What fare should I pay for a flight from New York to Boston tomorrow?",
+      "answerable": false,
+      "tags": [
+        "unsupported"
+      ],
+      "relevant_chunk_ids": [],
+      "evidence": [],
+      "unsupported_reason": "Route tool examples do not contain live flight fares or booking data.",
+      "live_sample": true,
+      "required_fact_patterns": []
+    }
+  ],
+  "live_sample_policy": "Fixed before generation runs: 12 answerable cases (6 per document) and all 6 unsupported cases. Regex checks are transparent diagnostic proxies for selected required facts, not semantic correctness judgments.",
+  "annotation_revision": 2,
+  "annotation_revision_notes": [
+    {
+      "revision": 2,
+      "date": "2026-10-24",
+      "reason": "Independent source audit identified omitted alternative or partial supporting chunks under the existing binary relevance policy. Added exact source excerpts, including agent model examples. Clarified case044 wording from database migration to replacing SQLite with PostgreSQL. Fixed live sample and required-fact patterns were preserved. No production retrieval code or ranking parameters changed; these are annotation corrections, not score-driven tuning.",
+      "corrected_cases": [
+        "docwise-001",
+        "docwise-004",
+        "docwise-007",
+        "docwise-008",
+        "docwise-014",
+        "docwise-015",
+        "docwise-018",
+        "docwise-019",
+        "docwise-022",
+        "docwise-040",
+        "docwise-044"
+      ]
+    }
+  ]
+}

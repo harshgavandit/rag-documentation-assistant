@@ -1,0 +1,1171 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-24T13:10:43.997887+00:00",
+  "scope": "Real local ONNX retrieval plus unchanged production answer() function; not hosted HTTP, admission, load, production-user or general semantic-quality measurement.",
+  "dataset_id": "docwise-authored-retrieval-v1",
+  "dataset_sha256": "90778a954c73dde7e1e2dcbbb3a2b7aa6422be2a5214bb5a1d1b9c69aeb62df3",
+  "corpus_sha256": "9a8242dcc4309057921dcc635783cf8415b4012155704878ad58ad15329620a7",
+  "source_base_commit": "449e5389146c7c7c1179e7459a6ea23a306daca5",
+  "source_sha256": {
+    "web/app.py": "a2a18e48609d81d7c1ee6ca4880d32e0943664c34e411bd31e921b5c9aa92571",
+    "web/engine.py": "57a19cb47de6b7e047c8ea8dd8ff3adfd89c119ed4cf39cc914114a72b97dc15",
+    "evaluation/evaluate_answers.py": "72debedf3ab957fcb2a08f5c81f723977b2639b4deb24ea2582e1e3be6cb565f"
+  },
+  "requested_model": "gpt-6-luna",
+  "max_completion_tokens": 2048,
+  "request_budget": 18,
+  "provider_requests": 18,
+  "cases": [
+    {
+      "id": "docwise-001",
+      "question": "Which toolkit and model power both Maps agents?",
+      "retrieval_ms": 2.706,
+      "status": "completed",
+      "result": {
+        "answer": "Both agents use Google’s Agent Development Kit (ADK) and the Gemini 2.0 Flash model. [Source: DOCUMENTATION.md, Section: Project Overview]",
+        "citations": [
+          "[Source: DOCUMENTATION.md, Section: Project Overview]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1007,
+        "completion_tokens": 92,
+        "total_tokens": 1099,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 49
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "Both agents use Google’s Agent Development Kit (ADK) and the Gemini 2.0 Flash model. [Source: DOCUMENTATION.md, Section: Project Overview]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 3550.856,
+      "elapsed_ms": 3554.195,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Comprehensive Documentation: AI Agents with Google Maps",
+          "chunk_index": 0
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Project Overview",
+          "chunk_index": 2
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Traditional Approach: Maps_Agent",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "1. What Is MCP (Model Context Protocol)?",
+          "chunk_index": 1
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 13
+        }
+      ]
+    },
+    {
+      "id": "docwise-005",
+      "question": "What default travel mode and request timeout does get_directions use?",
+      "retrieval_ms": 3.06,
+      "status": "completed",
+      "result": {
+        "answer": "`get_directions` defaults to `\"driving\"` and uses a 20-second request timeout. [Source: DOCUMENTATION.md, Section: Traditional Approach: Maps_Agent]",
+        "citations": [
+          "[Source: DOCUMENTATION.md, Section: Traditional Approach: Maps_Agent]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1839,
+        "completion_tokens": 69,
+        "total_tokens": 1908,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 24
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "`get_directions` defaults to `\"driving\"` and uses a 20-second request timeout. [Source: DOCUMENTATION.md, Section: Traditional Approach: Maps_Agent]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2857.765,
+      "elapsed_ms": 2860.975,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Traditional Approach: Maps_Agent",
+          "chunk_index": 6
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 19
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 12
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Traditional Approach: Maps_Agent",
+          "chunk_index": 7
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Modern Approach: MCP_Maps_Agent",
+          "chunk_index": 15
+        }
+      ]
+    },
+    {
+      "id": "docwise-007",
+      "question": "How are a function name, type hints and docstring used by FunctionTool?",
+      "retrieval_ms": 3.18,
+      "status": "completed",
+      "result": {
+        "answer": "`FunctionTool` uses the function name as the tool name, type hints to create the parameter schema, and the docstring as the tool description. [Source: DOCUMENTATION.md, Section: Traditional Approach: Maps_Agent]",
+        "citations": [
+          "[Source: DOCUMENTATION.md, Section: Traditional Approach: Maps_Agent]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1041,
+        "completion_tokens": 166,
+        "total_tokens": 1207,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 111
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "`FunctionTool` uses the function name as the tool name, type hints to create the parameter schema, and the docstring as the tool description. [Source: DOCUMENTATION.md, Section: Traditional Approach: Maps_Agent]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 3693.259,
+      "elapsed_ms": 3696.609,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Traditional Approach: Maps_Agent",
+          "chunk_index": 7
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 10
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "1. What Is MCP (Model Context Protocol)?",
+          "chunk_index": 1
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Project Overview",
+          "chunk_index": 2
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 9
+        }
+      ]
+    },
+    {
+      "id": "docwise-011",
+      "question": "How does search_places_on_route choose its search location and radius?",
+      "retrieval_ms": 3.407,
+      "status": "completed",
+      "result": {
+        "answer": "It uses the endpoint of the route’s middle step as the search location, then searches within a radius of **5,000 meters** of that point. [Source: DOCUMENTATION.md, Section: 🚨 The Problem: Adding More Tools]",
+        "citations": [
+          "[Source: DOCUMENTATION.md, Section: 🚨 The Problem: Adding More Tools]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1135,
+        "completion_tokens": 108,
+        "total_tokens": 1243,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 50
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "It uses the endpoint of the route’s middle step as the search location, then searches within a radius of **5,000 meters** of that point. [Source: DOCUMENTATION.md, Section: 🚨 The Problem: Adding More Tools]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 3018.351,
+      "elapsed_ms": 3021.947,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 11
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 12
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 20
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 9
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 13
+        }
+      ]
+    },
+    {
+      "id": "docwise-015",
+      "question": "What URL and authentication header are used by MCP_Maps_Agent?",
+      "retrieval_ms": 3.73,
+      "status": "completed",
+      "result": {
+        "answer": "MCP_Maps_Agent connects to `https://mapstools.googleapis.com/mcp` and sends its API key in the `X-Goog-Api-Key` header. [Source: DOCUMENTATION.md, Section: Modern Approach: MCP_Maps_Agent]",
+        "citations": [
+          "[Source: DOCUMENTATION.md, Section: Modern Approach: MCP_Maps_Agent]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1321,
+        "completion_tokens": 57,
+        "total_tokens": 1378,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "MCP_Maps_Agent connects to `https://mapstools.googleapis.com/mcp` and sends its API key in the `X-Goog-Api-Key` header. [Source: DOCUMENTATION.md, Section: Modern Approach: MCP_Maps_Agent]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2891.195,
+      "elapsed_ms": 2895.063,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Modern Approach: MCP_Maps_Agent",
+          "chunk_index": 15
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Table of Contents",
+          "chunk_index": 1
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Project Overview",
+          "chunk_index": 2
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Comprehensive Documentation: AI Agents with Google Maps",
+          "chunk_index": 0
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        }
+      ]
+    },
+    {
+      "id": "docwise-018",
+      "question": "Which JSON-RPC methods list MCP tools and invoke one?",
+      "retrieval_ms": 3.728,
+      "status": "completed",
+      "result": {
+        "answer": "`tools/list` lists MCP tools, and `tools/call` invokes a tool. [Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "citations": [
+          "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1927,
+        "completion_tokens": 81,
+        "total_tokens": 2008,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 37
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "`tools/list` lists MCP tools, and `tools/call` invokes a tool. [Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2421.231,
+      "elapsed_ms": 2425.075,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 19
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 17
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Key Differences and Benefits",
+          "chunk_index": 21
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "1. What Is MCP (Model Context Protocol)?",
+          "chunk_index": 1
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        }
+      ]
+    },
+    {
+      "id": "docwise-029",
+      "question": "Which five tables are in patients.db and how are visits related to lab results?",
+      "retrieval_ms": 3.051,
+      "status": "completed",
+      "result": {
+        "answer": "The five tables are `patients`, `visits`, `diagnoses`, `medications`, and `lab_results`. [Source: MCP_Documentation.md, Section: 5. Database Design]\n\nEach visit can be associated with many lab results, and each lab result is linked to a visit. [Source: MCP_Documentation.md, Section: 5. Database Design]",
+        "citations": [
+          "[Source: MCP_Documentation.md, Section: 5. Database Design]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1544,
+        "completion_tokens": 134,
+        "total_tokens": 1678,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 47
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "The five tables are `patients`, `visits`, `diagnoses`, `medications`, and `lab_results`. [Source: MCP_Documentation.md, Section: 5. Database Design]\n\nEach visit can be associated with many lab results, and each lab result is linked to a visit. [Source: MCP_Documentation.md, Section: 5. Database Design]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2540.047,
+      "elapsed_ms": 2543.251,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "5. Database Design",
+          "chunk_index": 5
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "8. Step-by-Step Build Order",
+          "chunk_index": 12
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "9. Running and Testing the Server",
+          "chunk_index": 13
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 10
+        }
+      ]
+    },
+    {
+      "id": "docwise-032",
+      "question": "Why does an old abnormal lab result not continue penalizing a patient after improvement?",
+      "retrieval_ms": 4.347,
+      "status": "completed",
+      "result": {
+        "answer": "The risk summary considers only the most recent result for each test type, so an older abnormal result no longer counts after a newer result shows improvement. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+        "citations": [
+          "[Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1836,
+        "completion_tokens": 53,
+        "total_tokens": 1889,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "The risk summary considers only the most recent result for each test type, so an older abnormal result no longer counts after a newer result shows improvement. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2419.294,
+      "elapsed_ms": 2423.757,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 7
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "8. Step-by-Step Build Order",
+          "chunk_index": 12
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "5. Database Design",
+          "chunk_index": 5
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        }
+      ]
+    },
+    {
+      "id": "docwise-033",
+      "question": "What signal totals produce LOW, MEDIUM and HIGH patient risk tiers?",
+      "retrieval_ms": 3.502,
+      "status": "completed",
+      "result": {
+        "answer": "LOW: 0–2 signals; MEDIUM: 3–4; HIGH: 5 or more. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+        "citations": [
+          "[Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1580,
+        "completion_tokens": 71,
+        "total_tokens": 1651,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 18
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "LOW: 0–2 signals; MEDIUM: 3–4; HIGH: 5 or more. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1728.115,
+      "elapsed_ms": 1731.729,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 7
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "9. Running and Testing the Server",
+          "chunk_index": 13
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "8. Step-by-Step Build Order",
+          "chunk_index": 12
+        }
+      ]
+    },
+    {
+      "id": "docwise-034",
+      "question": "Which time windows and recurring diagnoses does get_readmission_insights compute?",
+      "retrieval_ms": 3.384,
+      "status": "completed",
+      "result": {
+        "answer": "`get_readmission_insights` computes visit counts over 30-, 90-, and 180-day windows, and lists diagnoses that appear in two or more separate visits. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+        "citations": [
+          "[Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "all_required_fact_patterns_match": false,
+        "fixture_checks_pass": false
+      },
+      "usage": {
+        "prompt_tokens": 1610,
+        "completion_tokens": 94,
+        "total_tokens": 1704,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 29
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "`get_readmission_insights` computes visit counts over 30-, 90-, and 180-day windows, and lists diagnoses that appear in two or more separate visits. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2128.705,
+      "elapsed_ms": 2132.22,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "9. Running and Testing the Server",
+          "chunk_index": 13
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "5. Database Design",
+          "chunk_index": 5
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 7
+        }
+      ]
+    },
+    {
+      "id": "docwise-036",
+      "question": "What should an AI call before issuing SQL and what SQLite metadata operation is used?",
+      "retrieval_ms": 4.155,
+      "status": "completed",
+      "result": {
+        "answer": "Call `get_database_schema` before `query_database`; it uses SQLite’s `PRAGMA table_info()` for each table. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+        "citations": [
+          "[Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1605,
+        "completion_tokens": 99,
+        "total_tokens": 1704,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 44
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "Call `get_database_schema` before `query_database`; it uses SQLite’s `PRAGMA table_info()` for each table. [Source: MCP_Documentation.md, Section: 6. The Four Tools — Implementation Details]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1903.647,
+      "elapsed_ms": 1907.943,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 9
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "1. What Is MCP (Model Context Protocol)?",
+          "chunk_index": 1
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "2. Why Build a Custom MCP Server?",
+          "chunk_index": 2
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "5. Database Design",
+          "chunk_index": 5
+        }
+      ]
+    },
+    {
+      "id": "docwise-043",
+      "question": "Does the documented healthcare server already authenticate requests, and how could it be added?",
+      "retrieval_ms": 3.258,
+      "status": "completed",
+      "result": {
+        "answer": "No. The current server has no authentication. You could add an API key check or OAuth token validation before serving tool calls. [Source: MCP_Documentation.md, Section: 10. What's Next — Extending This Server]",
+        "citations": [
+          "[Source: MCP_Documentation.md, Section: 10. What's Next — Extending This Server]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": true,
+        "required_fact_pattern_matches": [
+          true,
+          true
+        ],
+        "all_required_fact_patterns_match": true,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1626,
+        "completion_tokens": 50,
+        "total_tokens": 1676,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "No. The current server has no authentication. You could add an API key check or OAuth token validation before serving tool calls. [Source: MCP_Documentation.md, Section: 10. What's Next — Extending This Server]",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 2444.058,
+      "elapsed_ms": 2447.453,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "2. Why Build a Custom MCP Server?",
+          "chunk_index": 2
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "3. Transport Options: Stdio vs Streamable HTTP",
+          "chunk_index": 3
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "9. Running and Testing the Server",
+          "chunk_index": 13
+        }
+      ]
+    },
+    {
+      "id": "docwise-045",
+      "question": "How do I configure Stripe subscriptions and refund a payment?",
+      "retrieval_ms": 5.28,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": null,
+        "required_fact_pattern_matches": [],
+        "all_required_fact_patterns_match": null,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1641,
+        "completion_tokens": 17,
+        "total_tokens": 1658,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1470.746,
+      "elapsed_ms": 1476.162,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 19
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 9
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "Building a Custom MCP Server — Healthcare Patient Records",
+          "chunk_index": 0
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "1. What Is MCP (Model Context Protocol)?",
+          "chunk_index": 1
+        }
+      ]
+    },
+    {
+      "id": "docwise-046",
+      "question": "What is the current weather in Mumbai?",
+      "retrieval_ms": 2.678,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": null,
+        "required_fact_pattern_matches": [],
+        "all_required_fact_patterns_match": null,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1190,
+        "completion_tokens": 28,
+        "total_tokens": 1218,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 5
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1757.062,
+      "elapsed_ms": 1759.966,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 9
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "3. Transport Options: Stdio vs Streamable HTTP",
+          "chunk_index": 3
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 20
+        }
+      ]
+    },
+    {
+      "id": "docwise-047",
+      "question": "What was Docwise production p95 latency last week?",
+      "retrieval_ms": 5.739,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": null,
+        "required_fact_pattern_matches": [],
+        "all_required_fact_patterns_match": null,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1122,
+        "completion_tokens": 32,
+        "total_tokens": 1154,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 9
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1387.119,
+      "elapsed_ms": 1393.031,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "3. Transport Options: Stdio vs Streamable HTTP",
+          "chunk_index": 3
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "Traditional Approach: Maps_Agent",
+          "chunk_index": 7
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 6
+        }
+      ]
+    },
+    {
+      "id": "docwise-048",
+      "question": "What is the actual HbA1c value of patient 4 in the running hospital database?",
+      "retrieval_ms": 4.627,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": null,
+        "required_fact_pattern_matches": [],
+        "all_required_fact_patterns_match": null,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1618,
+        "completion_tokens": 17,
+        "total_tokens": 1635,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1200.013,
+      "elapsed_ms": 1204.787,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 7
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "9. Running and Testing the Server",
+          "chunk_index": 13
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "6. The Four Tools — Implementation Details",
+          "chunk_index": 8
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "5. Database Design",
+          "chunk_index": 5
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "8. Step-by-Step Build Order",
+          "chunk_index": 12
+        }
+      ]
+    },
+    {
+      "id": "docwise-049",
+      "question": "What OAuth issuer URL and client secret does the healthcare server use in production?",
+      "retrieval_ms": 6.091,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": null,
+        "required_fact_pattern_matches": [],
+        "all_required_fact_patterns_match": null,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 1625,
+        "completion_tokens": 17,
+        "total_tokens": 1642,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1176.308,
+      "elapsed_ms": 1182.545,
+      "retrieved_sources": [
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "10. What's Next — Extending This Server",
+          "chunk_index": 14
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "7. Building the MCP Server with FastMCP",
+          "chunk_index": 11
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "9. Running and Testing the Server",
+          "chunk_index": 13
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "3. Transport Options: Stdio vs Streamable HTTP",
+          "chunk_index": 3
+        },
+        {
+          "doc": "MCP_Documentation.md",
+          "section": "2. Why Build a Custom MCP Server?",
+          "chunk_index": 2
+        }
+      ]
+    },
+    {
+      "id": "docwise-050",
+      "question": "What fare should I pay for a flight from New York to Boston tomorrow?",
+      "retrieval_ms": 3.629,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "refusal_decision_matches_fixture": true,
+        "non_refusal_has_valid_retrieved_labels": null,
+        "required_fact_pattern_matches": [],
+        "all_required_fact_patterns_match": null,
+        "fixture_checks_pass": true
+      },
+      "usage": {
+        "prompt_tokens": 2148,
+        "completion_tokens": 31,
+        "total_tokens": 2179,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 8
+      },
+      "model": "gpt-6-luna",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "finish_reason": "stop",
+      "provider_elapsed_ms": 1319.516,
+      "elapsed_ms": 1323.286,
+      "retrieved_sources": [
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 18
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 10
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 11
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "🚨 The Problem: Adding More Tools",
+          "chunk_index": 9
+        },
+        {
+          "doc": "DOCUMENTATION.md",
+          "section": "MCP Deep Dive: How It Works",
+          "chunk_index": 19
+        }
+      ]
+    }
+  ],
+  "grading": "Exact refusal state, retrieved citation-label membership and pre-authored regex fact proxies; not human assessment or factual-entailment evaluation.",
+  "summary": {
+    "attempted_cases": 18,
+    "completed_cases": 18,
+    "error_cases": 0,
+    "fixture_checks_passed": 17,
+    "answerable_cases_completed": 12,
+    "answerable_non_refusals": 12,
+    "answerable_required_fact_checks_passed": 11,
+    "unsupported_cases_completed": 6,
+    "unsupported_refusals": 6,
+    "records_with_usage": 18,
+    "token_totals": {
+      "prompt_tokens": 27415,
+      "completion_tokens": 1216,
+      "total_tokens": 28631
+    },
+    "currency_cost": null
+  }
+}

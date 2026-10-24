@@ -1,0 +1,3894 @@
+{
+  "cases": [
+    {
+      "answerable": true,
+      "case_id": "docwise-001",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.5413996682199069,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::000",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::009",
+            "DOCUMENTATION.md::015"
+          ],
+          "warm_latency_samples_ms": [
+            0.09019999924930744,
+            0.0701000026310794,
+            0.06649999704677612
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.592512031964586,
+            "recall_at_5": 0.75
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::000",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::008",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            2.6164999981119763,
+            2.1999999989930075,
+            1.8810000001394656
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.36331756126716835,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::000",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            1.8607000019983388,
+            1.5533000005234499,
+            1.3413000015134457
+          ]
+        }
+      },
+      "question": "Which toolkit and model power both Maps agents?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::002",
+        "DOCUMENTATION.md::008",
+        "DOCUMENTATION.md::013",
+        "DOCUMENTATION.md::015"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-002",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::003",
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.11839999933727086,
+            0.10009999823523685,
+            0.08720000187167898
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::003",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::001",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::021"
+          ],
+          "warm_latency_samples_ms": [
+            1.7239000007975847,
+            1.7297000013059005,
+            1.810599998862017
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::003",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::018",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.9197000001440756,
+            1.5635999989171978,
+            1.5836000020499341
+          ]
+        }
+      },
+      "question": "In the architecture diagrams, which side handles response parsing with MCP?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::003"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-003",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::023"
+          ],
+          "warm_latency_samples_ms": [
+            0.0853000019560568,
+            0.06850000136182643,
+            0.0664000035612844
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::023"
+          ],
+          "warm_latency_samples_ms": [
+            1.6443000022263732,
+            1.6233999995165505,
+            1.6953000013018027
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::004",
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            3.094199997576652,
+            1.7399999996996485,
+            1.6938999979174696
+          ]
+        }
+      },
+      "question": "How is MAPS_API_KEY loaded in the traditional agent?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::005"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-004",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7039180890341347,
+            "recall_at_5": 0.6666666666666666
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::007",
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.13490000128513202,
+            0.12060000153724104,
+            0.10649999967426993
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7039180890341347,
+            "recall_at_5": 0.6666666666666666
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.532200000132434,
+            2.137600000423845,
+            2.045900000666734
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.46927872602275644,
+            "recall_at_5": 0.3333333333333333
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::008"
+          ],
+          "warm_latency_samples_ms": [
+            1.6526000035810284,
+            1.7133999972429592,
+            3.5233999988122378
+          ]
+        }
+      },
+      "question": "Which Python library wraps a function so the Google ADK agent can call it?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::005",
+        "DOCUMENTATION.md::007",
+        "DOCUMENTATION.md::012"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-005",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            0.0991000015346799,
+            0.07969999933266081,
+            0.076299998909235
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::015"
+          ],
+          "warm_latency_samples_ms": [
+            1.6899000002013054,
+            3.238599998439895,
+            1.9883000022673514
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::018"
+          ],
+          "warm_latency_samples_ms": [
+            1.6556999980821274,
+            1.5014999989944045,
+            1.5533999976469204
+          ]
+        }
+      },
+      "question": "What default travel mode and request timeout does get_directions use?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::006"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-006",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::013",
+            "MCP_Documentation.md::008",
+            "DOCUMENTATION.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            0.06319999738479964,
+            0.05080000119050965,
+            0.048800000513438135
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            1.2594999971042853,
+            1.2542999975266866,
+            1.2133999989600852
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            1.3967999984743074,
+            1.2605000010807998,
+            1.1703000018314924
+          ]
+        }
+      },
+      "question": "What route fields does get_directions return?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::006"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-007",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::007",
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::012"
+          ],
+          "warm_latency_samples_ms": [
+            0.12599999899975955,
+            0.09620000128052197,
+            0.09159999899566174
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::010",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::002",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            2.361999999266118,
+            2.028200000495417,
+            1.9683999998960644
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::007",
+            "MCP_Documentation.md::006",
+            "DOCUMENTATION.md::012",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            1.7388000014761928,
+            1.709399999526795,
+            3.125200000795303
+          ]
+        }
+      },
+      "question": "How are a function name, type hints and docstring used by FunctionTool?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::007",
+        "DOCUMENTATION.md::006"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-008",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::004",
+            "DOCUMENTATION.md::021"
+          ],
+          "warm_latency_samples_ms": [
+            0.07860000187065452,
+            0.05950000195298344,
+            0.05729999975301325
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::004",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.439700001355959,
+            1.4282000011007767,
+            3.2090999993670266
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::004",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            1.310299998294795,
+            1.3870999973732978,
+            1.4922999980626628
+          ]
+        }
+      },
+      "question": "What must Maps_Agent include when returning directions?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::008",
+        "DOCUMENTATION.md::013"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-009",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::013",
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.18980000095325522,
+            0.13339999713934958,
+            0.12090000018361025
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::020"
+          ],
+          "warm_latency_samples_ms": [
+            3.348900001583388,
+            2.2160999978950713,
+            3.193299999111332
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::008"
+          ],
+          "warm_latency_samples_ms": [
+            2.7159999990544748,
+            2.256299998407485,
+            2.37129999732133
+          ]
+        }
+      },
+      "question": "Why could the original directions-only agent not find gas stations on a route?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::009"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-010",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::008",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            0.12220000280649401,
+            0.09349999891128391,
+            0.08919999891077168
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            2.0922000003338326,
+            1.8653000006452203,
+            1.8767000001389533
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::006",
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            1.8831000015779864,
+            2.029499999480322,
+            2.327300000615651
+          ]
+        }
+      },
+      "question": "What seven steps are required to add a second traditional tool?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::010"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-011",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.09819999831961468,
+            0.07610000102431513,
+            0.07270000060088933
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            2.0678000000771135,
+            2.1760999989055563,
+            1.9629000016720966
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::020"
+          ],
+          "warm_latency_samples_ms": [
+            2.5151000008918345,
+            2.2623000004386995,
+            1.9510999991325662
+          ]
+        }
+      },
+      "question": "How does search_places_on_route choose its search location and radius?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::011"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-012",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::013",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.12599999899975955,
+            0.10299999848939478,
+            0.1005000012810342
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::019"
+          ],
+          "warm_latency_samples_ms": [
+            2.530300000216812,
+            2.4198999999498483,
+            2.240700003312668
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.0335999979579356,
+            1.78809999852092,
+            2.4874999980966095
+          ]
+        }
+      },
+      "question": "How many places does the route search return, and which details are included?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::011"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-013",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            0.11810000069090165,
+            0.09259999933419749,
+            0.08719999823370017
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            3.518500001518987,
+            2.415400002064416,
+            2.2568000022147316
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6934264036172708,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.066599998215679,
+            2.050200000667246,
+            1.8893000014941208
+          ]
+        }
+      },
+      "question": "How are both directions_tool and places_tool added to Maps_Agent?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::012",
+        "DOCUMENTATION.md::013"
+      ],
+      "tags": [
+        "multi_section",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-014",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::014",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::015",
+            "MCP_Documentation.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            0.10919999840552919,
+            0.0853000019560568,
+            0.08139999772538431
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::014",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::008",
+            "MCP_Documentation.md::012"
+          ],
+          "warm_latency_samples_ms": [
+            1.6359000001102686,
+            1.6044000003603287,
+            1.9109999993816018
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::014",
+            "DOCUMENTATION.md::023",
+            "MCP_Documentation.md::006",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.661500002228422,
+            1.5251000004354864,
+            1.3956999973743223
+          ]
+        }
+      },
+      "question": "What happens to code complexity as traditional tools are added?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::014",
+        "DOCUMENTATION.md::023"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-015",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::002",
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::001",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            0.12419999984558672,
+            0.0914999982342124,
+            0.09040000077220611
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::000",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            1.8944000003102701,
+            1.770400001987582,
+            1.8428000003041234
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::000",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::004",
+            "DOCUMENTATION.md::017"
+          ],
+          "warm_latency_samples_ms": [
+            2.3949999995238613,
+            2.463799999532057,
+            1.9629000016720966
+          ]
+        }
+      },
+      "question": "What URL and authentication header are used by MCP_Maps_Agent?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::015",
+        "DOCUMENTATION.md::020"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-016",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::004",
+            "DOCUMENTATION.md::012",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.10739999925135635,
+            0.08270000034826808,
+            0.08990000060293823
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::004",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.941800001077354,
+            1.8984000016644131,
+            1.7814000020734966
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.25,
+            "ndcg_at_5": 0.2640681225725909,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            1.6286999998555984,
+            3.1793999987712596,
+            2.47759999911068
+          ]
+        }
+      },
+      "question": "How does MCPToolset discover tools without manually registering every function?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::015",
+        "DOCUMENTATION.md::019"
+      ],
+      "tags": [
+        "multi_section",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-017",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::023",
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            0.10140000085812062,
+            0.07499999992433004,
+            0.07229999755509198
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::002",
+            "DOCUMENTATION.md::023"
+          ],
+          "warm_latency_samples_ms": [
+            1.8372000013187062,
+            2.68300000243471,
+            1.884299999801442
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::003",
+            "DOCUMENTATION.md::000",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.714199999696575,
+            1.510400001279777,
+            1.4319000001705717
+          ]
+        }
+      },
+      "question": "Which standard is described as USB-C for AI?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::017"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-018",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::013",
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::017"
+          ],
+          "warm_latency_samples_ms": [
+            0.10800000018207356,
+            0.08280000110971741,
+            0.08040000102482736
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8503449055347546,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::021",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            1.9367000022612046,
+            1.9654999996419065,
+            2.5676000004750676
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::021",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.024000001256354,
+            1.7568999974173494,
+            1.7805999996198807
+          ]
+        }
+      },
+      "question": "Which JSON-RPC methods list MCP tools and invoke one?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::019",
+        "MCP_Documentation.md::011"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-019",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::003",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            0.2002000001084525,
+            0.10119999933522195,
+            0.09159999899566174
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::000",
+            "DOCUMENTATION.md::015"
+          ],
+          "warm_latency_samples_ms": [
+            1.830500001233304,
+            1.757599999109516,
+            1.8864000012399629
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8503449055347546,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::000",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::019"
+          ],
+          "warm_latency_samples_ms": [
+            2.134899998054607,
+            1.7282000007980969,
+            1.6603999974904582
+          ]
+        }
+      },
+      "question": "Which Google Maps MCP tool converts an address into coordinates?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::020",
+        "DOCUMENTATION.md::019"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-020",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::003",
+            "MCP_Documentation.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            0.10620000102790073,
+            0.08370000068680383,
+            0.08069999967119657
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::003",
+            "DOCUMENTATION.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            2.0760000006703194,
+            1.848800002335338,
+            1.6219999997701962
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            1.626199999009259,
+            1.6381999994337093,
+            2.3138999968068674
+          ]
+        }
+      },
+      "question": "When does the comparison recommend traditional tools rather than MCP?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::021",
+        "DOCUMENTATION.md::023"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-021",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::002",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            0.11399999857530929,
+            0.08299999899463728,
+            0.08040000102482736
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::022",
+            "DOCUMENTATION.md::005",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            1.6826999999466352,
+            1.6170999988389667,
+            1.4988000002631452
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.2,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::008",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::004",
+            "DOCUMENTATION.md::000",
+            "DOCUMENTATION.md::022"
+          ],
+          "warm_latency_samples_ms": [
+            1.3795999984722584,
+            1.5472000013687648,
+            1.6490999987581745
+          ]
+        }
+      },
+      "question": "Which environment variables and commands run the two Maps agents?",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::022"
+      ],
+      "tags": [
+        "exact",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-022",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::014",
+            "DOCUMENTATION.md::002",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.14059999739401974,
+            0.2623000000312459,
+            0.1801999969757162
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::014",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::008"
+          ],
+          "warm_latency_samples_ms": [
+            1.9227000011596829,
+            1.8644999981916044,
+            1.899400002002949
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9674679834891693,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::014",
+            "DOCUMENTATION.md::001",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.455400001053931,
+            2.0256999996490777,
+            1.7633000024943613
+          ]
+        }
+      },
+      "question": "Compare the number of lines shown for the traditional two-tool agent and MCP agent.",
+      "relevant_chunk_ids": [
+        "DOCUMENTATION.md::021",
+        "DOCUMENTATION.md::023",
+        "DOCUMENTATION.md::014"
+      ],
+      "tags": [
+        "paraphrase",
+        "maps"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-023",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            0.11349999840604141,
+            0.08769999840296805,
+            0.0835999999253545
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.1703000020352192,
+            2.24779999916791,
+            1.7530000004626345
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.25,
+            "ndcg_at_5": 0.43067655807339306,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::023"
+          ],
+          "warm_latency_samples_ms": [
+            1.5147999984037597,
+            1.4746999986527953,
+            1.9801000016741455
+          ]
+        }
+      },
+      "question": "What is an MCP client and what is an MCP server?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::001"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-024",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            0.11920000179088674,
+            0.08750000051804818,
+            0.08499999967170879
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            1.8748000002233312,
+            1.7230999983439688,
+            2.2693999999319203
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::004",
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            1.4929000026313588,
+            1.4200000005075708,
+            1.4353000005939975
+          ]
+        }
+      },
+      "question": "Why build a custom MCP server around a proprietary healthcare database?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::002"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-025",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.14100000043981709,
+            0.10770000153570436,
+            0.10240000119665638
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::001",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.9949999987147748,
+            1.750499999616295,
+            2.252099999168422
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::021",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            1.9933000003220513,
+            1.8726000016613398,
+            1.705200000287732
+          ]
+        }
+      },
+      "question": "How do Stdio and Streamable HTTP differ for local versus shared deployments?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::003"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-026",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            0.1396000006934628,
+            0.1095000006898772,
+            0.10539999857428484
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            2.1594999998342246,
+            1.9070000016654376,
+            1.8295999980182387
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            1.9380000012461096,
+            1.9957000004069414,
+            2.2129999997559935
+          ]
+        }
+      },
+      "question": "Why did the healthcare project choose Streamable HTTP instead of the older SSE transport?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::003"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-027",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::006",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            0.07370000093942508,
+            0.062200000684242696,
+            0.05830000009154901
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::006",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            1.1901999969268218,
+            1.257400002941722,
+            1.2467999986256473
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::006",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            1.1464999988675117,
+            1.1694999993778765,
+            1.113700000132667
+          ]
+        }
+      },
+      "question": "Which files implement the four healthcare tools?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::004"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-028",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            0.11629999789875001,
+            0.08660000094096176,
+            0.08470000102533959
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::021"
+          ],
+          "warm_latency_samples_ms": [
+            1.8396000014035963,
+            1.6455000004498288,
+            1.6451000010420103
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.3065735963827292,
+            "recall_at_5": 0.5
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::013",
+            "DOCUMENTATION.md::021"
+          ],
+          "warm_latency_samples_ms": [
+            2.4897000002965797,
+            1.781699997081887,
+            1.5395000009448268
+          ]
+        }
+      },
+      "question": "Why can the healthcare tools be tested without the MCP server?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::004",
+        "MCP_Documentation.md::012"
+      ],
+      "tags": [
+        "multi_section",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-029",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::008"
+          ],
+          "warm_latency_samples_ms": [
+            0.14399999781744555,
+            0.11529999756021425,
+            0.11209999865968712
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            2.9985999972268473,
+            2.288100000441773,
+            2.136800001608208
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            1.7451999992772471,
+            1.6508000007888768,
+            1.63790000078734
+          ]
+        }
+      },
+      "question": "Which five tables are in patients.db and how are visits related to lab results?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::005"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-030",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            0.0987999992503319,
+            0.08970000271801837,
+            0.07989999721758068
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            1.8090000012307428,
+            1.933799998369068,
+            2.5666999972600024
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.453799999784678,
+            1.835499999288004,
+            1.6550000000279397
+          ]
+        }
+      },
+      "question": "What do is_active and is_abnormal mean in the healthcare schema?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::005"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-031",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.11770000128308311,
+            0.09330000102636404,
+            0.09000000136438757
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.890399998956127,
+            1.6462999992654659,
+            1.609999999345746
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            1.818600001570303,
+            1.5624000006937422,
+            1.523899998574052
+          ]
+        }
+      },
+      "question": "How are chronic conditions, medications and abnormal labs counted in risk scoring?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::007"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-032",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.12739999874611385,
+            0.10689999908208847,
+            0.1038999980664812
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            2.4026999999477994,
+            2.063399999315152,
+            2.0022999997308943
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            1.6144000001077075,
+            2.0560999982990324,
+            2.1840999979758635
+          ]
+        }
+      },
+      "question": "Why does an old abnormal lab result not continue penalizing a patient after improvement?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::007"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-033",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "DOCUMENTATION.md::014",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::012"
+          ],
+          "warm_latency_samples_ms": [
+            0.10770000153570436,
+            0.08610000077169389,
+            0.08349999916390516
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::012"
+          ],
+          "warm_latency_samples_ms": [
+            1.646900000196183,
+            2.2743000008631498,
+            2.2263000028033275
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            1.542999998491723,
+            1.4460999991570134,
+            1.5149999999266583
+          ]
+        }
+      },
+      "question": "What signal totals produce LOW, MEDIUM and HIGH patient risk tiers?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::007"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-034",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.09679999857326038,
+            0.07330000153160654,
+            0.06989999747020192
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            2.3509999991802033,
+            4.1192999997292645,
+            3.42839999939315
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            1.9572999990487006,
+            2.19670000296901,
+            3.6669000000983942
+          ]
+        }
+      },
+      "question": "Which time windows and recurring diagnoses does get_readmission_insights compute?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::008"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-035",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.11600000289035961,
+            0.07750000077066943,
+            0.07229999755509198
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.6847000006237067,
+            1.7238000000361353,
+            2.2266000014496967
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.9441999975242652,
+            1.572400000441121,
+            1.5386000013677403
+          ]
+        }
+      },
+      "question": "Under what conditions is readmission risk HIGH or MODERATE?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::008"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-036",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::005",
+            "DOCUMENTATION.md::017"
+          ],
+          "warm_latency_samples_ms": [
+            0.15560000247205608,
+            0.23370000053546391,
+            0.19529999917722307
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            1.9628000009106472,
+            2.129699998477008,
+            1.9686999985424336
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::012"
+          ],
+          "warm_latency_samples_ms": [
+            2.8536999998323154,
+            2.067900000838563,
+            2.0070999999006744
+          ]
+        }
+      },
+      "question": "What should an AI call before issuing SQL and what SQLite metadata operation is used?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::009"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-037",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::013",
+            "DOCUMENTATION.md::019"
+          ],
+          "warm_latency_samples_ms": [
+            0.08130000060191378,
+            0.0656000011076685,
+            0.180200000613695
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.014699999563163,
+            1.7677000032563228,
+            1.6270999985863455
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.7518999993626494,
+            2.3565999981656205,
+            2.183500000683125
+          ]
+        }
+      },
+      "question": "What SQL statements does query_patient_database allow or reject?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::010"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-038",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.1711999975668732,
+            0.11509999967529438,
+            0.0990999978967011
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::008"
+          ],
+          "warm_latency_samples_ms": [
+            1.7148000006272923,
+            2.3198000017146114,
+            2.120099998137448
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::010",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            1.6198999983316753,
+            1.5286999987438321,
+            1.6835999995237216
+          ]
+        }
+      },
+      "question": "What fields and result shape does the safe SQL tool return?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::010"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-039",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::007",
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.12229999992996454,
+            0.09660000068834051,
+            0.10169999950448982
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::007",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::009",
+            "DOCUMENTATION.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            2.0823999984713737,
+            2.1338000005926006,
+            2.1621000014420133
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::007",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::006",
+            "DOCUMENTATION.md::017",
+            "DOCUMENTATION.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.216900000348687,
+            1.9008000017493032,
+            1.9417999974393751
+          ]
+        }
+      },
+      "question": "How do type hints and docstrings become a tool schema in FastMCP?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::011"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-040",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9674679834891693,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            0.15279999934136868,
+            0.3034999972442165,
+            0.1483999985794071
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7653606369886217,
+            "recall_at_5": 0.6666666666666666
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::003",
+            "DOCUMENTATION.md::023",
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            2.446599999530008,
+            2.891999996791128,
+            2.2981000001891516
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7039180890341347,
+            "recall_at_5": 0.6666666666666666
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::003",
+            "DOCUMENTATION.md::015",
+            "DOCUMENTATION.md::020"
+          ],
+          "warm_latency_samples_ms": [
+            2.720899999985704,
+            2.3418000018864404,
+            2.1016999999119435
+          ]
+        }
+      },
+      "question": "How is the FastMCP ASGI app created and on which host and port does it run?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::011",
+        "MCP_Documentation.md::003",
+        "MCP_Documentation.md::013"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-041",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.12119999882997945,
+            0.09990000035031699,
+            0.15010000061010942
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::009"
+          ],
+          "warm_latency_samples_ms": [
+            2.5009999990288634,
+            2.6068000006489456,
+            2.6360000010754447
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::014"
+          ],
+          "warm_latency_samples_ms": [
+            4.112999999051681,
+            2.471499999955995,
+            2.6239999970130157
+          ]
+        }
+      },
+      "question": "In which order are db.py, seed_data.py, tools and server.py built?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::012"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-042",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::012",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.14659999942523427,
+            0.11639999866019934,
+            0.112599998828955
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.10960000185878,
+            2.1942000021226704,
+            2.128299998730654
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::000",
+            "DOCUMENTATION.md::017",
+            "MCP_Documentation.md::001",
+            "DOCUMENTATION.md::016"
+          ],
+          "warm_latency_samples_ms": [
+            3.114299997832859,
+            2.0684000010078307,
+            2.049099999567261
+          ]
+        }
+      },
+      "question": "How can MCP Inspector verify the server and how is Claude Desktop pointed at it?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::013"
+      ],
+      "tags": [
+        "exact",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-043",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::012",
+            "DOCUMENTATION.md::019"
+          ],
+          "warm_latency_samples_ms": [
+            0.12659999993047677,
+            0.10969999857479706,
+            0.10570000085863285
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            2.3588000003655907,
+            2.2349999999278225,
+            2.0576999995682854
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            1.9510999991325662,
+            2.2233000017877202,
+            2.199099999415921
+          ]
+        }
+      },
+      "question": "Does the documented healthcare server already authenticate requests, and how could it be added?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::014"
+      ],
+      "tags": [
+        "paraphrase",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-044",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.13929999840911478,
+            0.11580000136746094,
+            0.11230000018258579
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.835900002537528,
+            2.9548999991675373,
+            2.530599998863181
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.3163000005297363,
+            2.2774000026402064,
+            2.401300000201445
+          ]
+        }
+      },
+      "question": "Where would replacing SQLite with PostgreSQL be implemented, and how do resources differ from tools?",
+      "relevant_chunk_ids": [
+        "MCP_Documentation.md::014"
+      ],
+      "tags": [
+        "multi_section",
+        "healthcare"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-045",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::001",
+            "MCP_Documentation.md::012",
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.09789999967324547,
+            0.08130000060191378,
+            0.07729999924777076
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::011",
+            "DOCUMENTATION.md::019",
+            "MCP_Documentation.md::009",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.485299999534618,
+            3.27379999725963,
+            2.179200000682613
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::000",
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::012",
+            "DOCUMENTATION.md::013",
+            "MCP_Documentation.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            1.859399999375455,
+            1.826499999879161,
+            1.7412999986845534
+          ]
+        }
+      },
+      "question": "How do I configure Stripe subscriptions and refund a payment?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-046",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::009",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.07900000127847306,
+            0.06120000034570694,
+            0.06950000170036219
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::009",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::014",
+            "DOCUMENTATION.md::020"
+          ],
+          "warm_latency_samples_ms": [
+            2.0774999975401442,
+            1.7865999980131164,
+            2.299799998581875
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::009",
+            "MCP_Documentation.md::006",
+            "DOCUMENTATION.md::018",
+            "MCP_Documentation.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            1.4271000000007916,
+            1.3365999984671362,
+            1.7606000001251232
+          ]
+        }
+      },
+      "question": "What is the current weather in Mumbai?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-047",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::012",
+            "DOCUMENTATION.md::021"
+          ],
+          "warm_latency_samples_ms": [
+            0.19109999993816018,
+            0.09140000111074187,
+            0.07419999747071415
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "DOCUMENTATION.md::007",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.17740000152844,
+            2.027399998041801,
+            2.0119000000704546
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::006",
+            "MCP_Documentation.md::013",
+            "DOCUMENTATION.md::016",
+            "MCP_Documentation.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            3.248199998779455,
+            2.446900001814356,
+            2.082200000586454
+          ]
+        }
+      },
+      "question": "What was Docwise production p95 latency last week?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-048",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::004",
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::012",
+            "DOCUMENTATION.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.18210000052931719,
+            0.13749999925494194,
+            0.2206999997724779
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::012"
+          ],
+          "warm_latency_samples_ms": [
+            2.6943000011669938,
+            2.619099999719765,
+            2.568200001405785
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::007",
+            "MCP_Documentation.md::005",
+            "MCP_Documentation.md::008",
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            3.350399998453213,
+            2.9050999983155634,
+            2.9528000013669953
+          ]
+        }
+      },
+      "question": "What is the actual HbA1c value of patient 4 in the running hospital database?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-049",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.24420000045211054,
+            0.45990000216988847,
+            0.32170000122278
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::013",
+            "MCP_Documentation.md::003",
+            "MCP_Documentation.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            4.556399999273708,
+            4.167700000834884,
+            2.871100001357263
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "MCP_Documentation.md::000",
+            "MCP_Documentation.md::014",
+            "MCP_Documentation.md::011",
+            "MCP_Documentation.md::002",
+            "MCP_Documentation.md::013"
+          ],
+          "warm_latency_samples_ms": [
+            4.711400000815047,
+            4.312400000344496,
+            4.292899997381028
+          ]
+        }
+      },
+      "question": "What OAuth issuer URL and client secret does the healthcare server use in production?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-050",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::019",
+            "DOCUMENTATION.md::018",
+            "DOCUMENTATION.md::010",
+            "MCP_Documentation.md::009",
+            "DOCUMENTATION.md::011"
+          ],
+          "warm_latency_samples_ms": [
+            0.1936999979079701,
+            0.1641000017116312,
+            0.16210000103455968
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::018",
+            "DOCUMENTATION.md::010",
+            "DOCUMENTATION.md::011",
+            "DOCUMENTATION.md::009",
+            "DOCUMENTATION.md::019"
+          ],
+          "warm_latency_samples_ms": [
+            2.8953000000910833,
+            2.369000001635868,
+            2.3432000016327947
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "ranked_chunk_ids": [
+            "DOCUMENTATION.md::020",
+            "DOCUMENTATION.md::018",
+            "DOCUMENTATION.md::006",
+            "DOCUMENTATION.md::013",
+            "DOCUMENTATION.md::010"
+          ],
+          "warm_latency_samples_ms": [
+            2.427799998258706,
+            2.3760000003676396,
+            3.0384000019694213
+          ]
+        }
+      },
+      "question": "What fare should I pay for a flight from New York to Boston tomorrow?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "unsupported"
+      ]
+    }
+  ],
+  "corpus": {
+    "chunk_count": 39,
+    "chunk_id_format": "<metadata.doc_title>::<metadata.chunk_index padded to 3 digits>",
+    "path": "web/data/corpus.json",
+    "sha256": "9a8242dcc4309057921dcc635783cf8415b4012155704878ad58ad15329620a7"
+  },
+  "dataset": {
+    "answerable_case_count": 44,
+    "case_count": 50,
+    "id": "docwise-authored-retrieval-v1",
+    "label": "Synthetic, repository-authored diagnostic evaluation; not an external benchmark or held-out research test",
+    "sha256": "90778a954c73dde7e1e2dcbbb3a2b7aa6422be2a5214bb5a1d1b9c69aeb62df3"
+  },
+  "evaluation_kind": "local_authored_retrieval_diagnostic",
+  "generated_at_utc": "2026-10-24T13:10:02.913982+00:00",
+  "model": {
+    "artifact_sha256": {
+      "model.onnx": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+    },
+    "manifest_sha256": "93f99cad60662e14cf069619f695a3265a17f511d27b85313419dbee9c7f4778",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "protocol": {
+    "aggregation": "macro mean over answerable queries; unsupported queries excluded from ranking metrics",
+    "cold_scope": "one fresh evaluator process; import and index construction separated; OS/filesystem caches not cleared; first method calls share one index",
+    "excluded_warmup_rounds": 1,
+    "latency_scope": "local retrieval calls only; excludes HTTP, network, generation, rate limiting and model downloads",
+    "limitations": "Small authored diagnostic set derived from two educational documents; not held out, external, traffic weighted, production telemetry or an answer-generation benchmark. No retrieval tuning performed.",
+    "method_order": [
+      "bm25",
+      "vector",
+      "hybrid"
+    ],
+    "percentiles": "linear interpolation at (sample_count - 1) * p",
+    "relevance": "binary; unlisted chunks treated as non-relevant",
+    "top_k": 5,
+    "warm_repeats_per_case": 3
+  },
+  "runtime": {
+    "logical_cpu_count": 14,
+    "machine": "AMD64",
+    "onnx_inter_op_threads": 1,
+    "onnx_intra_op_threads": 2,
+    "onnx_provider": "CPUExecutionProvider",
+    "os": "Windows",
+    "os_release": "11",
+    "packages": {
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.0",
+      "rank-bm25": "0.2.2",
+      "tokenizers": "0.23.3"
+    },
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "source": {
+    "engine_sha256": "57a19cb47de6b7e047c8ea8dd8ff3adfd89c119ed4cf39cc914114a72b97dc15",
+    "evaluator_sha256": "4325ff93bd154b3987490e0d75b7fa109047d3cd7349083dd6f8d067477f4824",
+    "head_sha": "449e5389146c7c7c1179e7459a6ea23a306daca5",
+    "metrics_sha256": "97864ee74dbb8b45f122fb5e9b128f40cd95abd530e5246c5f11855c79529a5c",
+    "working_tree_dirty": true
+  },
+  "startup": {
+    "dependency_import_ms": 997.469000001729,
+    "first_query_per_method_ms": {
+      "bm25": 0.17139999908977188,
+      "hybrid": 1.7292999982601032,
+      "vector": 2.1674000017810613
+    },
+    "index_construction_ms": 1051.3423000011244
+  },
+  "summary": {
+    "bm25": {
+      "answerable_case_count": 44,
+      "metrics": {
+        "hit_at_1": 0.9090909090909091,
+        "hit_at_5": 0.9545454545454546,
+        "mrr_at_5": 0.9318181818181818,
+        "ndcg_at_5": 0.8824811874384124,
+        "recall_at_5": 0.8901515151515151
+      },
+      "unsupported_cases": {
+        "count": 6,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 6
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 0.45990000216988847,
+        "mean_ms": 0.11323133325883343,
+        "min_ms": 0.048800000513438135,
+        "p50_ms": 0.10029999975813553,
+        "p95_ms": 0.19799499968939918,
+        "p99_ms": 0.3127819992732837,
+        "sample_count": 150
+      }
+    },
+    "hybrid": {
+      "answerable_case_count": 44,
+      "metrics": {
+        "hit_at_1": 0.8863636363636364,
+        "hit_at_5": 0.9545454545454546,
+        "mrr_at_5": 0.9204545454545454,
+        "ndcg_at_5": 0.8774727586572919,
+        "recall_at_5": 0.8882575757575758
+      },
+      "unsupported_cases": {
+        "count": 6,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 6
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 4.556399999273708,
+        "mean_ms": 2.1436046668047006,
+        "min_ms": 1.1901999969268218,
+        "p50_ms": 2.0518000001175096,
+        "p95_ms": 3.2253249988571038,
+        "p99_ms": 4.1439840002931305,
+        "sample_count": 150
+      }
+    },
+    "vector": {
+      "answerable_case_count": 44,
+      "metrics": {
+        "hit_at_1": 0.5909090909090909,
+        "hit_at_5": 0.9545454545454546,
+        "mrr_at_5": 0.7431818181818183,
+        "ndcg_at_5": 0.735760338700368,
+        "recall_at_5": 0.8636363636363636
+      },
+      "unsupported_cases": {
+        "count": 6,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 6
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 4.711400000815047,
+        "mean_ms": 2.030491999757942,
+        "min_ms": 1.113700000132667,
+        "p50_ms": 1.8862000015360536,
+        "p95_ms": 3.217239998775766,
+        "p99_ms": 4.302844998892397,
+        "sample_count": 150
+      }
+    }
+  }
+}
