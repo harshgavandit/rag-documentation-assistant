@@ -38,10 +38,14 @@ jobs:
         run: python -m evaluation.run --validate-only
       - name: Measure retrieval without paid providers
         run: python -m evaluation.run --output evaluation/results/ci-retrieval.json --repeats 3 --warmup-rounds 1
+      - name: Validate expanded source labels
+        run: python -m evaluation.run --dataset evaluation/cases_v2.json --validate-only
+      - name: Measure expanded retrieval without paid providers
+        run: python -m evaluation.run --dataset evaluation/cases_v2.json --output evaluation/results/ci-retrieval-v2.json --repeats 3 --warmup-rounds 1
       - name: Retain retrieval evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: retrieval-${{ github.sha }}
-          path: evaluation/results/ci-retrieval.json
+          path: evaluation/results/ci-retrieval*.json
           if-no-files-found: error
           retention-days: 30

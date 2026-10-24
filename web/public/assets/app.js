@@ -2,6 +2,8 @@
 const $ = id => document.getElementById(id);
 let lastAnswer = '';
 let busy = false;
+let feedbackTicket = '';
+let feedbackBusy = false;
 const names = {'DOCUMENTATION.md':'AI agents & Google Maps','MCP_Documentation.md':'Building an MCP server'};
 const node = (tag, cls, text) => { const el=document.createElement(tag); if(cls)el.className=cls; if(text!==undefined)el.textContent=text; return el; };
 function inline(text, parent) {
@@ -35,6 +37,7 @@ function reset() {
 }
 async function ask(question) {
   if(busy||!question.trim())return;
+  feedbackTicket='';$('answer-feedback').hidden=true;$('feedback-status').textContent='';
   busy=true;$('submit-button').disabled=true;$('question').disabled=true;$('intro').hidden=true;$('suggestions').hidden=true;$('conversation').hidden=false;$('asked-question').textContent=question;$('answer-content').replaceChildren(node('div','loading','Finding relevant passages and preparing a cited answer…'));$('copy-answer').hidden=true;$('answer-meta').hidden=true;$('sources-section').hidden=true;$('status').textContent='Searching the documentation…';$('status').className='status';
   const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),115000);
   try {
@@ -42,6 +45,8 @@ async function ask(question) {
     let data;try{data=await response.json();}catch{throw Error('The server is temporarily unavailable. Please try again shortly.');}
     if(!response.ok) {const retry=response.headers.get('Retry-After');throw Error((typeof data.detail==='string'?data.detail:'Please enter a question between 1 and 2,000 characters.')+(retry?` Retry in ${retry} seconds.`:''));}
     lastAnswer=data.answer;renderAnswer(data.answer);$('copy-answer').hidden=false;$('answer-meta').hidden=false;$('answer-meta').textContent=`${data.refused?'No documented answer found':'Source labels verified'} · ${data.model} · ${data.elapsed_seconds}s`;
+    feedbackTicket=typeof data.feedback_ticket==='string'?data.feedback_ticket:'';
+    $('answer-feedback').hidden=!feedbackTicket;$('feedback-helpful').disabled=false;$('feedback-unhelpful').disabled=false;
     $('sources').replaceChildren();data.sources.forEach(source=>{const details=node('details','source');const summary=node('summary','',source.section);summary.append(node('small','',`${source.document} · Passage ${source.rank}${source.subsection?' · '+source.subsection:''}`));details.append(summary,node('pre','',source.content));$('sources').append(details);});
     $('source-count').textContent=`${data.sources.length} passages`;$('sources-section').hidden=false;$('status').textContent='Ask another question, or expand a source to inspect the evidence.';$('question').value='';
   } catch(error) { $('answer-content').replaceChildren(node('p','', 'We couldn’t complete that question.'));$('status').textContent=error.name==='AbortError'?'The request took too long. Please try again.':error.message;$('status').className='status error'; }
@@ -52,4 +57,19 @@ $('question').addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key===
 document.querySelectorAll('[data-question]').forEach(button=>button.addEventListener('click',()=>{$('question').value=button.dataset.question;ask(button.dataset.question);}));
 $('new-question').addEventListener('click',reset);
 $('copy-answer').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(lastAnswer);$('copy-answer').textContent='Copied';setTimeout(()=>$('copy-answer').textContent='Copy answer',1800);}catch{$('copy-answer').textContent='Select text to copy';}});
+async function sendFeedback(helpful) {
+  if(!feedbackTicket||feedbackBusy)return;
+  const ticket=feedbackTicket;feedbackBusy=true;
+  $('feedback-helpful').disabled=true;$('feedback-unhelpful').disabled=true;
+  try {
+    const response=await fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket,helpful,category:helpful?'clear':$('feedback-category').value})});
+    if(ticket!==feedbackTicket)return;
+    if(!response.ok)throw Error();
+    feedbackTicket='';$('feedback-status').textContent='Thanks—feedback saved.';
+  } catch {
+    if(ticket===feedbackTicket){$('feedback-status').textContent='Feedback could not be saved. Please try again.';$('feedback-helpful').disabled=false;$('feedback-unhelpful').disabled=false;}
+  } finally {feedbackBusy=false;}
+}
+$('feedback-helpful').addEventListener('click',()=>sendFeedback(true));
+$('feedback-unhelpful').addEventListener('click',()=>sendFeedback(false));
 loadLibrary();

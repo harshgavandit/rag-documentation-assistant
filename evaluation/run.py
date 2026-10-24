@@ -47,10 +47,15 @@ def load_dataset(dataset_path=DATASET, corpus_path=CORPUS):
     if len(chunks) != len(corpus):
         raise ValueError('Duplicate corpus chunk IDs')
     case_ids = set()
+    questions = set()
     for case in dataset['cases']:
-        if not re.fullmatch(r'docwise-\d{3}', case['id']) or case['id'] in case_ids:
+        if not re.fullmatch(r'docwise-(?:v[2-9]\d*-)?\d{3}', case['id']) or case['id'] in case_ids:
             raise ValueError('Invalid or duplicate case ID')
         case_ids.add(case['id'])
+        normalized_question = ' '.join(case['question'].casefold().split())
+        if normalized_question in questions:
+            raise ValueError('Duplicate question text')
+        questions.add(normalized_question)
         if not case['question'].strip() or not case['tags']:
             raise ValueError('Missing question or tags')
         relevant = case['relevant_chunk_ids']
@@ -116,7 +121,50 @@ def git_metadata():
             'metrics_sha256': sha256(ROOT / 'evaluation/metrics.py')}
 
 
-def evaluate(dataset, corpus, repeats=3, warmup_rounds=1):
+def summarize_results(results, method):
+    """Summarize actual rows; tag groups overlap and must not be added together."""
+    answerable = [row['methods'][method]['metrics'] for row in results if row['answerable']]
+    unsupported = [row for row in results if not row['answerable']]
+    samples = [sample for row in results for sample in row['methods'][method]['warm_latency_samples_ms']]
+    return {'case_count': len(results), 'answerable_case_count': len(answerable),
+        'metrics': {key: sum(row[key] for row in answerable) / len(answerable) for key in answerable[0]} if answerable else None,
+        'miss_at_5_case_ids': [row['case_id'] for row in results
+                              if row['answerable'] and row['methods'][method]['metrics']['hit_at_5'] == 0],
+        'warm_retrieval_latency_all_cases': timing_summary(samples),
+        'unsupported_cases': {'count': len(unsupported),
+            'returned_nonempty_count': sum(bool(row['methods'][method]['ranked_chunk_ids']) for row in unsupported),
+            'interpretation': 'Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.'}}
+
+
+def dataset_identity(dataset, dataset_path):
+    return {'id': dataset['dataset_id'], 'label': dataset['label'], 'sha256': sha256(dataset_path),
+            'annotation_revision': dataset.get('annotation_revision'),
+            'case_count': len(dataset['cases']),
+            'answerable_case_count': sum(c['answerable'] for c in dataset['cases'])}
+
+
+def retain_sources(report, dataset_path, output_path):
+    """Save exact measured source bytes beside the report, including line endings.
+
+    No environment/configuration or provider files are captured. Relative snapshot
+    paths are portable; hashes can be verified even after Git normalizes checkout text.
+    """
+    files = {'dataset': dataset_path, 'evaluator': Path(__file__),
+             'metrics': ROOT / 'evaluation/metrics.py', 'engine': ROOT / 'web/engine.py',
+             'model_manifest': ROOT / 'web/model_manifest.json', 'corpus': CORPUS}
+    folder = output_path.parent / 'sources'
+    folder.mkdir(parents=True, exist_ok=True)
+    snapshots = {}
+    for label, path in files.items():
+        target = folder / f'{output_path.stem}-{label}.txt'
+        content = path.read_bytes()
+        target.write_bytes(content)
+        snapshots[label] = {'path_relative_to_report': target.relative_to(output_path.parent).as_posix(),
+                            'sha256': hashlib.sha256(content).hexdigest()}
+    report['source']['exact_byte_snapshots'] = snapshots
+
+
+def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET):
     model = validate_artifacts()
     # Import and construction measured separately. OS/filesystem caches are not cleared.
     started = perf_counter()
@@ -156,22 +204,17 @@ def evaluate(dataset, corpus, repeats=3, warmup_rounds=1):
                 raise ValueError('Retrieval rankings varied between repetitions')
             warm_samples[method].extend(samples)
             methods[method] = {'ranked_chunk_ids': rankings[0], 'warm_latency_samples_ms': samples,
-                               'metrics': ranking_metrics(rankings[0], case['relevant_chunk_ids']) if case['answerable'] else None}
-        results.append({'case_id': case['id'], 'question': case['question'], 'tags': case['tags'],
+                               'metrics': ranking_metrics(rankings[0], case['relevant_chunk_ids']) if case['answerable'] else None,
+                               'missed_relevant_chunk_ids': [cid for cid in case['relevant_chunk_ids'] if cid not in rankings[0]]}
+        results.append({'case_id': case['id'], 'intent_id': case.get('intent_id'), 'question': case['question'], 'tags': case['tags'],
                         'answerable': case['answerable'], 'relevant_chunk_ids': case['relevant_chunk_ids'], 'methods': methods})
-    summaries = {}
-    for method in METHODS:
-        answerable = [row['methods'][method]['metrics'] for row in results if row['answerable']]
-        summaries[method] = {'answerable_case_count': len(answerable),
-            'metrics': {key: sum(row[key] for row in answerable) / len(answerable) for key in answerable[0]},
-            'warm_retrieval_latency_all_cases': timing_summary(warm_samples[method]),
-            'unsupported_cases': {'count': sum(not row['answerable'] for row in results),
-                'returned_nonempty_count': sum(bool(row['methods'][method]['ranked_chunk_ids']) for row in results if not row['answerable']),
-                'interpretation': 'Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.'}}
+    summaries = {method: summarize_results(results, method) for method in METHODS}
+    tags = sorted({tag for row in results for tag in row['tags']})
+    breakdowns = {tag: {method: summarize_results([row for row in results if tag in row['tags']], method)
+                        for method in METHODS} for tag in tags}
     return {'schema_version': 1, 'evaluation_kind': 'local_authored_retrieval_diagnostic',
         'generated_at_utc': datetime.now(timezone.utc).isoformat(),
-        'dataset': {'id': dataset['dataset_id'], 'label': dataset['label'], 'sha256': sha256(DATASET),
-                    'case_count': len(dataset['cases']), 'answerable_case_count': sum(c['answerable'] for c in dataset['cases'])},
+        'dataset': dataset_identity(dataset, dataset_path),
         'corpus': dataset['corpus'], 'source': git_metadata(), 'model': model,
         'runtime': {'python': platform.python_version(), 'os': platform.system(), 'os_release': platform.release(),
             'machine': platform.machine(), 'logical_cpu_count': os.cpu_count(),
@@ -186,11 +229,12 @@ def evaluate(dataset, corpus, repeats=3, warmup_rounds=1):
             'limitations': 'Small authored diagnostic set derived from two educational documents; not held out, external, traffic weighted, production telemetry or an answer-generation benchmark. No retrieval tuning performed.'},
         'startup': {'dependency_import_ms': import_ms, 'index_construction_ms': construction_ms,
                     'first_query_per_method_ms': first_query},
-        'summary': summaries, 'cases': results}
+        'summary': summaries, 'by_tag': breakdowns, 'tag_aggregation_note': 'Tag groups overlap. Each group is macro averaged over its answerable queries; unsupported-only groups have null ranking metrics.', 'cases': results}
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--dataset', type=Path, default=DATASET, help='frozen dataset JSON; defaults to the original v1 cases')
     parser.add_argument('--output', type=Path, default=ROOT / 'evaluation/results/local.json')
     parser.add_argument('--repeats', type=int, default=3)
     parser.add_argument('--warmup-rounds', type=int, default=1)
@@ -199,12 +243,13 @@ def main(argv=None):
     if args.repeats < 1 or args.warmup_rounds < 1:
         parser.error('repeats and warmup-rounds must be at least 1')
     try:
-        dataset, corpus = load_dataset()
+        dataset, corpus = load_dataset(args.dataset)
         if args.validate_only:
-            print(json.dumps({'valid': True, 'cases': len(dataset['cases']), 'chunks': len(corpus), 'corpus_sha256': sha256(CORPUS)}, sort_keys=True))
+            print(json.dumps({'valid': True, 'cases': len(dataset['cases']), 'chunks': len(corpus), 'corpus_sha256': sha256(CORPUS), 'dataset_sha256': sha256(args.dataset), 'dataset_id': dataset['dataset_id']}, sort_keys=True))
             return 0
-        report = evaluate(dataset, corpus, args.repeats, args.warmup_rounds)
+        report = evaluate(dataset, corpus, args.repeats, args.warmup_rounds, dataset_path=args.dataset)
         args.output.parent.mkdir(parents=True, exist_ok=True)
+        retain_sources(report, args.dataset, args.output)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + '\n', encoding='utf-8')
         print(json.dumps({'completed': True, 'summary': report['summary']}, sort_keys=True, allow_nan=False))
         return 0

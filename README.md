@@ -2,7 +2,7 @@
 
 A Python documentation assistant that combines keyword and vector retrieval, fuses their rankings, and generates answers with document/section citations. The repository contains a ChromaDB/LangGraph command-line pipeline and a lighter FastAPI/ONNX deployment of the same documentation workflow.
 
-[Live app](https://rag-documentation-assistant.vercel.app/) · [Web implementation](web/app.py) · [Evaluation](evaluation/README.md) · [Tests](https://github.com/harshgavandit/rag-documentation-assistant/actions/workflows/evaluation.yml)
+[Live app](https://rag-documentation-assistant.vercel.app/) · [Evaluation](evaluation/README.md) · [Operations](operations/README.md) · [Tests](https://github.com/harshgavandit/rag-documentation-assistant/actions/workflows/evaluation.yml)
 
 **Stack:** Python, FastAPI, LangGraph, ChromaDB, BM25, MiniLM, ONNX Runtime, OpenAI, Upstash Redis, Vercel.
 
@@ -119,9 +119,17 @@ The [CLI verification record](verification/VERIFICATION.md) and [hosted verifica
 
 ## Retrieval and answer measurements
 
+The latest [112-question retrieval diagnostic](evaluation/METHODOLOGY_V2.md) covers 96 answerable intents and 16 unsupported questions. A separate AI agent checked the relevance labels against source excerpts before ranking. Hybrid found labelled evidence in its top five for **93/96** answerable intents; BM25 found it for **94/96**. Full results include per-topic breakdowns and every miss. This is authored diagnostic data, not an external or human-labelled benchmark.
+
+The [instruction/conflict/ambiguity run](evaluation/ADVERSARIAL.md) completed **12 real model calls**, passing all twelve pre-authored checks. It uses synthetic contexts to inspect prompt behavior; these results do not establish universal prompt-injection resistance. The answer prompt now explicitly separates untrusted passages, reports unresolved disagreement and asks for grounded clarification.
+
 The [evaluation guide](evaluation/README.md) includes the dataset, commands and retained JSON results. Fifty authored questions cover the bundled guides: 44 answerable and six unsupported. All three retrieval methods found labelled evidence in their top five for **42/44** answerable questions. BM25 led the current hybrid ranking on this set (MRR@5 **0.9318 vs 0.9205**); the report preserves that result and both hybrid misses.
 
 A separate **18-request real model run** returned cited answers for 12 answerable questions and refusals for all six unsupported questions. **17/18** combined fixture checks passed; the remaining check was a regex false negative on a valid paraphrase, retained and explained. Provider usage totalled **28,631 tokens**. These are small public-document diagnostic runs, not a general accuracy or production-latency claim.
+
+## Operating the application
+
+[Daily observation snapshots](operations/README.md) collect protected, expiring aggregate latency, status, token and feedback counts. Signed checks remain separate from unsigned visitor requests. Collection retains no question text, answer text or visitor identity. Optional answer feedback uses fixed categories and one-use opaque tickets; it measures submitted helpfulness choices, not verified business impact. CI snapshots call no model and publish no secrets. Operational history and real feedback accumulate from actual use after enablement.
 
 ## Scope and tradeoffs
 
