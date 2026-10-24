@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "collected_at_utc": "2026-10-24T13:47:33.440103+00:00",
+  "target_host": "rag-documentation-assistant.vercel.app",
+  "scope": "Read-only health and protected aggregate schema verification; private measurements omitted.",
+  "limitations": "This public artifact contains health and schema check outcomes only; it establishes no traffic, usage or user outcomes.",
+  "health": {
+    "http_status": 200,
+    "elapsed_ms": 206.782,
+    "ready": true
+  },
+  "aggregate_schema_valid": true,
+  "operations": {
+    "http_status": 200,
+    "elapsed_ms": 453.623
+  },
+  "passed": true
+}

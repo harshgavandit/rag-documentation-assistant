@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-24T13:46:59.275640+00:00",
+  "scope": "Controlled signed synthetic events written by the actual local Operations adapter to the deployed shared Redis namespace, then real deployed feedback/reader HTTP checks. No query endpoint, answer generation, actual visitor feedback or production-user outcome is exercised.",
+  "provider_requests": 0,
+  "target_host": "rag-documentation-assistant.vercel.app",
+  "observations": [
+    {
+      "name": "unauthorized_reader_denied",
+      "passed": true,
+      "http_status": 401
+    },
+    {
+      "name": "authorized_reader_ready",
+      "passed": true,
+      "http_status": 200
+    },
+    {
+      "name": "signed_synthetic_fixture_ticket_issued",
+      "passed": true
+    },
+    {
+      "name": "real_deployed_feedback_accepts_once",
+      "passed": true,
+      "first_status": 200,
+      "replay_status": 409
+    },
+    {
+      "name": "real_ticket_expiry_rejected",
+      "passed": true,
+      "http_status": 409
+    },
+    {
+      "name": "signed_fixtures_stay_synthetic",
+      "passed": true,
+      "synthetic_event_delta": 2,
+      "synthetic_feedback_delta": 1
+    }
+  ],
+  "source_sha256": {
+    "web/observability.py": "2f377a0712320eb587c0bcb9f895d676b36d25e20524ceeee4b9462482582044",
+    "operations/verify_live.py": "fd326e07f4cb47c3d926c42efb541f9a43b4bb61dc6b0480b109195aafde066b"
+  },
+  "observed_visitor_query_delta": 0,
+  "visitor_delta_note": "No visitor event is intentionally written by this drill. Concurrent unsigned activity is uncontrolled; the observed delta is not unique people or a product outcome.",
+  "passed": true
+}

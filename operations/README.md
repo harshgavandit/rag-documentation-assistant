@@ -4,6 +4,20 @@ Docwise can retain small aggregate measurements in the same configured Upstash R
 
 The hosted setup is configured by the maintainer: production enablement, a generated server-only read token, the Actions secret and target origin. Public daily artifacts retain endpoint timing/readiness and aggregate-schema validation only. Full measurements remain behind the authenticated endpoint. Daily checks begin accumulating observations after enablement; they cannot establish an earlier uptime history.
 
+## Recorded enablement and controls
+
+Monitoring was enabled on 24 October 2026. The first [read-only workflow run](https://github.com/harshgavandit/rag-documentation-assistant/actions/runs/40099653359) passed. Its [public health/schema artifact](results/public-health-2026-10-24.json) contains no private usage, token, feedback or cost totals. Future daily runs create dated observations; a single successful check is not an uptime history.
+
+The [live controls report](results/live-controls-2026-10-24.json) records six passing observations against actual Redis and deployed HTTP routes: unauthorized reads denied, authorized reads accepted, signed synthetic tickets issued, feedback accepted once with replay rejected, real ticket expiry rejected, and synthetic fixture events/feedback kept in their own cohort. No query endpoint or model call was exercised in this drill. Its two adapter events and one feedback click are explicitly synthetic, not real-user outcomes.
+
+Reproduce a separately authorized control drill with private existing configuration files:
+
+```powershell
+python operations/verify_live.py --live --env-file .env --control-file /private/operations.env --output operations/results/controls-new.json
+```
+
+The control file contains only `OPS_READ_TOKEN`. This command writes two signed synthetic fixture events, consumes one test ticket through the deployed feedback endpoint and shortens only the second exact synthetic ticket's TTL to verify expiry. It uses no broad key lookup/deletion and never calls a model. It must not be used as real visitor or task-success evidence.
+
 ## Server configuration
 
 Configure these server-only variables alongside the existing Upstash REST URL and token:
@@ -16,7 +30,7 @@ Configure these server-only variables alongside the existing Upstash REST URL an
 | `OPS_PROMPT_USD_PER_MILLION` | Optional explicit nonnegative prompt-token price used for recorded-token estimates |
 | `OPS_OUTPUT_USD_PER_MILLION` | Optional explicit nonnegative output-token price; both rates must be valid before any estimate appears |
 
-The aggregate route is `/api/operations?days=7`. Root integration must require `x-ops-token` equal to the configured secret using `Operations.is_authorized`; the helper rejects absent/short server secrets and checks equality with `hmac.compare_digest`. An unsigned request cannot designate itself synthetic. A valid query carrying the same header is recorded in the separate `synthetic` cohort. All other query events enter `visitor`, which means unsigned requests and can include crawlers, abuse or unmarked tests. It is not a count of verified people. The route must remain unavailable when collection/auth configuration is absent, and must never return a public metrics page.
+The aggregate route is `/api/operations?days=7`. The route requires `x-ops-token` equal to the configured secret using `Operations.is_authorized`; the helper rejects absent/short server secrets and checks equality with `hmac.compare_digest`. An unsigned request cannot designate itself synthetic. A valid query carrying the same header is recorded in the separate `synthetic` cohort. All other query events enter `visitor`, which means unsigned requests and can include crawlers, abuse or unmarked tests. It is not a count of verified people. The route must remain unavailable when collection/auth configuration is absent, and must never return a public metrics page.
 
 `Operations()` reads environment values when used, keeping startup backward compatible and tests independent of module import order. `begin_request(header)` sets a request-local `ContextVar`; `current_event()` lets the existing two-argument answer function attach returned provider usage without changing its public signature. `record_usage(event, result.get('usage'))` must run as soon as an actual provider response returns, before answer guards. `finish_request(event, status_code, outcome)` resets the context and catches collection failures. The query's answer/status continues even if Redis telemetry is unavailable. Context is local to the current thread/task; no mutable global event, question or identity is stored.
 
