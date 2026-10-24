@@ -143,7 +143,7 @@ def dataset_identity(dataset, dataset_path):
             'answerable_case_count': sum(c['answerable'] for c in dataset['cases'])}
 
 
-def retain_sources(report, dataset_path, output_path):
+def retain_sources(report, dataset_path, output_path, corpus_path=CORPUS):
     """Save exact measured source bytes beside the report, including line endings.
 
     No environment/configuration or provider files are captured. Relative snapshot
@@ -151,7 +151,7 @@ def retain_sources(report, dataset_path, output_path):
     """
     files = {'dataset': dataset_path, 'evaluator': Path(__file__),
              'metrics': ROOT / 'evaluation/metrics.py', 'engine': ROOT / 'web/engine.py',
-             'model_manifest': ROOT / 'web/model_manifest.json', 'corpus': CORPUS}
+             'model_manifest': ROOT / 'web/model_manifest.json', 'corpus': corpus_path}
     folder = output_path.parent / 'sources'
     folder.mkdir(parents=True, exist_ok=True)
     snapshots = {}
@@ -164,7 +164,7 @@ def retain_sources(report, dataset_path, output_path):
     report['source']['exact_byte_snapshots'] = snapshots
 
 
-def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET):
+def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET, corpus_path=CORPUS):
     model = validate_artifacts()
     # Import and construction measured separately. OS/filesystem caches are not cleared.
     started = perf_counter()
@@ -172,10 +172,11 @@ def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET):
     from web.engine import Index
     import_ms = (perf_counter() - started) * 1000
     started = perf_counter()
-    index = Index()
+    production_corpus = corpus_path.resolve() == CORPUS.resolve()
+    index = Index() if production_corpus else Index(chunks=corpus)
     construction_ms = (perf_counter() - started) * 1000
     if index.chunks != corpus:
-        raise ValueError('Production index corpus differs from the frozen evaluation corpus')
+        raise ValueError('Index corpus differs from the frozen evaluation corpus')
     retrieve = make_retrievers(index, np)
     first_query = {}
     for method in METHODS:
@@ -216,6 +217,7 @@ def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET):
         'generated_at_utc': datetime.now(timezone.utc).isoformat(),
         'dataset': dataset_identity(dataset, dataset_path),
         'corpus': dataset['corpus'], 'source': git_metadata(), 'model': model,
+        'retrieval_scope': 'deployed_corpus' if production_corpus else 'separate_frozen_diagnostic_corpus',
         'runtime': {'python': platform.python_version(), 'os': platform.system(), 'os_release': platform.release(),
             'machine': platform.machine(), 'logical_cpu_count': os.cpu_count(),
             'packages': {package: version(package) for package in ('numpy', 'onnxruntime', 'tokenizers', 'rank-bm25')},
@@ -226,7 +228,7 @@ def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET):
             'percentiles': 'linear interpolation at (sample_count - 1) * p',
             'latency_scope': 'local retrieval calls only; excludes HTTP, network, generation, rate limiting and model downloads',
             'cold_scope': 'one fresh evaluator process; import and index construction separated; OS/filesystem caches not cleared; first method calls share one index',
-            'limitations': 'Small authored diagnostic set derived from two educational documents; not held out, external, traffic weighted, production telemetry or an answer-generation benchmark. No retrieval tuning performed.'},
+            'limitations': dataset.get('limitations', 'Small authored diagnostic set derived from two educational documents; not held out, external, traffic weighted, production telemetry or an answer-generation benchmark. No retrieval tuning performed.')},
         'startup': {'dependency_import_ms': import_ms, 'index_construction_ms': construction_ms,
                     'first_query_per_method_ms': first_query},
         'summary': summaries, 'by_tag': breakdowns, 'tag_aggregation_note': 'Tag groups overlap. Each group is macro averaged over its answerable queries; unsupported-only groups have null ranking metrics.', 'cases': results}
@@ -235,6 +237,7 @@ def evaluate(dataset, corpus, repeats=3, warmup_rounds=1, dataset_path=DATASET):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dataset', type=Path, default=DATASET, help='frozen dataset JSON; defaults to the original v1 cases')
+    parser.add_argument('--corpus', type=Path, default=CORPUS, help='explicit frozen corpus; defaults to the deployed corpus')
     parser.add_argument('--output', type=Path, default=ROOT / 'evaluation/results/local.json')
     parser.add_argument('--repeats', type=int, default=3)
     parser.add_argument('--warmup-rounds', type=int, default=1)
@@ -243,13 +246,13 @@ def main(argv=None):
     if args.repeats < 1 or args.warmup_rounds < 1:
         parser.error('repeats and warmup-rounds must be at least 1')
     try:
-        dataset, corpus = load_dataset(args.dataset)
+        dataset, corpus = load_dataset(args.dataset, args.corpus)
         if args.validate_only:
-            print(json.dumps({'valid': True, 'cases': len(dataset['cases']), 'chunks': len(corpus), 'corpus_sha256': sha256(CORPUS), 'dataset_sha256': sha256(args.dataset), 'dataset_id': dataset['dataset_id']}, sort_keys=True))
+            print(json.dumps({'valid': True, 'cases': len(dataset['cases']), 'chunks': len(corpus), 'corpus_sha256': sha256(args.corpus), 'dataset_sha256': sha256(args.dataset), 'dataset_id': dataset['dataset_id']}, sort_keys=True))
             return 0
-        report = evaluate(dataset, corpus, args.repeats, args.warmup_rounds, dataset_path=args.dataset)
+        report = evaluate(dataset, corpus, args.repeats, args.warmup_rounds, dataset_path=args.dataset, corpus_path=args.corpus)
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        retain_sources(report, args.dataset, args.output)
+        retain_sources(report, args.dataset, args.output, corpus_path=args.corpus)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + '\n', encoding='utf-8')
         print(json.dumps({'completed': True, 'summary': report['summary']}, sort_keys=True, allow_nan=False))
         return 0

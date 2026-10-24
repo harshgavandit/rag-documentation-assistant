@@ -1,0 +1,37 @@
+{
+  "annotation_revision": 1,
+  "answerable_case_count": 50,
+  "benchmark_id": "docwise-broader-diagnostic-v1",
+  "case_count": 60,
+  "dev_case_count": 36,
+  "domains": [
+    "banking",
+    "cache",
+    "realtime",
+    "community",
+    "durable_jobs"
+  ],
+  "files": {
+    "corpus.json": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5",
+    "dev.json": "e64b033025f26b4e880e4152344027ac4bf5d3a9454a3723c69c36871f61e612",
+    "heldout.json": "fd183ef306c9825cbe80c28b37214eef191cf9a8b0b541366fd179f36b45f6f3",
+    "manifest.json": "43bb69a2fc3280969d5c8b9e6ad4d352516326bb702f4bdb8720cebd2c4e991e",
+    "sources/banking-README.md": "76da247eb67b79826f3b3d1ccdda93c59e1f4b7ddd01d9ede994c949968d2b94",
+    "sources/cache-README.md": "1a0406b46ebd7d84597c5be8ab3d919417cefa38202eb345f7988983996b3cc7",
+    "sources/community-README.md": "58b061f81db279fb4704ad7dfc63a724836d1a5cd346ba979a45d8eac8f9ddf1",
+    "sources/durable-ADR-0001.md": "152d095d5848f7ba2e0f0819c04b5d6d1f26f64ec12f3069ec3927d1ec4c14cd",
+    "sources/durable-ARCHITECTURE.md": "530d00a0573dc5bf05e7448663222130683e616640a93176fe892f818f1bde4e",
+    "sources/realtime-README.md": "f0241afc3e95a88f65946a405f3374bfd338f796e5573fef733afc36028936d5"
+  },
+  "frozen_on": "2026-10-25",
+  "heldout_case_count": 24,
+  "historical_reports_changed": false,
+  "provider_requests_made": 0,
+  "retrieval_tuning_performed": false,
+  "schema_version": 1,
+  "source_review": {
+    "human_labeled": false,
+    "status": "pending_independent_agent_review"
+  },
+  "status": "frozen_before_any_broader_retrieval_pending_source_review"
+}

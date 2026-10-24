@@ -1,0 +1,53 @@
+{
+  "annotation_revision": 2,
+  "corrections": [
+    {
+      "added_chunk_id": "community-README.md::004",
+      "case_id": "docwise-v3-043",
+      "excerpt": "`ASSISTANT_HOURLY_LIMIT` bounds shared provider operations.",
+      "reason": "Additional direct partial support for an explicitly requested proposition under the existing binary relevance policy."
+    },
+    {
+      "added_chunk_id": "community-README.md::003",
+      "case_id": "docwise-v3-046",
+      "excerpt": "private Vercel Blob storage",
+      "reason": "Additional direct partial support for an explicitly requested proposition under the existing binary relevance policy."
+    },
+    {
+      "added_chunk_id": "durable-ARCHITECTURE.md::001",
+      "case_id": "docwise-v3-052",
+      "excerpt": "Mongo remains the authority across all of them.",
+      "reason": "Additional direct partial support for an explicitly requested proposition under the existing binary relevance policy."
+    },
+    {
+      "added_chunk_id": "realtime-README.md::005",
+      "case_id": "docwise-v3-028",
+      "excerpt": "refresh replay, logout revocation",
+      "reason": "Additional direct partial support for an explicitly requested proposition under the existing binary relevance policy."
+    },
+    {
+      "added_chunk_id": "community-README.md::005",
+      "case_id": "docwise-v3-042",
+      "excerpt": "directory filtering, private shortlists",
+      "reason": "Additional direct partial support for an explicitly requested proposition under the existing binary relevance policy."
+    }
+  ],
+  "human_labeled": false,
+  "independently_human_reviewed": false,
+  "limitations": "Independent AI source-label review is not independent human labeling, an external benchmark or an attestation of the source applications.",
+  "outcome": "All 60 answerability labels and source-scope boundaries accepted. Five additional partial-support chunks included under the unchanged binary relevance policy. No question, intent, answerability flag or split changed.",
+  "previous_freeze": {
+    "datasets": {
+      "dev": "annotation_history/revision1-dev.json",
+      "heldout": "annotation_history/revision1-heldout.json"
+    },
+    "path": "annotation_history/revision1-freeze.json",
+    "sha256": "3f0c756f67a9113184e823962290c0216a70012d80c13bb2e93529ac83d83dbb"
+  },
+  "reviewed_case_count": 60,
+  "reviewed_on": "2026-10-25",
+  "reviewer_kind": "independent_AI_agent",
+  "reviewer_task": "curationagent",
+  "schema_version": 1,
+  "timing": "Completed before any broader retrieval ranking or provider call; labels were reviewed from frozen document excerpts, without retrieval scores."
+}

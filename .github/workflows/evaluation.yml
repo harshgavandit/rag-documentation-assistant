@@ -36,6 +36,12 @@ jobs:
         run: python -m unittest discover -s web/tests -v
       - name: Verify retained metrics and source snapshots
         run: python -m evaluation.verify_evidence
+      - name: Validate frozen multi-domain diagnostic
+        run: python -m evaluation.broader --check-build --validate-only --check-encoder
+      - name: Measure development query domains without paid providers
+        run: python -m evaluation.broader --run-split dev --output evaluation/results/ci-broader-dev.json
+      - name: Measure heldout query domains without paid providers
+        run: python -m evaluation.broader --run-split heldout --output evaluation/results/ci-broader-heldout.json
       - name: Validate frozen source labels
         run: python -m evaluation.run --validate-only
       - name: Measure retrieval without paid providers
@@ -48,6 +54,9 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: retrieval-${{ github.sha }}
-          path: evaluation/results/ci-retrieval*.json
+          path: |
+            evaluation/results/ci-retrieval*.json
+            evaluation/results/ci-broader*.json
+            evaluation/results/sources/ci-broader-*
           if-no-files-found: error
           retention-days: 30

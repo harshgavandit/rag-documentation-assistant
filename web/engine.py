@@ -15,8 +15,9 @@ ROOT=Path(__file__).resolve().parent
 
 class Index:
     """Cache model, normalized corpus vectors and BM25 once per warm instance."""
-    def __init__(self) -> None:
-        self.chunks=json.loads((ROOT/'data/corpus.json').read_text(encoding='utf-8'))
+    def __init__(self, chunks: list[dict] | None = None) -> None:
+        # Explicit evaluation corpora never replace the deployed read-only corpus.
+        self.chunks=json.loads((ROOT/'data/corpus.json').read_text(encoding='utf-8')) if chunks is None else chunks
         options=ort.SessionOptions()
         options.intra_op_num_threads=2
         options.inter_op_num_threads=1

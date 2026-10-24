@@ -18,6 +18,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, field_validator
 from engine import get_index
 from grounding import build_messages
 from observability import Operations, OperationsUnavailable
+import staging
 
 ROOT=Path(__file__).resolve().parent
 REFUSAL='I could not find an answer to this question in the provided documentation.'
@@ -121,12 +122,13 @@ def post_json(url:str,payload:object,token:str,timeout:int=15) -> dict:
         return json.load(response)
 
 
-def admit(identity:str) -> None:
+def admit(identity:str) -> int:
     """Apply shared minute, per-client minute and global daily public-demo budgets."""
     prefix=os.getenv('RATE_LIMIT_PREFIX','rag:web:v1')
     policies=[('global',int(os.getenv('RATE_LIMIT_REQUESTS','20')),60),
               ('client:'+hashlib.sha256(identity.encode()).hexdigest()[:24],3,60),
               ('daily',int(os.getenv('DAILY_QUERY_LIMIT','100')),86400)]
+    client_ttl_ms=None
     for scope,limit,window in policies:
         result=post_json(os.environ['UPSTASH_REDIS_REST_URL'].rstrip('/'),
                          ['EVAL',SCRIPT,1,prefix+':'+scope,limit,window*1000],os.environ['UPSTASH_REDIS_REST_TOKEN'])
@@ -136,16 +138,21 @@ def admit(identity:str) -> None:
         if not values[0]:
             delay=max(1,math.ceil(values[2]/1000))
             raise HTTPException(429,'The demo request limit has been reached. Please try again later.',headers={'Retry-After':str(delay)})
+        if scope.startswith('client:'):
+            client_ttl_ms=values[2]
+    return client_ttl_ms
 
 
 def answer(question:str,chunks:list[dict]) -> dict:
     """Generate using retrieved context and validate returned citation labels."""
     allowed={f"[Source: {c['metadata']['doc_title']}, Section: {c['metadata']['section_title']}]" for c in chunks}
     try:
-        result=post_json('https://api.openai.com/v1/chat/completions',{
-            'model':os.getenv('OPENAI_MODEL','gpt-6-luna'),'max_completion_tokens':int(os.getenv('OPENAI_MAX_COMPLETION_TOKENS','2048')),
-            'messages':build_messages(question,chunks,REFUSAL)},
-            os.environ['OPENAI_API_KEY'],timeout=60)
+        messages=build_messages(question,chunks,REFUSAL)
+        result=staging.response(chunks,REFUSAL)
+        if result is None:
+            result=post_json('https://api.openai.com/v1/chat/completions',{
+                'model':os.getenv('OPENAI_MODEL','gpt-6-luna'),'max_completion_tokens':int(os.getenv('OPENAI_MAX_COMPLETION_TOKENS','2048')),
+                'messages':messages},os.environ['OPENAI_API_KEY'],timeout=60)
     except HTTPError as exc:
         logging.warning('OpenAI request failed: HTTP %s',exc.code)
         raise HTTPException(503,'The model provider is temporarily unavailable. Please try again later.') from None
@@ -190,14 +197,16 @@ def documents():
 @app.post('/api/query')
 def query(payload:Question,request:Request):
     """Admit, retrieve and generate one grounded answer, keeping secrets server-side."""
+    scenario=staging.authorize(request)
     # Vercel overwrites x-vercel-forwarded-for at its edge; never trust client-supplied X-Forwarded-For.
     identity=(request.headers.get('x-vercel-forwarded-for','') if os.getenv('VERCEL') else '') or (request.client.host if request.client else 'unknown')
     started=time.monotonic()
     event=ops.begin_request(request.headers.get('x-ops-token',''))
     status_code,outcome=500,'error'
+    staging_context=staging.enter(scenario)
     try:
         configuration()
-        admit(identity)
+        admission_ttl_ms=admit(identity)
         chunks=get_index().search(payload.question)
         result=answer(payload.question,chunks)
         status_code,outcome=200,'refused' if result['refused'] else 'answered'
@@ -210,10 +219,17 @@ def query(payload:Question,request:Request):
         raise HTTPException(503,'A required service is temporarily unavailable. Please try again shortly.') from None
     finally:
         ticket=ops.finish_request(event,status_code=status_code,outcome=outcome)
+        staging.leave(staging_context)
     return dict(result,question=payload.question,model=os.getenv('OPENAI_MODEL','gpt-6-luna'),elapsed_seconds=round(time.monotonic()-started,2),
                 feedback_ticket=ticket,
                 sources=[{'document':c['metadata']['doc_title'],'section':c['metadata']['section_title'],
-                          'subsection':c['metadata'].get('subsection_title',''),'content':c['content'],'rank':c['rank'],'score':c['score']} for c in chunks])
+                          'subsection':c['metadata'].get('subsection_title',''),'content':c['content'],'rank':c['rank'],'score':c['score']} for c in chunks],
+                **({'staging_admission':{'client_ttl_ms':admission_ttl_ms}} if scenario is not None else {}))
+
+
+@app.get('/api/staging/provenance')
+def staging_provenance(request:Request):
+    return staging.provenance(request)
 
 
 @app.get('/api/operations')

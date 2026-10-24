@@ -1,0 +1,446 @@
+{
+  "corpus_sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5",
+  "dataset_hashes": {
+    "docwise-broader-v1-dev": "65786a6cd08d1911c5d172fadd6654f48e07a18a187b985a2d20fcde6fe032d2",
+    "docwise-broader-v1-heldout": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679"
+  },
+  "packet_id": "316ac68cc67b654204f8ffce25045bf6cb9da9dd4f49f54fa45c9efd04966140",
+  "questions": [
+    {
+      "case_id": "f89d266f1ffb099b",
+      "question": "In the banking harness, which beneficiary identifiers are supported and what happens when a name matches more than one beneficiary?"
+    },
+    {
+      "case_id": "bbb3b30f4094bb15",
+      "question": "What prevents a banking proposal from debiting funds during the same invocation that stages it?"
+    },
+    {
+      "case_id": "40a5d0483499f495",
+      "question": "Which transfer eligibility checks does the banking application enforce independently of its prompt?"
+    },
+    {
+      "case_id": "ce9ff4f9bad83f65",
+      "question": "What simulated banking outcomes are available, and how do FAILED and PENDING affect funds?"
+    },
+    {
+      "case_id": "e3d547e6cd02b539",
+      "question": "How does the hosted banking store bound concurrent ownership and expiry of a visitor snapshot?"
+    },
+    {
+      "case_id": "585edad06e7c3c85",
+      "question": "What wall-clock and model-call bounds does the hosted banking runner place on each turn?"
+    },
+    {
+      "case_id": "b21ec7a04b8e8e57",
+      "question": "How large may a streamed banking POST body be, and can a missing or falsely small Content-Length bypass that limit?"
+    },
+    {
+      "case_id": "d38cc16bcb79bf38",
+      "question": "Does the banking daily allowance reset at midnight, and what does expiration of a demo snapshot do?"
+    },
+    {
+      "case_id": "17ced103df93128b",
+      "question": "Which local command runs the deployed banking interface, and is the original ADK developer interface mounted publicly?"
+    },
+    {
+      "case_id": "2537b7ae210b7f75",
+      "question": "Does the banking demo move real funds or provide identity-verified payment rails?"
+    },
+    {
+      "case_id": "75d47acee0a422d4",
+      "question": "What is the full real savings-account number assigned to Aaron by the banking harness?"
+    },
+    {
+      "case_id": "65f79ec46b2899d6",
+      "question": "What monthly rupee fee does the banking harness charge account holders?"
+    },
+    {
+      "case_id": "b74fbc34c081864b",
+      "question": "In the Symposium cache flow, which kind of hit avoids provider work and which still needs a query embedding?"
+    },
+    {
+      "case_id": "11eead196ef502f6",
+      "question": "What inputs select the Symposium cache namespace, and why does changed citation metadata matter?"
+    },
+    {
+      "case_id": "0e4f4b2166f6ae35",
+      "question": "What are the default entry limit and TTL for each Symposium cache namespace?"
+    },
+    {
+      "case_id": "c4a2d80091837438",
+      "question": "What does the Symposium loader validate, and which metadata format replaces pickle deserialization?"
+    },
+    {
+      "case_id": "e971a67919abff50",
+      "question": "Which generation finish state may enter the Symposium cache, and what happens to truncated or tool-call responses?"
+    },
+    {
+      "case_id": "a132e10f31747b7d",
+      "question": "Does the local Symposium Valkey adapter require a vector-search module or provide an indexed ANN service?"
+    },
+    {
+      "case_id": "079ff8ec3802f594",
+      "question": "Which two explicit settings run the Symposium app locally without Redis, and what protection is disabled?"
+    },
+    {
+      "case_id": "eb5075de1c71668b",
+      "question": "What risk does semantic answer reuse introduce, and do request budgets cap total provider spending?"
+    },
+    {
+      "case_id": "1ae4b23dbb2961ac",
+      "question": "What did the Symposium local SQLite workload measure, and does that result describe hosted production traffic?"
+    },
+    {
+      "case_id": "601a4d8531d473ed",
+      "question": "What does a Symposium page-citation check establish, and what does it leave unproven?"
+    },
+    {
+      "case_id": "4aaed77d10ff40ad",
+      "question": "What exact registration fee in rupees does the fictional Innovate 2026 symposium charge?"
+    },
+    {
+      "case_id": "f5c293fc161edef3",
+      "question": "How much did the Symposium hosted Redis service invoice the author last month?"
+    },
+    {
+      "case_id": "760c82598dd08d26",
+      "question": "How many meeting participants are supported, and how are concurrent joins serialized before enforcing that cap?"
+    },
+    {
+      "case_id": "c027aa0c9085afab",
+      "question": "What prevents one socket from joining multiple rooms through overlapping requests, and what happens after failed admission?"
+    },
+    {
+      "case_id": "8c9ccb63b5e39e9d",
+      "question": "Which path carries Apna Video Call media, and what does the server coordinate instead?"
+    },
+    {
+      "case_id": "fedadd1e27edc030",
+      "question": "How are meeting access and refresh tokens stored, and what do refresh and logout change?"
+    },
+    {
+      "case_id": "8befbae457b5fa0d",
+      "question": "What PostgreSQL capability does meeting signaling need, and which connection type should be used?"
+    },
+    {
+      "case_id": "5fad0c6fce79f752",
+      "question": "What relay may Apna Video Call need on restricted networks, and does Vercel supply it?"
+    },
+    {
+      "case_id": "4c19c2e2b7d4105e",
+      "question": "Where are meeting recordings stored, and is there a server-side recording archive?"
+    },
+    {
+      "case_id": "b0fdaefd85f7e683",
+      "question": "Does possession of an Apna Video Call meeting link require approval through a lobby or a room password?"
+    },
+    {
+      "case_id": "5affab8098b429c4",
+      "question": "Which directories are the active meeting implementation, and what is the status of backend/?"
+    },
+    {
+      "case_id": "b9a844ad49275074",
+      "question": "What does the two-instance meeting integration suite exercise, and does it measure actual camera or microphone quality across networks?"
+    },
+    {
+      "case_id": "bc190d08f8cc8c14",
+      "question": "What is the actual TURN password used by the hosted Apna Video Call deployment?"
+    },
+    {
+      "case_id": "1ab670e000a9714d",
+      "question": "What measured MOS audio-quality score does Apna Video Call achieve on a 3G network?"
+    },
+    {
+      "case_id": "5acff89058fb21ad",
+      "question": "Which business records are publicly discoverable in Agri Samaj, and who controls publication?"
+    },
+    {
+      "case_id": "70580608443f511a",
+      "question": "May the Agri Samaj assistant read private applications or execute account actions?"
+    },
+    {
+      "case_id": "11f5d268cabe086f",
+      "question": "Against what set does Agri Samaj validate the source identifiers returned by its assistant?"
+    },
+    {
+      "case_id": "12dbdc4b7d1ebf22",
+      "question": "What ownership checks precede storing an Agri Samaj business mutation, and how are profile and audit changes stored?"
+    },
+    {
+      "case_id": "18db748b7ed2f81d",
+      "question": "Which JWT properties and current account properties does an authenticated Agri Samaj request check?"
+    },
+    {
+      "case_id": "d4c3e1e78281ed99",
+      "question": "Which Agri Samaj business directory filters are available, and can a visitor preserve filters or keep a private shortlist?"
+    },
+    {
+      "case_id": "0813ee0f64589257",
+      "question": "What authorizes an Agri Samaj generated voice reply, and how are its provider requests bounded?"
+    },
+    {
+      "case_id": "c838beea521dab7a",
+      "question": "What password length does Agri Samaj administrator seeding require, and does seeding overwrite existing accounts?"
+    },
+    {
+      "case_id": "761faf7316412052",
+      "question": "Which database isolation does the Agri Samaj browser runner use, and are provider calls on by default?"
+    },
+    {
+      "case_id": "23099779d53c638e",
+      "question": "Where should Agri Samaj private uploads live on Vercel and when self-hosting?"
+    },
+    {
+      "case_id": "ead2515c8f62a1f5",
+      "question": "What supporting identity document did the owner of the latest Agri Samaj business application upload?"
+    },
+    {
+      "case_id": "53bf168aaa565eef",
+      "question": "What exact rupee amount is the Agri Samaj premium advertisement package today?"
+    },
+    {
+      "case_id": "2d7f55be786996d4",
+      "question": "In the durable-effects lab, what must commit before ingestion may return HTTP 202?"
+    },
+    {
+      "case_id": "ed3dde2a2cecbbaf",
+      "question": "In the durable-effects lab, how do leased relays and worker commit ordering handle duplicate queue delivery?"
+    },
+    {
+      "case_id": "bf0155fe7a3bcaaa",
+      "question": "What happens in the catalog lab when a retry uses the same idempotency key with the same input versus changed input?"
+    },
+    {
+      "case_id": "0cea437c131bc678",
+      "question": "In the catalog lab, can a positive Redis cache entry authorize a revoked session, and which store is authoritative?"
+    },
+    {
+      "case_id": "d7a585da61a16f62",
+      "question": "How stale can the catalog lab cache be, and what happens during Redis failure or fallback overload?"
+    },
+    {
+      "case_id": "6aed40bed12d2399",
+      "question": "Does the durable-effects lab document an operating cloud deployment or independently proven local fault domains?"
+    },
+    {
+      "case_id": "fad2c9f366409859",
+      "question": "How does the durable-effects lab isolate repeatedly failing jobs, and how is redrive represented?"
+    },
+    {
+      "case_id": "97b1102c6363ecbd",
+      "question": "What CPU, memory and worker allocations distinguish the lab vertical and horizontal serving profiles?"
+    },
+    {
+      "case_id": "90d6c1c60b7eccaa",
+      "question": "What identity and evidence connect the lab tested container image to production promotion?"
+    },
+    {
+      "case_id": "f4e7fb52007f25a1",
+      "question": "Which stale-address connection timeout, upstream-attempt bound and total retry budget does the lab gateway document?"
+    },
+    {
+      "case_id": "b59bcac4de1666fa",
+      "question": "How many seconds did the lab measured multi-AZ cloud failover take during its last production outage?"
+    },
+    {
+      "case_id": "b5cc663da7500c6e",
+      "question": "Which payment processor settles stock purchases in the durable-effects catalog lab?"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Source-label annotation packet. Gold and generated outputs omitted; public repository gold remains accessible.",
+  "sources": [
+    {
+      "chunk_id": "banking-README.md::000",
+      "content": "# Banking Agent Harness\n\nA Python banking assistant that separates language-model suggestions from transfer authorization. The model can look up an account or propose a transfer; application code validates the proposal, requires confirmation in a later user turn, and records the simulated outcome.\n\n[Live demo](https://banking-agent-harness.vercel.app) · [Tests](https://github.com/harshgavandit/banking-agent-harness/actions/workflows/tests.yml) · [Hosted verification](verification/VERCEL-DEPLOYMENT.md)\n\n**Stack:** Python 3.12, FastAPI, Google ADK, LiteLLM, OpenAI, Upstash Redis, Vercel.\n\n![A confirmed simulated transfer with its resulting account balance](verification/browser-confirmed-transfer.jpg)",
+      "document": "banking-README.md",
+      "section": "Banking Agent Harness"
+    },
+    {
+      "chunk_id": "banking-README.md::001",
+      "content": "## Try the workflow\n\n```text\nWhat is my savings account balance?\nTransfer 1000 rupees to Aaron.\nconfirm\nCheck transaction TXN001.\n```\n\n- Check balance, daily transfer allowance, and existing transactions.\n- Find beneficiaries by name, ID, or the last four account digits. Ambiguous matches require a choice; blocked beneficiaries are rejected.\n- Review recipient and amount before approving a staged transfer in a separate message or with **Confirm transfer**.\n- Refresh the page and continue the same demo session. Other visitors receive separate accounts and histories.\n\nAll accounts and transactions use mock data. No real money moves.",
+      "document": "banking-README.md",
+      "section": "Try the workflow"
+    },
+    {
+      "chunk_id": "banking-README.md::002",
+      "content": "## How a transfer runs\n\n```text\nBrowser + signed session cookie\n  → FastAPI: origin / payload checks + Redis session lease\n  → ADK agent: bounded model/tool calls\n  → Deterministic policy: beneficiary, balance, amount, daily allowance\n  → Pending proposal: no debit until a later explicit confirmation\n  → Revalidate → simulated executor → recorded transaction outcome\n  → Atomic Redis snapshot commit → updated account and tool results\n```\n\nThe important boundaries live in code:\n\n| Decision | Implementation |\n| --- | --- |\n| Transfer eligibility | [`policy_service.py`](app/services/policy_service.py) checks finite positive amounts, beneficiary status, balance, and allowance independently of the prompt. |\n| Confirmation | [`banking_tools.py`](app/tools/banking_tools.py) requires a previously staged proposal and an explicit confirmation from a different invocation. It expires old proposals and revalidates before execution. |\n| Actual outcome | [`transaction_executor.py`](app/services/transaction_executor.py) supplies `SUCCESS`, `FAILED`, or `PENDING`. Failed transfers leave the balance unchanged; pending transfers hold funds. |\n| Visitor isolation | [`hosted_store.py`](app/hosted_store.py) keeps one Redis snapshot per visitor with a 120-second lease, compare-owner commit, and 24-hour inactivity expiry. |\n| Bounded execution | [`agent.py`](app/agent.py) applies Redis user/model admission and tool limits. The hosted runner bounds each turn to 75 seconds and eight model calls. |\n| Request boundary | [`web.py`](app/web.py) validates declared lengths and caps actual streamed POST bodies at 12,000 bytes before parsing or calling a handler. Missing, chunked or falsely small length headers cannot bypass the byte limit. Error responses retain the API's no-store and browser security headers. |",
+      "document": "banking-README.md",
+      "section": "How a transfer runs"
+    },
+    {
+      "chunk_id": "banking-README.md::003",
+      "content": "## Run locally\n\nUse Python 3.12. From the repository root:\n\n```powershell\npython -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1\npython -m pip install -r requirements.lock.txt\nCopy-Item app/.env.example app/.env\n```\n\nOn macOS/Linux, activate with `source .venv/bin/activate` and copy with `cp app/.env.example app/.env`. Set values in the untracked `app/.env`:\n\n| Variable | Purpose |\n| --- | --- |\n| `OPENAI_API_KEY` | Server-side OpenAI credential. |\n| `LLM_MODEL` | LiteLLM model identifier; default `openai/gpt-4o-mini`. |\n| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | Required for the public-style app's snapshot storage and for enabled admission limits. |\n| `DEMO_SESSION_SECRET` | Random signing secret of at least 32 characters for the public-style app's cookie. |\n| `RATE_LIMIT_ENABLED` | Set `true` to enforce the Redis limits; Redis failures then block agent execution. |\n| `MOCK_TRANSACTION_OUTCOME` | Optional `SUCCESS`, `FAILED`, or `PENDING` to exercise different results. |\n\nSee [`app/.env.example`](app/.env.example) for timeouts, request limits, and tool/transfer budgets. Keep credentials server-side.\n\nRun the same FastAPI interface used by the deployment:\n\n```powershell\npython -m uvicorn app.web:app --host 127.0.0.1 --port 8011\n```\n\nOpen <http://127.0.0.1:8011>. The original local ADK developer interface is also available with `python scripts/serve.py --port 8010` or `./start.ps1`; its in-memory sessions are separate from the Redis-backed web app. The developer interface is not mounted on the public deployment.",
+      "document": "banking-README.md",
+      "section": "Run locally"
+    },
+    {
+      "chunk_id": "banking-README.md::004",
+      "content": "## Tests and reproducible checks\n\n```powershell\npython -m pytest -q\npython -m pip check\npython -m compileall -q app scripts tests index.py\nnode --check web/app.js\n```\n\nThe offline suite covers policy rejection, later-turn confirmation, execution outcomes, visitor isolation, signed cookies, cross-origin rejection, overlapping turns, and actual ASGI body limits. Request-boundary tests include malformed and duplicate lengths, zero-prefixed length overflow, chunked input, false length claims and exact-limit byte preservation. GitHub Actions runs it on Windows and Linux with Python 3.12; tests use doubles rather than paid provider requests.\n\nWith the local web app running and credentials configured, `python scripts/verify_hosted.py http://127.0.0.1:8011` exercises real model calls, restored proposals, and separate visitor accounts. It consumes provider quota and changes only synthetic demo account state. The separate `scripts/verify_live.py` and `scripts/verify_http.py` check the agent and ADK developer interface.\n\nThe [20 October hosted report](verification/VERCEL-DEPLOYMENT.md) records the deployment checks and their limits. It is a dated observation, not a load-capacity or banking-compliance claim.",
+      "document": "banking-README.md",
+      "section": "Tests and reproducible checks"
+    },
+    {
+      "chunk_id": "banking-README.md::005",
+      "content": "## Scope\n\nThis is an anonymous-session engineering demonstration, without identity-verified accounts or payment rails. Snapshot expiry resets the demo; the daily allowance is a session budget without a midnight reset. Redis serialization protects this mock ledger, not an external financial transaction. Real banking would additionally require durable financial ledgers, authenticated identities, reconciliation, and operational controls.",
+      "document": "banking-README.md",
+      "section": "Scope"
+    },
+    {
+      "chunk_id": "cache-README.md::000",
+      "content": "# Symposium RAG Bot — Shared Semantic Cache\n\nA PDF question-answering application with page citations, exact and semantic answer reuse, and Redis request admission. The hosted FastAPI app shares a bounded cache across serverless instances; local development also supports SQLite and Valkey cache adapters.\n\n[Live demo](https://symposium-rag-bot.vercel.app) · [Tests](https://github.com/harshgavandit/RAG-Semantic-Cache-Symposium-Bot/actions/workflows/tests.yml) · [Workload and recovery evidence](benchmarks/README.md)\n\n**Stack:** Python 3.12, FastAPI, OpenAI, LangChain, FAISS, Upstash Redis, SQLite/Valkey, Streamlit, Vercel.\n\n![The hosted chatbot showing its answer and document reference](evidence/vercel-desktop.jpg)",
+      "document": "cache-README.md",
+      "section": "Symposium RAG Bot — Shared Semantic Cache"
+    },
+    {
+      "chunk_id": "cache-README.md::001",
+      "content": "## What to explore\n\nAsk about the date, venue, schedule, eligibility, competitions, or registration fees. Answers include page references; the interface also shows when an answer came from cache. The public demo uses a **fictional Innovate 2026 guide**, not a real event or private document. It does not search the web.",
+      "document": "cache-README.md",
+      "section": "What to explore"
+    },
+    {
+      "chunk_id": "cache-README.md::002",
+      "content": "## Request and data flow\n\n```text\nPDF → page-aware chunks → OpenAI embeddings → FAISS + JSON metadata + hash manifest\n\nQuestion → client admission → exact cache lookup\n  ├─ hit: return saved answer and source references\n  └─ miss: shared provider admission → query embedding → semantic cache lookup\n       ├─ hit: reuse answer and original sources\n       └─ miss: FAISS top-3 passages → OpenAI answer → citation check → cache\n```\n\n| Engineering choice | Mechanism |\n| --- | --- |\n| Shared cache | [`redis_cache.py`](phase2_retrieval/redis_cache.py) stores answers, vectors, source labels, expiry times, and bounded ordering in Upstash Redis. Lua updates perform insertion and eviction atomically. |\n| Cache invalidation | [`resources.py`](phase2_retrieval/resources.py) derives the namespace from PDF, index and document-text/metadata hashes, embedding and answer models, threshold, and response-policy version. Changed citation metadata or the strict completion policy selects a new namespace, preventing stale cached answers from bypassing the updated context. |\n| Admission before paid work | [`backend.py`](phase2_retrieval/backend.py) admits clients before lookup and uses a separate shared gate before query embedding. Exact hits avoid provider calls; semantic hits still require a query embedding. |\n| Safe index loading | The loader checks corpus/index/metadata hashes and embedding dimensions, then reads FAISS plus JSON metadata rather than deserializing a pickle. |\n| Answer boundary | Non-refusal answers require page labels present in the retrieved passages. Only a completed `stop` generation can enter the cache; truncated, filtered, tool-call and unknown completion states return explicit errors. |\n\nDefault cache settings are 256 entries and a 24-hour TTL per namespace. Semantic matching uses a cosine-distance threshold, so similar wording can reuse an answer. Citation-label checks validate page membership, not factual entailment.\n\nThe local Valkey adapter uses the same bounded hash/Lua contract as the Redis adapter, with a cosine scan of the configured entry limit. It reuses the query vector supplied by the handler, supports exact lookups before embedding, and does not require a vector-search module. This is a small bounded cache, not an indexed ANN service. Switching from the previous BetterDB adapter starts a new cache key layout; persisted document indexes remain unchanged. The legacy BetterDB package remains pinned in the dependency file but is no longer imported by the request path.",
+      "document": "cache-README.md",
+      "section": "Request and data flow"
+    },
+    {
+      "chunk_id": "cache-README.md::003",
+      "content": "## Run locally\n\nUse Python 3.12. From the repository root:\n\n```powershell\npython -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1\npython -m pip install -r requirements-dev.txt\nCopy-Item .env.example .env\n```\n\nOn macOS/Linux, use `source .venv/bin/activate` and `cp .env.example .env`. Configure the untracked `.env`:\n\n| Variable | Purpose |\n| --- | --- |\n| `OPENAI_API_KEY` | Server-side embedding and generation credential. |\n| `LLM_MODEL`, `EMBEDDING_MODEL` | Defaults: `gpt-4o-mini`, `text-embedding-3-small`. Re-ingest when the embedding model changes. |\n| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | Redis admission credentials; also required for `CACHE_BACKEND=redis`. |\n| `RATE_LIMIT_ENABLED` | Defaults to `true`; invalid or unavailable Redis blocks admission. |\n| `CACHE_BACKEND` | `local`, `valkey`, `auto`, or `redis`. `auto` tries Valkey and falls back to local SQLite; Vercel requires `redis`. |\n| `CACHE_THRESHOLD`, `CACHE_TTL_SECONDS`, `CACHE_MAX_ENTRIES` | Defaults: `0.15`, `86400`, and `256`. |\n\nThe remaining timeout, request-budget, and Valkey options are in [`.env.example`](.env.example). For a local run without Redis, explicitly set `CACHE_BACKEND=local` and `RATE_LIMIT_ENABLED=false`; this disables shared admission rather than simulating it.\n\nCreate the included contact-free sample, then build the index:\n\n```powershell\npython scripts/create_sample_pdf.py\npython -m phase1_ingestion.ingest\npython -m uvicorn phase2_retrieval.backend:app --host 127.0.0.1 --port 8000 --no-proxy-headers\n```\n\nOpen <http://127.0.0.1:8000> for the browser UI. In a second terminal, `python -m streamlit run phase2_retrieval/frontend.py --server.port 8502` starts the alternate local interface. `BACKEND_URL` defaults to `http://127.0.0.1:8000`.\n\nFor your own document, put an appropriate PDF at `data/symposium.pdf` before ingestion. The sample script refuses to overwrite an existing file. Ingestion sends extracted text to the configured embedding provider; PDFs, extracted data, indexes, local caches, and credentials are excluded from Git. Rebuild the index after changing the PDF or embedding model.\n\nWindows shortcuts: `./run.ps1 ingest`, `./run.ps1 backend`, `./run.ps1 frontend`, and `./run.ps1 test` use the repository's `.venv`.",
+      "document": "cache-README.md",
+      "section": "Run locally"
+    },
+    {
+      "chunk_id": "cache-README.md::004",
+      "content": "## Tests and verification\n\n```powershell\npython -m pytest -q\npython -m pip check\npython -m compileall -q config.py app.py phase1_ingestion phase2_retrieval scripts tests\n```\n\nThe offline suite covers cache reuse and misses, eviction and TTL, Redis cache behavior, source preservation, refusal/citation handling, index validation, rate denial, and hosting configuration. [GitHub Actions](.github/workflows/tests.yml) runs the regression suite on Python 3.12 without a paid provider request.\n\nWith the included fictional sample indexed, OpenAI and Redis configured, and `RATE_LIMIT_ENABLED=true` (restart the backend after configuration changes):\n\n```powershell\npython scripts/verify_live.py --url http://127.0.0.1:8000\n```\n\nThis makes real embedding/generation requests, exercises cache behavior and HTTP errors, and uses isolated expiring Redis counters to check atomic admission and recovery. It writes a local verification report and consumes provider quota.\n\nThe [20 October hosted report](evidence/vercel-verification-report.md) records observed provider, cache, citation, and denial checks. It reports a one-page, one-chunk public sample; that demonstration does not establish retrieval quality for a larger corpus. No cost-savings or throughput figure is claimed.",
+      "document": "cache-README.md",
+      "section": "Tests and verification"
+    },
+    {
+      "chunk_id": "cache-README.md::005",
+      "content": "## Workload and recovery measurements\n\nThe [benchmark guide](benchmarks/README.md) contains reproducible commands and retained reports. A local SQLite workload completed **9,000 operations** across three trials at concurrency 1, 4 and 8 with zero operation errors or expected-result mismatches. Four workers outperformed eight on this machine, so the report retains the contention tradeoff rather than claiming linear scaling.\n\nThe workload exposed unclosed SQLite handles; explicit connection closure now preserves transactions and rollback, with regression tests. Six adapter recovery checks and 18 isolated HTTP observations cover TTL refill, bounded eviction, writer contention, unavailable dependencies and recovery. The HTTP drill uses injected providers. A separate **real Redis drill** used 15 commands against isolated expiring keys: exactly three of 12 concurrent attempts were admitted, identities remained separate, and admission resumed after expiry. These are controlled development measurements, separate from the hosted Redis cache and production traffic.",
+      "document": "cache-README.md",
+      "section": "Workload and recovery measurements"
+    },
+    {
+      "chunk_id": "cache-README.md::006",
+      "content": "## Deployment and limits\n\nThe [deployment guide](docs/vercel-deployment.md) explains the Vercel build and shared Redis cache. The build generates a fictional sample under `deploy_data/`, keeping original documents and local runtime data out of the upload. Streamlit remains a separate local interface.\n\nSemantic cache reuse is heuristic and can conflate nearby intents. The cache performs a bounded vector scan rather than a distributed vector-index query. Request budgets limit request counts, not total provider spending; production use would need corpus-specific evaluation, traffic-aware budgeting, and monitoring.",
+      "document": "cache-README.md",
+      "section": "Deployment and limits"
+    },
+    {
+      "chunk_id": "realtime-README.md::000",
+      "content": "# Apna Video Call\n\nA full-stack video meeting app with peer-to-peer WebRTC media, shared PostgreSQL-backed signaling and room state, and guest or authenticated entry.\n\n[Open the app](https://zoom-clone-blue-pi.vercel.app/) · [Meeting server](server/app.js) · [Media lifecycle](frontend/src/useMeeting.js) · [Integration tests](tests/integration.test.js)",
+      "document": "realtime-README.md",
+      "section": "Apna Video Call"
+    },
+    {
+      "chunk_id": "realtime-README.md::001",
+      "content": "## Features\n\n- Start or join a meeting as a guest, or create an account and sign in.\n- Invite others with a meeting link or room code.\n- Make video and audio calls, mute your microphone, and turn your camera on or off.\n- Share your screen and send messages in the meeting chat.\n- Draw together on a shared whiteboard.\n- Raise your hand, send emoji reactions, and see who is in the meeting.\n- Record a selected screen or tab and download the video to your device.\n- View your meeting history when signed in.\n\nMeetings support up to **six people**. Anyone with the meeting link can join; rooms do not have an approval lobby or password.",
+      "document": "realtime-README.md",
+      "section": "Features"
+    },
+    {
+      "chunk_id": "realtime-README.md::002",
+      "content": "## Architecture\n\n```text\nReact / Vite browser clients\n  ├─ Camera, microphone and screen → WebRTC peer connections\n  ├─ Sign-in and history → Express HTTP API\n  └─ Signaling, chat, reactions and whiteboard → Socket.IO\n                                                 ↓\n                                  PostgreSQL Socket.IO adapter\n                                  Sessions, messages and presence\n```\n\nMedia travels between peers, rather than through an application media server. The server coordinates room membership and SDP/ICE exchange. PostgreSQL shares signaling between server instances and persists accounts, rotating sessions, meeting history, chat and expiring participant leases.\n\n| Engineering decision | Why it is there |\n|---|---|\n| Transactional room admission | A PostgreSQL advisory lock serializes joins to the same room before enforcing the six-participant cap. |\n| One room per socket | Admission is reserved before the first asynchronous operation. Overlapping join requests cannot subscribe one socket to multiple rooms; failed database commits or adapter joins clear room privileges and subscriptions. |\n| Expiring participant leases | Reconnect replaces the tab's previous lease; heartbeats refresh presence and stale leases expire after an interrupted process. |\n| Room-scoped signaling | The server checks that signal recipients belong to the sender's room and bounds message sizes and event rates. |\n| Hashed, rotating sessions | Access and refresh tokens are stored as hashes. Refresh replaces both tokens; logout revokes the stored session. |\n| Authentication-rate identity | Direct deployments use the connection's peer address, ignoring client-supplied forwarding headers. Vercel deployments accept only a valid IP from the platform's `x-vercel-forwarded-for` header. |\n| Explicit media cleanup | Peer connections and media tracks are stopped on exit; screen replacement and reconnect negotiation live in the shared meeting hook. |\n\nThe active implementation is [`server/`](server/) and [`frontend/`](frontend/). [`backend/`](backend/) contains the earlier implementation and is not the root application's runtime.",
+      "document": "realtime-README.md",
+      "section": "Architecture"
+    },
+    {
+      "chunk_id": "realtime-README.md::003",
+      "content": "## Stack\n\nReact, Vite, Material UI, WebRTC, MediaRecorder, Express, Socket.IO, PostgreSQL, bcrypt, Node's test runner and Vitest.",
+      "document": "realtime-README.md",
+      "section": "Stack"
+    },
+    {
+      "chunk_id": "realtime-README.md::004",
+      "content": "## Run locally\n\nUse **Node.js 22.x** and a dedicated PostgreSQL database. The PostgreSQL connection must support `LISTEN/NOTIFY`; use a direct connection rather than a transaction pooler.\n\n```powershell\ngit clone https://github.com/harshgavandit/Zoom_Clone.git\ncd Zoom_Clone\nnpm ci\nnpm ci --prefix frontend\nCopy-Item .env.example .env.local\n```\n\nSet `DATABASE_URL` and, when using a pooled provider URL, `DATABASE_URL_UNPOOLED` in `.env.local`. The application prefers the unpooled URL. Schema tables are created on first readiness, so use an empty development database. `PORT` defaults to `8000`.\n\n```powershell\n# Terminal 1: HTTP API and signaling\nnpm start\n\n# Terminal 2: Vite UI, with /api proxied to localhost:8000\nnpm --prefix frontend start\n```\n\nOpen Vite's displayed local URL. For a single-origin production-style local run:\n\n```powershell\nnpm run build\nnpm start\n```\n\nThe server serves the built frontend at `http://localhost:8000`.",
+      "document": "realtime-README.md",
+      "section": "Run locally"
+    },
+    {
+      "chunk_id": "realtime-README.md::005",
+      "content": "## Verification\n\n```powershell\nnpm run check\nnpm --prefix frontend test\nnpm test\nnpm run build\n```\n\n`npm test` launches two local server instances against the configured PostgreSQL database and exercises authentication, refresh replay, logout revocation, room events and cross-room isolation. It creates synthetic accounts and meeting records; use a separate test database. Test ports `8121` and `8122` must be free.\n\nThe same command runs [admission-boundary regressions](tests/admission-boundaries.test.js) against the production connection handler with deterministic database/adapter failures, and [compressed-body checks](tests/compressed-body.test.js) against the installed HTTP middleware. These checks cover concurrent joins, failed-admission cleanup and spoofed forwarding headers. The two-instance suite verifies signaling and shared state; it does not measure real camera/audio quality or performance across different networks.\n\n[CI](.github/workflows/ci.yml) supplies isolated PostgreSQL, runs frontend route tests and the two-instance integration suite, builds the UI and audits active dependencies. [`scripts/smoke.mjs`](scripts/smoke.mjs) contains the shared checks. `npm run test:live` defaults to `http://localhost:8000`; set `BASE_URL` and optionally `SECONDARY_URL` to test another deployment. It creates test accounts and meeting records, so use a dedicated environment and run it deliberately.\n\nCI also checks the historical `backend/` dependencies separately with `npm ci --prefix backend --ignore-scripts`, `npm --prefix backend test`, and `npm audit --prefix backend --audit-level=moderate`. These offline checks exercise native bcrypt compatibility, Mongoose validation, existing authentication controllers and compressed-body parsing without connecting MongoDB or starting mediasoup workers. They do not replace a full SFU deployment test.",
+      "document": "realtime-README.md",
+      "section": "Verification"
+    },
+    {
+      "chunk_id": "realtime-README.md::006",
+      "content": "## Deployment and limits\n\n[`vercel.json`](vercel.json) builds the Vite frontend and routes API/signaling traffic through [`api/index.js`](api/index.js). Configure the database URLs in the hosting environment. No database credential is sent to the browser.\n\n- This is a small-group peer mesh, not an SFU. Browser bandwidth and CPU usage grow as more peers join.\n- STUN is configured by default. Restricted networks may need an authenticated TURN relay via `TURN_URL`, `TURN_USERNAME` and `TURN_CREDENTIAL`; Vercel does not provide that relay.\n- Camera and microphone access require browser permission and HTTPS, or localhost during development.\n- Recordings stay on the user's device. The Recordings page lists downloads in the current browser; the files are saved in Downloads. There is no server-side recording archive.\n- Guest rooms are accessible to anyone holding the link. This implementation does not claim enterprise meeting access controls or a production availability guarantee.",
+      "document": "realtime-README.md",
+      "section": "Deployment and limits"
+    },
+    {
+      "chunk_id": "realtime-README.md::007",
+      "content": "## Repository map\n\n| Path | Contents |\n|---|---|\n| `server/` | Active Express API, PostgreSQL state and Socket.IO coordination |\n| `frontend/src/` | React pages, meeting hook, media controls and UI |\n| `api/` | Vercel entry point |\n| `tests/`, `scripts/smoke.mjs` | Two-instance API and signaling checks |\n| `.github/workflows/` | PostgreSQL-backed CI |",
+      "document": "realtime-README.md",
+      "section": "Repository map"
+    },
+    {
+      "chunk_id": "community-README.md::000",
+      "content": "# आगरी समाज · Agri Samaj\n\nA Marathi-English community platform for discovering local businesses, sharing publications and events, and managing business registrations. This is community work, developed around the Agri Samaj community's requirements.\n\n[Visit the website](https://agri-samaj-community-platform.vercel.app) · [Application routes](src/app) · [Database schema](prisma/schema.prisma) · [CI](.github/workflows/ci.yml)\n\n![Agri Samaj community homepage](docs/images/community-homepage.png)",
+      "document": "community-README.md",
+      "section": "आगरी समाज · Agri Samaj"
+    },
+    {
+      "chunk_id": "community-README.md::001",
+      "content": "## What the platform does\n\n- **Community discovery:** Marathi-English pages about Agri history, language, culture, organisations and initiatives, with links to official education, scholarship, employment and entrepreneurship resources.\n- **Business directory:** Search by name, category, district or business type. Open public profiles, share search filters as URLs and save businesses to a private account shortlist.\n- **News and publications:** Search published updates, browse upcoming or past events, download event calendar files and open community publication PDFs.\n- **Business registration:** Create an account, save an application draft, attach supporting documents and track its review. Only approved businesses appear in public search.\n- **Advertisements:** Choose a package, submit artwork and a payment reference, and follow an administrator-reviewed booking process.\n- **Administration:** Review applications, request changes, approve or reject listings, manage categories, review advertisements and payment references, publish content, and handle inquiries.\n- **Bilingual assistance:** Ask questions in Marathi or English, review recorded-question transcripts, read source-linked answers and listen to generated voice replies.",
+      "document": "community-README.md",
+      "section": "What the platform does"
+    },
+    {
+      "chunk_id": "community-README.md::002",
+      "content": "## Architecture\n\n```text\nNext.js / React interface\n  ├─ Server-rendered public pages → bounded directory and community queries\n  ├─ Member routes → session validation → owned business drafts and uploads\n  ├─ Admin routes → role checks → review decisions and audit records\n  └─ Assistant routes → persistent admission → public context → OpenAI\n                                   ↓\n                         Prisma / PostgreSQL\n                  Private files: Vercel Blob or local storage\n```\n\n| Engineering decision | Implementation |\n|---|---|\n| Separate public and private records | Public queries select approved records; draft documents and owner fields have separate access checks. |\n| Enforce ownership on the server | Business mutations validate the account and uploaded-file ownership before storing profile and audit changes in a transaction. |\n| Recheck account state | JWT verification checks algorithm, issuer, audience and expiration; authenticated requests also load the active account and role. |\n| Bound reads and shared traffic | Directory and admin queries use bounded pagination; PostgreSQL-backed counters enforce limits across application instances. |\n| Keep AI within the website's scope | Context comes from public content and approved listings. Returned source identifiers are checked against the retrieved set. The assistant cannot read private applications or execute account actions. |\n| Control generated voice | Voice replies require a signed, expiring token for a generated answer; provider calls receive cancellation signals and timeouts. |\n\nSee [authentication](src/lib/auth.ts), [business registration](src/app/api/businesses/register/route.ts), [request validation and limits](src/lib/http.ts), [assistant admission](src/lib/assistant-admission.ts), and [assistant source validation](src/app/api/assistant/chat/route.ts).",
+      "document": "community-README.md",
+      "section": "Architecture"
+    },
+    {
+      "chunk_id": "community-README.md::003",
+      "content": "## Stack\n\nNext.js App Router, React, TypeScript, Tailwind CSS, Prisma, PostgreSQL, Zod, bcrypt, JWT sessions, private Vercel Blob storage, OpenAI, Playwright and Node's test runner.",
+      "document": "community-README.md",
+      "section": "Stack"
+    },
+    {
+      "chunk_id": "community-README.md::004",
+      "content": "## Run locally\n\nUse Node.js 22.x and a PostgreSQL database dedicated to this application.\n\n```powershell\ngit clone https://github.com/harshgavandit/agri-samaj-community-platform.git\ncd agri-samaj-community-platform\nnpm ci\nCopy-Item .env.example .env\n```\n\nConfigure `.env` before continuing:\n\n| Variables | Purpose |\n|---|---|\n| `DATABASE_URL`, `DIRECT_URL` | PostgreSQL runtime and migration connections. Remote connections must require TLS. |\n| `JWT_SECRET` | A unique cryptographically random secret of at least 32 characters. |\n| `APP_URL`, `NEXT_PUBLIC_APP_URL` | `http://localhost:3000` locally; the HTTPS origin when hosted. |\n| `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `ADMIN_NAME` | Administrator details for seeding. Use a unique password of at least 12 characters and at most 72 UTF-8 bytes. Existing accounts are not overwritten. |\n| `UPLOAD_DIR` | Optional private durable directory for local uploads, outside `public/`. |\n| `BLOB_READ_WRITE_TOKEN` | Private Blob store on Vercel; keep it server-side. |\n\n```powershell\nnpm run check:env\nnpm run prisma:generate\nnpm run db:deploy\nnpm run prisma:seed\nnpm run dev\n```\n\nMigrations and seeding write to the configured application database. Use a local development database. Open `http://localhost:3000`.\n\nThe assistant is optional. Set `OPENAI_API_KEY` and `OPENAI_MODEL` to enable it. Voice settings are `OPENAI_TRANSCRIPTION_MODEL` and `OPENAI_VOICE_MODEL`; `ASSISTANT_HOURLY_LIMIT` bounds shared provider operations. Other website features do not require a provider key. See [`.env.example`](.env.example) for the complete variable list.",
+      "document": "community-README.md",
+      "section": "Run locally"
+    },
+    {
+      "chunk_id": "community-README.md::005",
+      "content": "## Verification\n\n```powershell\nnpm run lint\nnpm run type-check\nnpm test\nnpm run build\nnpx playwright install chromium\nnpm run test:e2e\n```\n\nBrowser tests need a dedicated **local** PostgreSQL server. Set `E2E_DATABASE_URL` if the default `127.0.0.1:5547/agri_test` is unavailable. The runner creates an isolated schema and synthetic fixtures; never point tests at the deployed application database. Normal tests disable provider calls. Live AI and Blob checks are explicit opt-ins in [the runner](tests/run-e2e.mjs).\n\n[CI](.github/workflows/ci.yml) starts PostgreSQL and runs lint, type checks, unit tests, dependency audit, production build and browser journeys. Regressions cover registration/upload ownership, withdrawn-image privacy, directory filtering, private shortlists, admin pagination, session validation, request bounds and assistant controls.",
+      "document": "community-README.md",
+      "section": "Verification"
+    },
+    {
+      "chunk_id": "community-README.md::006",
+      "content": "## Operational scope\n\n- Business and advertisement publication requires administrator review. Advertisement payment references are reviewed manually; this is not an automated payment processor.\n- The assistant uses published website content. It has no live web search and cannot approve applications, verify payments or change accounts.\n- The community's administrators determine content and roadmap. No official government endorsement, adoption metric or production service-level guarantee is implied.\n- On Vercel, use PostgreSQL and a **private** Blob store. Local filesystem uploads require durable private storage when self-hosting.",
+      "document": "community-README.md",
+      "section": "Operational scope"
+    },
+    {
+      "chunk_id": "community-README.md::007",
+      "content": "## Repository map\n\n| Path | Contents |\n|---|---|\n| `src/app/` | Public pages, member/admin interfaces and API routes |\n| `src/lib/` | Auth, validation, public data, storage and AI boundaries |\n| `prisma/` | PostgreSQL schema, migrations and controlled seed data |\n| `tests/` | Unit, security and Playwright regression tests |\n| `scripts/` | Environment checks, deployment and maintenance helpers |\n\nReleased under the [MIT license](LICENSE).",
+      "document": "community-README.md",
+      "section": "Repository map"
+    },
+    {
+      "chunk_id": "durable-ARCHITECTURE.md::000",
+      "content": "# Architecture and data guarantees\n\n```mermaid\nflowchart LR\n  C[Client] --> E[Nginx local / TLS ALB cloud]\n  E --> A[Independent Express replicas]\n  A --> M[(Mongo primary)]\n  A --> R[(Rebuildable Redis catalog cache)]\n  M --> O[Leased outbox relay]\n  O --> Q[SQS / local ElasticMQ]\n  Q --> W[Independent bounded workers]\n  W --> M\n  Q --> D[Dead-letter queue]\n  A --> T[OpenTelemetry collector]\n  W --> T\n  O --> T\n  A --> P[Direct Prometheus scrapes]\n  E --> L[Bounded edge/log receiver]\n  L --> G[Grafana: metrics, logs, traces]\n  P --> G\n  T --> G\n```\n\nProtected requests verify authoritative Mongo sessions and account state through bounded linearizable primary reads. Independent session/account reads run concurrently; both must finish successfully before authorization, quota writes or mutations. Redis cannot authorize a revoked session. Requests already authorized before a completed revocation may finish. Refresh tokens are stored as hashes and rotate through an atomic compare-and-set; a replay or concurrent loser revokes the family and requires sign-in.\n\nProduct changes require a server-side administrator role. Cart, wishlist and job access are scoped to the authenticated owner. Mutations store an idempotency receipt and their effects in one majority transaction. A retry with the same key and input returns the saved response; changed input returns 409. Cart increments and guarded deletes retry transaction conflicts rather than lose committed increments.\n\nIngestion returns 202 only after a majority transaction commits the job, idempotency scope and outbox event. A leased relay publishes a versioned message and can publish twice after a crash. Workers commit the product effect and terminal state before acknowledging the message. Duplicate transport produces one logical effect. This is at-least-once transport with idempotent effects. Failed jobs are isolated after bounded attempts; redrive is an audited generation change.\n\nRedis holds public catalog responses for at most 30 seconds from read start, with downward jitter, namespace invalidation, bounded payloads and per-process single-flight. Authorization/cookie requests bypass caching. A Redis outage uses a bounded Mongo fallback; overload is a visible 503. Nginx caching is disabled. Stock and payments are outside this catalog lab's acceptance contract.\n\nThe local environment has one Mongo member and one host. Separate containers prove process/replica behavior, not independent fault domains. Cloud IaC describes private ECS services, TLS ALB, WAF, encrypted Redis/SQS, private Atlas connectivity, separate runtime/migration identities and managed telemetry. That architecture remains undeployed while cloud configuration is absent.\n\nLocal gateway stale-address connection attempts are bounded to 250 milliseconds, with up to four upstream attempts within a four-second total retry budget. Writes retain the default non-idempotent replay protection described in the [NGINX proxy retry documentation](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_next_upstream). Edge diagnostics retain upstream address/status/connect time without request bodies, query strings or authorization headers. A repeated three-cycle stop/restart test checks actual content and zero failures at 100 catalog requests/s; the report is separate from mixed-workload capacity.",
+      "document": "durable-ARCHITECTURE.md",
+      "section": "Architecture and data guarantees"
+    },
+    {
+      "chunk_id": "durable-ARCHITECTURE.md::001",
+      "content": "## Configuration and boundaries\n\nThe serving container starts compiled code directly as a non-root user with a read-only root filesystem and bounded temporary space. The vertical entrypoint starts four workers in one 4 CPU/4 GiB container. Horizontal uses four 1 CPU/1 GiB API containers. Relay/worker pools, concurrency and queue leases are independent of API replicas. Mongo remains the authority across all of them.\n\nRuntime source identity is recorded in an OCI image label. CI exports and hashes the tested image archive; security checks scan that archive; publication verifies identity, durability, scan and operational evidence before signing the registry digest. Production promotes the same tested digest and requires real staging business and SLO evidence.",
+      "document": "durable-ARCHITECTURE.md",
+      "section": "Configuration and boundaries"
+    },
+    {
+      "chunk_id": "durable-ADR-0001.md::000",
+      "content": "# ADR 0001: Canonical Express service and durable effects\n\nStatus: accepted for implementation, cloud operation pending.\n\nThe five-framework lab needs a comparable contract while production hardening requires one operational target. Express is canonical. Comparison backends advertise their actual capabilities; missing Go routes are not silently treated as passing. The historical vertical exercise stays separate from the horizontal profile.\n\nMongo is the durable authority for sessions, idempotency receipts, ingestion jobs and outbox. Majority transactions connect acknowledgement to persisted work. SQS provides at-least-once delivery; leased workers and unique transactional effects tolerate duplicates. Redis is rebuildable public-catalog acceleration. Private authorization never depends on positive Redis cache entries.\n\nECS/Atlas are the cloud reference because separate tasks, managed data and protected digest promotion meet the scope without adding a Kubernetes control plane. This choice adds provider/network/state/secret operational work. Local Compose supplies repeatable failure tests but cannot establish cloud AZ or PIT recovery.\n\nTradeoffs: authoritative session reads add database latency; a 30-second catalog TTL permits explicitly bounded staleness; refresh races require reauthentication; Mongo remains a shared bottleneck. Raise pools, replicas or introduce new data infrastructure only after measured capacity identifies a constraint and the cost/consistency model is documented.",
+      "document": "durable-ADR-0001.md",
+      "section": "ADR 0001: Canonical Express service and durable effects"
+    }
+  ]
+}
