@@ -119,6 +119,8 @@ The [CLI verification record](verification/VERIFICATION.md) and [hosted verifica
 
 ## Retrieval and answer measurements
 
+The [multi-domain diagnostic](evaluation/BROADER_RESULTS.md) adds frozen repository documentation from five application domains, separate development/held-out query domains, 60 questions and raw retrieval comparisons. On 20 answerable held-out questions, both BM25 and hybrid found evidence in their top five, while BM25 ranked it earlier on average. A separate bounded real-model run retained 23 responses and one timeout across 24 attempts. The deployed two-guide library is unchanged; this is a separate diagnostic corpus, with AI-reviewed rather than human-authored labels.
+
 The latest [112-question retrieval diagnostic](evaluation/METHODOLOGY_V2.md) covers 96 answerable intents and 16 unsupported questions. A separate AI agent checked the relevance labels against source excerpts before ranking. Hybrid found labelled evidence in its top five for **93/96** answerable intents; BM25 found it for **94/96**. Full results include per-topic breakdowns and every miss. This is authored diagnostic data, not an external or human-labelled benchmark.
 
 The [instruction/conflict/ambiguity run](evaluation/ADVERSARIAL.md) completed **12 real model calls**, passing all twelve pre-authored checks. It uses synthetic contexts to inspect prompt behavior; these results do not establish universal prompt-injection resistance. The answer prompt now explicitly separates untrusted passages, reports unresolved disagreement and asks for grounded clarification.
@@ -128,6 +130,8 @@ The [evaluation guide](evaluation/README.md) includes the dataset, commands and 
 A separate **18-request real model run** returned cited answers for 12 answerable questions and refusals for all six unsupported questions. **17/18** combined fixture checks passed; the remaining check was a regex false negative on a valid paraphrase, retained and explained. Provider usage totalled **28,631 tokens**. These are small public-document diagnostic runs, not a general accuracy or production-latency claim.
 
 ## Operating the application
+
+The [hosted preview workload](operations/HOSTED_WORKLOAD.md) exercises real Vercel, Redis admission, ONNX retrieval and usage accounting under an isolated deterministic provider. Its 16-query report retains individual timings and failure states, separate from real model performance. Preview credentials use temporary controls and separate Redis key prefixes; production has no public test bypass.
 
 [Daily observation snapshots](operations/README.md) collect protected, expiring aggregate latency, status, token and feedback counts. Signed checks remain separate from unsigned visitor requests. Collection retains no question text, answer text or visitor identity. Optional answer feedback uses fixed categories and one-use opaque tickets; it measures submitted helpfulness choices, not verified business impact. CI snapshots call no model and publish no secrets. Operational history and real feedback accumulate from actual use after enablement.
 

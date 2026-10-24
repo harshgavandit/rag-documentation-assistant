@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
+          fetch-depth: 0
       - name: Set up Python 3.12
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
@@ -38,6 +39,13 @@ jobs:
         run: python -m evaluation.verify_evidence
       - name: Validate frozen multi-domain diagnostic
         run: python -m evaluation.broader --check-build --validate-only --check-encoder
+      - name: Verify retained multi-domain retrieval and answer records
+        run: |
+          python -m evaluation.broader --verify-report evaluation/results/broader-v1-dev-2026-10-25.json
+          python -m evaluation.broader --verify-report evaluation/results/broader-v1-heldout-2026-10-25.json
+          python -m evaluation.broader_answers --verify-report evaluation/results/broader-v1-live-answers-2026-10-25.json
+      - name: Verify retained hosted workload source and accounting
+        run: python -m operations.verify_workload
       - name: Measure development query domains without paid providers
         run: python -m evaluation.broader --run-split dev --output evaluation/results/ci-broader-dev.json
       - name: Measure heldout query domains without paid providers

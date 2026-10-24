@@ -1,0 +1,1025 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-24T18:51:40.831567+00:00",
+  "scope": "Real provider generation with production answer guards and local ONNX retrieval over a separate frozen multi-domain diagnostic corpus. No hosted admission or real-user claim.",
+  "grading": "Expected refusal decisions and citation-label membership proxies only. Semantic correctness and independent human evaluation remain unmeasured.",
+  "requested_model": "gpt-6-luna",
+  "max_completion_tokens": 800,
+  "request_limit": 24,
+  "dataset_sha256": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679",
+  "corpus_sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5",
+  "source_commit": "272115fc1ed22121f95bc5a94237670d5dccff8a",
+  "working_tree_dirty": true,
+  "pricing": {
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "checked_date": "2026-10-25",
+    "service_tier": "standard",
+    "input_usd_per_million": 0.1,
+    "cached_input_usd_per_million": 0.01,
+    "output_usd_per_million": 0.5
+  },
+  "provider_requests": 24,
+  "source_snapshots": {
+    "web/app.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_app.py.txt",
+      "sha256": "e6fc3f5cbbae2a13b9ce3ee34130b8e3f9f61ef1cacd9add6d6997cf0bc6f6c0"
+    },
+    "web/engine.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_engine.py.txt",
+      "sha256": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e"
+    },
+    "web/grounding.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_grounding.py.txt",
+      "sha256": "d016320fd84976b44d33a958654510c4725f10ba0ef559f6d8371b6aea403f72"
+    },
+    "web/staging.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_staging.py.txt",
+      "sha256": "ba0381bf748e14b4e0d5ec461af528d97ddb0ea3a0787b72e716d3a1ccc01d8f"
+    },
+    "evaluation/broader_answers.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-evaluation_broader_answers.py.txt",
+      "sha256": "4a9b09a1cee46d5eeacf62d04bfd95746d8971348924f1f983dce50368ffac06"
+    },
+    "evaluation/request_budget.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-evaluation_request_budget.py.txt",
+      "sha256": "cacefcb7193ba27cc91d541a75c160e0a1671a72ac607223e7e7fd856ac96348"
+    }
+  },
+  "cases": [
+    {
+      "id": "docwise-v3-037",
+      "question": "Which business records are publicly discoverable in Agri Samaj, and who controls publication?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::001",
+        "community-README.md::004",
+        "community-README.md::006",
+        "community-README.md::002"
+      ],
+      "retrieval_ms": 6.92,
+      "status": "completed",
+      "result": {
+        "answer": "Only approved businesses are publicly discoverable in search and public profiles; drafts and unapproved applications are not public. Administrators control publication by reviewing applications and approving or rejecting listings. [Source: community-README.md, Section: What the platform does] [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: What the platform does]",
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 3,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1757,
+        "completion_tokens": 142,
+        "total_tokens": 1899,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 71
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Only approved businesses are publicly discoverable in search and public profiles; drafts and unapproved applications are not public. Administrators control publication by reviewing applications and approving or rejecting listings. [Source: community-README.md, Section: What the platform does] [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 4915.04,
+      "elapsed_ms": 4924.617
+    },
+    {
+      "id": "docwise-v3-038",
+      "question": "May the Agri Samaj assistant read private applications or execute account actions?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::002",
+        "community-README.md::001",
+        "community-README.md::006",
+        "community-README.md::004"
+      ],
+      "retrieval_ms": 4.959,
+      "status": "completed",
+      "result": {
+        "answer": "No. The assistant cannot read private applications or execute account actions; it uses public website content and approved listings. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Operational scope]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]",
+          "[Source: community-README.md, Section: Operational scope]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1754,
+        "completion_tokens": 91,
+        "total_tokens": 1845,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 35
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "No. The assistant cannot read private applications or execute account actions; it uses public website content and approved listings. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Operational scope]",
+      "provider_ms": 2770.957,
+      "elapsed_ms": 2779.268
+    },
+    {
+      "id": "docwise-v3-039",
+      "question": "Against what set does Agri Samaj validate the source identifiers returned by its assistant?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::002",
+        "cache-README.md::002",
+        "community-README.md::001",
+        "community-README.md::004"
+      ],
+      "retrieval_ms": 4.002,
+      "status": "completed",
+      "result": {
+        "answer": "Agri Samaj validates returned source identifiers against the retrieved set. [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2171,
+        "completion_tokens": 47,
+        "total_tokens": 2218,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 13
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Agri Samaj validates returned source identifiers against the retrieved set. [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 1670.751,
+      "elapsed_ms": 1677.912
+    },
+    {
+      "id": "docwise-v3-040",
+      "question": "What ownership checks precede storing an Agri Samaj business mutation, and how are profile and audit changes stored?",
+      "retrieved_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::001",
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "retrieval_ms": 4.419,
+      "status": "completed",
+      "result": {
+        "answer": "Before storing a business mutation, the server validates the account and verifies ownership of any uploaded files. It then stores the profile and audit changes together in a transaction. [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1804,
+        "completion_tokens": 108,
+        "total_tokens": 1912,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 55
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Before storing a business mutation, the server validates the account and verifies ownership of any uploaded files. It then stores the profile and audit changes together in a transaction. [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 2381.989,
+      "elapsed_ms": 2389.249
+    },
+    {
+      "id": "docwise-v3-041",
+      "question": "Which JWT properties and current account properties does an authenticated Agri Samaj request check?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::002",
+        "community-README.md::001",
+        "banking-README.md::001"
+      ],
+      "retrieval_ms": 3.17,
+      "status": "completed",
+      "result": {
+        "answer": "An authenticated Agri Samaj request checks the JWT’s algorithm, issuer, audience, and expiration, then loads the active account and its role. [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1785,
+        "completion_tokens": 82,
+        "total_tokens": 1867,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 32
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "An authenticated Agri Samaj request checks the JWT’s algorithm, issuer, audience, and expiration, then loads the active account and its role. [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 2440.349,
+      "elapsed_ms": 2448.581
+    },
+    {
+      "id": "docwise-v3-042",
+      "question": "Which Agri Samaj business directory filters are available, and can a visitor preserve filters or keep a private shortlist?",
+      "retrieved_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::002",
+        "community-README.md::006"
+      ],
+      "retrieval_ms": 4.309,
+      "status": "completed",
+      "result": {
+        "answer": "The directory supports filters by **name, category, district, and business type**. Search filters can be preserved and shared in a URL. Visitors can also save businesses to a **private account shortlist**. [Source: community-README.md, Section: What the platform does]",
+        "citations": [
+          "[Source: community-README.md, Section: What the platform does]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1762,
+        "completion_tokens": 121,
+        "total_tokens": 1883,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 56
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The directory supports filters by **name, category, district, and business type**. Search filters can be preserved and shared in a URL. Visitors can also save businesses to a **private account shortlist**. [Source: community-README.md, Section: What the platform does]",
+      "provider_ms": 2870.93,
+      "elapsed_ms": 2878.511
+    },
+    {
+      "id": "docwise-v3-043",
+      "question": "What authorizes an Agri Samaj generated voice reply, and how are its provider requests bounded?",
+      "retrieved_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::000",
+        "community-README.md::002",
+        "community-README.md::004",
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "retrieval_ms": 4.386,
+      "status": "completed",
+      "result": {
+        "answer": "A generated voice reply requires a signed, expiring token tied to a generated answer. Provider calls are bounded with cancellation signals and timeouts; the shared `ASSISTANT_HOURLY_LIMIT` also limits provider operations. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Run locally]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]",
+          "[Source: community-README.md, Section: Run locally]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2359,
+        "completion_tokens": 167,
+        "total_tokens": 2526,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 88
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "A generated voice reply requires a signed, expiring token tied to a generated answer. Provider calls are bounded with cancellation signals and timeouts; the shared `ASSISTANT_HOURLY_LIMIT` also limits provider operations. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Run locally]",
+      "provider_ms": 2736.717,
+      "elapsed_ms": 2744.947
+    },
+    {
+      "id": "docwise-v3-044",
+      "question": "What password length does Agri Samaj administrator seeding require, and does seeding overwrite existing accounts?",
+      "retrieved_chunk_ids": [
+        "community-README.md::004",
+        "community-README.md::000",
+        "cache-README.md::003",
+        "community-README.md::006",
+        "community-README.md::001"
+      ],
+      "retrieval_ms": 4.716,
+      "status": "completed",
+      "result": {
+        "answer": "Administrator seeding requires a unique password of at least 12 characters and at most 72 UTF-8 bytes. It does not overwrite existing accounts. [Source: community-README.md, Section: Run locally]",
+        "citations": [
+          "[Source: community-README.md, Section: Run locally]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2033,
+        "completion_tokens": 46,
+        "total_tokens": 2079,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Administrator seeding requires a unique password of at least 12 characters and at most 72 UTF-8 bytes. It does not overwrite existing accounts. [Source: community-README.md, Section: Run locally]",
+      "provider_ms": 2589.636,
+      "elapsed_ms": 2607.096
+    },
+    {
+      "id": "docwise-v3-045",
+      "question": "Which database isolation does the Agri Samaj browser runner use, and are provider calls on by default?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::005",
+        "realtime-README.md::006",
+        "realtime-README.md::005"
+      ],
+      "retrieval_ms": 4.578,
+      "status": "completed",
+      "result": {
+        "answer": "The browser runner creates an isolated schema in a dedicated local PostgreSQL database. Normal tests disable provider calls; live AI and Blob checks are explicit opt-ins. [Source: community-README.md, Section: Verification]",
+        "citations": [
+          "[Source: community-README.md, Section: Verification]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1843,
+        "completion_tokens": 46,
+        "total_tokens": 1889,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The browser runner creates an isolated schema in a dedicated local PostgreSQL database. Normal tests disable provider calls; live AI and Blob checks are explicit opt-ins. [Source: community-README.md, Section: Verification]",
+      "provider_ms": 1682.811,
+      "elapsed_ms": 1690.554
+    },
+    {
+      "id": "docwise-v3-046",
+      "question": "Where should Agri Samaj private uploads live on Vercel and when self-hosting?",
+      "retrieved_chunk_ids": [
+        "community-README.md::006",
+        "community-README.md::004",
+        "community-README.md::000",
+        "realtime-README.md::006",
+        "community-README.md::002"
+      ],
+      "retrieval_ms": 4.199,
+      "status": "error",
+      "error_type": "TimeoutError",
+      "http_status": null,
+      "provider_ms": 60691.642,
+      "elapsed_ms": 60708.536
+    },
+    {
+      "id": "docwise-v3-047",
+      "question": "What supporting identity document did the owner of the latest Agri Samaj business application upload?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::001",
+        "community-README.md::004",
+        "durable-ARCHITECTURE.md::001",
+        "community-README.md::002"
+      ],
+      "retrieval_ms": 3.144,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": null,
+        "retrieved_gold_chunk_count": 0,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1799,
+        "completion_tokens": 33,
+        "total_tokens": 1832,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 10
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "provider_ms": 3408.493,
+      "elapsed_ms": 3415.365
+    },
+    {
+      "id": "docwise-v3-048",
+      "question": "What exact rupee amount is the Agri Samaj premium advertisement package today?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::001",
+        "community-README.md::004",
+        "banking-README.md::001",
+        "cache-README.md::001"
+      ],
+      "retrieval_ms": 4.311,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": null,
+        "retrieved_gold_chunk_count": 0,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1497,
+        "completion_tokens": 31,
+        "total_tokens": 1528,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 8
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "provider_ms": 1926.08,
+      "elapsed_ms": 1991.486
+    },
+    {
+      "id": "docwise-v3-049",
+      "question": "In the durable-effects lab, what must commit before ingestion may return HTTP 202?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "durable-ARCHITECTURE.md::000",
+        "cache-README.md::002",
+        "cache-README.md::005",
+        "community-README.md::004"
+      ],
+      "retrieval_ms": 4.084,
+      "status": "completed",
+      "result": {
+        "answer": "A majority transaction must commit the ingestion job, idempotency scope, and outbox event before ingestion may return HTTP 202. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2663,
+        "completion_tokens": 47,
+        "total_tokens": 2710,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "A majority transaction must commit the ingestion job, idempotency scope, and outbox event before ingestion may return HTTP 202. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2526.692,
+      "elapsed_ms": 2533.656
+    },
+    {
+      "id": "docwise-v3-050",
+      "question": "In the durable-effects lab, how do leased relays and worker commit ordering handle duplicate queue delivery?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "durable-ARCHITECTURE.md::000",
+        "durable-ARCHITECTURE.md::001",
+        "banking-README.md::004",
+        "realtime-README.md::002"
+      ],
+      "retrieval_ms": 4.402,
+      "status": "completed",
+      "result": {
+        "answer": "A leased relay may publish the message twice if it crashes. Workers commit the product effect and terminal job state before acknowledging the queue message, so duplicate delivery results in one logical effect despite at-least-once transport. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2371,
+        "completion_tokens": 132,
+        "total_tokens": 2503,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 62
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "A leased relay may publish the message twice if it crashes. Workers commit the product effect and terminal job state before acknowledging the queue message, so duplicate delivery results in one logical effect despite at-least-once transport. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 4434.285,
+      "elapsed_ms": 4449.21
+    },
+    {
+      "id": "docwise-v3-051",
+      "question": "What happens in the catalog lab when a retry uses the same idempotency key with the same input versus changed input?",
+      "retrieved_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000",
+        "cache-README.md::002",
+        "durable-ARCHITECTURE.md::001",
+        "cache-README.md::005"
+      ],
+      "retrieval_ms": 7.882,
+      "status": "completed",
+      "result": {
+        "answer": "For a mutation, retrying with the same idempotency key and same input returns the saved response; using that key with changed input returns **409**. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2411,
+        "completion_tokens": 106,
+        "total_tokens": 2517,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 47
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "For a mutation, retrying with the same idempotency key and same input returns the saved response; using that key with changed input returns **409**. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2663.803,
+      "elapsed_ms": 2677.993
+    },
+    {
+      "id": "docwise-v3-052",
+      "question": "In the catalog lab, can a positive Redis cache entry authorize a revoked session, and which store is authoritative?",
+      "retrieved_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000",
+        "banking-README.md::005",
+        "cache-README.md::002",
+        "banking-README.md::002"
+      ],
+      "retrieval_ms": 4.546,
+      "status": "completed",
+      "result": {
+        "answer": "No. A positive Redis cache entry cannot authorize a revoked session; protected requests verify session and account state using authoritative Mongo reads. Mongo is the durable authority for sessions, while Redis is only rebuildable catalog-cache acceleration. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees] [Source: durable-ADR-0001.md, Section: ADR 0001: Canonical Express service and durable effects]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+          "[Source: durable-ADR-0001.md, Section: ADR 0001: Canonical Express service and durable effects]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2519,
+        "completion_tokens": 145,
+        "total_tokens": 2664,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 49
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "No. A positive Redis cache entry cannot authorize a revoked session; protected requests verify session and account state using authoritative Mongo reads. Mongo is the durable authority for sessions, while Redis is only rebuildable catalog-cache acceleration. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees] [Source: durable-ADR-0001.md, Section: ADR 0001: Canonical Express service and durable effects]",
+      "provider_ms": 2749.652,
+      "elapsed_ms": 2759.452
+    },
+    {
+      "id": "docwise-v3-053",
+      "question": "How stale can the catalog lab cache be, and what happens during Redis failure or fallback overload?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "cache-README.md::002",
+        "durable-ARCHITECTURE.md::000",
+        "cache-README.md::006",
+        "cache-README.md::004"
+      ],
+      "retrieval_ms": 4.014,
+      "status": "completed",
+      "result": {
+        "answer": "Catalog responses can be stale for at most 30 seconds from the start of the read; downward jitter may shorten that window. If Redis is unavailable, requests use a bounded Mongo fallback. If that fallback is overloaded, the service returns a visible 503. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2454,
+        "completion_tokens": 165,
+        "total_tokens": 2619,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 87
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Catalog responses can be stale for at most 30 seconds from the start of the read; downward jitter may shorten that window. If Redis is unavailable, requests use a bounded Mongo fallback. If that fallback is overloaded, the service returns a visible 503. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2954.829,
+      "elapsed_ms": 2964.491
+    },
+    {
+      "id": "docwise-v3-054",
+      "question": "Does the durable-effects lab document an operating cloud deployment or independently proven local fault domains?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "realtime-README.md::005",
+        "cache-README.md::006",
+        "durable-ARCHITECTURE.md::000",
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "retrieval_ms": 3.486,
+      "status": "completed",
+      "result": {
+        "answer": "No. Cloud operation is pending, and the local environment has one Mongo member and one host; separate containers demonstrate process/replica behavior, not independent fault domains. [Source: durable-ADR-0001.md, Section: ADR 0001: Canonical Express service and durable effects] [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ADR-0001.md, Section: ADR 0001: Canonical Express service and durable effects]",
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2176,
+        "completion_tokens": 129,
+        "total_tokens": 2305,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 43
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "No. Cloud operation is pending, and the local environment has one Mongo member and one host; separate containers demonstrate process/replica behavior, not independent fault domains. [Source: durable-ADR-0001.md, Section: ADR 0001: Canonical Express service and durable effects] [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2198.238,
+      "elapsed_ms": 2206.926
+    },
+    {
+      "id": "docwise-v3-055",
+      "question": "How does the durable-effects lab isolate repeatedly failing jobs, and how is redrive represented?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "durable-ARCHITECTURE.md::000",
+        "banking-README.md::005",
+        "cache-README.md::004",
+        "banking-README.md::002"
+      ],
+      "retrieval_ms": 4.289,
+      "status": "completed",
+      "result": {
+        "answer": "Repeatedly failing jobs are isolated after a bounded number of attempts, with a dead-letter queue shown in the architecture. Redrive is represented as an audited generation change. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2270,
+        "completion_tokens": 125,
+        "total_tokens": 2395,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 65
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Repeatedly failing jobs are isolated after a bounded number of attempts, with a dead-letter queue shown in the architecture. Redrive is represented as an audited generation change. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2617.444,
+      "elapsed_ms": 2626.56
+    },
+    {
+      "id": "docwise-v3-056",
+      "question": "What CPU, memory and worker allocations distinguish the lab vertical and horizontal serving profiles?",
+      "retrieved_chunk_ids": [
+        "durable-ARCHITECTURE.md::001",
+        "durable-ADR-0001.md::000",
+        "realtime-README.md::002",
+        "realtime-README.md::005",
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "retrieval_ms": 3.722,
+      "status": "completed",
+      "result": {
+        "answer": "The vertical profile runs four workers in one container allocated 4 CPU and 4 GiB of memory. The horizontal profile uses four API containers, each allocated 1 CPU and 1 GiB of memory. [Source: durable-ARCHITECTURE.md, Section: Configuration and boundaries]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Configuration and boundaries]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2473,
+        "completion_tokens": 145,
+        "total_tokens": 2618,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 77
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The vertical profile runs four workers in one container allocated 4 CPU and 4 GiB of memory. The horizontal profile uses four API containers, each allocated 1 CPU and 1 GiB of memory. [Source: durable-ARCHITECTURE.md, Section: Configuration and boundaries]",
+      "provider_ms": 2988.573,
+      "elapsed_ms": 2997.001
+    },
+    {
+      "id": "docwise-v3-057",
+      "question": "What identity and evidence connect the lab tested container image to production promotion?",
+      "retrieved_chunk_ids": [
+        "durable-ARCHITECTURE.md::001",
+        "durable-ADR-0001.md::000",
+        "cache-README.md::001",
+        "banking-README.md::005",
+        "cache-README.md::004"
+      ],
+      "retrieval_ms": 5.821,
+      "status": "completed",
+      "result": {
+        "answer": "The container’s runtime source identity is recorded in an OCI image label. CI exports and hashes the tested image archive, which is security-scanned; publication verifies identity, durability, scan, and operational evidence before signing the registry digest. Production then promotes that same tested digest and requires real staging business and SLO evidence. [Source: durable-ARCHITECTURE.md, Section: Configuration and boundaries]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Configuration and boundaries]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1388,
+        "completion_tokens": 173,
+        "total_tokens": 1561,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 84
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The container’s runtime source identity is recorded in an OCI image label. CI exports and hashes the tested image archive, which is security-scanned; publication verifies identity, durability, scan, and operational evidence before signing the registry digest. Production then promotes that same tested digest and requires real staging business and SLO evidence. [Source: durable-ARCHITECTURE.md, Section: Configuration and boundaries]",
+      "provider_ms": 2645.276,
+      "elapsed_ms": 2656.414
+    },
+    {
+      "id": "docwise-v3-058",
+      "question": "Which stale-address connection timeout, upstream-attempt bound and total retry budget does the lab gateway document?",
+      "retrieved_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "cache-README.md::002",
+        "realtime-README.md::002",
+        "realtime-README.md::005",
+        "cache-README.md::006"
+      ],
+      "retrieval_ms": 4.181,
+      "status": "completed",
+      "result": {
+        "answer": "The lab gateway documents a **250 ms stale-address connection timeout**, **up to four upstream attempts**, and a **four-second total retry budget**. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2677,
+        "completion_tokens": 111,
+        "total_tokens": 2788,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 54
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The lab gateway documents a **250 ms stale-address connection timeout**, **up to four upstream attempts**, and a **four-second total retry budget**. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2361.238,
+      "elapsed_ms": 2370.241
+    },
+    {
+      "id": "docwise-v3-059",
+      "question": "How many seconds did the lab measured multi-AZ cloud failover take during its last production outage?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "durable-ARCHITECTURE.md::000",
+        "cache-README.md::005",
+        "realtime-README.md::005",
+        "banking-README.md::002"
+      ],
+      "retrieval_ms": 5.165,
+      "status": "completed",
+      "result": {
+        "answer": "I could not find an answer to this question in the provided documentation.",
+        "citations": [],
+        "refused": true
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": true,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": null,
+        "retrieved_gold_chunk_count": 0,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2497,
+        "completion_tokens": 48,
+        "total_tokens": 2545,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 25
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "I could not find an answer to this question in the provided documentation.",
+      "provider_ms": 1423.009,
+      "elapsed_ms": 1433.465
+    },
+    {
+      "id": "docwise-v3-060",
+      "question": "Which payment processor settles stock purchases in the durable-effects catalog lab?",
+      "retrieved_chunk_ids": [
+        "durable-ADR-0001.md::000",
+        "community-README.md::006",
+        "banking-README.md::005",
+        "durable-ARCHITECTURE.md::000",
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "retrieval_ms": 4.666,
+      "status": "completed",
+      "result": {
+        "answer": "The catalog lab does not specify a payment processor; stock and payments are outside its acceptance contract. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+        "citations": [
+          "[Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": false,
+        "refused": false,
+        "expected_refusal_matches": false,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 0,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1857,
+        "completion_tokens": 133,
+        "total_tokens": 1990,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 87
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The catalog lab does not specify a payment processor; stock and payments are outside its acceptance contract. [Source: durable-ARCHITECTURE.md, Section: Architecture and data guarantees]",
+      "provider_ms": 2164.629,
+      "elapsed_ms": 2175.517
+    }
+  ],
+  "summary": {
+    "attempted_cases": 24,
+    "completed_cases": 23,
+    "error_cases": 1,
+    "decision_proxies_passed": 22,
+    "non_refusal_label_proxies_passed": 20,
+    "unsupported_refusals": 3,
+    "known_token_subtotals": {
+      "prompt_tokens": 48320,
+      "completion_tokens": 2373,
+      "total_tokens": 50693
+    },
+    "records_with_complete_usage": 23,
+    "records_priced_from_returned_usage": 23,
+    "returned_usage_estimate_usd": 0.0060185,
+    "cost_scope": "Published Standard-rate estimate for returned complete usage and cached-input counters only; not a provider invoice or complete billed-cost reconciliation.",
+    "human_evaluated_answers": 0
+  },
+  "continuation_segments": [
+    {
+      "segment_index": 1,
+      "recorded_at_utc": "2026-10-24T19:00:48.390590+00:00",
+      "source_commit": "4f9d892d021a9c2fd97832306a10abe3e87ab754",
+      "working_tree_dirty": true,
+      "before_case_count": 10,
+      "budget_authorization": "user-approved-2026-10-25-24-additional",
+      "request_limit": 24,
+      "max_completion_tokens": 800,
+      "ledger_path_sha256": "c069cd6ea0e116af8118bf127038863fac989b19f655f3a3905acab4ff93ad08",
+      "before_report": {
+        "path": "sources/broader-v1-live-answers-2026-10-25-continuation-01-before-report.txt",
+        "sha256": "77b15156fef3de37a1aa73ac044265d20d9b66f868717e5de48ff9ae225d675f"
+      },
+      "runner_source": {
+        "path": "sources/broader-v1-live-answers-2026-10-25-continuation-01-runner.txt",
+        "sha256": "e91b29a229d1eafa076ded8ee7d54c8d8a26bbb8edb196637a0fd172ce0c3f9c"
+      }
+    }
+  ]
+}

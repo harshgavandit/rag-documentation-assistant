@@ -1,0 +1,46 @@
+{
+  "annotation_revision": 2,
+  "answerable_case_count": 50,
+  "benchmark_id": "docwise-broader-diagnostic-v1",
+  "case_count": 60,
+  "dev_case_count": 36,
+  "domains": [
+    "banking",
+    "cache",
+    "realtime",
+    "community",
+    "durable_jobs"
+  ],
+  "files": {
+    "annotation_history/revision1-dev.json": "e64b033025f26b4e880e4152344027ac4bf5d3a9454a3723c69c36871f61e612",
+    "annotation_history/revision1-freeze.json": "3f0c756f67a9113184e823962290c0216a70012d80c13bb2e93529ac83d83dbb",
+    "annotation_history/revision1-heldout.json": "fd183ef306c9825cbe80c28b37214eef191cf9a8b0b541366fd179f36b45f6f3",
+    "corpus.json": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5",
+    "dev.json": "65786a6cd08d1911c5d172fadd6654f48e07a18a187b985a2d20fcde6fe032d2",
+    "heldout.json": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679",
+    "manifest.json": "43bb69a2fc3280969d5c8b9e6ad4d352516326bb702f4bdb8720cebd2c4e991e",
+    "source_review.json": "36c88af4f8a473aecae7143aa570e0ce0599c8f4f4e8a2b5fbb3f87697a89627",
+    "sources/banking-README.md": "76da247eb67b79826f3b3d1ccdda93c59e1f4b7ddd01d9ede994c949968d2b94",
+    "sources/cache-README.md": "1a0406b46ebd7d84597c5be8ab3d919417cefa38202eb345f7988983996b3cc7",
+    "sources/community-README.md": "58b061f81db279fb4704ad7dfc63a724836d1a5cd346ba979a45d8eac8f9ddf1",
+    "sources/durable-ADR-0001.md": "152d095d5848f7ba2e0f0819c04b5d6d1f26f64ec12f3069ec3927d1ec4c14cd",
+    "sources/durable-ARCHITECTURE.md": "530d00a0573dc5bf05e7448663222130683e616640a93176fe892f818f1bde4e",
+    "sources/realtime-README.md": "f0241afc3e95a88f65946a405f3374bfd338f796e5573fef733afc36028936d5"
+  },
+  "frozen_on": "2026-10-25",
+  "heldout_case_count": 24,
+  "historical_reports_changed": false,
+  "provider_requests_made": 0,
+  "retrieval_tuning_performed": false,
+  "schema_version": 1,
+  "source_review": {
+    "before_any_broader_retrieval": true,
+    "case_count_reviewed": 60,
+    "human_labeled": false,
+    "previous_freeze_sha256": "3f0c756f67a9113184e823962290c0216a70012d80c13bb2e93529ac83d83dbb",
+    "record": "source_review.json",
+    "reviewer_kind": "independent_AI_agent",
+    "status": "completed_independent_agent_review"
+  },
+  "status": "frozen_after_independent_agent_source_review_before_any_broader_retrieval"
+}

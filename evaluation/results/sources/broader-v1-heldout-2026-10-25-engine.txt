@@ -1,0 +1,60 @@
+"""Lightweight, read-only ONNX hybrid retrieval for the Vercel web application."""
+from functools import lru_cache
+import json
+from pathlib import Path
+import re
+import threading
+
+import numpy as np
+import onnxruntime as ort
+from rank_bm25 import BM25Okapi
+from tokenizers import Tokenizer
+
+ROOT=Path(__file__).resolve().parent
+
+
+class Index:
+    """Cache model, normalized corpus vectors and BM25 once per warm instance."""
+    def __init__(self, chunks: list[dict] | None = None) -> None:
+        # Explicit evaluation corpora never replace the deployed read-only corpus.
+        self.chunks=json.loads((ROOT/'data/corpus.json').read_text(encoding='utf-8')) if chunks is None else chunks
+        options=ort.SessionOptions()
+        options.intra_op_num_threads=2
+        options.inter_op_num_threads=1
+        self.session=ort.InferenceSession(str(ROOT/'models/model.onnx'),sess_options=options,providers=['CPUExecutionProvider'])
+        self.tokenizer=Tokenizer.from_file(str(ROOT/'models/tokenizer.json'))
+        self.tokenizer.enable_truncation(max_length=256)
+        self.tokenizer.enable_padding()
+        self.lock=threading.Lock()
+        self.vectors=self.encode([chunk['content'] for chunk in self.chunks])
+        self.bm25=BM25Okapi([re.findall(r'\w+',chunk['content'].lower()) or [''] for chunk in self.chunks])
+
+    def encode(self,texts:list[str]) -> np.ndarray:
+        """Apply attention-mask mean pooling and L2 normalization, as MiniLM expects."""
+        with self.lock:
+            tokens=self.tokenizer.encode_batch(texts)
+        ids=np.array([t.ids for t in tokens],dtype=np.int64)
+        mask=np.array([t.attention_mask for t in tokens],dtype=np.int64)
+        inputs={'input_ids':ids,'attention_mask':mask,'token_type_ids':np.zeros_like(ids)}
+        hidden=self.session.run(None,{i.name:inputs[i.name] for i in self.session.get_inputs()})[0]
+        pooled=(hidden*mask[:,:,None]).sum(axis=1)/np.maximum(mask.sum(axis=1,keepdims=True),1)
+        return pooled/np.maximum(np.linalg.norm(pooled,axis=1,keepdims=True),1e-12)
+
+    def search(self,question:str,top_k:int=5) -> list[dict]:
+        """Fuse positive BM25 ranks and cosine similarity ranks using RRF."""
+        vector_scores=self.vectors@self.encode([question])[0]
+        keywords=self.bm25.get_scores(re.findall(r'\w+',question.lower()))
+        lexical=sorted((i for i,s in enumerate(keywords) if s>0),key=lambda i:keywords[i],reverse=True)[:top_k*2]
+        semantic=np.argsort(-vector_scores)[:top_k*2].tolist()
+        scores={}
+        for ranking in (lexical,semantic):
+            for rank,i in enumerate(ranking,1):
+                scores[i]=scores.get(i,0)+1/(60+rank)
+        ordered=sorted(scores,key=lambda i:scores[i],reverse=True)[:top_k]
+        return [dict(self.chunks[i],score=round(scores[i],6),similarity=round(float(vector_scores[i]),4),rank=r) for r,i in enumerate(ordered,1)]
+
+
+@lru_cache(maxsize=1)
+def get_index() -> Index:
+    """Reuse the immutable index on warm instances."""
+    return Index()

@@ -1,0 +1,719 @@
+{
+  "annotation_revision": 1,
+  "authorship": "Authored by an AI agent from exact public repository snapshots before any broader retrieval rankings. A separate agent reviews source labels before ranking. Same original documentation author across domains; no independent human annotation claim.",
+  "cases": [
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::001",
+          "excerpt": "Only approved businesses appear in public search."
+        },
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "Public queries select approved records; draft documents and owner fields have separate access checks."
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "excerpt": "Business and advertisement publication requires administrator review."
+        }
+      ],
+      "id": "docwise-v3-037",
+      "intent_id": "community_publication_approval",
+      "question": "Which business records are publicly discoverable in Agri Samaj, and who controls publication?",
+      "relevant_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::002",
+        "community-README.md::006"
+      ],
+      "tags": [
+        "community",
+        "multi_section",
+        "privacy"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "Context comes from public content and approved listings."
+        },
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "The assistant cannot read private applications or execute account actions."
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "excerpt": "The assistant uses published website content. It has no live web search and cannot approve applications, verify payments or change accounts."
+        }
+      ],
+      "id": "docwise-v3-038",
+      "intent_id": "community_assistant_private_boundary",
+      "question": "May the Agri Samaj assistant read private applications or execute account actions?",
+      "relevant_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::006"
+      ],
+      "tags": [
+        "community",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "Returned source identifiers are checked against the retrieved set."
+        }
+      ],
+      "id": "docwise-v3-039",
+      "intent_id": "community_source_membership",
+      "question": "Against what set does Agri Samaj validate the source identifiers returned by its assistant?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "Business mutations validate the account and uploaded-file ownership before storing profile and audit changes in a transaction."
+        }
+      ],
+      "id": "docwise-v3-040",
+      "intent_id": "community_upload_ownership",
+      "question": "What ownership checks precede storing an Agri Samaj business mutation, and how are profile and audit changes stored?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation",
+        "privacy"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "JWT verification checks algorithm, issuer, audience and expiration; authenticated requests also load the active account and role."
+        }
+      ],
+      "id": "docwise-v3-041",
+      "intent_id": "community_jwt_and_account",
+      "question": "Which JWT properties and current account properties does an authenticated Agri Samaj request check?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::001",
+          "excerpt": "Search by name, category, district or business type. Open public profiles, share search filters as URLs and save businesses to a private account shortlist."
+        }
+      ],
+      "id": "docwise-v3-042",
+      "intent_id": "community_directory_and_shortlists",
+      "question": "Which Agri Samaj business directory filters are available, and can a visitor preserve filters or keep a private shortlist?",
+      "relevant_chunk_ids": [
+        "community-README.md::001"
+      ],
+      "tags": [
+        "community",
+        "workflow"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "Voice replies require a signed, expiring token for a generated answer; provider calls receive cancellation signals and timeouts."
+        }
+      ],
+      "id": "docwise-v3-043",
+      "intent_id": "community_generated_voice_control",
+      "question": "What authorizes an Agri Samaj generated voice reply, and how are its provider requests bounded?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::004",
+          "excerpt": "Use a unique password of at least 12 characters and at most 72 UTF-8 bytes. Existing accounts are not overwritten."
+        }
+      ],
+      "id": "docwise-v3-044",
+      "intent_id": "community_admin_seed",
+      "question": "What password length does Agri Samaj administrator seeding require, and does seeding overwrite existing accounts?",
+      "relevant_chunk_ids": [
+        "community-README.md::004"
+      ],
+      "tags": [
+        "community",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::005",
+          "excerpt": "The runner creates an isolated schema and synthetic fixtures; never point tests at the deployed application database. Normal tests disable provider calls. Live AI and Blob checks are explicit opt-ins"
+        }
+      ],
+      "id": "docwise-v3-045",
+      "intent_id": "community_isolated_browser_tests",
+      "question": "Which database isolation does the Agri Samaj browser runner use, and are provider calls on by default?",
+      "relevant_chunk_ids": [
+        "community-README.md::005"
+      ],
+      "tags": [
+        "community",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "community",
+      "evidence": [
+        {
+          "chunk_id": "community-README.md::002",
+          "excerpt": "Private files: Vercel Blob or local storage"
+        },
+        {
+          "chunk_id": "community-README.md::004",
+          "excerpt": "Optional private durable directory for local uploads, outside `public/`."
+        },
+        {
+          "chunk_id": "community-README.md::004",
+          "excerpt": "Private Blob store on Vercel; keep it server-side."
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "excerpt": "On Vercel, use PostgreSQL and a **private** Blob store. Local filesystem uploads require durable private storage when self-hosting."
+        }
+      ],
+      "id": "docwise-v3-046",
+      "intent_id": "community_private_file_storage",
+      "question": "Where should Agri Samaj private uploads live on Vercel and when self-hosting?",
+      "relevant_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::004",
+        "community-README.md::006"
+      ],
+      "tags": [
+        "community",
+        "multi_section",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": false,
+      "domain": "community",
+      "evidence": [],
+      "id": "docwise-v3-047",
+      "intent_id": "community_private_application_details",
+      "question": "What supporting identity document did the owner of the latest Agri Samaj business application upload?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "community",
+        "unsupported"
+      ],
+      "unsupported_reason": "Only public repository documentation is frozen. It contains no private application records, and the described assistant cannot read private applications."
+    },
+    {
+      "answerable": false,
+      "domain": "community",
+      "evidence": [],
+      "id": "docwise-v3-048",
+      "intent_id": "community_advertisement_price",
+      "question": "What exact rupee amount is the Agri Samaj premium advertisement package today?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "community",
+        "unsupported"
+      ],
+      "unsupported_reason": "The README mentions choosing advertisement packages and manually reviewed references but contains no package price or current pricing table."
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Ingestion returns 202 only after a majority transaction commits the job, idempotency scope and outbox event."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "Mongo is the durable authority for sessions, idempotency receipts, ingestion jobs and outbox. Majority transactions connect acknowledgement to persisted work."
+        }
+      ],
+      "id": "docwise-v3-049",
+      "intent_id": "durable_jobs_accepted_ingestion",
+      "question": "In the durable-effects lab, what must commit before ingestion may return HTTP 202?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "durability"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "A leased relay publishes a versioned message and can publish twice after a crash. Workers commit the product effect and terminal state before acknowledging the message. Duplicate transport produces one logical effect. This is at-least-once transport with idempotent effects."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "SQS provides at-least-once delivery; leased workers and unique transactional effects tolerate duplicates."
+        }
+      ],
+      "id": "docwise-v3-050",
+      "intent_id": "durable_jobs_duplicate_delivery",
+      "question": "In the durable-effects lab, how do leased relays and worker commit ordering handle duplicate queue delivery?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "durability"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Mutations store an idempotency receipt and their effects in one majority transaction. A retry with the same key and input returns the saved response; changed input returns 409."
+        }
+      ],
+      "id": "docwise-v3-051",
+      "intent_id": "durable_jobs_idempotency_mismatch",
+      "question": "What happens in the catalog lab when a retry uses the same idempotency key with the same input versus changed input?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Protected requests verify authoritative Mongo sessions and account state through bounded linearizable primary reads."
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Redis cannot authorize a revoked session."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "Private authorization never depends on positive Redis cache entries."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "Mongo is the durable authority for sessions, idempotency receipts, ingestion jobs and outbox."
+        }
+      ],
+      "id": "docwise-v3-052",
+      "intent_id": "durable_jobs_cache_cannot_authorize",
+      "question": "In the catalog lab, can a positive Redis cache entry authorize a revoked session, and which store is authoritative?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "privacy"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Redis holds public catalog responses for at most 30 seconds from read start, with downward jitter, namespace invalidation, bounded payloads and per-process single-flight."
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "A Redis outage uses a bounded Mongo fallback; overload is a visible 503."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "a 30-second catalog TTL permits explicitly bounded staleness"
+        }
+      ],
+      "id": "docwise-v3-053",
+      "intent_id": "durable_jobs_catalog_cache_failure",
+      "question": "How stale can the catalog lab cache be, and what happens during Redis failure or fallback overload?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "The local environment has one Mongo member and one host. Separate containers prove process/replica behavior, not independent fault domains."
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "That architecture remains undeployed while cloud configuration is absent."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "Status: accepted for implementation, cloud operation pending."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "Local Compose supplies repeatable failure tests but cannot establish cloud AZ or PIT recovery."
+        }
+      ],
+      "id": "docwise-v3-054",
+      "intent_id": "durable_jobs_cloud_and_fault_domains",
+      "question": "Does the durable-effects lab document an operating cloud deployment or independently proven local fault domains?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Failed jobs are isolated after bounded attempts; redrive is an audited generation change."
+        }
+      ],
+      "id": "docwise-v3-055",
+      "intent_id": "durable_jobs_failure_redrive",
+      "question": "How does the durable-effects lab isolate repeatedly failing jobs, and how is redrive represented?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::001",
+          "excerpt": "The vertical entrypoint starts four workers in one 4 CPU/4 GiB container. Horizontal uses four 1 CPU/1 GiB API containers."
+        }
+      ],
+      "id": "docwise-v3-056",
+      "intent_id": "durable_jobs_fair_replica_resources",
+      "question": "What CPU, memory and worker allocations distinguish the lab vertical and horizontal serving profiles?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "tags": [
+        "durable_jobs",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::001",
+          "excerpt": "Runtime source identity is recorded in an OCI image label. CI exports and hashes the tested image archive; security checks scan that archive; publication verifies identity, durability, scan and operational evidence before signing the registry digest. Production promotes the same tested digest and requires real staging business and SLO evidence."
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "excerpt": "protected digest promotion meet the scope"
+        }
+      ],
+      "id": "docwise-v3-057",
+      "intent_id": "durable_jobs_tested_digest",
+      "question": "What identity and evidence connect the lab tested container image to production promotion?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::001",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "durable_jobs",
+      "evidence": [
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "excerpt": "Local gateway stale-address connection attempts are bounded to 250 milliseconds, with up to four upstream attempts within a four-second total retry budget."
+        }
+      ],
+      "id": "docwise-v3-058",
+      "intent_id": "durable_jobs_gateway_retry_budget",
+      "question": "Which stale-address connection timeout, upstream-attempt bound and total retry budget does the lab gateway document?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": false,
+      "domain": "durable_jobs",
+      "evidence": [],
+      "id": "docwise-v3-059",
+      "intent_id": "durable_jobs_cloud_failover_result",
+      "question": "How many seconds did the lab measured multi-AZ cloud failover take during its last production outage?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "durable_jobs",
+        "unsupported"
+      ],
+      "unsupported_reason": "The captured architecture explicitly says cloud operation remains undeployed and local containers do not prove independent fault domains. There is no measured multi-AZ production failover result."
+    },
+    {
+      "answerable": false,
+      "domain": "durable_jobs",
+      "evidence": [],
+      "id": "docwise-v3-060",
+      "intent_id": "durable_jobs_payment_processor",
+      "question": "Which payment processor settles stock purchases in the durable-effects catalog lab?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "durable_jobs",
+        "unsupported"
+      ],
+      "unsupported_reason": "Stock and payments are explicitly outside the catalog lab acceptance contract. No settlement processor is specified in the frozen documents."
+    }
+  ],
+  "corpus": {
+    "chunk_count": 32,
+    "chunk_id_format": "<metadata.doc_title>::<metadata.chunk_index padded to 3 digits>",
+    "encoder_input_diagnostics": {
+      "chunk_count": 32,
+      "encoder_token_limit": 256,
+      "interpretation": "Production encoder truncates each chunk to 256 tokens. Original heading chunking is preserved; BM25 still sees full chunk text.",
+      "maximum_untruncated_tokens": 785,
+      "per_chunk_untruncated_tokens": [
+        {
+          "chunk_id": "banking-README.md::000",
+          "token_count": 187
+        },
+        {
+          "chunk_id": "banking-README.md::001",
+          "token_count": 139
+        },
+        {
+          "chunk_id": "banking-README.md::002",
+          "token_count": 459
+        },
+        {
+          "chunk_id": "banking-README.md::003",
+          "token_count": 492
+        },
+        {
+          "chunk_id": "banking-README.md::004",
+          "token_count": 287
+        },
+        {
+          "chunk_id": "banking-README.md::005",
+          "token_count": 80
+        },
+        {
+          "chunk_id": "cache-README.md::000",
+          "token_count": 209
+        },
+        {
+          "chunk_id": "cache-README.md::001",
+          "token_count": 72
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "token_count": 581
+        },
+        {
+          "chunk_id": "cache-README.md::003",
+          "token_count": 756
+        },
+        {
+          "chunk_id": "cache-README.md::004",
+          "token_count": 316
+        },
+        {
+          "chunk_id": "cache-README.md::005",
+          "token_count": 213
+        },
+        {
+          "chunk_id": "cache-README.md::006",
+          "token_count": 134
+        },
+        {
+          "chunk_id": "realtime-README.md::000",
+          "token_count": 119
+        },
+        {
+          "chunk_id": "realtime-README.md::001",
+          "token_count": 146
+        },
+        {
+          "chunk_id": "realtime-README.md::002",
+          "token_count": 458
+        },
+        {
+          "chunk_id": "realtime-README.md::003",
+          "token_count": 47
+        },
+        {
+          "chunk_id": "realtime-README.md::004",
+          "token_count": 294
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "token_count": 455
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "token_count": 236
+        },
+        {
+          "chunk_id": "realtime-README.md::007",
+          "token_count": 120
+        },
+        {
+          "chunk_id": "community-README.md::000",
+          "token_count": 151
+        },
+        {
+          "chunk_id": "community-README.md::001",
+          "token_count": 244
+        },
+        {
+          "chunk_id": "community-README.md::002",
+          "token_count": 398
+        },
+        {
+          "chunk_id": "community-README.md::003",
+          "token_count": 63
+        },
+        {
+          "chunk_id": "community-README.md::004",
+          "token_count": 481
+        },
+        {
+          "chunk_id": "community-README.md::005",
+          "token_count": 234
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "token_count": 124
+        },
+        {
+          "chunk_id": "community-README.md::007",
+          "token_count": 126
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "token_count": 785
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::001",
+          "token_count": 154
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "token_count": 280
+        }
+      ],
+      "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "truncated_chunk_count": 13
+    },
+    "path": "evaluation/broader_v1/corpus.json",
+    "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+  },
+  "dataset_id": "docwise-broader-v1-heldout",
+  "domains": [
+    "community",
+    "durable_jobs"
+  ],
+  "freeze": {
+    "answerable_cases": 20,
+    "case_count": 24,
+    "production_corpus_changed": false,
+    "production_ranking_changed": false,
+    "status": "authored_before_broader_retrieval_pending_independent_source_review",
+    "unsupported_cases": 4
+  },
+  "frozen_on": "2026-10-25",
+  "gold_policy": "Binary chunk relevance: every known chunk directly supporting at least one explicitly requested proposition is labeled, including alternative summaries. Heading-only mentions do not count. Exact supporting excerpts demonstrate text presence, not independent entailment or completeness. Recall counts relevant chunks, not answer-component coverage.",
+  "label": "Authored multi-domain diagnostic heldout query partition; not an external benchmark or independent human labels",
+  "limitations": "Five domains from six public repository documents by the same author. Not an external benchmark, independently human-labeled dataset, production traffic or generated-answer evaluation. Domain-separated query diagnostic splits; all documents are available to retrieval. The durable-jobs source describes an implementation lab with undeployed cloud operation. Production retrieval is unchanged apart from explicit corpus injection. No ranking or threshold tuning before this frozen diagnostic. Thirteen of 32 chunks exceed the encoder 256-token limit; complete source chunks remain available to BM25 and generation context.",
+  "partition": "heldout",
+  "schema_version": 1,
+  "scope": "Statements describe the six source documents at their pinned revisions, not independent verification of runtime behavior or deployed features. All documents are available to retrieval; the heldout query partition separates domains and is not a hidden external research test."
+}

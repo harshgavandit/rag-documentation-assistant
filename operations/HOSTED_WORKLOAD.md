@@ -1,5 +1,9 @@
 # Hosted workload diagnostic
 
+The [25 October run](results/hosted-staging-verified-config-2026-10-25.json) completed all 16 query attempts and four auxiliary reads on an actual preview deployment. The recorded statuses were six `200`, seven `429`, two `502` and one `503`, exactly matching the scenarios and limits. Signed synthetic accounting matched all expected totals; visitor counters stayed zero. The [cleanup record](results/hosted-staging-cleanup-2026-10-25.json) confirms the temporary project token was revoked and the preview deleted. Earlier setup probes remain alongside the successful report: one stopped at Vercel authentication and another at redacted configuration, each before any query POST.
+
+Verify the retained report and exact Git source binding offline with `python -m operations.verify_workload` (full Git history is required for the measured commit). CI runs this check plus corruption regressions. Hashes establish internal consistency, not independent attestation or a production SLO.
+
 `hosted_workload.py` measures the deployed Vercel FastAPI, Redis admission, ONNX retrieval, answer guards and usage-accounting path on an isolated **preview**. The provider is deterministic and cannot contact OpenAI. These timings do not measure model latency, sustained service capacity, real visitor outcomes or an availability SLO.
 
 The production app is unchanged unless staging is explicitly configured. An enabled or malformed staging flag on a production deployment fails closed. Preview queries require two distinct private tokens and a fixed scenario allowlist before admission. The adapter requires the dummy key `staging-unused-no-provider`, preview environment, exact committed source SHA, isolated namespace nonce, fixed request limits and fixture pricing. Protected provenance checks the deployed source/model hashes, Vercel deployment identity and installed runtime versions. No query can select arbitrary endpoints, code, model or delays.

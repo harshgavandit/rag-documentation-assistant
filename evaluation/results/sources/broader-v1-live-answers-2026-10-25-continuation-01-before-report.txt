@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-24T18:51:40.831567+00:00",
+  "scope": "Real provider generation with production answer guards and local ONNX retrieval over a separate frozen multi-domain diagnostic corpus. No hosted admission or real-user claim.",
+  "grading": "Expected refusal decisions and citation-label membership proxies only. Semantic correctness and independent human evaluation remain unmeasured.",
+  "requested_model": "gpt-6-luna",
+  "max_completion_tokens": 800,
+  "request_limit": 24,
+  "dataset_sha256": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679",
+  "corpus_sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5",
+  "source_commit": "272115fc1ed22121f95bc5a94237670d5dccff8a",
+  "working_tree_dirty": true,
+  "pricing": {
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "checked_date": "2026-10-25",
+    "service_tier": "standard",
+    "input_usd_per_million": 0.1,
+    "cached_input_usd_per_million": 0.01,
+    "output_usd_per_million": 0.5
+  },
+  "provider_requests": 10,
+  "source_snapshots": {
+    "web/app.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_app.py.txt",
+      "sha256": "e6fc3f5cbbae2a13b9ce3ee34130b8e3f9f61ef1cacd9add6d6997cf0bc6f6c0"
+    },
+    "web/engine.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_engine.py.txt",
+      "sha256": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e"
+    },
+    "web/grounding.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_grounding.py.txt",
+      "sha256": "d016320fd84976b44d33a958654510c4725f10ba0ef559f6d8371b6aea403f72"
+    },
+    "web/staging.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-web_staging.py.txt",
+      "sha256": "ba0381bf748e14b4e0d5ec461af528d97ddb0ea3a0787b72e716d3a1ccc01d8f"
+    },
+    "evaluation/broader_answers.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-evaluation_broader_answers.py.txt",
+      "sha256": "4a9b09a1cee46d5eeacf62d04bfd95746d8971348924f1f983dce50368ffac06"
+    },
+    "evaluation/request_budget.py": {
+      "path": "sources/broader-v1-live-answers-2026-10-25-evaluation_request_budget.py.txt",
+      "sha256": "cacefcb7193ba27cc91d541a75c160e0a1671a72ac607223e7e7fd856ac96348"
+    }
+  },
+  "cases": [
+    {
+      "id": "docwise-v3-037",
+      "question": "Which business records are publicly discoverable in Agri Samaj, and who controls publication?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::001",
+        "community-README.md::004",
+        "community-README.md::006",
+        "community-README.md::002"
+      ],
+      "retrieval_ms": 6.92,
+      "status": "completed",
+      "result": {
+        "answer": "Only approved businesses are publicly discoverable in search and public profiles; drafts and unapproved applications are not public. Administrators control publication by reviewing applications and approving or rejecting listings. [Source: community-README.md, Section: What the platform does] [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: What the platform does]",
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 3,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1757,
+        "completion_tokens": 142,
+        "total_tokens": 1899,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 71
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Only approved businesses are publicly discoverable in search and public profiles; drafts and unapproved applications are not public. Administrators control publication by reviewing applications and approving or rejecting listings. [Source: community-README.md, Section: What the platform does] [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 4915.04,
+      "elapsed_ms": 4924.617
+    },
+    {
+      "id": "docwise-v3-038",
+      "question": "May the Agri Samaj assistant read private applications or execute account actions?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::002",
+        "community-README.md::001",
+        "community-README.md::006",
+        "community-README.md::004"
+      ],
+      "retrieval_ms": 4.959,
+      "status": "completed",
+      "result": {
+        "answer": "No. The assistant cannot read private applications or execute account actions; it uses public website content and approved listings. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Operational scope]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]",
+          "[Source: community-README.md, Section: Operational scope]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1754,
+        "completion_tokens": 91,
+        "total_tokens": 1845,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 35
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "No. The assistant cannot read private applications or execute account actions; it uses public website content and approved listings. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Operational scope]",
+      "provider_ms": 2770.957,
+      "elapsed_ms": 2779.268
+    },
+    {
+      "id": "docwise-v3-039",
+      "question": "Against what set does Agri Samaj validate the source identifiers returned by its assistant?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::002",
+        "cache-README.md::002",
+        "community-README.md::001",
+        "community-README.md::004"
+      ],
+      "retrieval_ms": 4.002,
+      "status": "completed",
+      "result": {
+        "answer": "Agri Samaj validates returned source identifiers against the retrieved set. [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2171,
+        "completion_tokens": 47,
+        "total_tokens": 2218,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 13
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Agri Samaj validates returned source identifiers against the retrieved set. [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 1670.751,
+      "elapsed_ms": 1677.912
+    },
+    {
+      "id": "docwise-v3-040",
+      "question": "What ownership checks precede storing an Agri Samaj business mutation, and how are profile and audit changes stored?",
+      "retrieved_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::001",
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "retrieval_ms": 4.419,
+      "status": "completed",
+      "result": {
+        "answer": "Before storing a business mutation, the server validates the account and verifies ownership of any uploaded files. It then stores the profile and audit changes together in a transaction. [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1804,
+        "completion_tokens": 108,
+        "total_tokens": 1912,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 55
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Before storing a business mutation, the server validates the account and verifies ownership of any uploaded files. It then stores the profile and audit changes together in a transaction. [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 2381.989,
+      "elapsed_ms": 2389.249
+    },
+    {
+      "id": "docwise-v3-041",
+      "question": "Which JWT properties and current account properties does an authenticated Agri Samaj request check?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::002",
+        "community-README.md::001",
+        "banking-README.md::001"
+      ],
+      "retrieval_ms": 3.17,
+      "status": "completed",
+      "result": {
+        "answer": "An authenticated Agri Samaj request checks the JWT’s algorithm, issuer, audience, and expiration, then loads the active account and its role. [Source: community-README.md, Section: Architecture]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1785,
+        "completion_tokens": 82,
+        "total_tokens": 1867,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 32
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "An authenticated Agri Samaj request checks the JWT’s algorithm, issuer, audience, and expiration, then loads the active account and its role. [Source: community-README.md, Section: Architecture]",
+      "provider_ms": 2440.349,
+      "elapsed_ms": 2448.581
+    },
+    {
+      "id": "docwise-v3-042",
+      "question": "Which Agri Samaj business directory filters are available, and can a visitor preserve filters or keep a private shortlist?",
+      "retrieved_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::002",
+        "community-README.md::006"
+      ],
+      "retrieval_ms": 4.309,
+      "status": "completed",
+      "result": {
+        "answer": "The directory supports filters by **name, category, district, and business type**. Search filters can be preserved and shared in a URL. Visitors can also save businesses to a **private account shortlist**. [Source: community-README.md, Section: What the platform does]",
+        "citations": [
+          "[Source: community-README.md, Section: What the platform does]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1762,
+        "completion_tokens": 121,
+        "total_tokens": 1883,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 56
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The directory supports filters by **name, category, district, and business type**. Search filters can be preserved and shared in a URL. Visitors can also save businesses to a **private account shortlist**. [Source: community-README.md, Section: What the platform does]",
+      "provider_ms": 2870.93,
+      "elapsed_ms": 2878.511
+    },
+    {
+      "id": "docwise-v3-043",
+      "question": "What authorizes an Agri Samaj generated voice reply, and how are its provider requests bounded?",
+      "retrieved_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::000",
+        "community-README.md::002",
+        "community-README.md::004",
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "retrieval_ms": 4.386,
+      "status": "completed",
+      "result": {
+        "answer": "A generated voice reply requires a signed, expiring token tied to a generated answer. Provider calls are bounded with cancellation signals and timeouts; the shared `ASSISTANT_HOURLY_LIMIT` also limits provider operations. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Run locally]",
+        "citations": [
+          "[Source: community-README.md, Section: Architecture]",
+          "[Source: community-README.md, Section: Run locally]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 2,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2359,
+        "completion_tokens": 167,
+        "total_tokens": 2526,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 88
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "A generated voice reply requires a signed, expiring token tied to a generated answer. Provider calls are bounded with cancellation signals and timeouts; the shared `ASSISTANT_HOURLY_LIMIT` also limits provider operations. [Source: community-README.md, Section: Architecture] [Source: community-README.md, Section: Run locally]",
+      "provider_ms": 2736.717,
+      "elapsed_ms": 2744.947
+    },
+    {
+      "id": "docwise-v3-044",
+      "question": "What password length does Agri Samaj administrator seeding require, and does seeding overwrite existing accounts?",
+      "retrieved_chunk_ids": [
+        "community-README.md::004",
+        "community-README.md::000",
+        "cache-README.md::003",
+        "community-README.md::006",
+        "community-README.md::001"
+      ],
+      "retrieval_ms": 4.716,
+      "status": "completed",
+      "result": {
+        "answer": "Administrator seeding requires a unique password of at least 12 characters and at most 72 UTF-8 bytes. It does not overwrite existing accounts. [Source: community-README.md, Section: Run locally]",
+        "citations": [
+          "[Source: community-README.md, Section: Run locally]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 2033,
+        "completion_tokens": 46,
+        "total_tokens": 2079,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "Administrator seeding requires a unique password of at least 12 characters and at most 72 UTF-8 bytes. It does not overwrite existing accounts. [Source: community-README.md, Section: Run locally]",
+      "provider_ms": 2589.636,
+      "elapsed_ms": 2607.096
+    },
+    {
+      "id": "docwise-v3-045",
+      "question": "Which database isolation does the Agri Samaj browser runner use, and are provider calls on by default?",
+      "retrieved_chunk_ids": [
+        "community-README.md::000",
+        "community-README.md::004",
+        "community-README.md::005",
+        "realtime-README.md::006",
+        "realtime-README.md::005"
+      ],
+      "retrieval_ms": 4.578,
+      "status": "completed",
+      "result": {
+        "answer": "The browser runner creates an isolated schema in a dedicated local PostgreSQL database. Normal tests disable provider calls; live AI and Blob checks are explicit opt-ins. [Source: community-README.md, Section: Verification]",
+        "citations": [
+          "[Source: community-README.md, Section: Verification]"
+        ],
+        "refused": false
+      },
+      "checks": {
+        "expected_answerable": true,
+        "refused": false,
+        "expected_refusal_matches": true,
+        "non_refusal_labels_valid": true,
+        "retrieved_gold_chunk_count": 1,
+        "semantic_correctness_human_reviewed": false
+      },
+      "usage": {
+        "prompt_tokens": 1843,
+        "completion_tokens": 46,
+        "total_tokens": 1889,
+        "cached_prompt_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "returned_model": "gpt-6-luna",
+      "finish_reason": "stop",
+      "provider_output": "The browser runner creates an isolated schema in a dedicated local PostgreSQL database. Normal tests disable provider calls; live AI and Blob checks are explicit opt-ins. [Source: community-README.md, Section: Verification]",
+      "provider_ms": 1682.811,
+      "elapsed_ms": 1690.554
+    },
+    {
+      "id": "docwise-v3-046",
+      "question": "Where should Agri Samaj private uploads live on Vercel and when self-hosting?",
+      "retrieved_chunk_ids": [
+        "community-README.md::006",
+        "community-README.md::004",
+        "community-README.md::000",
+        "realtime-README.md::006",
+        "community-README.md::002"
+      ],
+      "retrieval_ms": 4.199,
+      "status": "error",
+      "error_type": "TimeoutError",
+      "http_status": null,
+      "provider_ms": 60691.642,
+      "elapsed_ms": 60708.536
+    }
+  ],
+  "summary": {
+    "attempted_cases": 10,
+    "completed_cases": 9,
+    "error_cases": 1,
+    "decision_proxies_passed": 9,
+    "non_refusal_label_proxies_passed": 9,
+    "unsupported_refusals": 0,
+    "known_token_subtotals": {
+      "prompt_tokens": 17268,
+      "completion_tokens": 850,
+      "total_tokens": 18118
+    },
+    "records_with_complete_usage": 9,
+    "records_priced_from_returned_usage": 9,
+    "returned_usage_estimate_usd": 0.0021518,
+    "cost_scope": "Published Standard-rate estimate for returned complete usage and cached-input counters only; not a provider invoice or complete billed-cost reconciliation.",
+    "human_evaluated_answers": 0
+  }
+}

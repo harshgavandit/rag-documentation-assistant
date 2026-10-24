@@ -1,0 +1,3433 @@
+{
+  "broader_evidence": {
+    "benchmark_id": "docwise-broader-diagnostic-v1",
+    "exact_byte_snapshots": {
+      "annotation_history/revision1-dev.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-00.txt",
+        "sha256": "e64b033025f26b4e880e4152344027ac4bf5d3a9454a3723c69c36871f61e612"
+      },
+      "annotation_history/revision1-freeze.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-01.txt",
+        "sha256": "3f0c756f67a9113184e823962290c0216a70012d80c13bb2e93529ac83d83dbb"
+      },
+      "annotation_history/revision1-heldout.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-02.txt",
+        "sha256": "fd183ef306c9825cbe80c28b37214eef191cf9a8b0b541366fd179f36b45f6f3"
+      },
+      "broader.py": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-03.txt",
+        "sha256": "5cf8f66872e70729419717edbaa61a7d3d6d3e74fca7dd04111dfea1a3c53b49"
+      },
+      "character_splitter.py": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-04.txt",
+        "sha256": "1bbfdb14f8684c8099506f370c91c0f1bdc6f555aa38da7e6ad146605ddae624"
+      },
+      "corpus.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-05.txt",
+        "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+      },
+      "dev.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-06.txt",
+        "sha256": "65786a6cd08d1911c5d172fadd6654f48e07a18a187b985a2d20fcde6fe032d2"
+      },
+      "freeze.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-07.txt",
+        "sha256": "fb88e99f369cfe9f05df52da5b8826020086ece18f2e7bf6310b3c57d73e1299"
+      },
+      "heldout.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-08.txt",
+        "sha256": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679"
+      },
+      "manifest.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-09.txt",
+        "sha256": "43bb69a2fc3280969d5c8b9e6ad4d352516326bb702f4bdb8720cebd2c4e991e"
+      },
+      "semantic_splitter.py": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-10.txt",
+        "sha256": "482a97777e0c8314aa3f5e71ab4b8cc9b77e0817e3a0be303c82c3e92540fcea"
+      },
+      "source_review.json": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-11.txt",
+        "sha256": "36c88af4f8a473aecae7143aa570e0ce0599c8f4f4e8a2b5fbb3f87697a89627"
+      },
+      "sources/banking-README.md": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-12.txt",
+        "sha256": "76da247eb67b79826f3b3d1ccdda93c59e1f4b7ddd01d9ede994c949968d2b94"
+      },
+      "sources/cache-README.md": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-13.txt",
+        "sha256": "1a0406b46ebd7d84597c5be8ab3d919417cefa38202eb345f7988983996b3cc7"
+      },
+      "sources/community-README.md": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-14.txt",
+        "sha256": "58b061f81db279fb4704ad7dfc63a724836d1a5cd346ba979a45d8eac8f9ddf1"
+      },
+      "sources/durable-ADR-0001.md": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-15.txt",
+        "sha256": "152d095d5848f7ba2e0f0819c04b5d6d1f26f64ec12f3069ec3927d1ec4c14cd"
+      },
+      "sources/durable-ARCHITECTURE.md": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-16.txt",
+        "sha256": "530d00a0573dc5bf05e7448663222130683e616640a93176fe892f818f1bde4e"
+      },
+      "sources/realtime-README.md": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-broader-17.txt",
+        "sha256": "f0241afc3e95a88f65946a405f3374bfd338f796e5573fef733afc36028936d5"
+      }
+    },
+    "provider_requests_made": 0
+  },
+  "by_tag": {
+    "community": {
+      "bm25": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.6,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.7533333333333333,
+          "ndcg_at_5": 0.7536457403069247,
+          "recall_at_5": 0.925
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.21430000197142363,
+          "mean_ms": 0.1400388892862894,
+          "min_ms": 0.08970000635599717,
+          "p50_ms": 0.1358500012429431,
+          "p95_ms": 0.18799999998009298,
+          "p99_ms": 0.20604000274033749,
+          "sample_count": 36
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.4,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.65,
+          "ndcg_at_5": 0.6933072702063771,
+          "recall_at_5": 0.925
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 5.1753000007011,
+          "mean_ms": 3.362797222709762,
+          "min_ms": 2.4216000019805506,
+          "p50_ms": 3.1879499983915593,
+          "p95_ms": 4.753324998091557,
+          "p99_ms": 5.100715000662603,
+          "sample_count": 36
+        }
+      },
+      "vector": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.4,
+          "hit_at_5": 0.9,
+          "mrr_at_5": 0.6033333333333333,
+          "ndcg_at_5": 0.6317343358675669,
+          "recall_at_5": 0.8
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-045"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.221700000925921,
+          "mean_ms": 3.050233333447573,
+          "min_ms": 2.245499999844469,
+          "p50_ms": 2.9637000006914604,
+          "p95_ms": 4.141649997109198,
+          "p99_ms": 4.198565000478993,
+          "sample_count": 36
+        }
+      }
+    },
+    "comparison": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.2027000009547919,
+          "mean_ms": 0.15321666554276211,
+          "min_ms": 0.10910000128205866,
+          "p50_ms": 0.15194999650702812,
+          "p95_ms": 0.1998250008909963,
+          "p99_ms": 0.20212500094203278,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.7063999989186414,
+          "mean_ms": 2.8414666679357956,
+          "min_ms": 1.9766000041272491,
+          "p50_ms": 2.9251000014482997,
+          "p95_ms": 3.584049998607952,
+          "p99_ms": 3.6819299988565035,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.6,
+          "ndcg_at_5": 0.6934264036172708,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.1464999992749654,
+          "mean_ms": 2.4223833327899533,
+          "min_ms": 1.8147000009776093,
+          "p50_ms": 2.3509499987994786,
+          "p95_ms": 3.1178499993984587,
+          "p99_ms": 3.140769999299664,
+          "sample_count": 6
+        }
+      }
+    },
+    "configuration": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.9024049875019746,
+          "recall_at_5": 0.875
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.17330000264337286,
+          "mean_ms": 0.1384999995934777,
+          "min_ms": 0.1097999993362464,
+          "p50_ms": 0.13434999709716067,
+          "p95_ms": 0.1669750017754268,
+          "p99_ms": 0.17203500246978365,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8938510284803185,
+          "recall_at_5": 0.875
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.683699997258373,
+          "mean_ms": 3.3201166673582825,
+          "min_ms": 2.627100002428051,
+          "p50_ms": 2.940999998827465,
+          "p95_ms": 4.530824999164906,
+          "p99_ms": 4.653124997639679,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8183412193664159,
+          "recall_at_5": 0.75
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.039799994439818,
+          "mean_ms": 2.932816667453153,
+          "min_ms": 2.71470000006957,
+          "p50_ms": 2.9583500036096666,
+          "p95_ms": 3.035999996427563,
+          "p99_ms": 3.039039994837367,
+          "sample_count": 6
+        }
+      }
+    },
+    "durability": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1790999958757311,
+          "mean_ms": 0.150399998043819,
+          "min_ms": 0.1260999997612089,
+          "p50_ms": 0.14699999883305281,
+          "p95_ms": 0.1773249969119206,
+          "p99_ms": 0.178744996082969,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.835300001606811,
+          "mean_ms": 2.6773000014751838,
+          "min_ms": 2.5287000025855377,
+          "p50_ms": 2.6501499996811617,
+          "p95_ms": 2.8337750027276343,
+          "p99_ms": 2.8349950018309755,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.75,
+          "ndcg_at_5": 0.7718856545760127,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.1644000046071596,
+          "mean_ms": 2.6788833335255426,
+          "min_ms": 2.3156999959610403,
+          "p50_ms": 2.6333499990869313,
+          "p95_ms": 3.0669500047224574,
+          "p99_ms": 3.144910004630219,
+          "sample_count": 6
+        }
+      }
+    },
+    "durable_jobs": {
+      "bm25": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.95,
+          "ndcg_at_5": 0.9396290390560079,
+          "recall_at_5": 0.9666666666666666
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.41090000013355166,
+          "mean_ms": 0.16335277824610886,
+          "min_ms": 0.09299999510403723,
+          "p50_ms": 0.14930000179447234,
+          "p95_ms": 0.2495500029908726,
+          "p99_ms": 0.38514000007126004,
+          "sample_count": 36
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.95,
+          "ndcg_at_5": 0.9193226495046316,
+          "recall_at_5": 0.9666666666666666
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.170599997451063,
+          "mean_ms": 2.6722916667899375,
+          "min_ms": 1.9766000041272491,
+          "p50_ms": 2.596649999759393,
+          "p95_ms": 3.4724750021268846,
+          "p99_ms": 4.008129997964715,
+          "sample_count": 36
+        }
+      },
+      "vector": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 0.9,
+          "mrr_at_5": 0.6533333333333333,
+          "ndcg_at_5": 0.6107360565042914,
+          "recall_at_5": 0.7666666666666667
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-055"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.7593000053893775,
+          "mean_ms": 2.5835111116773786,
+          "min_ms": 1.7656999989412725,
+          "p50_ms": 2.535449999413686,
+          "p95_ms": 3.727424995304318,
+          "p99_ms": 4.524170002696336,
+          "sample_count": 36
+        }
+      }
+    },
+    "exact_term": {
+      "bm25": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.17700000171316788,
+          "mean_ms": 0.15220000204863027,
+          "min_ms": 0.13749999925494194,
+          "p50_ms": 0.14210000517778099,
+          "p95_ms": 0.1735100020596292,
+          "p99_ms": 0.17630200178246014,
+          "sample_count": 3
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.131900004518684,
+          "mean_ms": 2.8633666685588346,
+          "min_ms": 2.7106999987154268,
+          "p50_ms": 2.7475000024423935,
+          "p95_ms": 3.093460004311055,
+          "p99_ms": 3.124212004477158,
+          "sample_count": 3
+        }
+      },
+      "vector": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.1799999997019768,
+          "mean_ms": 2.8246666697668843,
+          "min_ms": 2.6323000056436285,
+          "p50_ms": 2.6617000039550476,
+          "p95_ms": 3.128170000127284,
+          "p99_ms": 3.169633999787038,
+          "sample_count": 3
+        }
+      }
+    },
+    "failure": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.75,
+          "ndcg_at_5": 0.8154648767857288,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1880999989225529,
+          "mean_ms": 0.1529333349026274,
+          "min_ms": 0.1109000004362315,
+          "p50_ms": 0.15220000204863027,
+          "p95_ms": 0.1879499995993683,
+          "p99_ms": 0.188069999057916,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.75,
+          "ndcg_at_5": 0.7753252713598225,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.170599997451063,
+          "mean_ms": 3.0351833326373403,
+          "min_ms": 2.24500000331318,
+          "p50_ms": 2.9724999985774048,
+          "p95_ms": 3.976574998887372,
+          "p99_ms": 4.131794997738325,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 0.5,
+          "mrr_at_5": 0.5,
+          "ndcg_at_5": 0.3065735963827292,
+          "recall_at_5": 0.25
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-055"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.607399994507432,
+          "mean_ms": 2.5940000001961985,
+          "min_ms": 2.1294999969541095,
+          "p50_ms": 2.4479500025336165,
+          "p95_ms": 3.4059749959851615,
+          "p99_ms": 3.567114994802978,
+          "sample_count": 6
+        }
+      }
+    },
+    "implementation": {
+      "bm25": {
+        "answerable_case_count": 5,
+        "case_count": 5,
+        "metrics": {
+          "hit_at_1": 0.6,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.7066666666666667,
+          "ndcg_at_5": 0.7914989052379724,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.18709999858401716,
+          "mean_ms": 0.13910000076672682,
+          "min_ms": 0.10870000551221892,
+          "p50_ms": 0.13469999976223335,
+          "p95_ms": 0.175899999885587,
+          "p99_ms": 0.18485999884433113,
+          "sample_count": 15
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 5,
+        "case_count": 5,
+        "metrics": {
+          "hit_at_1": 0.4,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.6333333333333333,
+          "ndcg_at_5": 0.7403142945053556,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.96220000059111,
+          "mean_ms": 3.242293333460111,
+          "min_ms": 2.057100005913526,
+          "p50_ms": 3.2879000063985586,
+          "p95_ms": 4.411370003072078,
+          "p99_ms": 4.852034001087304,
+          "sample_count": 15
+        }
+      },
+      "vector": {
+        "answerable_case_count": 5,
+        "case_count": 5,
+        "metrics": {
+          "hit_at_1": 0.6,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.7066666666666667,
+          "ndcg_at_5": 0.7754430630676099,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.221700000925921,
+          "mean_ms": 2.9640266662075496,
+          "min_ms": 1.8722000022535212,
+          "p50_ms": 2.9601999995065853,
+          "p95_ms": 4.162409997661598,
+          "p99_ms": 4.209842000273056,
+          "sample_count": 15
+        }
+      }
+    },
+    "measurement_scope": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.75,
+          "ndcg_at_5": 0.8154648767857288,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.19070000416832045,
+          "mean_ms": 0.1647166682232637,
+          "min_ms": 0.14850000297883525,
+          "p50_ms": 0.15675000031478703,
+          "p95_ms": 0.18935000298370142,
+          "p99_ms": 0.19043000393139664,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.6666666666666666,
+          "ndcg_at_5": 0.6886076576690247,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.2349999964935705,
+          "mean_ms": 2.748483331136716,
+          "min_ms": 2.276999999594409,
+          "p50_ms": 2.7391500007070135,
+          "p95_ms": 3.22852499630244,
+          "p99_ms": 3.2337049964553444,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 0.5,
+          "mrr_at_5": 0.5,
+          "ndcg_at_5": 0.3065735963827292,
+          "recall_at_5": 0.25
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-045"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.66809999832185,
+          "mean_ms": 2.796100000220273,
+          "min_ms": 2.164700003049802,
+          "p50_ms": 2.596750000520842,
+          "p95_ms": 3.5596999987319577,
+          "p99_ms": 3.6464199984038714,
+          "sample_count": 6
+        }
+      }
+    },
+    "multi_section": {
+      "bm25": {
+        "answerable_case_count": 9,
+        "case_count": 9,
+        "metrics": {
+          "hit_at_1": 0.8888888888888888,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.9444444444444444,
+          "ndcg_at_5": 0.9000273963923434,
+          "recall_at_5": 0.9351851851851851
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.41090000013355166,
+          "mean_ms": 0.16278888910569045,
+          "min_ms": 0.09409999620402232,
+          "p50_ms": 0.14799999917158857,
+          "p95_ms": 0.3022000011696945,
+          "p99_ms": 0.39176400008727785,
+          "sample_count": 27
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 9,
+        "case_count": 9,
+        "metrics": {
+          "hit_at_1": 0.7777777777777778,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8888888888888888,
+          "ndcg_at_5": 0.853405642027377,
+          "recall_at_5": 0.9351851851851851
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 5.1753000007011,
+          "mean_ms": 2.954566667472978,
+          "min_ms": 2.057100005913526,
+          "p50_ms": 2.8292000060901046,
+          "p95_ms": 4.043369999999413,
+          "p99_ms": 4.914077999856088,
+          "sample_count": 27
+        }
+      },
+      "vector": {
+        "answerable_case_count": 9,
+        "case_count": 9,
+        "metrics": {
+          "hit_at_1": 0.5555555555555556,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.7777777777777778,
+          "ndcg_at_5": 0.6881670870066265,
+          "recall_at_5": 0.7962962962962963
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.7593000053893775,
+          "mean_ms": 2.8355777782659666,
+          "min_ms": 1.8722000022535212,
+          "p50_ms": 2.7746000050683506,
+          "p95_ms": 3.943469996738713,
+          "p99_ms": 4.584632003388832,
+          "sample_count": 27
+        }
+      }
+    },
+    "privacy": {
+      "bm25": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.6666666666666666,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8333333333333334,
+          "ndcg_at_5": 0.8150305623307957,
+          "recall_at_5": 0.8888888888888888
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.41090000013355166,
+          "mean_ms": 0.205677779578966,
+          "min_ms": 0.11890000314451754,
+          "p50_ms": 0.17070000467356294,
+          "p95_ms": 0.38146000006236136,
+          "p99_ms": 0.4050120001193136,
+          "sample_count": 9
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.6666666666666666,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8333333333333334,
+          "ndcg_at_5": 0.8150305623307957,
+          "recall_at_5": 0.8888888888888888
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.96220000059111,
+          "mean_ms": 3.4337333345320076,
+          "min_ms": 2.943299994512927,
+          "p50_ms": 3.217500001483131,
+          "p95_ms": 4.449080002086703,
+          "p99_ms": 4.859576000890229,
+          "sample_count": 9
+        }
+      },
+      "vector": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.3333333333333333,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.6666666666666666,
+          "ndcg_at_5": 0.7476614468306132,
+          "recall_at_5": 0.8888888888888888
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.7593000053893775,
+          "mean_ms": 3.376766668225173,
+          "min_ms": 2.843600006599445,
+          "p50_ms": 3.1163000021479093,
+          "p95_ms": 4.490580002311617,
+          "p99_ms": 4.705556004773825,
+          "sample_count": 9
+        }
+      }
+    },
+    "scope_boundary": {
+      "bm25": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8503449055347546,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.14699999883305281,
+          "mean_ms": 0.11823333140152197,
+          "min_ms": 0.09409999620402232,
+          "p50_ms": 0.11359999916749075,
+          "p95_ms": 0.1436599988664966,
+          "p99_ms": 0.14633199883974157,
+          "sample_count": 3
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.5,
+          "ndcg_at_5": 0.6509209298071326,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 5.1753000007011,
+          "mean_ms": 4.008266669795073,
+          "min_ms": 3.103000002738554,
+          "p50_ms": 3.7465000059455633,
+          "p95_ms": 5.032420001225546,
+          "p99_ms": 5.146724000805989,
+          "sample_count": 3
+        }
+      },
+      "vector": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.5,
+          "ndcg_at_5": 0.6240505200038379,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.992000001540873,
+          "mean_ms": 2.8083333333294527,
+          "min_ms": 2.5900999971781857,
+          "p50_ms": 2.8429000012692995,
+          "p95_ms": 2.977090001513716,
+          "p99_ms": 2.9890180015354417,
+          "sample_count": 3
+        }
+      }
+    },
+    "unsupported": {
+      "bm25": {
+        "answerable_case_count": 0,
+        "case_count": 4,
+        "metrics": null,
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 4,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 4
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.21490000654011965,
+          "mean_ms": 0.12661666733038146,
+          "min_ms": 0.08970000635599717,
+          "p50_ms": 0.11560000348254107,
+          "p95_ms": 0.18674000421015077,
+          "p99_ms": 0.2092680060741259,
+          "sample_count": 12
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 0,
+        "case_count": 4,
+        "metrics": null,
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 4,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 4
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.038900002138689,
+          "mean_ms": 2.5065916670428123,
+          "min_ms": 2.0281999968574382,
+          "p50_ms": 2.4236999997810926,
+          "p95_ms": 2.990060002412065,
+          "p99_ms": 3.0291320021933643,
+          "sample_count": 12
+        }
+      },
+      "vector": {
+        "answerable_case_count": 0,
+        "case_count": 4,
+        "metrics": null,
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 4,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 4
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.6904999976977706,
+          "mean_ms": 2.3966583339642966,
+          "min_ms": 1.7656999989412725,
+          "p50_ms": 2.5032500016095582,
+          "p95_ms": 2.677519998906064,
+          "p99_ms": 2.6879039979394292,
+          "sample_count": 12
+        }
+      }
+    },
+    "workflow": {
+      "bm25": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.6131471927654584,
+          "recall_at_5": 0.5
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.21430000197142363,
+          "mean_ms": 0.18429999909130856,
+          "min_ms": 0.16849999519763514,
+          "p50_ms": 0.17010000010486692,
+          "p95_ms": 0.20988000178476796,
+          "p99_ms": 0.2134160019340925,
+          "sample_count": 3
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.6131471927654584,
+          "recall_at_5": 0.5
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.875299997162074,
+          "mean_ms": 3.6374666645618468,
+          "min_ms": 3.4421999953337945,
+          "p50_ms": 3.5949000011896715,
+          "p95_ms": 3.8472599975648336,
+          "p99_ms": 3.869691997242626,
+          "sample_count": 3
+        }
+      },
+      "vector": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.5,
+          "ndcg_at_5": 0.38685280723454163,
+          "recall_at_5": 0.5
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 4.1555999996489845,
+          "mean_ms": 3.6968999993405305,
+          "min_ms": 3.2051000016508624,
+          "p50_ms": 3.7299999967217445,
+          "p95_ms": 4.1130399993562605,
+          "p99_ms": 4.14708799959044,
+          "sample_count": 3
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-037",
+      "intent_id": "community_publication_approval",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6797310500037655,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::002",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.17070000467356294,
+            0.13530000433092937,
+            0.11890000314451754
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6797310500037655,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::006",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            3.166800001054071,
+            3.679400004330091,
+            3.149299998767674
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.7122630665145961,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::006",
+            "community-README.md::004",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.843600006599445,
+            3.1163000021479093,
+            3.2429999992018566
+          ]
+        }
+      },
+      "question": "Which business records are publicly discoverable in Agri Samaj, and who controls publication?",
+      "relevant_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::002",
+        "community-README.md::006"
+      ],
+      "tags": [
+        "community",
+        "multi_section",
+        "privacy"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-038",
+      "intent_id": "community_assistant_private_boundary",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8503449055347546,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.14699999883305281,
+            0.11359999916749075,
+            0.09409999620402232
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6509209298071326,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::002",
+            "community-README.md::001",
+            "community-README.md::006",
+            "community-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            5.1753000007011,
+            3.7465000059455633,
+            3.103000002738554
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6240505200038379,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::006",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.5900999971781857,
+            2.8429000012692995,
+            2.992000001540873
+          ]
+        }
+      },
+      "question": "May the Agri Samaj assistant read private applications or execute account actions?",
+      "relevant_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::006"
+      ],
+      "tags": [
+        "community",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-039",
+      "intent_id": "community_source_membership",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::001",
+            "community-README.md::000",
+            "community-README.md::004",
+            "cache-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.16510000568814576,
+            0.12430000060703605,
+            0.12150000111432746
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::002",
+            "cache-README.md::002",
+            "community-README.md::001",
+            "community-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.8811000011046417,
+            3.327099999296479,
+            3.0287999979918823
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.2,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "cache-README.md::002",
+            "banking-README.md::000",
+            "community-README.md::004",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            4.221700000925921,
+            3.254100003687199,
+            2.6870000001508743
+          ]
+        }
+      },
+      "question": "Against what set does Agri Samaj validate the source identifiers returned by its assistant?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-040",
+      "intent_id": "community_upload_ownership",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.17110000044340268,
+            0.15189999976428226,
+            0.13469999976223335
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::000",
+            "community-README.md::004",
+            "community-README.md::001",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            3.366400000231806,
+            3.2879000063985586,
+            4.96220000059111
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::006",
+            "community-README.md::000",
+            "durable-ARCHITECTURE.md::001",
+            "community-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            3.4595000033732504,
+            2.9601999995065853,
+            2.9114999997545965
+          ]
+        }
+      },
+      "question": "What ownership checks precede storing an Agri Samaj business mutation, and how are profile and audit changes stored?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation",
+        "privacy"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-041",
+      "intent_id": "community_jwt_and_account",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.2,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::004",
+            "realtime-README.md::006",
+            "community-README.md::001",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.15330000314861536,
+            0.1224999941769056,
+            0.10870000551221892
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::004",
+            "community-README.md::002",
+            "community-README.md::001",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            4.175300004135352,
+            3.374799998709932,
+            3.0263999942690134
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::000",
+            "community-README.md::004",
+            "banking-README.md::002",
+            "banking-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.8412999963620678,
+            2.974899995024316,
+            4.1369999962626025
+          ]
+        }
+      },
+      "question": "Which JWT properties and current account properties does an authenticated Agri Samaj request check?",
+      "relevant_chunk_ids": [
+        "community-README.md::002"
+      ],
+      "tags": [
+        "community",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-042",
+      "intent_id": "community_directory_and_shortlists",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::001",
+            "community-README.md::000",
+            "community-README.md::004",
+            "community-README.md::002",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.21430000197142363,
+            0.17010000010486692,
+            0.16849999519763514
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::001",
+            "community-README.md::000",
+            "community-README.md::004",
+            "community-README.md::002",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            3.4421999953337945,
+            3.5949000011896715,
+            3.875299997162074
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::002",
+            "community-README.md::004",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            3.2051000016508624,
+            4.1555999996489845,
+            3.7299999967217445
+          ]
+        }
+      },
+      "question": "Which Agri Samaj business directory filters are available, and can a visitor preserve filters or keep a private shortlist?",
+      "relevant_chunk_ids": [
+        "community-README.md::001",
+        "community-README.md::005"
+      ],
+      "tags": [
+        "community",
+        "workflow"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-043",
+      "intent_id": "community_generated_voice_control",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5706417189553201,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::001",
+            "community-README.md::000",
+            "community-README.md::002",
+            "community-README.md::004",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.18709999858401716,
+            0.14650000230176374,
+            0.1331999956164509
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5706417189553201,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::001",
+            "community-README.md::000",
+            "community-README.md::002",
+            "community-README.md::004",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            3.132499994535465,
+            3.869300002406817,
+            3.7307999955373816
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5706417189553201,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::002",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.8080999982194044,
+            3.280500000983011,
+            3.0430999977397732
+          ]
+        }
+      },
+      "question": "What authorizes an Agri Samaj generated voice reply, and how are its provider requests bounded?",
+      "relevant_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::004"
+      ],
+      "tags": [
+        "community",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-044",
+      "intent_id": "community_admin_seed",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::004",
+            "community-README.md::000",
+            "community-README.md::001",
+            "banking-README.md::001",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.17330000264337286,
+            0.131200002215337,
+            0.13639999815495685
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::004",
+            "community-README.md::000",
+            "cache-README.md::003",
+            "community-README.md::006",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            4.683699997258373,
+            4.0722000048845075,
+            3.15509999927599
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::004",
+            "community-README.md::000",
+            "community-README.md::007",
+            "banking-README.md::003",
+            "cache-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            3.024600002390798,
+            2.901100000599399,
+            2.9672000018763356
+          ]
+        }
+      },
+      "question": "What password length does Agri Samaj administrator seeding require, and does seeding overwrite existing accounts?",
+      "relevant_chunk_ids": [
+        "community-README.md::004"
+      ],
+      "tags": [
+        "community",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-045",
+      "intent_id": "community_isolated_browser_tests",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::005",
+            "realtime-README.md::006",
+            "community-README.md::004",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.19070000416832045,
+            0.15110000094864517,
+            0.1503000021330081
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::004",
+            "community-README.md::005",
+            "realtime-README.md::006",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            3.209099995729048,
+            3.2349999964935705,
+            2.9752000045846216
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::004",
+            "community-README.md::002",
+            "community-README.md::000",
+            "realtime-README.md::005",
+            "durable-ADR-0001.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.613600001495797,
+            3.66809999832185,
+            3.2344999999622814
+          ]
+        }
+      },
+      "question": "Which database isolation does the Agri Samaj browser runner use, and are provider calls on by default?",
+      "relevant_chunk_ids": [
+        "community-README.md::005"
+      ],
+      "tags": [
+        "community",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-046",
+      "intent_id": "community_private_file_storage",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8048099750039491,
+            "recall_at_5": 0.75
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::006",
+            "community-README.md::004",
+            "community-README.md::000",
+            "community-README.md::002",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.14799999917158857,
+            0.1322999960393645,
+            0.1097999993362464
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.787702056960637,
+            "recall_at_5": 0.75
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::006",
+            "community-README.md::004",
+            "community-README.md::000",
+            "realtime-README.md::006",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.627100002428051,
+            2.72689999837894,
+            2.655700001923833
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6366824387328317,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "community-README.md::002",
+            "community-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "community-README.md::006",
+            "community-README.md::004",
+            "community-README.md::000",
+            "realtime-README.md::006",
+            "cache-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.9495000053429976,
+            3.039799994439818,
+            2.71470000006957
+          ]
+        }
+      },
+      "question": "Where should Agri Samaj private uploads live on Vercel and when self-hosting?",
+      "relevant_chunk_ids": [
+        "community-README.md::002",
+        "community-README.md::004",
+        "community-README.md::006",
+        "community-README.md::003"
+      ],
+      "tags": [
+        "community",
+        "multi_section",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-047",
+      "intent_id": "community_private_application_details",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.1435999947716482,
+            0.11620000441325828,
+            0.1083999959519133
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "durable-ARCHITECTURE.md::001",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.8050000037183054,
+            2.950100002635736,
+            2.4216000019805506
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "community-README.md::006",
+            "community-README.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            2.599999999802094,
+            2.6904999976977706,
+            2.6646000042092055
+          ]
+        }
+      },
+      "question": "What supporting identity document did the owner of the latest Agri Samaj business application upload?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "community",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-048",
+      "intent_id": "community_advertisement_price",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "banking-README.md::001",
+            "community-README.md::004",
+            "community-README.md::001",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.11500000255182385,
+            0.09299999510403723,
+            0.08970000635599717
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "banking-README.md::001",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.5682999985292554,
+            2.841500005160924,
+            3.038900002138689
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "community-README.md::000",
+            "community-README.md::001",
+            "community-README.md::004",
+            "banking-README.md::005",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.6668999998946674,
+            2.530300000216812,
+            2.245499999844469
+          ]
+        }
+      },
+      "question": "What exact rupee amount is the Agri Samaj premium advertisement package today?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "community",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-049",
+      "intent_id": "durable_jobs_accepted_ingestion",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::002",
+            "community-README.md::004",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.1720000000204891,
+            0.1311999949393794,
+            0.1260999997612089
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::002",
+            "cache-README.md::005",
+            "community-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.570299999206327,
+            2.6772999990498647,
+            2.5287000025855377
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "cache-README.md::005",
+            "durable-ARCHITECTURE.md::000",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            3.1644000046071596,
+            2.570600001490675,
+            2.3156999959610403
+          ]
+        }
+      },
+      "question": "In the durable-effects lab, what must commit before ingestion may return HTTP 202?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "durability"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-050",
+      "intent_id": "durable_jobs_duplicate_delivery",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "durable-ARCHITECTURE.md::001",
+            "banking-README.md::002",
+            "community-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.1790999958757311,
+            0.1438999970559962,
+            0.15010000061010942
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "durable-ARCHITECTURE.md::001",
+            "banking-README.md::004",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.835300001606811,
+            2.6230000003124587,
+            2.8292000060901046
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6240505200038379,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::005",
+            "durable-ARCHITECTURE.md::001",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.7746000050683506,
+            2.696099996683188,
+            2.5518999973428436
+          ]
+        }
+      },
+      "question": "In the durable-effects lab, how do leased relays and worker commit ordering handle duplicate queue delivery?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "durability"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-051",
+      "intent_id": "durable_jobs_idempotency_mismatch",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::001",
+            "cache-README.md::002",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.19120000069960952,
+            0.2027000009547919,
+            0.18419999832985923
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::002",
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            3.137800005788449,
+            3.2169999976758845,
+            3.7063999989186414
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.2,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::005",
+            "banking-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::002",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            3.1464999992749654,
+            3.031899999768939,
+            2.7312999955029227
+          ]
+        }
+      },
+      "question": "What happens in the catalog lab when a retry uses the same idempotency key with the same input versus changed input?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-052",
+      "intent_id": "durable_jobs_cache_cannot_authorize",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7653606369886217,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::002",
+            "cache-README.md::006",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.22030000400263816,
+            0.3372999999555759,
+            0.41090000013355166
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7653606369886217,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "banking-README.md::005",
+            "cache-README.md::002",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            3.217500001483131,
+            2.943299994512927,
+            3.130800003418699
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.5307212739772434,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::002",
+            "cache-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            4.7593000053893775,
+            4.087499997694977,
+            3.010000000358559
+          ]
+        }
+      },
+      "question": "In the catalog lab, can a positive Redis cache entry authorize a revoked session, and which store is authoritative?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000",
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "privacy"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-053",
+      "intent_id": "durable_jobs_catalog_cache_failure",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::002",
+            "cache-README.md::006",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.1875000016298145,
+            0.15600000187987462,
+            0.14840000221738592
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "cache-README.md::002",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::006",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            4.170599997451063,
+            3.394500003196299,
+            3.279399999883026
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "cache-README.md::002",
+            "cache-README.md::005",
+            "cache-README.md::006",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            3.607399994507432,
+            2.747600003203843,
+            2.80170000041835
+          ]
+        }
+      },
+      "question": "How stale can the catalog lab cache be, and what happens during Redis failure or fallback overload?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-054",
+      "intent_id": "durable_jobs_cloud_and_fault_domains",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::001",
+            "realtime-README.md::006",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.18529999942984432,
+            0.14850000297883525,
+            0.16239999968092889
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8772153153380493,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "realtime-README.md::005",
+            "cache-README.md::006",
+            "durable-ARCHITECTURE.md::000",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.5030999968294054,
+            2.276999999594409,
+            2.291499993589241
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::005",
+            "realtime-README.md::005",
+            "community-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.579899999545887,
+            2.164700003049802,
+            2.5157999989460222
+          ]
+        }
+      },
+      "question": "Does the durable-effects lab document an operating cloud deployment or independently proven local fault domains?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-055",
+      "intent_id": "durable_jobs_failure_redrive",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::002",
+            "realtime-README.md::006",
+            "banking-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.1880999989225529,
+            0.12670000432990491,
+            0.1109000004362315
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::005",
+            "cache-README.md::004",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.6655999972717836,
+            2.455999994708691,
+            2.24500000331318
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "cache-README.md::005",
+            "cache-README.md::004",
+            "banking-README.md::005",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.14830000186339,
+            2.1294999969541095,
+            2.129500004230067
+          ]
+        }
+      },
+      "question": "How does the durable-effects lab isolate repeatedly failing jobs, and how is redrive represented?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-056",
+      "intent_id": "durable_jobs_fair_replica_resources",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "durable-ADR-0001.md::000",
+            "community-README.md::001",
+            "banking-README.md::001",
+            "realtime-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.11969999468419701,
+            0.10910000128205866,
+            0.11239999730605632
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "durable-ADR-0001.md::000",
+            "realtime-README.md::002",
+            "realtime-README.md::005",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            1.9766000041272491,
+            2.2986000039963983,
+            2.7123999971081503
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::005",
+            "realtime-README.md::002",
+            "realtime-README.md::005",
+            "durable-ADR-0001.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            1.9706000020960346,
+            1.8392999991192482,
+            1.8147000009776093
+          ]
+        }
+      },
+      "question": "What CPU, memory and worker allocations distinguish the lab vertical and horizontal serving profiles?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::001"
+      ],
+      "tags": [
+        "durable_jobs",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-057",
+      "intent_id": "durable_jobs_tested_digest",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "durable-ADR-0001.md::000",
+            "community-README.md::005",
+            "cache-README.md::000",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.13919999764766544,
+            0.1171000039903447,
+            0.11030000314349309
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::001",
+            "banking-README.md::005",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.057100005913526,
+            2.1521999951801263,
+            2.262500005599577
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::001",
+            "durable-ADR-0001.md::000",
+            "banking-README.md::005",
+            "community-README.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            2.0501999970292673,
+            1.8722000022535212,
+            1.9591000018408522
+          ]
+        }
+      },
+      "question": "What identity and evidence connect the lab tested container image to production promotion?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::001",
+        "durable-ADR-0001.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "multi_section",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-058",
+      "intent_id": "durable_jobs_gateway_retry_budget",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::003",
+            "realtime-README.md::002",
+            "cache-README.md::002",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.17700000171316788,
+            0.14210000517778099,
+            0.13749999925494194
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::002",
+            "realtime-README.md::002",
+            "realtime-README.md::005",
+            "cache-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.7475000024423935,
+            2.7106999987154268,
+            3.131900004518684
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::005",
+            "cache-README.md::004",
+            "durable-ARCHITECTURE.md::000",
+            "durable-ADR-0001.md::000",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            3.1799999997019768,
+            2.6323000056436285,
+            2.6617000039550476
+          ]
+        }
+      },
+      "question": "Which stale-address connection timeout, upstream-attempt bound and total retry budget does the lab gateway document?",
+      "relevant_chunk_ids": [
+        "durable-ARCHITECTURE.md::000"
+      ],
+      "tags": [
+        "durable_jobs",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-059",
+      "intent_id": "durable_jobs_cloud_failover_result",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::002",
+            "realtime-README.md::006",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.21490000654011965,
+            0.16370000230381265,
+            0.15920000441838056
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::005",
+            "realtime-README.md::005",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.4257999975816347,
+            2.392499998677522,
+            2.376399999775458
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::005",
+            "realtime-README.md::005",
+            "cache-README.md::004",
+            "durable-ADR-0001.md::000",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.519000001484528,
+            2.3599000051035546,
+            2.4875000017345883
+          ]
+        }
+      },
+      "question": "How many seconds did the lab measured multi-AZ cloud failover take during its last production outage?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "durable_jobs",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-060",
+      "intent_id": "durable_jobs_payment_processor",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "community-README.md::006",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::005",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.11839999933727086,
+            0.10430000111227855,
+            0.09299999510403723
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "community-README.md::006",
+            "banking-README.md::005",
+            "durable-ARCHITECTURE.md::000",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.1890999996685423,
+            2.0281999968574382,
+            2.041699997789692
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "banking-README.md::005",
+            "durable-ARCHITECTURE.md::001",
+            "community-README.md::006",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.7656999989412725,
+            2.219499998318497,
+            2.0105000003241003
+          ]
+        }
+      },
+      "question": "Which payment processor settles stock purchases in the durable-effects catalog lab?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "durable_jobs",
+        "unsupported"
+      ]
+    }
+  ],
+  "corpus": {
+    "chunk_count": 32,
+    "chunk_id_format": "<metadata.doc_title>::<metadata.chunk_index padded to 3 digits>",
+    "encoder_input_diagnostics": {
+      "chunk_count": 32,
+      "encoder_token_limit": 256,
+      "interpretation": "Production encoder truncates each chunk to 256 tokens. Original heading chunking is preserved; BM25 still sees full chunk text.",
+      "maximum_untruncated_tokens": 785,
+      "per_chunk_untruncated_tokens": [
+        {
+          "chunk_id": "banking-README.md::000",
+          "token_count": 187
+        },
+        {
+          "chunk_id": "banking-README.md::001",
+          "token_count": 139
+        },
+        {
+          "chunk_id": "banking-README.md::002",
+          "token_count": 459
+        },
+        {
+          "chunk_id": "banking-README.md::003",
+          "token_count": 492
+        },
+        {
+          "chunk_id": "banking-README.md::004",
+          "token_count": 287
+        },
+        {
+          "chunk_id": "banking-README.md::005",
+          "token_count": 80
+        },
+        {
+          "chunk_id": "cache-README.md::000",
+          "token_count": 209
+        },
+        {
+          "chunk_id": "cache-README.md::001",
+          "token_count": 72
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "token_count": 581
+        },
+        {
+          "chunk_id": "cache-README.md::003",
+          "token_count": 756
+        },
+        {
+          "chunk_id": "cache-README.md::004",
+          "token_count": 316
+        },
+        {
+          "chunk_id": "cache-README.md::005",
+          "token_count": 213
+        },
+        {
+          "chunk_id": "cache-README.md::006",
+          "token_count": 134
+        },
+        {
+          "chunk_id": "realtime-README.md::000",
+          "token_count": 119
+        },
+        {
+          "chunk_id": "realtime-README.md::001",
+          "token_count": 146
+        },
+        {
+          "chunk_id": "realtime-README.md::002",
+          "token_count": 458
+        },
+        {
+          "chunk_id": "realtime-README.md::003",
+          "token_count": 47
+        },
+        {
+          "chunk_id": "realtime-README.md::004",
+          "token_count": 294
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "token_count": 455
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "token_count": 236
+        },
+        {
+          "chunk_id": "realtime-README.md::007",
+          "token_count": 120
+        },
+        {
+          "chunk_id": "community-README.md::000",
+          "token_count": 151
+        },
+        {
+          "chunk_id": "community-README.md::001",
+          "token_count": 244
+        },
+        {
+          "chunk_id": "community-README.md::002",
+          "token_count": 398
+        },
+        {
+          "chunk_id": "community-README.md::003",
+          "token_count": 63
+        },
+        {
+          "chunk_id": "community-README.md::004",
+          "token_count": 481
+        },
+        {
+          "chunk_id": "community-README.md::005",
+          "token_count": 234
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "token_count": 124
+        },
+        {
+          "chunk_id": "community-README.md::007",
+          "token_count": 126
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "token_count": 785
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::001",
+          "token_count": 154
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "token_count": 280
+        }
+      ],
+      "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "truncated_chunk_count": 13
+    },
+    "path": "evaluation/broader_v1/corpus.json",
+    "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+  },
+  "dataset": {
+    "annotation_revision": 2,
+    "answerable_case_count": 20,
+    "case_count": 24,
+    "id": "docwise-broader-v1-heldout",
+    "label": "Authored multi-domain diagnostic heldout query partition; not an external benchmark or independent human labels",
+    "sha256": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679"
+  },
+  "evaluation_kind": "local_authored_retrieval_diagnostic",
+  "generated_at_utc": "2026-10-24T18:45:38.144332+00:00",
+  "model": {
+    "artifact_sha256": {
+      "model.onnx": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+    },
+    "manifest_sha256": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "protocol": {
+    "aggregation": "macro mean over answerable queries; unsupported queries excluded from ranking metrics",
+    "cold_scope": "one fresh evaluator process; import and index construction separated; OS/filesystem caches not cleared; first method calls share one index",
+    "excluded_warmup_rounds": 1,
+    "latency_scope": "local retrieval calls only; excludes HTTP, network, generation, rate limiting and model downloads",
+    "limitations": "Five domains from six public repository documents by the same author. Not an external benchmark, independently human-labeled dataset, production traffic or generated-answer evaluation. Domain-separated query diagnostic splits; all documents are available to retrieval. The durable-jobs source describes an implementation lab with undeployed cloud operation. Production retrieval is unchanged apart from explicit corpus injection. No ranking or threshold tuning before this frozen diagnostic. Thirteen of 32 chunks exceed the encoder 256-token limit; complete source chunks remain available to BM25 and generation context.",
+    "method_order": [
+      "bm25",
+      "vector",
+      "hybrid"
+    ],
+    "percentiles": "linear interpolation at (sample_count - 1) * p",
+    "relevance": "binary; unlisted chunks treated as non-relevant",
+    "top_k": 5,
+    "warm_repeats_per_case": 3
+  },
+  "retrieval_scope": "separate_frozen_diagnostic_corpus",
+  "runtime": {
+    "logical_cpu_count": 14,
+    "machine": "AMD64",
+    "onnx_inter_op_threads": 1,
+    "onnx_intra_op_threads": 2,
+    "onnx_provider": "CPUExecutionProvider",
+    "os": "Windows",
+    "os_release": "11",
+    "packages": {
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.0",
+      "rank-bm25": "0.2.2",
+      "tokenizers": "0.23.3"
+    },
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "source": {
+    "engine_sha256": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e",
+    "evaluator_sha256": "f90dca24cd7b020fe105f226435463fe6211d8f12ca1328e5b8730befe94ef98",
+    "exact_byte_snapshots": {
+      "corpus": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-corpus.txt",
+        "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+      },
+      "dataset": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-dataset.txt",
+        "sha256": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679"
+      },
+      "engine": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-engine.txt",
+        "sha256": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e"
+      },
+      "evaluator": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-evaluator.txt",
+        "sha256": "f90dca24cd7b020fe105f226435463fe6211d8f12ca1328e5b8730befe94ef98"
+      },
+      "metrics": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-metrics.txt",
+        "sha256": "97864ee74dbb8b45f122fb5e9b128f40cd95abd530e5246c5f11855c79529a5c"
+      },
+      "model_manifest": {
+        "path_relative_to_report": "sources/broader-v1-heldout-2026-10-25-model_manifest.txt",
+        "sha256": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4"
+      }
+    },
+    "head_sha": "b953f30d9238a26d019a766c5e91d17b52ca39de",
+    "metrics_sha256": "97864ee74dbb8b45f122fb5e9b128f40cd95abd530e5246c5f11855c79529a5c",
+    "working_tree_dirty": true
+  },
+  "startup": {
+    "dependency_import_ms": 161.14560000278288,
+    "first_query_per_method_ms": {
+      "bm25": 0.3176000027451664,
+      "hybrid": 2.650299997185357,
+      "vector": 3.838999997242354
+    },
+    "index_construction_ms": 799.887299996044
+  },
+  "summary": {
+    "bm25": {
+      "answerable_case_count": 20,
+      "case_count": 24,
+      "metrics": {
+        "hit_at_1": 0.75,
+        "hit_at_5": 1.0,
+        "mrr_at_5": 0.8516666666666668,
+        "ndcg_at_5": 0.8466373896814663,
+        "recall_at_5": 0.9458333333333334
+      },
+      "miss_at_5_case_ids": [],
+      "unsupported_cases": {
+        "count": 4,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 4
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 0.41090000013355166,
+        "mean_ms": 0.15169583376619913,
+        "min_ms": 0.08970000635599717,
+        "p50_ms": 0.14519999967887998,
+        "p95_ms": 0.21457000402733684,
+        "p99_ms": 0.3586440000071893,
+        "sample_count": 72
+      }
+    },
+    "hybrid": {
+      "answerable_case_count": 20,
+      "case_count": 24,
+      "metrics": {
+        "hit_at_1": 0.65,
+        "hit_at_5": 1.0,
+        "mrr_at_5": 0.8,
+        "ndcg_at_5": 0.8063149598555043,
+        "recall_at_5": 0.9458333333333334
+      },
+      "miss_at_5_case_ids": [],
+      "unsupported_cases": {
+        "count": 4,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 4
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 5.1753000007011,
+        "mean_ms": 3.01754444474985,
+        "min_ms": 1.9766000041272491,
+        "p50_ms": 2.962650003610179,
+        "p95_ms": 4.172715000458993,
+        "p99_ms": 5.023999000623009,
+        "sample_count": 72
+      }
+    },
+    "vector": {
+      "answerable_case_count": 20,
+      "case_count": 24,
+      "metrics": {
+        "hit_at_1": 0.45,
+        "hit_at_5": 0.9,
+        "mrr_at_5": 0.6283333333333333,
+        "ndcg_at_5": 0.6212351961859292,
+        "recall_at_5": 0.7833333333333333
+      },
+      "miss_at_5_case_ids": [
+        "docwise-v3-045",
+        "docwise-v3-055"
+      ],
+      "unsupported_cases": {
+        "count": 4,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 4
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 4.7593000053893775,
+        "mean_ms": 2.8168722225624756,
+        "min_ms": 1.7656999989412725,
+        "p50_ms": 2.7611000041360967,
+        "p95_ms": 4.109774997050408,
+        "p99_ms": 4.377604002220327,
+        "sample_count": 72
+      }
+    }
+  },
+  "tag_aggregation_note": "Tag groups overlap. Each group is macro averaged over its answerable queries; unsupported-only groups have null ranking metrics."
+}

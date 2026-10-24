@@ -1,0 +1,4482 @@
+{
+  "broader_evidence": {
+    "benchmark_id": "docwise-broader-diagnostic-v1",
+    "exact_byte_snapshots": {
+      "annotation_history/revision1-dev.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-00.txt",
+        "sha256": "e64b033025f26b4e880e4152344027ac4bf5d3a9454a3723c69c36871f61e612"
+      },
+      "annotation_history/revision1-freeze.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-01.txt",
+        "sha256": "3f0c756f67a9113184e823962290c0216a70012d80c13bb2e93529ac83d83dbb"
+      },
+      "annotation_history/revision1-heldout.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-02.txt",
+        "sha256": "fd183ef306c9825cbe80c28b37214eef191cf9a8b0b541366fd179f36b45f6f3"
+      },
+      "broader.py": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-03.txt",
+        "sha256": "5cf8f66872e70729419717edbaa61a7d3d6d3e74fca7dd04111dfea1a3c53b49"
+      },
+      "character_splitter.py": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-04.txt",
+        "sha256": "1bbfdb14f8684c8099506f370c91c0f1bdc6f555aa38da7e6ad146605ddae624"
+      },
+      "corpus.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-05.txt",
+        "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+      },
+      "dev.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-06.txt",
+        "sha256": "65786a6cd08d1911c5d172fadd6654f48e07a18a187b985a2d20fcde6fe032d2"
+      },
+      "freeze.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-07.txt",
+        "sha256": "fb88e99f369cfe9f05df52da5b8826020086ece18f2e7bf6310b3c57d73e1299"
+      },
+      "heldout.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-08.txt",
+        "sha256": "27fa330ea523b0d9330fb8bd5b7cbcfc8e7b385b7dfbcf93b1d52fab42659679"
+      },
+      "manifest.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-09.txt",
+        "sha256": "43bb69a2fc3280969d5c8b9e6ad4d352516326bb702f4bdb8720cebd2c4e991e"
+      },
+      "semantic_splitter.py": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-10.txt",
+        "sha256": "482a97777e0c8314aa3f5e71ab4b8cc9b77e0817e3a0be303c82c3e92540fcea"
+      },
+      "source_review.json": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-11.txt",
+        "sha256": "36c88af4f8a473aecae7143aa570e0ce0599c8f4f4e8a2b5fbb3f87697a89627"
+      },
+      "sources/banking-README.md": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-12.txt",
+        "sha256": "76da247eb67b79826f3b3d1ccdda93c59e1f4b7ddd01d9ede994c949968d2b94"
+      },
+      "sources/cache-README.md": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-13.txt",
+        "sha256": "1a0406b46ebd7d84597c5be8ab3d919417cefa38202eb345f7988983996b3cc7"
+      },
+      "sources/community-README.md": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-14.txt",
+        "sha256": "58b061f81db279fb4704ad7dfc63a724836d1a5cd346ba979a45d8eac8f9ddf1"
+      },
+      "sources/durable-ADR-0001.md": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-15.txt",
+        "sha256": "152d095d5848f7ba2e0f0819c04b5d6d1f26f64ec12f3069ec3927d1ec4c14cd"
+      },
+      "sources/durable-ARCHITECTURE.md": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-16.txt",
+        "sha256": "530d00a0573dc5bf05e7448663222130683e616640a93176fe892f818f1bde4e"
+      },
+      "sources/realtime-README.md": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-broader-17.txt",
+        "sha256": "f0241afc3e95a88f65946a405f3374bfd338f796e5573fef733afc36028936d5"
+      }
+    },
+    "provider_requests_made": 0
+  },
+  "by_tag": {
+    "action_boundary": {
+      "bm25": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.9469024295259745,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1564999984111637,
+          "mean_ms": 0.1303999985490615,
+          "min_ms": 0.11660000018309802,
+          "p50_ms": 0.11809999705292284,
+          "p95_ms": 0.1526599982753396,
+          "p99_ms": 0.15573199838399887,
+          "sample_count": 3
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.2405999989132397,
+          "mean_ms": 2.217099999446267,
+          "min_ms": 2.2023999990778975,
+          "p50_ms": 2.2083000003476627,
+          "p95_ms": 2.237369999056682,
+          "p99_ms": 2.239953998941928,
+          "sample_count": 3
+        }
+      },
+      "vector": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.9674679834891693,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.542499998526182,
+          "mean_ms": 2.4397333327215165,
+          "min_ms": 2.350399998249486,
+          "p50_ms": 2.4263000013888814,
+          "p95_ms": 2.530879998812452,
+          "p99_ms": 2.540175998583436,
+          "sample_count": 3
+        }
+      }
+    },
+    "architecture": {
+      "bm25": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.7039180890341347,
+          "recall_at_5": 0.6666666666666666
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.15279999934136868,
+          "mean_ms": 0.12776666699210182,
+          "min_ms": 0.11330000415910035,
+          "p50_ms": 0.11719999747583643,
+          "p95_ms": 0.14923999915481545,
+          "p99_ms": 0.15208799930405803,
+          "sample_count": 3
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.1579999995301478,
+          "mean_ms": 3.050566667904301,
+          "min_ms": 2.9364000001805834,
+          "p50_ms": 3.0573000040021725,
+          "p95_ms": 3.1479299999773502,
+          "p99_ms": 3.1559859996195883,
+          "sample_count": 3
+        }
+      },
+      "vector": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.9674679834891693,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.2158999965758994,
+          "mean_ms": 2.327966663870029,
+          "min_ms": 1.7517999949632213,
+          "p50_ms": 2.016200000070967,
+          "p95_ms": 3.095929996925406,
+          "p99_ms": 3.1919059966458008,
+          "sample_count": 3
+        }
+      }
+    },
+    "banking": {
+      "bm25": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.95,
+          "ndcg_at_5": 0.9110700165011079,
+          "recall_at_5": 0.95
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.20850000146310776,
+          "mean_ms": 0.12905277819502065,
+          "min_ms": 0.08160000288626179,
+          "p50_ms": 0.12390000119921751,
+          "p95_ms": 0.16937499822233804,
+          "p99_ms": 0.19835000057355495,
+          "sample_count": 36
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.6,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.775,
+          "ndcg_at_5": 0.7706678706236166,
+          "recall_at_5": 0.95
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.427600000577513,
+          "mean_ms": 2.3627444441242713,
+          "min_ms": 1.5907999986666255,
+          "p50_ms": 2.2855500028526876,
+          "p95_ms": 3.40564999714843,
+          "p99_ms": 3.426585000488558,
+          "sample_count": 36
+        }
+      },
+      "vector": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.3,
+          "hit_at_5": 0.8,
+          "mrr_at_5": 0.48666666666666664,
+          "ndcg_at_5": 0.5434600001575524,
+          "recall_at_5": 0.75
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-007",
+          "docwise-v3-009"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.2700000010663643,
+          "mean_ms": 2.1394000003864573,
+          "min_ms": 1.506699998572003,
+          "p50_ms": 2.074900003208313,
+          "p95_ms": 2.823249997163657,
+          "p99_ms": 3.1216699997457904,
+          "sample_count": 36
+        }
+      }
+    },
+    "cache": {
+      "bm25": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.925,
+          "ndcg_at_5": 0.8656970943604311,
+          "recall_at_5": 0.9
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.22939999325899407,
+          "mean_ms": 0.12312499994651363,
+          "min_ms": 0.08949999755714089,
+          "p50_ms": 0.11660000018309802,
+          "p95_ms": 0.16305000463034958,
+          "p99_ms": 0.20696499559562645,
+          "sample_count": 36
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.95,
+          "ndcg_at_5": 0.9163797735485103,
+          "recall_at_5": 0.95
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.218000005290378,
+          "mean_ms": 2.364177777861995,
+          "min_ms": 1.7565999951330014,
+          "p50_ms": 2.3560999979963526,
+          "p95_ms": 3.034474999367376,
+          "p99_ms": 3.161615003773477,
+          "sample_count": 36
+        }
+      },
+      "vector": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.3,
+          "hit_at_5": 0.9,
+          "mrr_at_5": 0.6,
+          "ndcg_at_5": 0.6603998225137643,
+          "recall_at_5": 0.85
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-019"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.594000005046837,
+          "mean_ms": 2.10509722273855,
+          "min_ms": 1.603700002306141,
+          "p50_ms": 2.160050004022196,
+          "p95_ms": 2.514399999199668,
+          "p99_ms": 2.5796850030019414,
+          "sample_count": 36
+        }
+      }
+    },
+    "comparison": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.22939999325899407,
+          "mean_ms": 0.15543333211098798,
+          "min_ms": 0.11719999747583643,
+          "p50_ms": 0.15239999993355013,
+          "p95_ms": 0.21197499518166296,
+          "p99_ms": 0.22591499364352785,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.625,
+          "ndcg_at_5": 0.7153382790366966,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.636100005474873,
+          "mean_ms": 2.3410666666071243,
+          "min_ms": 2.0890000014333054,
+          "p50_ms": 2.3108499990485143,
+          "p95_ms": 2.577075003500795,
+          "p99_ms": 2.6242950050800573,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 0.5,
+          "mrr_at_5": 0.25,
+          "ndcg_at_5": 0.31546487678572877,
+          "recall_at_5": 0.5
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-009"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.5014999991981313,
+          "mean_ms": 2.1955166679011504,
+          "min_ms": 1.9179000009899028,
+          "p50_ms": 2.2174500008986797,
+          "p95_ms": 2.449150000757072,
+          "p99_ms": 2.4910299995099194,
+          "sample_count": 6
+        }
+      }
+    },
+    "configuration": {
+      "bm25": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.6666666666666666,
+          "hit_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.6666666666666666,
+          "ndcg_at_5": 0.6666666666666666,
+          "recall_at_5": 0.6666666666666666
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-029"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.16310000501107424,
+          "mean_ms": 0.1307555568119925,
+          "min_ms": 0.11100000119768083,
+          "p50_ms": 0.1233000002685003,
+          "p95_ms": 0.16122000524774194,
+          "p99_ms": 0.16272400505840778,
+          "sample_count": 9
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.6666666666666666,
+          "hit_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.6666666666666666,
+          "ndcg_at_5": 0.6666666666666666,
+          "recall_at_5": 0.6666666666666666
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-029"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.602400003524963,
+          "mean_ms": 2.45093333392611,
+          "min_ms": 2.2515000018756837,
+          "p50_ms": 2.4593999987700954,
+          "p95_ms": 2.596760004234966,
+          "p99_ms": 2.6012720036669634,
+          "sample_count": 9
+        }
+      },
+      "vector": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 0.3333333333333333,
+          "mrr_at_5": 0.16666666666666666,
+          "ndcg_at_5": 0.2103099178571525,
+          "recall_at_5": 0.3333333333333333
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-019",
+          "docwise-v3-029"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.364699997997377,
+          "mean_ms": 2.1764111103645214,
+          "min_ms": 2.024200002779253,
+          "p50_ms": 2.1424999940791167,
+          "p95_ms": 2.3490999985369854,
+          "p99_ms": 2.3615799981052987,
+          "sample_count": 9
+        }
+      }
+    },
+    "exact_term": {
+      "bm25": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8710490642551528,
+          "recall_at_5": 0.8333333333333334
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.20850000146310776,
+          "mean_ms": 0.14265555607077354,
+          "min_ms": 0.09150000551017001,
+          "p50_ms": 0.14090000331634656,
+          "p95_ms": 0.19150000007357448,
+          "p99_ms": 0.2051000011852011,
+          "sample_count": 9
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.6666666666666666,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8333333333333334,
+          "ndcg_at_5": 0.748025648778972,
+          "recall_at_5": 0.8333333333333334
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.427600000577513,
+          "mean_ms": 2.4573222213398873,
+          "min_ms": 1.7565999951330014,
+          "p50_ms": 2.1276999977999367,
+          "p95_ms": 3.42644000047585,
+          "p99_ms": 3.4273680005571805,
+          "sample_count": 9
+        }
+      },
+      "vector": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.38888888888888884,
+          "ndcg_at_5": 0.46228426907818054,
+          "recall_at_5": 0.8333333333333334
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.2700000010663643,
+          "mean_ms": 2.271055555158657,
+          "min_ms": 1.603700002306141,
+          "p50_ms": 2.130000000761356,
+          "p95_ms": 3.1004799995571375,
+          "p99_ms": 3.236096000764519,
+          "sample_count": 9
+        }
+      }
+    },
+    "failure": {
+      "bm25": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.9732402630493958,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1795999996829778,
+          "mean_ms": 0.1321333353795732,
+          "min_ms": 0.09960000170394778,
+          "p50_ms": 0.13010000111535192,
+          "p95_ms": 0.17268000228796154,
+          "p99_ms": 0.17821600020397455,
+          "sample_count": 9
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8710490642551528,
+          "recall_at_5": 0.8333333333333334
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.0035000017960556,
+          "mean_ms": 2.504911112029933,
+          "min_ms": 2.005900001677219,
+          "p50_ms": 2.551199999288656,
+          "p95_ms": 2.93754000304034,
+          "p99_ms": 2.9903080020449124,
+          "sample_count": 9
+        }
+      },
+      "vector": {
+        "answerable_case_count": 3,
+        "case_count": 3,
+        "metrics": {
+          "hit_at_1": 0.3333333333333333,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.6666666666666666,
+          "ndcg_at_5": 0.6725941869353331,
+          "recall_at_5": 0.8333333333333334
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.2841000027256086,
+          "mean_ms": 2.083800001451487,
+          "min_ms": 1.732500000798609,
+          "p50_ms": 2.072000002954155,
+          "p95_ms": 2.26966000336688,
+          "p99_ms": 2.281212002853863,
+          "sample_count": 9
+        }
+      }
+    },
+    "implementation": {
+      "bm25": {
+        "answerable_case_count": 7,
+        "case_count": 7,
+        "metrics": {
+          "hit_at_1": 0.8571428571428571,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.9285714285714286,
+          "ndcg_at_5": 0.8584910833322196,
+          "recall_at_5": 0.880952380952381
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.17110000044340268,
+          "mean_ms": 0.11861428529733703,
+          "min_ms": 0.08949999755714089,
+          "p50_ms": 0.11269999959040433,
+          "p95_ms": 0.1512000017100945,
+          "p99_ms": 0.16712000069674104,
+          "sample_count": 21
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 7,
+        "case_count": 7,
+        "metrics": {
+          "hit_at_1": 0.7142857142857143,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8571428571428571,
+          "ndcg_at_5": 0.7894038883526404,
+          "recall_at_5": 0.880952380952381
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.7471000032383017,
+          "mean_ms": 2.428471428131507,
+          "min_ms": 1.84350000199629,
+          "p50_ms": 2.3564000002807006,
+          "p95_ms": 3.242799997678958,
+          "p99_ms": 3.6462400021264334,
+          "sample_count": 21
+        }
+      },
+      "vector": {
+        "answerable_case_count": 7,
+        "case_count": 7,
+        "metrics": {
+          "hit_at_1": 0.7142857142857143,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8142857142857143,
+          "ndcg_at_5": 0.7854556082094876,
+          "recall_at_5": 0.880952380952381
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.659400000993628,
+          "mean_ms": 2.0637333329345675,
+          "min_ms": 1.6882999989320524,
+          "p50_ms": 1.9804000039584935,
+          "p95_ms": 2.5986000036937185,
+          "p99_ms": 2.647240001533646,
+          "sample_count": 21
+        }
+      }
+    },
+    "measurement_scope": {
+      "bm25": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.17640000442042947,
+          "mean_ms": 0.14355000166688114,
+          "min_ms": 0.11610000365180895,
+          "p50_ms": 0.1416000013705343,
+          "p95_ms": 0.1736250032990938,
+          "p99_ms": 0.17584500419616234,
+          "sample_count": 6
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.1238999945344403,
+          "mean_ms": 2.6906499988399446,
+          "min_ms": 2.2470999974757433,
+          "p50_ms": 2.6890500012086704,
+          "p95_ms": 3.0996749956102576,
+          "p99_ms": 3.119054994749604,
+          "sample_count": 6
+        }
+      },
+      "vector": {
+        "answerable_case_count": 2,
+        "case_count": 2,
+        "metrics": {
+          "hit_at_1": 0.5,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.625,
+          "ndcg_at_5": 0.7153382790366966,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.553099999204278,
+          "mean_ms": 2.2093833346540728,
+          "min_ms": 2.0399999993969686,
+          "p50_ms": 2.154950001568068,
+          "p95_ms": 2.4770750005700393,
+          "p99_ms": 2.5378949994774302,
+          "sample_count": 6
+        }
+      }
+    },
+    "multi_section": {
+      "bm25": {
+        "answerable_case_count": 11,
+        "case_count": 11,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.780493347294999,
+          "recall_at_5": 0.7575757575757577
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.17949999892152846,
+          "mean_ms": 0.12303030300906605,
+          "min_ms": 0.09150000551017001,
+          "p50_ms": 0.12009999772999436,
+          "p95_ms": 0.15897999983280897,
+          "p99_ms": 0.17412399989552796,
+          "sample_count": 33
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 11,
+        "case_count": 11,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8624201979154857,
+          "recall_at_5": 0.8787878787878788
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.1579999995301478,
+          "mean_ms": 2.3400909093183917,
+          "min_ms": 1.7565999951330014,
+          "p50_ms": 2.335100005439017,
+          "p95_ms": 3.0250200026785024,
+          "p99_ms": 3.1257760009611957,
+          "sample_count": 33
+        }
+      },
+      "vector": {
+        "answerable_case_count": 11,
+        "case_count": 11,
+        "metrics": {
+          "hit_at_1": 0.45454545454545453,
+          "hit_at_5": 0.9090909090909091,
+          "mrr_at_5": 0.6818181818181818,
+          "ndcg_at_5": 0.6830367668451421,
+          "recall_at_5": 0.7878787878787878
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-007"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.2158999965758994,
+          "mean_ms": 2.0313787882156302,
+          "min_ms": 1.5921000012895092,
+          "p50_ms": 1.9949999987147748,
+          "p95_ms": 2.4727800002438016,
+          "p99_ms": 3.00041199719999,
+          "sample_count": 33
+        }
+      }
+    },
+    "realtime": {
+      "bm25": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 0.9,
+          "mrr_at_5": 0.9,
+          "ndcg_at_5": 0.7879362023274451,
+          "recall_at_5": 0.7833333333333333
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-029"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1795999996829778,
+          "mean_ms": 0.12961111153547084,
+          "min_ms": 0.09249999857274815,
+          "p50_ms": 0.125449998449767,
+          "p95_ms": 0.17242500143765938,
+          "p99_ms": 0.17848000134108588,
+          "sample_count": 36
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.9,
+          "hit_at_5": 0.9,
+          "mrr_at_5": 0.9,
+          "ndcg_at_5": 0.8183688500473755,
+          "recall_at_5": 0.8166666666666667
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-029"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.7471000032383017,
+          "mean_ms": 2.425569444716934,
+          "min_ms": 1.7987000028369948,
+          "p50_ms": 2.398749998974381,
+          "p95_ms": 3.132424995783367,
+          "p99_ms": 3.540915001940447,
+          "sample_count": 36
+        }
+      },
+      "vector": {
+        "answerable_case_count": 10,
+        "case_count": 12,
+        "metrics": {
+          "hit_at_1": 0.6,
+          "hit_at_5": 0.9,
+          "mrr_at_5": 0.725,
+          "ndcg_at_5": 0.7060131534514078,
+          "recall_at_5": 0.8166666666666667
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-029"
+        ],
+        "unsupported_cases": {
+          "count": 2,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 2
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.2158999965758994,
+          "mean_ms": 2.100994444238798,
+          "min_ms": 1.629700003832113,
+          "p50_ms": 2.0390499994391575,
+          "p95_ms": 2.613800003018696,
+          "p99_ms": 3.0211249981221036,
+          "sample_count": 36
+        }
+      }
+    },
+    "request_boundary": {
+      "bm25": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.17949999892152846,
+          "mean_ms": 0.15590000111842528,
+          "min_ms": 0.14200000441633165,
+          "p50_ms": 0.14620000001741573,
+          "p95_ms": 0.17616999903111719,
+          "p99_ms": 0.1788339989434462,
+          "sample_count": 3
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 0.8503449055347546,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.456200003507547,
+          "mean_ms": 2.3932666687566475,
+          "min_ms": 2.3479000010411255,
+          "p50_ms": 2.3757000017212704,
+          "p95_ms": 2.4481500033289194,
+          "p99_ms": 2.4545900034718215,
+          "sample_count": 3
+        }
+      },
+      "vector": {
+        "answerable_case_count": 1,
+        "case_count": 1,
+        "metrics": {
+          "hit_at_1": 0.0,
+          "hit_at_5": 0.0,
+          "mrr_at_5": 0.0,
+          "ndcg_at_5": 0.0,
+          "recall_at_5": 0.0
+        },
+        "miss_at_5_case_ids": [
+          "docwise-v3-007"
+        ],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.4015000017243437,
+          "mean_ms": 2.3267000021102526,
+          "min_ms": 2.2599000003538094,
+          "p50_ms": 2.318700004252605,
+          "p95_ms": 2.39322000197717,
+          "p99_ms": 2.399844001774909,
+          "sample_count": 3
+        }
+      }
+    },
+    "scope_boundary": {
+      "bm25": {
+        "answerable_case_count": 7,
+        "case_count": 7,
+        "metrics": {
+          "hit_at_1": 0.8571428571428571,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.8928571428571429,
+          "ndcg_at_5": 0.7791295782986495,
+          "recall_at_5": 0.8571428571428571
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1627000019652769,
+          "mean_ms": 0.12217618980988239,
+          "min_ms": 0.09159999899566174,
+          "p50_ms": 0.12040000001434237,
+          "p95_ms": 0.1584999990882352,
+          "p99_ms": 0.16186000138986856,
+          "sample_count": 21
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 7,
+        "case_count": 7,
+        "metrics": {
+          "hit_at_1": 0.8571428571428571,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.9285714285714286,
+          "ndcg_at_5": 0.9128703030022887,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 3.218000005290378,
+          "mean_ms": 2.4024619051488116,
+          "min_ms": 1.8869999985327013,
+          "p50_ms": 2.3600999993504956,
+          "p95_ms": 3.056900000956375,
+          "p99_ms": 3.1857800044235773,
+          "sample_count": 21
+        }
+      },
+      "vector": {
+        "answerable_case_count": 7,
+        "case_count": 7,
+        "metrics": {
+          "hit_at_1": 0.42857142857142855,
+          "hit_at_5": 1.0,
+          "mrr_at_5": 0.7142857142857143,
+          "ndcg_at_5": 0.7954904433608062,
+          "recall_at_5": 1.0
+        },
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 0,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 0
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.594000005046837,
+          "mean_ms": 2.085366667805439,
+          "min_ms": 1.5921000012895092,
+          "p50_ms": 2.07570000202395,
+          "p95_ms": 2.528999997593928,
+          "p99_ms": 2.5810000035562553,
+          "sample_count": 21
+        }
+      }
+    },
+    "unsupported": {
+      "bm25": {
+        "answerable_case_count": 0,
+        "case_count": 6,
+        "metrics": null,
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 6,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 6
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 0.1564999984111637,
+          "mean_ms": 0.11121111189519677,
+          "min_ms": 0.08160000288626179,
+          "p50_ms": 0.10404999920865521,
+          "p95_ms": 0.1432400025805691,
+          "p99_ms": 0.15384799924504475,
+          "sample_count": 18
+        }
+      },
+      "hybrid": {
+        "answerable_case_count": 0,
+        "case_count": 6,
+        "metrics": null,
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 6,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 6
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.5137999982689507,
+          "mean_ms": 2.0082499997645047,
+          "min_ms": 1.5907999986666255,
+          "p50_ms": 1.9754999993892852,
+          "p95_ms": 2.3934399971039966,
+          "p99_ms": 2.4897279980359595,
+          "sample_count": 18
+        }
+      },
+      "vector": {
+        "answerable_case_count": 0,
+        "case_count": 6,
+        "metrics": null,
+        "miss_at_5_case_ids": [],
+        "unsupported_cases": {
+          "count": 6,
+          "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+          "returned_nonempty_count": 6
+        },
+        "warm_retrieval_latency_all_cases": {
+          "max_ms": 2.3281999965547584,
+          "mean_ms": 1.9340333330748964,
+          "min_ms": 1.506699998572003,
+          "p50_ms": 1.9550500001059845,
+          "p95_ms": 2.2828099972684868,
+          "p99_ms": 2.319121996697504,
+          "sample_count": 18
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-001",
+      "intent_id": "banking_beneficiary_resolution",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::001",
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "community-README.md::001",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.20850000146310776,
+            0.16599999798927456,
+            0.16259999392786995
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::001",
+            "banking-README.md::002",
+            "community-README.md::001",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            3.3992999960901216,
+            3.424700000323355,
+            3.427600000577513
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::001",
+            "community-README.md::001",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.846199997293297,
+            2.8155999971204437,
+            3.2700000010663643
+          ]
+        }
+      },
+      "question": "In the banking harness, which beneficiary identifiers are supported and what happens when a name matches more than one beneficiary?",
+      "relevant_chunk_ids": [
+        "banking-README.md::001"
+      ],
+      "tags": [
+        "banking",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-002",
+      "intent_id": "banking_later_confirmation",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9469024295259745,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "cache-README.md::001",
+            "realtime-README.md::006",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.1564999984111637,
+            0.11660000018309802,
+            0.11809999705292284
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::001",
+            "banking-README.md::005",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.2083000003476627,
+            2.2405999989132397,
+            2.2023999990778975
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9674679834891693,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "banking-README.md::001",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.350399998249486,
+            2.4263000013888814,
+            2.542499998526182
+          ]
+        }
+      },
+      "question": "What prevents a banking proposal from debiting funds during the same invocation that stages it?",
+      "relevant_chunk_ids": [
+        "banking-README.md::000",
+        "banking-README.md::001",
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "action_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-003",
+      "intent_id": "banking_deterministic_policy",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::003",
+            "cache-README.md::001",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.14589999773306772,
+            0.1016000023810193,
+            0.09700000373413786
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::001",
+            "community-README.md::002",
+            "banking-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.3353999931714498,
+            2.420400000119116,
+            2.3564000002807006
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "banking-README.md::001",
+            "banking-README.md::004",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.7336000018985942,
+            1.691899997240398,
+            1.712799996312242
+          ]
+        }
+      },
+      "question": "Which transfer eligibility checks does the banking application enforce independently of its prompt?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-004",
+      "intent_id": "banking_outcome_accounting",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "banking-README.md::003",
+            "banking-README.md::004",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.13590000162366778,
+            0.10270000348100439,
+            0.09960000170394778
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "banking-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "banking-README.md::001",
+            "banking-README.md::004",
+            "banking-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.005900001677219,
+            2.3234999971464276,
+            3.0035000017960556
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "banking-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::005",
+            "banking-README.md::001",
+            "durable-ADR-0001.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.072000002954155,
+            1.9236000007367693,
+            1.732500000798609
+          ]
+        }
+      },
+      "question": "What simulated banking outcomes are available, and how do FAILED and PENDING affect funds?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002",
+        "banking-README.md::003"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-005",
+      "intent_id": "banking_visitor_lease",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::005",
+            "cache-README.md::005",
+            "banking-README.md::004",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.1512000017100945,
+            0.11059999815188348,
+            0.10579999798210338
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "banking-README.md::002",
+            "community-README.md::002",
+            "cache-README.md::005",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.174399996874854,
+            2.0952999984729104,
+            3.242799997678958
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.2,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "community-README.md::002",
+            "realtime-README.md::002",
+            "community-README.md::006",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.4272000009659678,
+            2.3231999948620796,
+            2.2081000061007217
+          ]
+        }
+      },
+      "question": "How does the hosted banking store bound concurrent ownership and expiry of a visitor snapshot?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-006",
+      "intent_id": "banking_turn_budgets",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "banking-README.md::004",
+            "community-README.md::005",
+            "realtime-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.1604999997653067,
+            0.14090000331634656,
+            0.13000000035390258
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "banking-README.md::004",
+            "realtime-README.md::006",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.1276999977999367,
+            2.0865999977104366,
+            2.3383000007015653
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.3333333333333333,
+            "ndcg_at_5": 0.5,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::002",
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.3519000023952685,
+            2.130000000761356,
+            2.037999998719897
+          ]
+        }
+      },
+      "question": "What wall-clock and model-call bounds does the hosted banking runner place on each turn?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-007",
+      "intent_id": "banking_streamed_body_limit",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::004",
+            "banking-README.md::000",
+            "realtime-README.md::006",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.17949999892152846,
+            0.14620000001741573,
+            0.14200000441633165
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8503449055347546,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::002",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.456200003507547,
+            2.3757000017212704,
+            2.3479000010411255
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "banking-README.md::002",
+            "banking-README.md::004"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::000",
+            "realtime-README.md::002",
+            "banking-README.md::001",
+            "durable-ARCHITECTURE.md::001",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.4015000017243437,
+            2.2599000003538094,
+            2.318700004252605
+          ]
+        }
+      },
+      "question": "How large may a streamed banking POST body be, and can a missing or falsely small Content-Length bypass that limit?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002",
+        "banking-README.md::004"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "request_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-008",
+      "intent_id": "banking_session_ledger_scope",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "banking-README.md::001",
+            "banking-README.md::002",
+            "cache-README.md::001",
+            "banking-README.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.1584999990882352,
+            0.12040000001434237,
+            0.12579999747686088
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "banking-README.md::002",
+            "banking-README.md::001",
+            "banking-README.md::000",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.586999995401129,
+            2.436199996736832,
+            2.2507000030600466
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "banking-README.md::002",
+            "banking-README.md::004",
+            "cache-README.md::004",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.077800003462471,
+            2.528999997593928,
+            2.4554999981774017
+          ]
+        }
+      },
+      "question": "Does the banking daily allowance reset at midnight, and what does expiration of a demo snapshot do?",
+      "relevant_chunk_ids": [
+        "banking-README.md::005"
+      ],
+      "tags": [
+        "banking",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-009",
+      "intent_id": "banking_public_vs_dev",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::003",
+            "banking-README.md::004",
+            "cache-README.md::006",
+            "community-README.md::005",
+            "banking-README.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.14760000340174884,
+            0.12150000111432746,
+            0.11719999747583643
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.25,
+            "ndcg_at_5": 0.43067655807339306,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::004",
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "banking-README.md::003",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.636100005474873,
+            2.3218999995151535,
+            2.0890000014333054
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "banking-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ARCHITECTURE.md::001",
+            "banking-README.md::002",
+            "banking-README.md::000",
+            "community-README.md::006",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.0266999999876134,
+            1.9179000009899028,
+            2.2921000054338947
+          ]
+        }
+      },
+      "question": "Which local command runs the deployed banking interface, and is the original ADK developer interface mounted publicly?",
+      "relevant_chunk_ids": [
+        "banking-README.md::003"
+      ],
+      "tags": [
+        "banking",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-010",
+      "intent_id": "banking_mock_financial_boundary",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "banking-README.md::001"
+          ],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "cache-README.md::001",
+            "banking-README.md::000",
+            "realtime-README.md::006",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.12029999925289303,
+            0.09510000381851569,
+            0.09159999899566174
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "banking-README.md::000",
+            "banking-README.md::001",
+            "community-README.md::006",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.8869999985327013,
+            2.1686999971279874,
+            2.2737000035704114
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6934264036172708,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "banking-README.md::001",
+            "community-README.md::006",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.5921000012895092,
+            1.811200003430713,
+            1.7245000053662807
+          ]
+        }
+      },
+      "question": "Does the banking demo move real funds or provide identity-verified payment rails?",
+      "relevant_chunk_ids": [
+        "banking-README.md::001",
+        "banking-README.md::005"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-011",
+      "intent_id": "banking_real_account_number",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::001",
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "cache-README.md::001",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.1564999984111637,
+            0.12200000492157415,
+            0.12620000052265823
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::001",
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "community-README.md::001",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.2299999982351437,
+            2.1137000003363937,
+            1.970700002857484
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::001",
+            "banking-README.md::000",
+            "banking-README.md::005",
+            "banking-README.md::002",
+            "community-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.066900000500027,
+            1.9290999989607371,
+            1.9885000001522712
+          ]
+        }
+      },
+      "question": "What is the full real savings-account number assigned to Aaron by the banking harness?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "banking",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-012",
+      "intent_id": "banking_monthly_fee",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "cache-README.md::001",
+            "community-README.md::001",
+            "banking-README.md::001",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.10070000280393288,
+            0.08320000051753595,
+            0.08160000288626179
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::000",
+            "banking-README.md::001",
+            "community-README.md::001",
+            "banking-README.md::005",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            1.5907999986666255,
+            1.6130000003613532,
+            2.297400002134964
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::001",
+            "banking-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::005",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.810900001146365,
+            1.713599995127879,
+            1.506699998572003
+          ]
+        }
+      },
+      "question": "What monthly rupee fee does the banking harness charge account holders?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "banking",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-013",
+      "intent_id": "cache_exact_vs_semantic",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::006",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::000",
+            "cache-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            0.22939999325899407,
+            0.15970000094966963,
+            0.15719999646535143
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::006",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.2995999970589764,
+            2.299799998581875,
+            2.3999999975785613
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::000",
+            "cache-README.md::002",
+            "cache-README.md::006",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.5014999991981313,
+            2.21389999933308,
+            2.2210000024642795
+          ]
+        }
+      },
+      "question": "In the Symposium cache flow, which kind of hit avoids provider work and which still needs a query embedding?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-014",
+      "intent_id": "cache_namespace_inputs",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::004",
+            "cache-README.md::000",
+            "cache-README.md::001",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.12109999806853011,
+            0.1109000004362315,
+            0.1021999996737577
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::001",
+            "cache-README.md::004",
+            "community-README.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            1.84350000199629,
+            2.037500002188608,
+            2.160399999411311
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "community-README.md::007",
+            "cache-README.md::001",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.8506999986129813,
+            1.7932999980985187,
+            1.6882999989320524
+          ]
+        }
+      },
+      "question": "What inputs select the Symposium cache namespace, and why does changed citation metadata matter?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-015",
+      "intent_id": "cache_capacity_and_expiry",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "cache-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::006",
+            "cache-README.md::004",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.11709999671438709,
+            0.10680000559659675,
+            0.09150000551017001
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "cache-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::001",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            1.7778999972506426,
+            1.7772000064724125,
+            1.7565999951330014
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.38685280723454163,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "cache-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "cache-README.md::000",
+            "cache-README.md::002",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::002",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.752600001054816,
+            1.6314999957103282,
+            1.603700002306141
+          ]
+        }
+      },
+      "question": "What are the default entry limit and TTL for each Symposium cache namespace?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002",
+        "cache-README.md::003"
+      ],
+      "tags": [
+        "cache",
+        "multi_section",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-016",
+      "intent_id": "cache_safe_index_format",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::001",
+            "realtime-README.md::002",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.11269999959040433,
+            0.09169999975711107,
+            0.08949999755714089
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::004",
+            "cache-README.md::001",
+            "cache-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.4187000017263927,
+            2.3520999966422096,
+            2.335799996217247
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::005",
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            1.894400003948249,
+            2.33499999740161,
+            2.2540999998454936
+          ]
+        }
+      },
+      "question": "What does the Symposium loader validate, and which metadata format replaces pickle deserialization?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-017",
+      "intent_id": "cache_completed_generation",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::000",
+            "banking-README.md::002",
+            "realtime-README.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.16230000619543716,
+            0.13010000111535192,
+            0.12509999942267314
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::002",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.7049999989685602,
+            2.6996000015060417,
+            2.315800003998447
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::000",
+            "cache-README.md::002",
+            "cache-README.md::005",
+            "durable-ARCHITECTURE.md::001",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.232000006188173,
+            2.2480000043287873,
+            2.1925999972154386
+          ]
+        }
+      },
+      "question": "Which generation finish state may enter the Symposium cache, and what happens to truncated or tool-call responses?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-018",
+      "intent_id": "cache_valkey_search_boundary",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "cache-README.md::006"
+          ],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "community-README.md::006",
+            "realtime-README.md::006",
+            "cache-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            0.1497999983257614,
+            0.12309999874560162,
+            0.12009999772999436
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::006",
+            "cache-README.md::001",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.4076999980024993,
+            2.4913999950513244,
+            2.335100005439017
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6934264036172708,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::000",
+            "cache-README.md::002",
+            "cache-README.md::006",
+            "realtime-README.md::003",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.07570000202395,
+            2.031399999395944,
+            1.979200002097059
+          ]
+        }
+      },
+      "question": "Does the local Symposium Valkey adapter require a vector-search module or provide an indexed ANN service?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002",
+        "cache-README.md::006"
+      ],
+      "tags": [
+        "cache",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-019",
+      "intent_id": "cache_local_without_redis",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::003",
+            "community-README.md::004",
+            "realtime-README.md::005",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.14119999832473695,
+            0.11500000255182385,
+            0.11100000119768083
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::003",
+            "cache-README.md::000",
+            "durable-ARCHITECTURE.md::000",
+            "banking-README.md::003",
+            "banking-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.347000001464039,
+            2.5883000052999705,
+            2.5348999988636933
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "cache-README.md::003"
+          ],
+          "ranked_chunk_ids": [
+            "durable-ADR-0001.md::000",
+            "realtime-README.md::006",
+            "cache-README.md::004",
+            "cache-README.md::000",
+            "banking-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.024200002779253,
+            2.1129000015207566,
+            2.1424999940791167
+          ]
+        }
+      },
+      "question": "Which two explicit settings run the Symposium app locally without Redis, and what protection is disabled?",
+      "relevant_chunk_ids": [
+        "cache-README.md::003"
+      ],
+      "tags": [
+        "cache",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-020",
+      "intent_id": "cache_reuse_limit",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::006",
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::001",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            0.1539999939268455,
+            0.10800000018207356,
+            0.10450000263517722
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::006",
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "cache-README.md::001",
+            "durable-ADR-0001.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.8193000034661964,
+            2.5212000036844984,
+            3.218000005290378
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::002",
+            "cache-README.md::006",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::001",
+            "cache-README.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.1465000027092174,
+            2.1803999989060685,
+            1.9990000000689179
+          ]
+        }
+      },
+      "question": "What risk does semantic answer reuse introduce, and do request budgets cap total provider spending?",
+      "relevant_chunk_ids": [
+        "cache-README.md::006"
+      ],
+      "tags": [
+        "cache",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-021",
+      "intent_id": "cache_workload_vs_traffic",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::005",
+            "cache-README.md::000",
+            "realtime-README.md::006",
+            "realtime-README.md::005",
+            "cache-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.16529999993508682,
+            0.12029999925289303,
+            0.11610000365180895
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::005",
+            "cache-README.md::000",
+            "realtime-README.md::006",
+            "cache-README.md::006",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.762700001767371,
+            2.3677999997744337,
+            3.0269999988377094
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::005",
+            "cache-README.md::000",
+            "cache-README.md::006",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.553099999204278,
+            2.249000004667323,
+            2.1736000053351745
+          ]
+        }
+      },
+      "question": "What did the Symposium local SQLite workload measure, and does that result describe hosted production traffic?",
+      "relevant_chunk_ids": [
+        "cache-README.md::005"
+      ],
+      "tags": [
+        "cache",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-022",
+      "intent_id": "cache_citation_validation",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.25,
+            "ndcg_at_5": 0.43067655807339306,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::004",
+            "cache-README.md::001",
+            "banking-README.md::001",
+            "cache-README.md::002",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.12989999959245324,
+            0.10209999891230837,
+            0.112599998828955
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::001",
+            "cache-README.md::002",
+            "cache-README.md::004",
+            "cache-README.md::000",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.241700000013225,
+            2.3600999993504956,
+            3.056900000956375
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::001",
+            "cache-README.md::002",
+            "cache-README.md::000",
+            "durable-ARCHITECTURE.md::001",
+            "community-README.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            2.468799997586757,
+            2.594000005046837,
+            2.216700006101746
+          ]
+        }
+      },
+      "question": "What does a Symposium page-citation check establish, and what does it leave unproven?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-023",
+      "intent_id": "cache_event_fee",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::001",
+            "cache-README.md::000",
+            "banking-README.md::001",
+            "community-README.md::001",
+            "cache-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.14090000331634656,
+            0.10359999578213319,
+            0.09429999772692099
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::001",
+            "community-README.md::001",
+            "banking-README.md::001",
+            "cache-README.md::004",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.068399997369852,
+            1.9782000017585233,
+            1.953999999386724
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::001",
+            "community-README.md::001",
+            "banking-README.md::001",
+            "community-README.md::000",
+            "cache-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.274799997394439,
+            2.0061000032001175,
+            1.8669999990379438
+          ]
+        }
+      },
+      "question": "What exact registration fee in rupees does the fictional Innovate 2026 symposium charge?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "cache",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-024",
+      "intent_id": "cache_redis_invoice",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::000",
+            "banking-README.md::002",
+            "banking-README.md::001",
+            "cache-README.md::003",
+            "durable-ADR-0001.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.12649999553104863,
+            0.0954000061028637,
+            0.09150000551017001
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "cache-README.md::000",
+            "durable-ADR-0001.md::000",
+            "banking-README.md::002",
+            "cache-README.md::004",
+            "cache-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.5137999982689507,
+            2.3721999968984164,
+            1.9651999973575585
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "banking-README.md::005",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::004",
+            "cache-README.md::000",
+            "cache-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            1.7527000018162653,
+            2.195099994423799,
+            2.3281999965547584
+          ]
+        }
+      },
+      "question": "How much did the Symposium hosted Redis service invoice the author last month?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "cache",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-025",
+      "intent_id": "realtime_six_person_admission",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::001"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "banking-README.md::002",
+            "realtime-README.md::005",
+            "realtime-README.md::006",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.1453000004403293,
+            0.11609999637585133,
+            0.12579999747686088
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::001",
+            "cache-README.md::005",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.4209999974118546,
+            2.525900003092829,
+            2.6970999970217235
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::001",
+            "cache-README.md::005",
+            "realtime-README.md::000",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.9987999985460192,
+            2.157199996872805,
+            1.9452999986242503
+          ]
+        }
+      },
+      "question": "How many meeting participants are supported, and how are concurrent joins serialized before enforcing that cap?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::001",
+        "realtime-README.md::002"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-026",
+      "intent_id": "realtime_overlapping_joins",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "durable-ARCHITECTURE.md::000",
+            "cache-README.md::001",
+            "cache-README.md::004",
+            "banking-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.1795999996829778,
+            0.1334000044153072,
+            0.1205000007757917
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "durable-ARCHITECTURE.md::000",
+            "realtime-README.md::006",
+            "banking-README.md::002",
+            "banking-README.md::004"
+          ],
+          "warm_latency_samples_ms": [
+            2.1010999989812262,
+            2.838600004906766,
+            2.551199999288656
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::005",
+            "cache-README.md::005",
+            "realtime-README.md::001",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.2841000027256086,
+            2.0380999994813465,
+            2.031299998634495
+          ]
+        }
+      },
+      "question": "What prevents one socket from joining multiple rooms through overlapping requests, and what happens after failed admission?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::002"
+      ],
+      "tags": [
+        "realtime",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-027",
+      "intent_id": "realtime_media_and_coordination",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7039180890341347,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::006"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::007",
+            "realtime-README.md::002",
+            "realtime-README.md::001",
+            "cache-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.15279999934136868,
+            0.11330000415910035,
+            0.11719999747583643
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::002",
+            "realtime-README.md::006",
+            "cache-README.md::001",
+            "community-README.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            3.1579999995301478,
+            3.0573000040021725,
+            2.9364000001805834
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9674679834891693,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::002",
+            "realtime-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.016200000070967,
+            1.7517999949632213,
+            3.2158999965758994
+          ]
+        }
+      },
+      "question": "Which path carries Apna Video Call media, and what does the server coordinate instead?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::000",
+        "realtime-README.md::002",
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "architecture"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-028",
+      "intent_id": "realtime_session_rotation",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::005",
+            "banking-README.md::001",
+            "durable-ARCHITECTURE.md::000",
+            "realtime-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            0.17110000044340268,
+            0.13420000323094428,
+            0.13110000145388767
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::001",
+            "durable-ADR-0001.md::000",
+            "realtime-README.md::006",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.2048000028007664,
+            2.6383000003988855,
+            3.7471000032383017
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6131471927654584,
+            "recall_at_5": 0.5
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::001",
+            "banking-README.md::005",
+            "community-README.md::002",
+            "durable-ADR-0001.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.659400000993628,
+            2.5986000036937185,
+            2.2563999955309555
+          ]
+        }
+      },
+      "question": "How are meeting access and refresh tokens stored, and what do refresh and logout change?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::002",
+        "realtime-README.md::005"
+      ],
+      "tags": [
+        "realtime",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-029",
+      "intent_id": "realtime_postgres_connection",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::004"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::005",
+            "realtime-README.md::006",
+            "community-README.md::005",
+            "community-README.md::001",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.16310000501107424,
+            0.1233000002685003,
+            0.12799999967683107
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::004"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::005",
+            "realtime-README.md::002",
+            "realtime-README.md::000",
+            "realtime-README.md::007",
+            "realtime-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            2.4085999975795858,
+            2.602400003524963,
+            2.5814999971771613
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 0.0,
+            "mrr_at_5": 0.0,
+            "ndcg_at_5": 0.0,
+            "recall_at_5": 0.0
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::004"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::000",
+            "realtime-README.md::001",
+            "realtime-README.md::007",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.364699997997377,
+            2.294699996127747,
+            2.152200002456084
+          ]
+        }
+      },
+      "question": "What PostgreSQL capability does meeting signaling need, and which connection type should be used?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::004"
+      ],
+      "tags": [
+        "realtime",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-030",
+      "intent_id": "realtime_restricted_networks",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::006",
+            "realtime-README.md::000",
+            "cache-README.md::001",
+            "realtime-README.md::001",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.15840000560274348,
+            0.11799999629147351,
+            0.1188000023830682
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::006",
+            "realtime-README.md::000",
+            "realtime-README.md::001",
+            "cache-README.md::006",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            2.4593999987700954,
+            2.2515000018756837,
+            2.2848000007797964
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.6309297535714575,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "cache-README.md::006",
+            "realtime-README.md::002",
+            "community-README.md::003"
+          ],
+          "warm_latency_samples_ms": [
+            2.1029999988968484,
+            2.325699999346398,
+            2.0678000000771135
+          ]
+        }
+      },
+      "question": "What relay may Apna Video Call need on restricted networks, and does Vercel supply it?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-031",
+      "intent_id": "realtime_recording_storage",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.8772153153380493,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::006",
+            "realtime-README.md::002",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::001",
+            "durable-ARCHITECTURE.md::000"
+          ],
+          "warm_latency_samples_ms": [
+            0.1322999960393645,
+            0.09979999595088884,
+            0.09249999857274815
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::006",
+            "realtime-README.md::001",
+            "realtime-README.md::002",
+            "realtime-README.md::000",
+            "durable-ARCHITECTURE.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.0218999998178333,
+            2.152399996703025,
+            2.004400004807394
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::001",
+            "realtime-README.md::006",
+            "realtime-README.md::000",
+            "realtime-README.md::002",
+            "community-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            1.9949999987147748,
+            1.8264000027556904,
+            1.8103000038536265
+          ]
+        }
+      },
+      "question": "Where are meeting recordings stored, and is there a server-side recording archive?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::001",
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-032",
+      "intent_id": "realtime_guest_access",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::001",
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "realtime-README.md::002",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.1627000019652769,
+            0.13860000035492703,
+            0.12400000559864566
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::001",
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "realtime-README.md::002",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.263000002130866,
+            2.5764999954844825,
+            2.378800003498327
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.9197207891481876,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::001",
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "realtime-README.md::002",
+            "cache-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.1491000006790273,
+            2.107899999828078,
+            2.0221999948262237
+          ]
+        }
+      },
+      "question": "Does possession of an Apna Video Call meeting link require approval through a lobby or a room password?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::001",
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-033",
+      "intent_id": "realtime_runtime_directories",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.7653606369886217,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::007"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::005",
+            "realtime-README.md::006",
+            "durable-ADR-0001.md::000",
+            "banking-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            0.12509999942267314,
+            0.10279999696649611,
+            0.09919999865815043
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 0.6508205185601091,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::007"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::002",
+            "realtime-README.md::006",
+            "realtime-README.md::001",
+            "durable-ADR-0001.md::000",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            2.4776999998721294,
+            2.3889000003691763,
+            2.124400001775939
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.5,
+            "ndcg_at_5": 0.49818925746641285,
+            "recall_at_5": 0.6666666666666666
+          },
+          "missed_relevant_chunk_ids": [
+            "realtime-README.md::005"
+          ],
+          "ranked_chunk_ids": [
+            "realtime-README.md::001",
+            "realtime-README.md::002",
+            "realtime-README.md::006",
+            "realtime-README.md::007",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            1.9804000039584935,
+            1.9552000012481585,
+            1.8744999979389831
+          ]
+        }
+      },
+      "question": "Which directories are the active meeting implementation, and what is the status of backend/?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::002",
+        "realtime-README.md::007",
+        "realtime-README.md::005"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "case_id": "docwise-v3-034",
+      "intent_id": "realtime_integration_proof_boundary",
+      "methods": {
+        "bm25": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::005",
+            "realtime-README.md::006",
+            "cache-README.md::004",
+            "realtime-README.md::001",
+            "realtime-README.md::007"
+          ],
+          "warm_latency_samples_ms": [
+            0.17640000442042947,
+            0.14090000331634656,
+            0.14229999942472205
+          ]
+        },
+        "hybrid": {
+          "metrics": {
+            "hit_at_1": 1.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 1.0,
+            "ndcg_at_5": 1.0,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::005",
+            "realtime-README.md::001",
+            "realtime-README.md::006",
+            "realtime-README.md::000",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.2470999974757433,
+            2.61540000064997,
+            3.1238999945344403
+          ]
+        },
+        "vector": {
+          "metrics": {
+            "hit_at_1": 0.0,
+            "hit_at_5": 1.0,
+            "mrr_at_5": 0.25,
+            "ndcg_at_5": 0.43067655807339306,
+            "recall_at_5": 1.0
+          },
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::001",
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "realtime-README.md::005",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.136299997800961,
+            2.0399999993969686,
+            2.104300001519732
+          ]
+        }
+      },
+      "question": "What does the two-instance meeting integration suite exercise, and does it measure actual camera or microphone quality across networks?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::005"
+      ],
+      "tags": [
+        "realtime",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-035",
+      "intent_id": "realtime_turn_service_password",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::001",
+            "banking-README.md::004",
+            "banking-README.md::003",
+            "realtime-README.md::006"
+          ],
+          "warm_latency_samples_ms": [
+            0.12479999713832512,
+            0.10260000271955505,
+            0.09839999984251335
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::001",
+            "realtime-README.md::006",
+            "banking-README.md::004",
+            "cache-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            1.7987000028369948,
+            1.8127000003005378,
+            1.8596000008983538
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "durable-ARCHITECTURE.md::001",
+            "realtime-README.md::001",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.005599999392871,
+            1.766900000802707,
+            1.629700003832113
+          ]
+        }
+      },
+      "question": "What is the actual TURN password used by the hosted Apna Video Call deployment?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "realtime",
+        "unsupported"
+      ]
+    },
+    {
+      "answerable": false,
+      "case_id": "docwise-v3-036",
+      "intent_id": "realtime_quality_score",
+      "methods": {
+        "bm25": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::001",
+            "durable-ADR-0001.md::000",
+            "cache-README.md::001",
+            "realtime-README.md::005"
+          ],
+          "warm_latency_samples_ms": [
+            0.13809999654768035,
+            0.11100000119768083,
+            0.10450000263517722
+          ]
+        },
+        "hybrid": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::001",
+            "realtime-README.md::005",
+            "realtime-README.md::006",
+            "community-README.md::001"
+          ],
+          "warm_latency_samples_ms": [
+            2.008900002692826,
+            1.9727999970200472,
+            2.028399998380337
+          ]
+        },
+        "vector": {
+          "metrics": null,
+          "missed_relevant_chunk_ids": [],
+          "ranked_chunk_ids": [
+            "realtime-README.md::000",
+            "realtime-README.md::006",
+            "cache-README.md::005",
+            "realtime-README.md::005",
+            "realtime-README.md::002"
+          ],
+          "warm_latency_samples_ms": [
+            2.1094000039738603,
+            1.9810000012512319,
+            1.8803999992087483
+          ]
+        }
+      },
+      "question": "What measured MOS audio-quality score does Apna Video Call achieve on a 3G network?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "realtime",
+        "unsupported"
+      ]
+    }
+  ],
+  "corpus": {
+    "chunk_count": 32,
+    "chunk_id_format": "<metadata.doc_title>::<metadata.chunk_index padded to 3 digits>",
+    "encoder_input_diagnostics": {
+      "chunk_count": 32,
+      "encoder_token_limit": 256,
+      "interpretation": "Production encoder truncates each chunk to 256 tokens. Original heading chunking is preserved; BM25 still sees full chunk text.",
+      "maximum_untruncated_tokens": 785,
+      "per_chunk_untruncated_tokens": [
+        {
+          "chunk_id": "banking-README.md::000",
+          "token_count": 187
+        },
+        {
+          "chunk_id": "banking-README.md::001",
+          "token_count": 139
+        },
+        {
+          "chunk_id": "banking-README.md::002",
+          "token_count": 459
+        },
+        {
+          "chunk_id": "banking-README.md::003",
+          "token_count": 492
+        },
+        {
+          "chunk_id": "banking-README.md::004",
+          "token_count": 287
+        },
+        {
+          "chunk_id": "banking-README.md::005",
+          "token_count": 80
+        },
+        {
+          "chunk_id": "cache-README.md::000",
+          "token_count": 209
+        },
+        {
+          "chunk_id": "cache-README.md::001",
+          "token_count": 72
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "token_count": 581
+        },
+        {
+          "chunk_id": "cache-README.md::003",
+          "token_count": 756
+        },
+        {
+          "chunk_id": "cache-README.md::004",
+          "token_count": 316
+        },
+        {
+          "chunk_id": "cache-README.md::005",
+          "token_count": 213
+        },
+        {
+          "chunk_id": "cache-README.md::006",
+          "token_count": 134
+        },
+        {
+          "chunk_id": "realtime-README.md::000",
+          "token_count": 119
+        },
+        {
+          "chunk_id": "realtime-README.md::001",
+          "token_count": 146
+        },
+        {
+          "chunk_id": "realtime-README.md::002",
+          "token_count": 458
+        },
+        {
+          "chunk_id": "realtime-README.md::003",
+          "token_count": 47
+        },
+        {
+          "chunk_id": "realtime-README.md::004",
+          "token_count": 294
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "token_count": 455
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "token_count": 236
+        },
+        {
+          "chunk_id": "realtime-README.md::007",
+          "token_count": 120
+        },
+        {
+          "chunk_id": "community-README.md::000",
+          "token_count": 151
+        },
+        {
+          "chunk_id": "community-README.md::001",
+          "token_count": 244
+        },
+        {
+          "chunk_id": "community-README.md::002",
+          "token_count": 398
+        },
+        {
+          "chunk_id": "community-README.md::003",
+          "token_count": 63
+        },
+        {
+          "chunk_id": "community-README.md::004",
+          "token_count": 481
+        },
+        {
+          "chunk_id": "community-README.md::005",
+          "token_count": 234
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "token_count": 124
+        },
+        {
+          "chunk_id": "community-README.md::007",
+          "token_count": 126
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "token_count": 785
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::001",
+          "token_count": 154
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "token_count": 280
+        }
+      ],
+      "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "truncated_chunk_count": 13
+    },
+    "path": "evaluation/broader_v1/corpus.json",
+    "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+  },
+  "dataset": {
+    "annotation_revision": 2,
+    "answerable_case_count": 30,
+    "case_count": 36,
+    "id": "docwise-broader-v1-dev",
+    "label": "Authored multi-domain diagnostic dev query partition; not an external benchmark or independent human labels",
+    "sha256": "65786a6cd08d1911c5d172fadd6654f48e07a18a187b985a2d20fcde6fe032d2"
+  },
+  "evaluation_kind": "local_authored_retrieval_diagnostic",
+  "generated_at_utc": "2026-10-24T18:45:35.994336+00:00",
+  "model": {
+    "artifact_sha256": {
+      "model.onnx": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+    },
+    "manifest_sha256": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "protocol": {
+    "aggregation": "macro mean over answerable queries; unsupported queries excluded from ranking metrics",
+    "cold_scope": "one fresh evaluator process; import and index construction separated; OS/filesystem caches not cleared; first method calls share one index",
+    "excluded_warmup_rounds": 1,
+    "latency_scope": "local retrieval calls only; excludes HTTP, network, generation, rate limiting and model downloads",
+    "limitations": "Five domains from six public repository documents by the same author. Not an external benchmark, independently human-labeled dataset, production traffic or generated-answer evaluation. Domain-separated query diagnostic splits; all documents are available to retrieval. The durable-jobs source describes an implementation lab with undeployed cloud operation. Production retrieval is unchanged apart from explicit corpus injection. No ranking or threshold tuning before this frozen diagnostic. Thirteen of 32 chunks exceed the encoder 256-token limit; complete source chunks remain available to BM25 and generation context.",
+    "method_order": [
+      "bm25",
+      "vector",
+      "hybrid"
+    ],
+    "percentiles": "linear interpolation at (sample_count - 1) * p",
+    "relevance": "binary; unlisted chunks treated as non-relevant",
+    "top_k": 5,
+    "warm_repeats_per_case": 3
+  },
+  "retrieval_scope": "separate_frozen_diagnostic_corpus",
+  "runtime": {
+    "logical_cpu_count": 14,
+    "machine": "AMD64",
+    "onnx_inter_op_threads": 1,
+    "onnx_intra_op_threads": 2,
+    "onnx_provider": "CPUExecutionProvider",
+    "os": "Windows",
+    "os_release": "11",
+    "packages": {
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.0",
+      "rank-bm25": "0.2.2",
+      "tokenizers": "0.23.3"
+    },
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "source": {
+    "engine_sha256": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e",
+    "evaluator_sha256": "f90dca24cd7b020fe105f226435463fe6211d8f12ca1328e5b8730befe94ef98",
+    "exact_byte_snapshots": {
+      "corpus": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-corpus.txt",
+        "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+      },
+      "dataset": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-dataset.txt",
+        "sha256": "65786a6cd08d1911c5d172fadd6654f48e07a18a187b985a2d20fcde6fe032d2"
+      },
+      "engine": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-engine.txt",
+        "sha256": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e"
+      },
+      "evaluator": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-evaluator.txt",
+        "sha256": "f90dca24cd7b020fe105f226435463fe6211d8f12ca1328e5b8730befe94ef98"
+      },
+      "metrics": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-metrics.txt",
+        "sha256": "97864ee74dbb8b45f122fb5e9b128f40cd95abd530e5246c5f11855c79529a5c"
+      },
+      "model_manifest": {
+        "path_relative_to_report": "sources/broader-v1-dev-2026-10-25-model_manifest.txt",
+        "sha256": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4"
+      }
+    },
+    "head_sha": "b953f30d9238a26d019a766c5e91d17b52ca39de",
+    "metrics_sha256": "97864ee74dbb8b45f122fb5e9b128f40cd95abd530e5246c5f11855c79529a5c",
+    "working_tree_dirty": true
+  },
+  "startup": {
+    "dependency_import_ms": 1052.9246000005514,
+    "first_query_per_method_ms": {
+      "bm25": 0.5301999990479089,
+      "hybrid": 3.9165999987744726,
+      "vector": 4.80039999820292
+    },
+    "index_construction_ms": 844.1548000046168
+  },
+  "summary": {
+    "bm25": {
+      "answerable_case_count": 30,
+      "case_count": 36,
+      "metrics": {
+        "hit_at_1": 0.9,
+        "hit_at_5": 0.9666666666666667,
+        "mrr_at_5": 0.925,
+        "ndcg_at_5": 0.8549011043963279,
+        "recall_at_5": 0.8777777777777778
+      },
+      "miss_at_5_case_ids": [
+        "docwise-v3-029"
+      ],
+      "unsupported_cases": {
+        "count": 6,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 6
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 0.22939999325899407,
+        "mean_ms": 0.12726296322566835,
+        "min_ms": 0.08160000288626179,
+        "p50_ms": 0.12255000183358788,
+        "p95_ms": 0.16931499958445778,
+        "p99_ms": 0.20647700133849844,
+        "sample_count": 108
+      }
+    },
+    "hybrid": {
+      "answerable_case_count": 30,
+      "case_count": 36,
+      "metrics": {
+        "hit_at_1": 0.8,
+        "hit_at_5": 0.9666666666666667,
+        "mrr_at_5": 0.875,
+        "ndcg_at_5": 0.8351388314065009,
+        "recall_at_5": 0.9055555555555556
+      },
+      "miss_at_5_case_ids": [
+        "docwise-v3-029"
+      ],
+      "unsupported_cases": {
+        "count": 6,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 6
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 3.7471000032383017,
+        "mean_ms": 2.384163888901067,
+        "min_ms": 1.5907999986666255,
+        "p50_ms": 2.337049998459406,
+        "p95_ms": 3.197000003274297,
+        "p99_ms": 3.427397000559722,
+        "sample_count": 108
+      }
+    },
+    "vector": {
+      "answerable_case_count": 30,
+      "case_count": 36,
+      "metrics": {
+        "hit_at_1": 0.4,
+        "hit_at_5": 0.8666666666666667,
+        "mrr_at_5": 0.6038888888888889,
+        "ndcg_at_5": 0.6366243253742414,
+        "recall_at_5": 0.8055555555555556
+      },
+      "miss_at_5_case_ids": [
+        "docwise-v3-007",
+        "docwise-v3-009",
+        "docwise-v3-019",
+        "docwise-v3-029"
+      ],
+      "unsupported_cases": {
+        "count": 6,
+        "interpretation": "Diagnostic rankings only. No retrieval abstention threshold or answer/refusal accuracy is measured.",
+        "returned_nonempty_count": 6
+      },
+      "warm_retrieval_latency_all_cases": {
+        "max_ms": 3.2700000010663643,
+        "mean_ms": 2.1151638891212685,
+        "min_ms": 1.506699998572003,
+        "p50_ms": 2.0904000011796597,
+        "p95_ms": 2.59699000416731,
+        "p99_ms": 3.1900209966261146,
+        "sample_count": 108
+      }
+    }
+  },
+  "tag_aggregation_note": "Tag groups overlap. Each group is macro averaged over its answerable queries; unsupported-only groups have null ranking metrics."
+}

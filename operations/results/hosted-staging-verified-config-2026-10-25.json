@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-24T18:59:40.340423+00:00",
+  "target_host": "rag-documentation-assistant-50wbdl6gn-harshgavandits-projects.vercel.app",
+  "source_sha": "b953f30d9238a26d019a766c5e91d17b52ca39de",
+  "run_id": "5974acbef55f02ba",
+  "source_sha256": {
+    "app.py": "e6fc3f5cbbae2a13b9ce3ee34130b8e3f9f61ef1cacd9add6d6997cf0bc6f6c0",
+    "staging.py": "ba0381bf748e14b4e0d5ec461af528d97ddb0ea3a0787b72e716d3a1ccc01d8f",
+    "engine.py": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e",
+    "grounding.py": "d016320fd84976b44d33a958654510c4725f10ba0ef559f6d8371b6aea403f72",
+    "observability.py": "2f377a0712320eb587c0bcb9f895d676b36d25e20524ceeee4b9462482582044",
+    "prepare.py": "56680f9993edd8ea85680c94b347913d3bc48b993483bff11ee036e9e5c7e7d5",
+    "data/corpus.json": "9a8242dcc4309057921dcc635783cf8415b4012155704878ad58ad15329620a7",
+    "model_manifest.json": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4",
+    "requirements.txt": "2cc9ff873ed6f8527172e4244eb15c9cb34e80a732a94f89629efd88a006cda1",
+    "vercel.json": "83e037fb9db1a1c4ef8524d374cc32f2570e73576bc7683c0409aa534782c330"
+  },
+  "probe_sha256": "8937b0af109535f57cd425797df7c7a415c3ce7f667fc535a6f8a4142971d51a",
+  "scope": "Bounded hosted Vercel FastAPI/Redis/ONNX diagnostic with deterministic injected provider; zero real model requests.",
+  "limitations": "No real provider latency/quality, scale/SLO, visitor outcome or production uptime claim. Client network timings include edge/runtime/retrieval/Redis and injected delay. Cold status is not established.",
+  "bounds": {
+    "query_requests": 16,
+    "auxiliary_gets": 6,
+    "max_concurrency": 8,
+    "daily_admissions": 9,
+    "paid_provider_requests": 0,
+    "response_bytes": 131072,
+    "socket_timeout_seconds": 125
+  },
+  "requests": [
+    {
+      "started_at_utc": "2026-10-24T18:59:44.192497+00:00",
+      "http_status": 200,
+      "response_sha256": "f48d28c553f6d89b3f68da269ce17335e4c02e5a248973c7932227c4eaade3dd",
+      "elapsed_ms": 5941.686,
+      "completed_at_utc": "2026-10-24T18:59:50.133215+00:00",
+      "sequence": 1,
+      "phase": "guards_and_client_limit",
+      "scenario": "valid",
+      "handler_elapsed_seconds": 5.38,
+      "client_ttl_ms": 60000,
+      "retrieval_source_count": 5,
+      "retrieved_labels": [
+        "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "[Source: DOCUMENTATION.md, Section: Table of Contents]",
+        "[Source: MCP_Documentation.md, Section: 1. What Is MCP (Model Context Protocol)?]",
+        "[Source: MCP_Documentation.md, Section: 7. Building the MCP Server with FastMCP]",
+        "[Source: MCP_Documentation.md, Section: 8. Step-by-Step Build Order]"
+      ],
+      "result_valid": true
+    },
+    {
+      "started_at_utc": "2026-10-24T18:59:50.133215+00:00",
+      "http_status": 502,
+      "response_sha256": "03b9800cbe91b21c990943c7a40f00090d76ee1aab895fbf4ee835ff70760599",
+      "elapsed_ms": 1177.454,
+      "completed_at_utc": "2026-10-24T18:59:51.312599+00:00",
+      "sequence": 2,
+      "phase": "guards_and_client_limit",
+      "scenario": "invalid_citation"
+    },
+    {
+      "started_at_utc": "2026-10-24T18:59:51.313593+00:00",
+      "http_status": 503,
+      "response_sha256": "af49ac125723bd5b31be5d4281565676834e1c8bf93001c5975f92008025f83a",
+      "elapsed_ms": 1407.663,
+      "completed_at_utc": "2026-10-24T18:59:52.720829+00:00",
+      "sequence": 3,
+      "phase": "guards_and_client_limit",
+      "scenario": "provider_error"
+    },
+    {
+      "started_at_utc": "2026-10-24T18:59:52.721491+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 52,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 1258.388,
+      "completed_at_utc": "2026-10-24T18:59:53.980187+00:00",
+      "sequence": 4,
+      "phase": "guards_and_client_limit",
+      "scenario": "valid"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:00:46.232876+00:00",
+      "http_status": 200,
+      "response_sha256": "0744428bc8ac7992ce565b5e84dfaa6fd6f060cd0bbbe8046ca83c76865f3560",
+      "elapsed_ms": 1227.675,
+      "completed_at_utc": "2026-10-24T19:00:47.460134+00:00",
+      "sequence": 5,
+      "phase": "usage_and_refusal",
+      "scenario": "missing_usage",
+      "handler_elapsed_seconds": 0.84,
+      "client_ttl_ms": 60000,
+      "retrieval_source_count": 5,
+      "retrieved_labels": [
+        "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "[Source: DOCUMENTATION.md, Section: Table of Contents]",
+        "[Source: MCP_Documentation.md, Section: 1. What Is MCP (Model Context Protocol)?]",
+        "[Source: MCP_Documentation.md, Section: 7. Building the MCP Server with FastMCP]",
+        "[Source: MCP_Documentation.md, Section: 8. Step-by-Step Build Order]"
+      ],
+      "result_valid": true
+    },
+    {
+      "started_at_utc": "2026-10-24T19:00:47.460134+00:00",
+      "http_status": 502,
+      "response_sha256": "5567867b48c8685f95dd02c88cd39d57fc384eec8b5934343d1a515b98f6b865",
+      "elapsed_ms": 1548.365,
+      "completed_at_utc": "2026-10-24T19:00:49.008761+00:00",
+      "sequence": 6,
+      "phase": "usage_and_refusal",
+      "scenario": "truncated"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:00:49.009729+00:00",
+      "http_status": 200,
+      "response_sha256": "d1e51087147b33466db4819d6b079ef6b37bea727de8ebd2e2f9311602fbbd79",
+      "elapsed_ms": 1378.566,
+      "completed_at_utc": "2026-10-24T19:00:50.388339+00:00",
+      "sequence": 7,
+      "phase": "usage_and_refusal",
+      "scenario": "refusal",
+      "handler_elapsed_seconds": 0.85,
+      "client_ttl_ms": 57133,
+      "retrieval_source_count": 5,
+      "retrieved_labels": [
+        "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "[Source: DOCUMENTATION.md, Section: Table of Contents]",
+        "[Source: MCP_Documentation.md, Section: 1. What Is MCP (Model Context Protocol)?]",
+        "[Source: MCP_Documentation.md, Section: 7. Building the MCP Server with FastMCP]",
+        "[Source: MCP_Documentation.md, Section: 8. Step-by-Step Build Order]"
+      ],
+      "result_valid": true
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.639653+00:00",
+      "http_status": 200,
+      "response_sha256": "32443cfc9385fad5b1a03b07f9e6b3cc5f825da90480a7ada817aac0d820d93c",
+      "elapsed_ms": 2239.476,
+      "completed_at_utc": "2026-10-24T19:01:52.879322+00:00",
+      "sequence": 8,
+      "phase": "concurrent_admission",
+      "scenario": "slow",
+      "handler_elapsed_seconds": 1.07,
+      "client_ttl_ms": 59802,
+      "retrieval_source_count": 5,
+      "retrieved_labels": [
+        "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "[Source: DOCUMENTATION.md, Section: Table of Contents]",
+        "[Source: MCP_Documentation.md, Section: 1. What Is MCP (Model Context Protocol)?]",
+        "[Source: MCP_Documentation.md, Section: 7. Building the MCP Server with FastMCP]",
+        "[Source: MCP_Documentation.md, Section: 8. Step-by-Step Build Order]"
+      ],
+      "result_valid": true
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.640648+00:00",
+      "http_status": 200,
+      "response_sha256": "5293243059775b81dbcb64438c23ea857a65dfcf3b1a35681436b90139f0885e",
+      "elapsed_ms": 2552.519,
+      "completed_at_utc": "2026-10-24T19:01:53.193192+00:00",
+      "sequence": 9,
+      "phase": "concurrent_admission",
+      "scenario": "slow",
+      "handler_elapsed_seconds": 1.05,
+      "client_ttl_ms": 59577,
+      "retrieval_source_count": 5,
+      "retrieved_labels": [
+        "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "[Source: DOCUMENTATION.md, Section: Table of Contents]",
+        "[Source: MCP_Documentation.md, Section: 1. What Is MCP (Model Context Protocol)?]",
+        "[Source: MCP_Documentation.md, Section: 7. Building the MCP Server with FastMCP]",
+        "[Source: MCP_Documentation.md, Section: 8. Step-by-Step Build Order]"
+      ],
+      "result_valid": true
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.660499+00:00",
+      "http_status": 200,
+      "response_sha256": "cb94d76f69078efc99a2135484f9cce1b75ee9f346bce3a92e1dba64d4dd7ac5",
+      "elapsed_ms": 1911.357,
+      "completed_at_utc": "2026-10-24T19:01:52.571333+00:00",
+      "sequence": 10,
+      "phase": "concurrent_admission",
+      "scenario": "slow",
+      "handler_elapsed_seconds": 1.07,
+      "client_ttl_ms": 60000,
+      "retrieval_source_count": 5,
+      "retrieved_labels": [
+        "[Source: DOCUMENTATION.md, Section: MCP Deep Dive: How It Works]",
+        "[Source: DOCUMENTATION.md, Section: Table of Contents]",
+        "[Source: MCP_Documentation.md, Section: 1. What Is MCP (Model Context Protocol)?]",
+        "[Source: MCP_Documentation.md, Section: 7. Building the MCP Server with FastMCP]",
+        "[Source: MCP_Documentation.md, Section: 8. Step-by-Step Build Order]"
+      ],
+      "result_valid": true
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.663815+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 58,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 4164.442,
+      "completed_at_utc": "2026-10-24T19:01:54.828563+00:00",
+      "sequence": 11,
+      "phase": "concurrent_admission",
+      "scenario": "slow"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.692277+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 60,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 1881.558,
+      "completed_at_utc": "2026-10-24T19:01:52.573840+00:00",
+      "sequence": 12,
+      "phase": "concurrent_admission",
+      "scenario": "slow"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.698802+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 60,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 1940.229,
+      "completed_at_utc": "2026-10-24T19:01:52.638446+00:00",
+      "sequence": 13,
+      "phase": "concurrent_admission",
+      "scenario": "slow"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.724115+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 60,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 1961.08,
+      "completed_at_utc": "2026-10-24T19:01:52.685384+00:00",
+      "sequence": 14,
+      "phase": "concurrent_admission",
+      "scenario": "slow"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:01:50.743167+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 60,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 2005.251,
+      "completed_at_utc": "2026-10-24T19:01:52.748001+00:00",
+      "sequence": 15,
+      "phase": "concurrent_admission",
+      "scenario": "slow"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:02:55.078939+00:00",
+      "http_status": 429,
+      "retry_after_seconds": 86210,
+      "response_sha256": "b28a907dac83c08b74323b6f6657f3745a40f2df6cf4dd5988e01da61a27b68e",
+      "elapsed_ms": 1332.92,
+      "completed_at_utc": "2026-10-24T19:02:56.411472+00:00",
+      "sequence": 16,
+      "phase": "daily_budget",
+      "scenario": "valid"
+    }
+  ],
+  "auxiliary_requests": [
+    {
+      "started_at_utc": "2026-10-24T18:59:40.342429+00:00",
+      "http_status": 200,
+      "response_sha256": "c8b6556948d0a99da03953feade18140bfeb0dc9f118826e7b5d62abbe7489eb",
+      "elapsed_ms": 2270.424,
+      "completed_at_utc": "2026-10-24T18:59:42.612595+00:00",
+      "endpoint": "/api/staging/provenance"
+    },
+    {
+      "started_at_utc": "2026-10-24T18:59:42.614857+00:00",
+      "http_status": 200,
+      "response_sha256": "a71a6988da5876c8c591a1f1e35f2b496c31d05fbe30df01a1d6bb5206159166",
+      "elapsed_ms": 613.888,
+      "completed_at_utc": "2026-10-24T18:59:43.229089+00:00",
+      "endpoint": "/api/health"
+    },
+    {
+      "started_at_utc": "2026-10-24T18:59:43.229617+00:00",
+      "http_status": 200,
+      "response_sha256": "25167c8742e6673d69109e2db4b3c7a431a9974c026f1d6802aa861164fa2f71",
+      "elapsed_ms": 961.275,
+      "completed_at_utc": "2026-10-24T18:59:44.190486+00:00",
+      "endpoint": "/api/operations?days=2"
+    },
+    {
+      "started_at_utc": "2026-10-24T19:02:56.412477+00:00",
+      "http_status": 200,
+      "response_sha256": "42a7ccd16c8c5836e95435676ed8af8c775fc9b85b2c07e239427c26a6511175",
+      "elapsed_ms": 735.952,
+      "completed_at_utc": "2026-10-24T19:02:57.148658+00:00",
+      "endpoint": "/api/operations?days=2"
+    }
+  ],
+  "waits": [
+    {
+      "reason": "real_redis_admission_window",
+      "seconds": 52.25
+    },
+    {
+      "reason": "real_redis_admission_window",
+      "seconds": 60.25
+    },
+    {
+      "reason": "real_redis_admission_window",
+      "seconds": 60.25
+    }
+  ],
+  "passed": true,
+  "provenance": {
+    "schema_version": 1,
+    "environment": "preview",
+    "run_id": "5974acbef55f02ba",
+    "source_sha": "b953f30d9238a26d019a766c5e91d17b52ca39de",
+    "source_sha256": {
+      "app.py": "e6fc3f5cbbae2a13b9ce3ee34130b8e3f9f61ef1cacd9add6d6997cf0bc6f6c0",
+      "staging.py": "ba0381bf748e14b4e0d5ec461af528d97ddb0ea3a0787b72e716d3a1ccc01d8f",
+      "engine.py": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e",
+      "grounding.py": "d016320fd84976b44d33a958654510c4725f10ba0ef559f6d8371b6aea403f72",
+      "observability.py": "2f377a0712320eb587c0bcb9f895d676b36d25e20524ceeee4b9462482582044",
+      "prepare.py": "56680f9993edd8ea85680c94b347913d3bc48b993483bff11ee036e9e5c7e7d5",
+      "data/corpus.json": "9a8242dcc4309057921dcc635783cf8415b4012155704878ad58ad15329620a7",
+      "model_manifest.json": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4",
+      "requirements.txt": "2cc9ff873ed6f8527172e4244eb15c9cb34e80a732a94f89629efd88a006cda1",
+      "vercel.json": "83e037fb9db1a1c4ef8524d374cc32f2570e73576bc7683c0409aa534782c330"
+    },
+    "embedding_artifacts_sha256": {
+      "model.onnx": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+    },
+    "provider_mode": "deterministic-injected-no-network",
+    "provider_requests": 0,
+    "model": "deterministic-fixture-v1",
+    "rate_limit_prefix": "docwise:staging:5974acbef55f02ba:admission",
+    "operations_prefix": "docwise:staging:5974acbef55f02ba:operations",
+    "limits": {
+      "global_per_minute": 20,
+      "client_per_minute": 3,
+      "daily_admissions": 9
+    },
+    "fixture_usage": {
+      "prompt_tokens": 100,
+      "completion_tokens": 20
+    },
+    "fixture_rates_usd_per_million": {
+      "prompt": "1",
+      "output": "2"
+    },
+    "deployment_host": "rag-documentation-assistant-50wbdl6gn-harshgavandits-projects.vercel.app",
+    "deployment_id": "dpl_BALAXRU6YxMZ158kjyhBCLGX45bG",
+    "runtime_versions": {
+      "python": "3.12.14",
+      "fastapi": "0.162.0",
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.0",
+      "tokenizers": "0.23.3",
+      "rank-bm25": "0.2.2"
+    }
+  },
+  "accounting": {
+    "cohort_deltas": {
+      "visitor": {
+        "answered": 0,
+        "duration_ms_total": 0,
+        "errors": 0,
+        "feedback_category_citation_issue": 0,
+        "feedback_category_clear": 0,
+        "feedback_category_incomplete": 0,
+        "feedback_category_incorrect": 0,
+        "feedback_category_other": 0,
+        "feedback_helpful": 0,
+        "feedback_issued": 0,
+        "feedback_total": 0,
+        "feedback_unhelpful": 0,
+        "latency_le_10000_ms": 0,
+        "latency_le_1000_ms": 0,
+        "latency_le_100_ms": 0,
+        "latency_le_300000_ms": 0,
+        "latency_le_30000_ms": 0,
+        "latency_le_3000_ms": 0,
+        "latency_le_500_ms": 0,
+        "latency_le_60000_ms": 0,
+        "output_tokens": 0,
+        "prompt_tokens": 0,
+        "provider_responses": 0,
+        "queries": 0,
+        "refused": 0,
+        "status_2xx": 0,
+        "status_4xx": 0,
+        "status_5xx": 0,
+        "usage_complete": 0,
+        "usage_missing": 0
+      },
+      "synthetic": {
+        "answered": 5,
+        "duration_ms_total": 13619,
+        "errors": 10,
+        "feedback_category_citation_issue": 0,
+        "feedback_category_clear": 0,
+        "feedback_category_incomplete": 0,
+        "feedback_category_incorrect": 0,
+        "feedback_category_other": 0,
+        "feedback_helpful": 0,
+        "feedback_issued": 5,
+        "feedback_total": 0,
+        "feedback_unhelpful": 0,
+        "latency_le_10000_ms": 16,
+        "latency_le_1000_ms": 15,
+        "latency_le_100_ms": 0,
+        "latency_le_300000_ms": 16,
+        "latency_le_30000_ms": 16,
+        "latency_le_3000_ms": 15,
+        "latency_le_500_ms": 6,
+        "latency_le_60000_ms": 16,
+        "output_tokens": 140,
+        "prompt_tokens": 700,
+        "provider_responses": 8,
+        "queries": 16,
+        "refused": 1,
+        "status_2xx": 6,
+        "status_4xx": 7,
+        "status_5xx": 3,
+        "usage_complete": 7,
+        "usage_missing": 1
+      }
+    },
+    "fixture_estimate_usd": {
+      "visitor": "0",
+      "synthetic": "0.00098"
+    },
+    "rates_are_fixture_arithmetic_only": true,
+    "actual_paid_provider_requests": 0,
+    "actual_paid_provider_spend_usd": "0"
+  },
+  "completed_at_utc": "2026-10-24T19:02:57.149655+00:00"
+}

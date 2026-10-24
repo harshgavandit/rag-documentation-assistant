@@ -1,0 +1,51 @@
+"""Markdown heading chunks with H3 splitting, ignoring headings inside code fences."""
+import re
+from typing import List
+from chunking.character_splitter import Chunk
+
+
+def _sections(text: str, level: int) -> List[str]:
+    """Split at actual Markdown headings of one level, preserving fenced content."""
+    parts, current = [], []
+    fence_char, fence_length = '', 0
+    heading = re.compile(r'^' + '#' * level + r'\s+')
+    for line in text.splitlines(keepends=True):
+        match = re.match(r'^ {0,3}(`{3,}|~{3,})(.*)$', line)
+        if match:
+            marker, suffix = match.groups()
+            if not fence_char:
+                fence_char, fence_length = marker[0], len(marker)
+            elif marker[0] == fence_char and len(marker) >= fence_length and not suffix.strip():
+                fence_char, fence_length = '', 0
+        elif not fence_char and heading.match(line):
+            if current:
+                parts.append(''.join(current).strip())
+            current = []
+        current.append(line)
+    if current:
+        parts.append(''.join(current).strip())
+    return [part for part in parts if part]
+
+
+def split_by_headers(text: str, doc_title: str, max_words: int) -> List[Chunk]:
+    """Chunk at H2/H3 headings outside fenced code; max_words triggers H3 splitting."""
+    if max_words <= 0:
+        raise ValueError('max_words must be positive.')
+    chunks = []
+    for part in _sections(text, 2):
+        section_title = part.splitlines()[0].lstrip('#').strip()
+        parts = _sections(part, 3) if len(part.split()) > max_words else [part]
+        for content in parts:
+            first_line = content.splitlines()[0]
+            subsection = first_line[4:].strip() if first_line.startswith('### ') else ''
+            word_count = len(content.split())
+            chunks.append(Chunk(
+                content=content,
+                metadata={'doc_title': doc_title, 'section_title': section_title,
+                          'subsection_title': subsection, 'chunk_index': len(chunks),
+                          'strategy': 'semantic', 'word_count': word_count},
+                word_count=word_count,
+                has_code_block=bool(re.search(r'^ {0,3}(`{3,}|~{3,})', content, re.MULTILINE)),
+                has_table=bool(re.search(r'^\s*\|?\s*:?-{3,}:?\s*\|', content, re.MULTILINE)),
+            ))
+    return chunks

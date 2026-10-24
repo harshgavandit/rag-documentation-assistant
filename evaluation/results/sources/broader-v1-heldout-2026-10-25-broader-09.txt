@@ -1,0 +1,253 @@
+{
+  "benchmark_id": "docwise-broader-diagnostic-v1",
+  "chunking": {
+    "implementation": "chunking.semantic_splitter.split_by_headers",
+    "max_words": 400,
+    "order": "manifest source order, then document-local chunk order",
+    "serialization": "UTF-8 without BOM, LF, sorted keys, indent 2, final newline"
+  },
+  "encoder_input_diagnostics": {
+    "chunk_count": 32,
+    "encoder_token_limit": 256,
+    "interpretation": "Production encoder truncates each chunk to 256 tokens. Original heading chunking is preserved; BM25 still sees full chunk text.",
+    "maximum_untruncated_tokens": 785,
+    "per_chunk_untruncated_tokens": [
+      {
+        "chunk_id": "banking-README.md::000",
+        "token_count": 187
+      },
+      {
+        "chunk_id": "banking-README.md::001",
+        "token_count": 139
+      },
+      {
+        "chunk_id": "banking-README.md::002",
+        "token_count": 459
+      },
+      {
+        "chunk_id": "banking-README.md::003",
+        "token_count": 492
+      },
+      {
+        "chunk_id": "banking-README.md::004",
+        "token_count": 287
+      },
+      {
+        "chunk_id": "banking-README.md::005",
+        "token_count": 80
+      },
+      {
+        "chunk_id": "cache-README.md::000",
+        "token_count": 209
+      },
+      {
+        "chunk_id": "cache-README.md::001",
+        "token_count": 72
+      },
+      {
+        "chunk_id": "cache-README.md::002",
+        "token_count": 581
+      },
+      {
+        "chunk_id": "cache-README.md::003",
+        "token_count": 756
+      },
+      {
+        "chunk_id": "cache-README.md::004",
+        "token_count": 316
+      },
+      {
+        "chunk_id": "cache-README.md::005",
+        "token_count": 213
+      },
+      {
+        "chunk_id": "cache-README.md::006",
+        "token_count": 134
+      },
+      {
+        "chunk_id": "realtime-README.md::000",
+        "token_count": 119
+      },
+      {
+        "chunk_id": "realtime-README.md::001",
+        "token_count": 146
+      },
+      {
+        "chunk_id": "realtime-README.md::002",
+        "token_count": 458
+      },
+      {
+        "chunk_id": "realtime-README.md::003",
+        "token_count": 47
+      },
+      {
+        "chunk_id": "realtime-README.md::004",
+        "token_count": 294
+      },
+      {
+        "chunk_id": "realtime-README.md::005",
+        "token_count": 455
+      },
+      {
+        "chunk_id": "realtime-README.md::006",
+        "token_count": 236
+      },
+      {
+        "chunk_id": "realtime-README.md::007",
+        "token_count": 120
+      },
+      {
+        "chunk_id": "community-README.md::000",
+        "token_count": 151
+      },
+      {
+        "chunk_id": "community-README.md::001",
+        "token_count": 244
+      },
+      {
+        "chunk_id": "community-README.md::002",
+        "token_count": 398
+      },
+      {
+        "chunk_id": "community-README.md::003",
+        "token_count": 63
+      },
+      {
+        "chunk_id": "community-README.md::004",
+        "token_count": 481
+      },
+      {
+        "chunk_id": "community-README.md::005",
+        "token_count": 234
+      },
+      {
+        "chunk_id": "community-README.md::006",
+        "token_count": 124
+      },
+      {
+        "chunk_id": "community-README.md::007",
+        "token_count": 126
+      },
+      {
+        "chunk_id": "durable-ARCHITECTURE.md::000",
+        "token_count": 785
+      },
+      {
+        "chunk_id": "durable-ARCHITECTURE.md::001",
+        "token_count": 154
+      },
+      {
+        "chunk_id": "durable-ADR-0001.md::000",
+        "token_count": 280
+      }
+    ],
+    "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+    "truncated_chunk_count": 13
+  },
+  "frozen_on": "2026-10-25",
+  "limitations": "Five domains from six public repository documents by the same author. Not an external benchmark, independently human-labeled dataset, production traffic or generated-answer evaluation. Domain-separated query diagnostic splits; all documents are available to retrieval. The durable-jobs source describes an implementation lab with undeployed cloud operation.",
+  "schema_version": 1,
+  "source_documents": [
+    {
+      "doc_title": "banking-README.md",
+      "domain": "banking",
+      "license": {
+        "status": "no_repository_license_file_at_captured_revision",
+        "url": null
+      },
+      "original_path": "README.md",
+      "repository": "harshgavandit/banking-agent-harness",
+      "revision": "171fff57c9367c42bdcd6ba57787b113af7d2d0c",
+      "scope": "Public author-owned repository documentation snapshot; documents claims at this revision, not independent runtime verification.",
+      "sha256": "76da247eb67b79826f3b3d1ccdda93c59e1f4b7ddd01d9ede994c949968d2b94",
+      "snapshot_path": "sources/banking-README.md",
+      "source_url": "https://github.com/harshgavandit/banking-agent-harness/blob/171fff57c9367c42bdcd6ba57787b113af7d2d0c/README.md"
+    },
+    {
+      "doc_title": "cache-README.md",
+      "domain": "cache",
+      "license": {
+        "status": "no_repository_license_file_at_captured_revision",
+        "url": null
+      },
+      "original_path": "README.md",
+      "repository": "harshgavandit/RAG-Semantic-Cache-Symposium-Bot",
+      "revision": "378227e33170eb5e2298cbecf65994f3cab64821",
+      "scope": "Public author-owned repository documentation snapshot; documents claims at this revision, not independent runtime verification.",
+      "sha256": "1a0406b46ebd7d84597c5be8ab3d919417cefa38202eb345f7988983996b3cc7",
+      "snapshot_path": "sources/cache-README.md",
+      "source_url": "https://github.com/harshgavandit/RAG-Semantic-Cache-Symposium-Bot/blob/378227e33170eb5e2298cbecf65994f3cab64821/README.md"
+    },
+    {
+      "doc_title": "realtime-README.md",
+      "domain": "realtime",
+      "license": {
+        "status": "no_repository_license_file_at_captured_revision",
+        "url": null
+      },
+      "original_path": "README.md",
+      "repository": "harshgavandit/Zoom_Clone",
+      "revision": "a75539a0648ed12f6c8d33a4953278c8af96f280",
+      "scope": "Public author-owned repository documentation snapshot; documents claims at this revision, not independent runtime verification.",
+      "sha256": "f0241afc3e95a88f65946a405f3374bfd338f796e5573fef733afc36028936d5",
+      "snapshot_path": "sources/realtime-README.md",
+      "source_url": "https://github.com/harshgavandit/Zoom_Clone/blob/a75539a0648ed12f6c8d33a4953278c8af96f280/README.md"
+    },
+    {
+      "doc_title": "community-README.md",
+      "domain": "community",
+      "license": {
+        "status": "MIT",
+        "url": "https://github.com/harshgavandit/agri-samaj-community-platform/blob/0ce7079daf81a3ea0ebf8391666c2a1548c92642/LICENSE"
+      },
+      "original_path": "README.md",
+      "repository": "harshgavandit/agri-samaj-community-platform",
+      "revision": "0ce7079daf81a3ea0ebf8391666c2a1548c92642",
+      "scope": "Public author-owned repository documentation snapshot; documents claims at this revision, not independent runtime verification.",
+      "sha256": "58b061f81db279fb4704ad7dfc63a724836d1a5cd346ba979a45d8eac8f9ddf1",
+      "snapshot_path": "sources/community-README.md",
+      "source_url": "https://github.com/harshgavandit/agri-samaj-community-platform/blob/0ce7079daf81a3ea0ebf8391666c2a1548c92642/README.md"
+    },
+    {
+      "doc_title": "durable-ARCHITECTURE.md",
+      "domain": "durable_jobs",
+      "license": {
+        "status": "no_repository_license_file_at_captured_revision",
+        "url": null
+      },
+      "original_path": "season-1/2.vertical-vs-horizontal-scaling/docs/ARCHITECTURE.md",
+      "repository": "harshgavandit/Advanced-System-Design-Implementation-",
+      "revision": "76bbfbe77ef829d89ae6f1f4475e54903b07fa14",
+      "scope": "Public author-owned repository documentation snapshot; documents claims at this revision, not independent runtime verification.",
+      "sha256": "530d00a0573dc5bf05e7448663222130683e616640a93176fe892f818f1bde4e",
+      "snapshot_path": "sources/durable-ARCHITECTURE.md",
+      "source_url": "https://github.com/harshgavandit/Advanced-System-Design-Implementation-/blob/76bbfbe77ef829d89ae6f1f4475e54903b07fa14/season-1/2.vertical-vs-horizontal-scaling/docs/ARCHITECTURE.md"
+    },
+    {
+      "doc_title": "durable-ADR-0001.md",
+      "domain": "durable_jobs",
+      "license": {
+        "status": "no_repository_license_file_at_captured_revision",
+        "url": null
+      },
+      "original_path": "season-1/2.vertical-vs-horizontal-scaling/docs/adr/0001-canonical-service-and-durable-effects.md",
+      "repository": "harshgavandit/Advanced-System-Design-Implementation-",
+      "revision": "76bbfbe77ef829d89ae6f1f4475e54903b07fa14",
+      "scope": "Public author-owned repository documentation snapshot; documents claims at this revision, not independent runtime verification.",
+      "sha256": "152d095d5848f7ba2e0f0819c04b5d6d1f26f64ec12f3069ec3927d1ec4c14cd",
+      "snapshot_path": "sources/durable-ADR-0001.md",
+      "source_url": "https://github.com/harshgavandit/Advanced-System-Design-Implementation-/blob/76bbfbe77ef829d89ae6f1f4475e54903b07fa14/season-1/2.vertical-vs-horizontal-scaling/docs/adr/0001-canonical-service-and-durable-effects.md"
+    }
+  ],
+  "split_domains": {
+    "dev": [
+      "banking",
+      "cache",
+      "realtime"
+    ],
+    "heldout": [
+      "community",
+      "durable_jobs"
+    ]
+  }
+}

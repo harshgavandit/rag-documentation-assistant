@@ -1,0 +1,981 @@
+{
+  "annotation_revision": 2,
+  "authorship": "Authored by an AI agent from exact public repository snapshots before any broader retrieval rankings. An independent AI agent reviewed all 60 source labels before ranking, confirmed answerability/scope and identified five additional partial-support chunks under the unchanged policy. Annotation revision 2 includes those additions. Same original documentation author across domains; no independent human annotation claim.",
+  "cases": [
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::001",
+          "excerpt": "Find beneficiaries by name, ID, or the last four account digits. Ambiguous matches require a choice; blocked beneficiaries are rejected."
+        }
+      ],
+      "id": "docwise-v3-001",
+      "intent_id": "banking_beneficiary_resolution",
+      "question": "In the banking harness, which beneficiary identifiers are supported and what happens when a name matches more than one beneficiary?",
+      "relevant_chunk_ids": [
+        "banking-README.md::001"
+      ],
+      "tags": [
+        "banking",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::000",
+          "excerpt": "requires confirmation in a later user turn"
+        },
+        {
+          "chunk_id": "banking-README.md::001",
+          "excerpt": "Review recipient and amount before approving a staged transfer in a separate message"
+        },
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "Pending proposal: no debit until a later explicit confirmation"
+        },
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "requires a previously staged proposal and an explicit confirmation from a different invocation. It expires old proposals and revalidates before execution."
+        }
+      ],
+      "id": "docwise-v3-002",
+      "intent_id": "banking_later_confirmation",
+      "question": "What prevents a banking proposal from debiting funds during the same invocation that stages it?",
+      "relevant_chunk_ids": [
+        "banking-README.md::000",
+        "banking-README.md::001",
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "action_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "checks finite positive amounts, beneficiary status, balance, and allowance independently of the prompt."
+        }
+      ],
+      "id": "docwise-v3-003",
+      "intent_id": "banking_deterministic_policy",
+      "question": "Which transfer eligibility checks does the banking application enforce independently of its prompt?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "supplies `SUCCESS`, `FAILED`, or `PENDING`. Failed transfers leave the balance unchanged; pending transfers hold funds."
+        },
+        {
+          "chunk_id": "banking-README.md::003",
+          "excerpt": "Optional `SUCCESS`, `FAILED`, or `PENDING` to exercise different results."
+        }
+      ],
+      "id": "docwise-v3-004",
+      "intent_id": "banking_outcome_accounting",
+      "question": "What simulated banking outcomes are available, and how do FAILED and PENDING affect funds?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002",
+        "banking-README.md::003"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "keeps one Redis snapshot per visitor with a 120-second lease, compare-owner commit, and 24-hour inactivity expiry."
+        }
+      ],
+      "id": "docwise-v3-005",
+      "intent_id": "banking_visitor_lease",
+      "question": "How does the hosted banking store bound concurrent ownership and expiry of a visitor snapshot?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "The hosted runner bounds each turn to 75 seconds and eight model calls."
+        }
+      ],
+      "id": "docwise-v3-006",
+      "intent_id": "banking_turn_budgets",
+      "question": "What wall-clock and model-call bounds does the hosted banking runner place on each turn?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002"
+      ],
+      "tags": [
+        "banking",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::002",
+          "excerpt": "caps actual streamed POST bodies at 12,000 bytes before parsing or calling a handler. Missing, chunked or falsely small length headers cannot bypass the byte limit."
+        },
+        {
+          "chunk_id": "banking-README.md::004",
+          "excerpt": "Request-boundary tests include malformed and duplicate lengths, zero-prefixed length overflow, chunked input, false length claims and exact-limit byte preservation."
+        }
+      ],
+      "id": "docwise-v3-007",
+      "intent_id": "banking_streamed_body_limit",
+      "question": "How large may a streamed banking POST body be, and can a missing or falsely small Content-Length bypass that limit?",
+      "relevant_chunk_ids": [
+        "banking-README.md::002",
+        "banking-README.md::004"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "request_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::005",
+          "excerpt": "Snapshot expiry resets the demo; the daily allowance is a session budget without a midnight reset."
+        }
+      ],
+      "id": "docwise-v3-008",
+      "intent_id": "banking_session_ledger_scope",
+      "question": "Does the banking daily allowance reset at midnight, and what does expiration of a demo snapshot do?",
+      "relevant_chunk_ids": [
+        "banking-README.md::005"
+      ],
+      "tags": [
+        "banking",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::003",
+          "excerpt": "python -m uvicorn app.web:app --host 127.0.0.1 --port 8011"
+        },
+        {
+          "chunk_id": "banking-README.md::003",
+          "excerpt": "The developer interface is not mounted on the public deployment."
+        }
+      ],
+      "id": "docwise-v3-009",
+      "intent_id": "banking_public_vs_dev",
+      "question": "Which local command runs the deployed banking interface, and is the original ADK developer interface mounted publicly?",
+      "relevant_chunk_ids": [
+        "banking-README.md::003"
+      ],
+      "tags": [
+        "banking",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "banking",
+      "evidence": [
+        {
+          "chunk_id": "banking-README.md::001",
+          "excerpt": "All accounts and transactions use mock data. No real money moves."
+        },
+        {
+          "chunk_id": "banking-README.md::005",
+          "excerpt": "This is an anonymous-session engineering demonstration, without identity-verified accounts or payment rails."
+        },
+        {
+          "chunk_id": "banking-README.md::005",
+          "excerpt": "Redis serialization protects this mock ledger, not an external financial transaction."
+        }
+      ],
+      "id": "docwise-v3-010",
+      "intent_id": "banking_mock_financial_boundary",
+      "question": "Does the banking demo move real funds or provide identity-verified payment rails?",
+      "relevant_chunk_ids": [
+        "banking-README.md::001",
+        "banking-README.md::005"
+      ],
+      "tags": [
+        "banking",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": false,
+      "domain": "banking",
+      "evidence": [],
+      "id": "docwise-v3-011",
+      "intent_id": "banking_real_account_number",
+      "question": "What is the full real savings-account number assigned to Aaron by the banking harness?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "banking",
+        "unsupported"
+      ],
+      "unsupported_reason": "The banking document describes mock demo data and supported beneficiary lookup forms, but publishes no real account number for Aaron."
+    },
+    {
+      "answerable": false,
+      "domain": "banking",
+      "evidence": [],
+      "id": "docwise-v3-012",
+      "intent_id": "banking_monthly_fee",
+      "question": "What monthly rupee fee does the banking harness charge account holders?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "banking",
+        "unsupported"
+      ],
+      "unsupported_reason": "No account pricing or monthly fee schedule is included in any frozen source document."
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "Exact hits avoid provider calls; semantic hits still require a query embedding."
+        }
+      ],
+      "id": "docwise-v3-013",
+      "intent_id": "cache_exact_vs_semantic",
+      "question": "In the Symposium cache flow, which kind of hit avoids provider work and which still needs a query embedding?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "comparison"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "derives the namespace from PDF, index and document-text/metadata hashes, embedding and answer models, threshold, and response-policy version."
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "Changed citation metadata or the strict completion policy selects a new namespace, preventing stale cached answers from bypassing the updated context."
+        }
+      ],
+      "id": "docwise-v3-014",
+      "intent_id": "cache_namespace_inputs",
+      "question": "What inputs select the Symposium cache namespace, and why does changed citation metadata matter?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "Default cache settings are 256 entries and a 24-hour TTL per namespace."
+        },
+        {
+          "chunk_id": "cache-README.md::003",
+          "excerpt": "Defaults: `0.15`, `86400`, and `256`."
+        }
+      ],
+      "id": "docwise-v3-015",
+      "intent_id": "cache_capacity_and_expiry",
+      "question": "What are the default entry limit and TTL for each Symposium cache namespace?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002",
+        "cache-README.md::003"
+      ],
+      "tags": [
+        "cache",
+        "multi_section",
+        "exact_term"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "The loader checks corpus/index/metadata hashes and embedding dimensions, then reads FAISS plus JSON metadata rather than deserializing a pickle."
+        }
+      ],
+      "id": "docwise-v3-016",
+      "intent_id": "cache_safe_index_format",
+      "question": "What does the Symposium loader validate, and which metadata format replaces pickle deserialization?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "Only a completed `stop` generation can enter the cache; truncated, filtered, tool-call and unknown completion states return explicit errors."
+        }
+      ],
+      "id": "docwise-v3-017",
+      "intent_id": "cache_completed_generation",
+      "question": "Which generation finish state may enter the Symposium cache, and what happens to truncated or tool-call responses?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "with a cosine scan of the configured entry limit."
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "does not require a vector-search module. This is a small bounded cache, not an indexed ANN service."
+        },
+        {
+          "chunk_id": "cache-README.md::006",
+          "excerpt": "The cache performs a bounded vector scan rather than a distributed vector-index query."
+        }
+      ],
+      "id": "docwise-v3-018",
+      "intent_id": "cache_valkey_search_boundary",
+      "question": "Does the local Symposium Valkey adapter require a vector-search module or provide an indexed ANN service?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002",
+        "cache-README.md::006"
+      ],
+      "tags": [
+        "cache",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::003",
+          "excerpt": "explicitly set `CACHE_BACKEND=local` and `RATE_LIMIT_ENABLED=false`; this disables shared admission rather than simulating it."
+        }
+      ],
+      "id": "docwise-v3-019",
+      "intent_id": "cache_local_without_redis",
+      "question": "Which two explicit settings run the Symposium app locally without Redis, and what protection is disabled?",
+      "relevant_chunk_ids": [
+        "cache-README.md::003"
+      ],
+      "tags": [
+        "cache",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::006",
+          "excerpt": "Semantic cache reuse is heuristic and can conflate nearby intents."
+        },
+        {
+          "chunk_id": "cache-README.md::006",
+          "excerpt": "Request budgets limit request counts, not total provider spending;"
+        }
+      ],
+      "id": "docwise-v3-020",
+      "intent_id": "cache_reuse_limit",
+      "question": "What risk does semantic answer reuse introduce, and do request budgets cap total provider spending?",
+      "relevant_chunk_ids": [
+        "cache-README.md::006"
+      ],
+      "tags": [
+        "cache",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::005",
+          "excerpt": "A local SQLite workload completed **9,000 operations** across three trials at concurrency 1, 4 and 8 with zero operation errors or expected-result mismatches."
+        },
+        {
+          "chunk_id": "cache-README.md::005",
+          "excerpt": "These are controlled development measurements, separate from the hosted Redis cache and production traffic."
+        }
+      ],
+      "id": "docwise-v3-021",
+      "intent_id": "cache_workload_vs_traffic",
+      "question": "What did the Symposium local SQLite workload measure, and does that result describe hosted production traffic?",
+      "relevant_chunk_ids": [
+        "cache-README.md::005"
+      ],
+      "tags": [
+        "cache",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "cache",
+      "evidence": [
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "Non-refusal answers require page labels present in the retrieved passages."
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "excerpt": "Citation-label checks validate page membership, not factual entailment."
+        }
+      ],
+      "id": "docwise-v3-022",
+      "intent_id": "cache_citation_validation",
+      "question": "What does a Symposium page-citation check establish, and what does it leave unproven?",
+      "relevant_chunk_ids": [
+        "cache-README.md::002"
+      ],
+      "tags": [
+        "cache",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": false,
+      "domain": "cache",
+      "evidence": [],
+      "id": "docwise-v3-023",
+      "intent_id": "cache_event_fee",
+      "question": "What exact registration fee in rupees does the fictional Innovate 2026 symposium charge?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "cache",
+        "unsupported"
+      ],
+      "unsupported_reason": "The frozen README lists fees as a possible chatbot topic but does not contain the underlying fictional PDF or an actual fee amount. A topic mention is not evidence of a fee."
+    },
+    {
+      "answerable": false,
+      "domain": "cache",
+      "evidence": [],
+      "id": "docwise-v3-024",
+      "intent_id": "cache_redis_invoice",
+      "question": "How much did the Symposium hosted Redis service invoice the author last month?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "cache",
+        "unsupported"
+      ],
+      "unsupported_reason": "The frozen documents contain configuration and bounded development measurements, but no provider invoice or monthly hosted cost."
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::001",
+          "excerpt": "Meetings support up to **six people**."
+        },
+        {
+          "chunk_id": "realtime-README.md::002",
+          "excerpt": "A PostgreSQL advisory lock serializes joins to the same room before enforcing the six-participant cap."
+        }
+      ],
+      "id": "docwise-v3-025",
+      "intent_id": "realtime_six_person_admission",
+      "question": "How many meeting participants are supported, and how are concurrent joins serialized before enforcing that cap?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::001",
+        "realtime-README.md::002"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::002",
+          "excerpt": "Admission is reserved before the first asynchronous operation. Overlapping join requests cannot subscribe one socket to multiple rooms; failed database commits or adapter joins clear room privileges and subscriptions."
+        }
+      ],
+      "id": "docwise-v3-026",
+      "intent_id": "realtime_overlapping_joins",
+      "question": "What prevents one socket from joining multiple rooms through overlapping requests, and what happens after failed admission?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::002"
+      ],
+      "tags": [
+        "realtime",
+        "failure"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::000",
+          "excerpt": "peer-to-peer WebRTC media, shared PostgreSQL-backed signaling and room state"
+        },
+        {
+          "chunk_id": "realtime-README.md::002",
+          "excerpt": "Media travels between peers, rather than through an application media server. The server coordinates room membership and SDP/ICE exchange."
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "excerpt": "This is a small-group peer mesh, not an SFU."
+        }
+      ],
+      "id": "docwise-v3-027",
+      "intent_id": "realtime_media_and_coordination",
+      "question": "Which path carries Apna Video Call media, and what does the server coordinate instead?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::000",
+        "realtime-README.md::002",
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "architecture"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::002",
+          "excerpt": "Access and refresh tokens are stored as hashes. Refresh replaces both tokens; logout revokes the stored session."
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "excerpt": "refresh replay, logout revocation"
+        }
+      ],
+      "id": "docwise-v3-028",
+      "intent_id": "realtime_session_rotation",
+      "question": "How are meeting access and refresh tokens stored, and what do refresh and logout change?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::002",
+        "realtime-README.md::005"
+      ],
+      "tags": [
+        "realtime",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::004",
+          "excerpt": "The PostgreSQL connection must support `LISTEN/NOTIFY`; use a direct connection rather than a transaction pooler."
+        },
+        {
+          "chunk_id": "realtime-README.md::004",
+          "excerpt": "The application prefers the unpooled URL."
+        }
+      ],
+      "id": "docwise-v3-029",
+      "intent_id": "realtime_postgres_connection",
+      "question": "What PostgreSQL capability does meeting signaling need, and which connection type should be used?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::004"
+      ],
+      "tags": [
+        "realtime",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::006",
+          "excerpt": "Restricted networks may need an authenticated TURN relay via `TURN_URL`, `TURN_USERNAME` and `TURN_CREDENTIAL`; Vercel does not provide that relay."
+        }
+      ],
+      "id": "docwise-v3-030",
+      "intent_id": "realtime_restricted_networks",
+      "question": "What relay may Apna Video Call need on restricted networks, and does Vercel supply it?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "configuration"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::001",
+          "excerpt": "Record a selected screen or tab and download the video to your device."
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "excerpt": "Recordings stay on the user's device. The Recordings page lists downloads in the current browser; the files are saved in Downloads. There is no server-side recording archive."
+        }
+      ],
+      "id": "docwise-v3-031",
+      "intent_id": "realtime_recording_storage",
+      "question": "Where are meeting recordings stored, and is there a server-side recording archive?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::001",
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::001",
+          "excerpt": "Anyone with the meeting link can join; rooms do not have an approval lobby or password."
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "excerpt": "Guest rooms are accessible to anyone holding the link."
+        }
+      ],
+      "id": "docwise-v3-032",
+      "intent_id": "realtime_guest_access",
+      "question": "Does possession of an Apna Video Call meeting link require approval through a lobby or a room password?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::001",
+        "realtime-README.md::006"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "scope_boundary"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::002",
+          "excerpt": "The active implementation is [`server/`](server/) and [`frontend/`](frontend/). [`backend/`](backend/) contains the earlier implementation and is not the root application's runtime."
+        },
+        {
+          "chunk_id": "realtime-README.md::007",
+          "excerpt": "`server/` | Active Express API, PostgreSQL state and Socket.IO coordination"
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "excerpt": "CI also checks the historical `backend/` dependencies separately"
+        }
+      ],
+      "id": "docwise-v3-033",
+      "intent_id": "realtime_runtime_directories",
+      "question": "Which directories are the active meeting implementation, and what is the status of backend/?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::002",
+        "realtime-README.md::007",
+        "realtime-README.md::005"
+      ],
+      "tags": [
+        "realtime",
+        "multi_section",
+        "implementation"
+      ]
+    },
+    {
+      "answerable": true,
+      "domain": "realtime",
+      "evidence": [
+        {
+          "chunk_id": "realtime-README.md::005",
+          "excerpt": "`npm test` launches two local server instances against the configured PostgreSQL database and exercises authentication, refresh replay, logout revocation, room events and cross-room isolation."
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "excerpt": "The two-instance suite verifies signaling and shared state; it does not measure real camera/audio quality or performance across different networks."
+        }
+      ],
+      "id": "docwise-v3-034",
+      "intent_id": "realtime_integration_proof_boundary",
+      "question": "What does the two-instance meeting integration suite exercise, and does it measure actual camera or microphone quality across networks?",
+      "relevant_chunk_ids": [
+        "realtime-README.md::005"
+      ],
+      "tags": [
+        "realtime",
+        "measurement_scope"
+      ]
+    },
+    {
+      "answerable": false,
+      "domain": "realtime",
+      "evidence": [],
+      "id": "docwise-v3-035",
+      "intent_id": "realtime_turn_service_password",
+      "question": "What is the actual TURN password used by the hosted Apna Video Call deployment?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "realtime",
+        "unsupported"
+      ],
+      "unsupported_reason": "The README names TURN environment variables but does not publish any deployed relay credential. No credential is available in the frozen corpus."
+    },
+    {
+      "answerable": false,
+      "domain": "realtime",
+      "evidence": [],
+      "id": "docwise-v3-036",
+      "intent_id": "realtime_quality_score",
+      "question": "What measured MOS audio-quality score does Apna Video Call achieve on a 3G network?",
+      "relevant_chunk_ids": [],
+      "tags": [
+        "realtime",
+        "unsupported"
+      ],
+      "unsupported_reason": "The source explicitly limits the two-instance suite to signaling and shared state and contains no MOS or 3G media-quality measurement."
+    }
+  ],
+  "corpus": {
+    "chunk_count": 32,
+    "chunk_id_format": "<metadata.doc_title>::<metadata.chunk_index padded to 3 digits>",
+    "encoder_input_diagnostics": {
+      "chunk_count": 32,
+      "encoder_token_limit": 256,
+      "interpretation": "Production encoder truncates each chunk to 256 tokens. Original heading chunking is preserved; BM25 still sees full chunk text.",
+      "maximum_untruncated_tokens": 785,
+      "per_chunk_untruncated_tokens": [
+        {
+          "chunk_id": "banking-README.md::000",
+          "token_count": 187
+        },
+        {
+          "chunk_id": "banking-README.md::001",
+          "token_count": 139
+        },
+        {
+          "chunk_id": "banking-README.md::002",
+          "token_count": 459
+        },
+        {
+          "chunk_id": "banking-README.md::003",
+          "token_count": 492
+        },
+        {
+          "chunk_id": "banking-README.md::004",
+          "token_count": 287
+        },
+        {
+          "chunk_id": "banking-README.md::005",
+          "token_count": 80
+        },
+        {
+          "chunk_id": "cache-README.md::000",
+          "token_count": 209
+        },
+        {
+          "chunk_id": "cache-README.md::001",
+          "token_count": 72
+        },
+        {
+          "chunk_id": "cache-README.md::002",
+          "token_count": 581
+        },
+        {
+          "chunk_id": "cache-README.md::003",
+          "token_count": 756
+        },
+        {
+          "chunk_id": "cache-README.md::004",
+          "token_count": 316
+        },
+        {
+          "chunk_id": "cache-README.md::005",
+          "token_count": 213
+        },
+        {
+          "chunk_id": "cache-README.md::006",
+          "token_count": 134
+        },
+        {
+          "chunk_id": "realtime-README.md::000",
+          "token_count": 119
+        },
+        {
+          "chunk_id": "realtime-README.md::001",
+          "token_count": 146
+        },
+        {
+          "chunk_id": "realtime-README.md::002",
+          "token_count": 458
+        },
+        {
+          "chunk_id": "realtime-README.md::003",
+          "token_count": 47
+        },
+        {
+          "chunk_id": "realtime-README.md::004",
+          "token_count": 294
+        },
+        {
+          "chunk_id": "realtime-README.md::005",
+          "token_count": 455
+        },
+        {
+          "chunk_id": "realtime-README.md::006",
+          "token_count": 236
+        },
+        {
+          "chunk_id": "realtime-README.md::007",
+          "token_count": 120
+        },
+        {
+          "chunk_id": "community-README.md::000",
+          "token_count": 151
+        },
+        {
+          "chunk_id": "community-README.md::001",
+          "token_count": 244
+        },
+        {
+          "chunk_id": "community-README.md::002",
+          "token_count": 398
+        },
+        {
+          "chunk_id": "community-README.md::003",
+          "token_count": 63
+        },
+        {
+          "chunk_id": "community-README.md::004",
+          "token_count": 481
+        },
+        {
+          "chunk_id": "community-README.md::005",
+          "token_count": 234
+        },
+        {
+          "chunk_id": "community-README.md::006",
+          "token_count": 124
+        },
+        {
+          "chunk_id": "community-README.md::007",
+          "token_count": 126
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::000",
+          "token_count": 785
+        },
+        {
+          "chunk_id": "durable-ARCHITECTURE.md::001",
+          "token_count": 154
+        },
+        {
+          "chunk_id": "durable-ADR-0001.md::000",
+          "token_count": 280
+        }
+      ],
+      "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "truncated_chunk_count": 13
+    },
+    "path": "evaluation/broader_v1/corpus.json",
+    "sha256": "fdd570b87521982020ba90a10310f9cb6444f42628485c83cf10747da6f68db5"
+  },
+  "dataset_id": "docwise-broader-v1-dev",
+  "domains": [
+    "banking",
+    "cache",
+    "realtime"
+  ],
+  "freeze": {
+    "answerable_cases": 30,
+    "case_count": 36,
+    "production_corpus_changed": false,
+    "production_ranking_changed": false,
+    "status": "frozen_after_independent_agent_source_review_before_any_broader_retrieval",
+    "unsupported_cases": 6
+  },
+  "frozen_on": "2026-10-25",
+  "gold_policy": "Binary chunk relevance: every known chunk directly supporting at least one explicitly requested proposition is labeled, including alternative summaries. Heading-only mentions do not count. Exact supporting excerpts demonstrate text presence, not independent entailment or completeness. Recall counts relevant chunks, not answer-component coverage.",
+  "label": "Authored multi-domain diagnostic dev query partition; not an external benchmark or independent human labels",
+  "limitations": "Five domains from six public repository documents by the same author. Not an external benchmark, independently human-labeled dataset, production traffic or generated-answer evaluation. Domain-separated query diagnostic splits; all documents are available to retrieval. The durable-jobs source describes an implementation lab with undeployed cloud operation. Production retrieval is unchanged apart from explicit corpus injection. No ranking or threshold tuning before this frozen diagnostic. Thirteen of 32 chunks exceed the encoder 256-token limit; complete source chunks remain available to BM25 and generation context.",
+  "partition": "dev",
+  "schema_version": 1,
+  "scope": "Statements describe the six source documents at their pinned revisions, not independent verification of runtime behavior or deployed features. All documents are available to retrieval; the heldout query partition separates domains and is not a hidden external research test."
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-24T18:50:44.784403+00:00",
+  "target_host": "rag-documentation-assistant-g593wx1tr-harshgavandits-projects.vercel.app",
+  "source_sha": "b953f30d9238a26d019a766c5e91d17b52ca39de",
+  "run_id": "5974acbef55f02ba",
+  "source_sha256": {
+    "app.py": "e6fc3f5cbbae2a13b9ce3ee34130b8e3f9f61ef1cacd9add6d6997cf0bc6f6c0",
+    "staging.py": "ba0381bf748e14b4e0d5ec461af528d97ddb0ea3a0787b72e716d3a1ccc01d8f",
+    "engine.py": "52543b9e862967af7bc02224051253c451b38cd1ce670057d6bbbe8f39ec9a6e",
+    "grounding.py": "d016320fd84976b44d33a958654510c4725f10ba0ef559f6d8371b6aea403f72",
+    "observability.py": "2f377a0712320eb587c0bcb9f895d676b36d25e20524ceeee4b9462482582044",
+    "prepare.py": "56680f9993edd8ea85680c94b347913d3bc48b993483bff11ee036e9e5c7e7d5",
+    "data/corpus.json": "9a8242dcc4309057921dcc635783cf8415b4012155704878ad58ad15329620a7",
+    "model_manifest.json": "922b5d98f74b6111123ddd58d636c9c4c608554ca64c3a9279b56c7f3b7e3cb4",
+    "requirements.txt": "2cc9ff873ed6f8527172e4244eb15c9cb34e80a732a94f89629efd88a006cda1",
+    "vercel.json": "83e037fb9db1a1c4ef8524d374cc32f2570e73576bc7683c0409aa534782c330"
+  },
+  "probe_sha256": "8937b0af109535f57cd425797df7c7a415c3ce7f667fc535a6f8a4142971d51a",
+  "scope": "Bounded hosted Vercel FastAPI/Redis/ONNX diagnostic with deterministic injected provider; zero real model requests.",
+  "limitations": "No real provider latency/quality, scale/SLO, visitor outcome or production uptime claim. Client network timings include edge/runtime/retrieval/Redis and injected delay. Cold status is not established.",
+  "bounds": {
+    "query_requests": 16,
+    "auxiliary_gets": 6,
+    "max_concurrency": 8,
+    "daily_admissions": 9,
+    "paid_provider_requests": 0,
+    "response_bytes": 131072,
+    "socket_timeout_seconds": 125
+  },
+  "requests": [],
+  "auxiliary_requests": [
+    {
+      "started_at_utc": "2026-10-24T18:50:44.784403+00:00",
+      "http_status": 401,
+      "response_sha256": "b8c1f6de5ee4a79e4b272ca04ea54b1cb74f40788e43993200f59ae834cfbca1",
+      "elapsed_ms": 1322.783,
+      "completed_at_utc": "2026-10-24T18:50:46.106495+00:00",
+      "endpoint": "/api/staging/provenance"
+    }
+  ],
+  "waits": [],
+  "passed": false,
+  "failure": "auxiliary_endpoint_failed",
+  "completed_at_utc": "2026-10-24T18:50:46.106495+00:00"
+}

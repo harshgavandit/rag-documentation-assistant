@@ -1,5 +1,7 @@
 # Docwise retrieval evaluation
 
+The [multi-domain results](BROADER_RESULTS.md) extend the evaluation to frozen documentation from five application domains with development and held-out query-domain splits. They include 60 retrieval cases, 24 additional real provider attempts, raw outputs and a ready-to-use external [source-label review packet](HUMAN_REVIEW.md). Original results below remain historical; datasets and scopes are not combined into one accuracy score.
+
 The latest [expanded evaluation](METHODOLOGY_V2.md) covers 112 authored intents, with source labels checked by a separate AI agent before ranking. [Security/conflict/ambiguity challenges](ADVERSARIAL.md) record twelve additional real model calls. The original 50-case run and its 18 model outputs below remain historical evidence, with original data and results preserved.
 
 This is a synthetic, repository-authored diagnostic set built from the two bundled educational documents. It is **not an external benchmark, a held-out research test, production traffic, or a measure of generated-answer correctness**. Questions and initial gold labels were authored before running retrieval. Independent source review then corrected omitted supporting chunks under the existing partial-evidence policy, recorded as annotation revision 2 before generation-provider evaluation. It also clarified case044 to ask about replacing SQLite with PostgreSQL. The fixed live subset and fact patterns were preserved. Production retrieval parameters and code were not tuned against these cases.
