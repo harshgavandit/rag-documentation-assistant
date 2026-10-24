@@ -10,6 +10,7 @@ import importlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import time
@@ -75,10 +76,16 @@ def save(path, report):
 def verify(path):
     report = json.loads(path.read_text(encoding='utf-8'))
     dataset, corpus = load_dataset(ROOT / 'evaluation/broader_v1/heldout.json', ROOT / 'evaluation/broader_v1/corpus.json')
-    if (report['dataset_sha256'] != sha256(ROOT / 'evaluation/broader_v1/heldout.json') or
+    if (not isinstance(report, dict) or report.get('schema_version') != 1 or
+            report.get('requested_model') != 'gpt-6-luna' or
+            not re.fullmatch(r'[a-f0-9]{40}', str(report.get('source_commit', ''))) or
+            type(report.get('working_tree_dirty')) is not bool or
+            report.get('dataset_sha256') != sha256(ROOT / 'evaluation/broader_v1/heldout.json') or
             report['corpus_sha256'] != sha256(ROOT / 'evaluation/broader_v1/corpus.json') or
-            report['max_completion_tokens'] != 800 or report['request_limit'] != 24 or
-            len(report['cases']) > 24 or report['provider_requests'] != len(report['cases'])):
+            type(report.get('max_completion_tokens')) is not int or report['max_completion_tokens'] != 800 or
+            type(report.get('request_limit')) is not int or report['request_limit'] != 24 or
+            not isinstance(report.get('cases'), list) or len(report['cases']) > 24 or
+            type(report.get('provider_requests')) is not int or report['provider_requests'] != len(report['cases'])):
         raise ValueError('Answer report identity or budget mismatch')
     if [r['id'] for r in report['cases']] != [c['id'] for c in dataset['cases'][:len(report['cases'])]]:
         raise ValueError('Answer case coverage mismatch')
@@ -86,22 +93,65 @@ def verify(path):
     for row, case in zip(report['cases'], dataset['cases']):
         if row['question'] != case['question']:
             raise ValueError('Answer question mismatch')
-        chunks = [by_id[cid] for cid in row['retrieved_chunk_ids']]
-        if row['status'] == 'completed' and row['checks'] != checks(case, row['result'], chunks):
-            raise ValueError('Answer proxy mismatch')
-        usage = row.get('usage') or {}
+        selected = row.get('retrieved_chunk_ids')
+        if (not isinstance(selected, list) or len(selected) != 5 or
+                any(not isinstance(cid, str) or cid not in by_id for cid in selected) or len(set(selected)) != 5):
+            raise ValueError('Answer retrieved source inventory mismatch')
+        chunks = [by_id[cid] for cid in selected]
+        if row.get('status') not in {'completed', 'error'}:
+            raise ValueError('Invalid answer status')
+        if row['status'] == 'completed':
+            raw = row.get('provider_output')
+            if not isinstance(raw, str) or not raw.strip() or row.get('finish_reason') != 'stop':
+                raise ValueError('Completed answer lacks complete retained provider output')
+            text = raw.strip()
+            refusal = 'I could not find an answer to this question in the provided documentation.'
+            labels = re.findall(r'\[Source: .+?, Section: .+?\]', text)
+            allowed = {f"[Source: {c['metadata']['doc_title']}, Section: {c['metadata']['section_title']}]" for c in chunks}
+            if text.strip('\'"') == refusal:
+                text, labels = refusal, []
+            elif not labels or any(label not in allowed for label in labels):
+                raise ValueError('Retained provider output fails production citation guard')
+            expected_result = {'answer': text, 'citations': list(dict.fromkeys(labels)), 'refused': text == refusal}
+            if (not isinstance(row.get('result'), dict) or type(row['result'].get('refused')) is not bool or
+                    row['result'] != expected_result or row.get('checks') != checks(case, expected_result, chunks)):
+                raise ValueError('Answer result or proxy mismatch against retained provider output')
+        elif 'result' in row or 'checks' in row:
+            raise ValueError('Failed answer must not claim a completed result')
+        raw_usage = row.get('usage')
+        if raw_usage is not None and not isinstance(raw_usage, dict):
+            raise ValueError('Invalid returned token usage object')
+        usage = raw_usage or {}
+        usage_keys = {'prompt_tokens', 'completion_tokens', 'total_tokens', 'cached_prompt_tokens', 'reasoning_tokens'}
+        if not isinstance(usage, dict) or (usage and set(usage) != usage_keys):
+            raise ValueError('Invalid returned token usage inventory')
+        if any(value is not None and (type(value) is not int or not 0 <= value <= 10000000) for value in usage.values()):
+            raise ValueError('Returned token usage must be bounded nonnegative integers or unknown')
         if all(type(usage.get(k)) is int for k in ('prompt_tokens', 'completion_tokens', 'total_tokens')):
             if usage['prompt_tokens'] + usage['completion_tokens'] != usage['total_tokens']:
                 raise ValueError('Answer token arithmetic mismatch')
         if type(usage.get('completion_tokens')) is int and usage['completion_tokens'] > 800:
             raise ValueError('Returned output exceeds authorized cap')
+        for detail, total in (('cached_prompt_tokens', 'prompt_tokens'), ('reasoning_tokens', 'completion_tokens')):
+            if type(usage.get(detail)) is int and (type(usage.get(total)) is not int or usage[detail] > usage[total]):
+                raise ValueError('Returned token detail exceeds its total')
+    if not isinstance(report.get('source_snapshots'), dict) or set(report['source_snapshots']) != set(SOURCE_FILES):
+        raise ValueError('Incomplete answer source snapshot inventory')
     for name, entry in report['source_snapshots'].items():
-        snapshot = (path.parent / entry['path']).resolve()
-        if not snapshot.is_relative_to(path.parent.resolve()) or sha256(snapshot) != entry['sha256']:
+        if (not isinstance(entry, dict) or set(entry) != {'path', 'sha256'} or
+                not isinstance(entry.get('path'), str) or
+                not re.fullmatch(r'[a-f0-9]{64}', str(entry.get('sha256', '')))):
+            raise ValueError('Invalid answer source snapshot entry')
+        relative = Path(entry['path'])
+        snapshot = (path.parent / relative).resolve()
+        if (relative.is_absolute() or len(relative.parts) != 2 or relative.parts[0] != 'sources' or
+                '..' in relative.parts or not snapshot.is_relative_to(path.parent.resolve()) or
+                not snapshot.is_file() or sha256(snapshot) != entry['sha256']):
             raise ValueError('Answer source snapshot mismatch')
     if report['pricing'] != PRICING or report['summary'] != summarize(report['cases']):
         raise ValueError('Answer aggregate mismatch')
-    return {'verified': True, 'provider_requests': report['provider_requests'], 'new_provider_requests': 0}
+    return {'verified': True, 'provider_requests': report['provider_requests'], 'new_provider_requests': 0,
+            'complete_sample': len(report['cases']) == 24}
 
 
 def main(argv=None):
