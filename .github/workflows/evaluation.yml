@@ -34,6 +34,8 @@ jobs:
         run: python -m compileall -q web evaluation
       - name: Run offline web and evaluation tests
         run: python -m unittest discover -s web/tests -v
+      - name: Verify retained metrics and source snapshots
+        run: python -m evaluation.verify_evidence
       - name: Validate frozen source labels
         run: python -m evaluation.run --validate-only
       - name: Measure retrieval without paid providers

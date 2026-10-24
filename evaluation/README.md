@@ -80,3 +80,11 @@ The exact runner used for the recorded sample is retained as a [source snapshot]
 ## Continuous checks
 
 [GitHub Actions](../.github/workflows/evaluation.yml) installs the pinned evaluation environment on Python 3.12, verifies the public model checksums, runs web/evaluation regressions, validates the authored source excerpts and executes the retrieval comparison. It retains a JSON artifact for 30 days. CI has no API credentials and runs no paid generation. Ranking/runtime failures fail the job; scores and timings are reported without fitting an arbitrary threshold to this dataset.
+
+Verify the committed historical evidence separately, without models, credentials or network access:
+
+```powershell
+python -m evaluation.verify_evidence
+```
+
+This checks all four recorded reports against their exact-byte source and dataset snapshots. It recomputes per-question ranking metrics, aggregate scores, timing percentiles, generation fixture checks, and returned-token totals from retained raw records. CI also runs this verifier and corruption regressions. Older report schemas retain their original fields; the verifier does not rewrite them or apply a newer missing-usage policy retrospectively. This detects inconsistent evidence and accidental drift. It cannot independently attest that a provider call occurred, reproduce historical hardware timings, or convert authored regex checks into human evaluation.
