@@ -26,6 +26,7 @@ PRICING = {'source': 'https://developers.openai.com/api/docs/models/gpt-6-luna',
            'checked_date': '2026-10-25', 'service_tier': 'standard',
            'input_usd_per_million': 0.1, 'cached_input_usd_per_million': 0.01,
            'output_usd_per_million': 0.5}
+AUTHORIZATION = 'user-approved-2026-10-25-24-additional'
 
 
 def checks(case, result, chunks):
@@ -73,7 +74,24 @@ def save(path, report):
     temporary.replace(path)
 
 
-def verify(path):
+def artifact(path, entry, root):
+    if (not isinstance(entry, dict) or set(entry) != {'path', 'sha256'} or
+            not isinstance(entry.get('path'), str) or
+            not re.fullmatch(r'[a-f0-9]{64}', str(entry.get('sha256', '')))):
+        raise ValueError('Invalid answer source snapshot entry')
+    relative = Path(entry['path'])
+    snapshot = (root / relative).resolve()
+    if (relative.is_absolute() or len(relative.parts) != 2 or relative.parts[0] != 'sources' or
+            '..' in relative.parts or not snapshot.is_relative_to(root.resolve()) or
+            not snapshot.is_file() or sha256(snapshot) != entry['sha256']):
+        raise ValueError('Answer source snapshot mismatch')
+    return snapshot
+
+
+def verify(path, *, _artifact_root=None, _depth=0):
+    if _depth > 24:
+        raise ValueError('Continuation archive depth exceeds the request bound')
+    artifact_root = path.parent if _artifact_root is None else _artifact_root
     report = json.loads(path.read_text(encoding='utf-8'))
     dataset, corpus = load_dataset(ROOT / 'evaluation/broader_v1/heldout.json', ROOT / 'evaluation/broader_v1/corpus.json')
     if (not isinstance(report, dict) or report.get('schema_version') != 1 or
@@ -138,77 +156,110 @@ def verify(path):
     if not isinstance(report.get('source_snapshots'), dict) or set(report['source_snapshots']) != set(SOURCE_FILES):
         raise ValueError('Incomplete answer source snapshot inventory')
     for name, entry in report['source_snapshots'].items():
-        if (not isinstance(entry, dict) or set(entry) != {'path', 'sha256'} or
-                not isinstance(entry.get('path'), str) or
-                not re.fullmatch(r'[a-f0-9]{64}', str(entry.get('sha256', '')))):
-            raise ValueError('Invalid answer source snapshot entry')
-        relative = Path(entry['path'])
-        snapshot = (path.parent / relative).resolve()
-        if (relative.is_absolute() or len(relative.parts) != 2 or relative.parts[0] != 'sources' or
-                '..' in relative.parts or not snapshot.is_relative_to(path.parent.resolve()) or
-                not snapshot.is_file() or sha256(snapshot) != entry['sha256']):
-            raise ValueError('Answer source snapshot mismatch')
+        artifact(path, entry, artifact_root)
+    segments = report.get('continuation_segments', [])
+    if not isinstance(segments, list) or len(segments) > 24:
+        raise ValueError('Invalid continuation inventory')
+    # The latest immutable before-report contains the earlier segment inventory.
+    # Follow one prior report at each level to avoid exponential traversal.
+    for ordinal, segment in enumerate(segments, 1):
+        expected_keys = {'segment_index', 'recorded_at_utc', 'source_commit', 'working_tree_dirty',
+                         'before_case_count', 'before_report', 'runner_source', 'budget_authorization',
+                         'request_limit', 'max_completion_tokens', 'ledger_path_sha256'}
+        if (not isinstance(segment, dict) or set(segment) != expected_keys or
+                type(segment.get('segment_index')) is not int or segment['segment_index'] != ordinal or
+                type(segment.get('before_case_count')) is not int or not 1 <= segment['before_case_count'] < 24 or
+                segment['before_case_count'] > len(report['cases']) or
+                type(segment.get('working_tree_dirty')) is not bool or
+                not re.fullmatch(r'[a-f0-9]{40}', str(segment.get('source_commit', ''))) or
+                not re.fullmatch(r'[a-f0-9]{64}', str(segment.get('ledger_path_sha256', ''))) or
+                segment.get('budget_authorization') != AUTHORIZATION or
+                type(segment.get('request_limit')) is not int or segment['request_limit'] != 24 or
+                type(segment.get('max_completion_tokens')) is not int or segment['max_completion_tokens'] != 800):
+            raise ValueError('Invalid continuation identity or budget')
+        try:
+            stamp = datetime.fromisoformat(segment['recorded_at_utc'])
+            if stamp.utcoffset() is None:
+                raise ValueError
+        except (KeyError, TypeError, ValueError):
+            raise ValueError('Invalid continuation time') from None
+        artifact(path, segment['before_report'], artifact_root)
+        artifact(path, segment['runner_source'], artifact_root)
+        if ordinal > 1 and segment['ledger_path_sha256'] != segments[0]['ledger_path_sha256']:
+            raise ValueError('Continuation changed the private ledger binding')
+    if segments:
+        segment = segments[-1]
+        before_path = artifact(path, segment['before_report'], artifact_root)
+        verify(before_path, _artifact_root=artifact_root, _depth=_depth+1)
+        before = json.loads(before_path.read_text(encoding='utf-8'))
+        count = segment['before_case_count']
+        if (len(before['cases']) != count or before['provider_requests'] != count or
+                report['cases'][:count] != before['cases'] or
+                before.get('continuation_segments', []) != segments[:-1]):
+            raise ValueError('Continuation changed prior rows or segment inventory')
+        for name in ('schema_version', 'recorded_at_utc', 'source_commit', 'working_tree_dirty',
+                     'scope', 'grading', 'requested_model', 'max_completion_tokens', 'request_limit',
+                     'dataset_sha256', 'corpus_sha256', 'pricing', 'source_snapshots'):
+            if before.get(name) != report.get(name):
+                raise ValueError('Continuation changed original report identity or snapshots')
     if report['pricing'] != PRICING or report['summary'] != summarize(report['cases']):
         raise ValueError('Answer aggregate mismatch')
     return {'verified': True, 'provider_requests': report['provider_requests'], 'new_provider_requests': 0,
             'complete_sample': len(report['cases']) == 24}
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--live', action='store_true')
-    parser.add_argument('--env-file', type=Path)
-    parser.add_argument('--budget-ledger', type=Path)
-    parser.add_argument('--output', type=Path)
-    parser.add_argument('--verify-report', type=Path)
-    args = parser.parse_args(argv)
-    if args.verify_report:
-        print(json.dumps(verify(args.verify_report), sort_keys=True))
-        return 0
-    if not args.live or not args.output or not args.budget_ledger or not args.env_file:
-        parser.error('Live runs require explicit --live, private --env-file, --budget-ledger and new --output')
-    if args.output.exists() or not args.output.parent.is_dir():
-        parser.error('Output must be a new file in an existing directory')
-    from evaluation.broader import validate_bundle
-    validate_bundle(require_review=True)  # Frozen reviewed source labels, before paid work.
-    dataset, corpus = load_dataset(ROOT / 'evaluation/broader_v1/heldout.json', ROOT / 'evaluation/broader_v1/corpus.json')
-    if len(dataset['cases']) != 24:
-        parser.error('Expected frozen 24-case heldout sample')
-    from dotenv import dotenv_values
-    values = dotenv_values(args.env_file)
-    key = values.get('OPENAI_API_KEY') or values.get('OPEN_AI_API_KEY')
-    if not key:
-        parser.error('Private provider credential unavailable; no requests sent')
-    os.environ.update(OPENAI_API_KEY=key, OPENAI_MODEL='gpt-6-luna', OPENAI_MAX_COMPLETION_TOKENS='800')
-    if os.getenv('STAGING_WORKLOAD_ENABLED') == '1':
-        parser.error('Refuse live evaluation with staging fixtures enabled')
-    budget = RequestBudget(args.budget_ledger, authorization='user-approved-2026-10-25-24-additional', limit=24, output_cap=800)
-    if budget.snapshot()['attempts']:
-        parser.error('This allowance already has attempts; no automatic rerun or refund')
-    sys.path.insert(0, str(ROOT / 'web'))
-    site = importlib.import_module('app')
-    from web.engine import Index
-    index = Index(chunks=corpus)
-    report = {'schema_version': 1, 'recorded_at_utc': datetime.now(timezone.utc).isoformat(),
-        'scope': 'Real provider generation with production answer guards and local ONNX retrieval over a separate frozen multi-domain diagnostic corpus. No hosted admission or real-user claim.',
-        'grading': 'Expected refusal decisions and citation-label membership proxies only. Semantic correctness and independent human evaluation remain unmeasured.',
-        'requested_model': 'gpt-6-luna', 'max_completion_tokens': 800, 'request_limit': 24,
-        'dataset_sha256': sha256(ROOT / 'evaluation/broader_v1/heldout.json'),
-        'corpus_sha256': sha256(ROOT / 'evaluation/broader_v1/corpus.json'),
+def prepare_resume(path, ledger_path):
+    """Validate an existing incomplete report and the original ledger before any API work."""
+    if not path.is_file() or not ledger_path.is_file():
+        raise ValueError('Resume requires an existing report and existing private ledger')
+    verify(path)
+    report = json.loads(path.read_text(encoding='utf-8'))
+    count = len(report['cases'])
+    if not 1 <= count < 24:
+        raise ValueError('Resume requires a nonempty incomplete sample; completed runs cannot replay')
+    budget = RequestBudget(ledger_path, authorization=AUTHORIZATION, limit=24, output_cap=800)
+    if budget.lock.exists():
+        raise ValueError('Resume cannot proceed while a reservation lock exists')
+    attempts = budget.snapshot()['attempts']
+    if len(attempts) != count or [a['case_id'] for a in attempts] != [r['id'] for r in report['cases']]:
+        raise ValueError('Existing ledger attempts must exactly match the retained report prefix')
+    binding = hashlib.sha256(str(ledger_path.resolve()).encode()).hexdigest()
+    if report.get('continuation_segments') and report['continuation_segments'][0]['ledger_path_sha256'] != binding:
+        raise ValueError('Resume must use the same private ledger path')
+    for name in SOURCE_FILES:
+        if name != 'evaluation/broader_answers.py' and sha256(ROOT/name) != report['source_snapshots'][name]['sha256']:
+            raise ValueError('Continuation cannot change original production or budget dependencies')
+    return report, budget, count
+
+
+def attach_continuation(path, report, budget):
+    """Archive exact original bytes and new runner source before appending any attempt."""
+    ordinal = len(report.get('continuation_segments', []))+1
+    folder = path.parent/'sources'
+    before_path = folder/f'{path.stem}-continuation-{ordinal:02d}-before-report.txt'
+    runner_path = folder/f'{path.stem}-continuation-{ordinal:02d}-runner.txt'
+    before_bytes = path.read_bytes()
+    if json.loads(before_bytes) != report:
+        raise ValueError('Report changed after resume validation')
+    with before_path.open('xb') as handle:
+        handle.write(before_bytes)
+    with runner_path.open('xb') as handle:
+        handle.write(Path(__file__).read_bytes())
+    report.setdefault('continuation_segments', []).append({
+        'segment_index': ordinal, 'recorded_at_utc': datetime.now(timezone.utc).isoformat(),
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'working_tree_dirty': bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip()),
-        'pricing': PRICING, 'provider_requests': 0, 'source_snapshots': {}, 'cases': []}
-    for name in SOURCE_FILES:
-        original = ROOT / name
-        snapshot = args.output.parent / 'sources' / (args.output.stem + '-' + name.replace('/', '_') + '.txt')
-        with snapshot.open('xb') as handle:
-            handle.write(original.read_bytes())
-        report['source_snapshots'][name] = {'path': snapshot.relative_to(args.output.parent).as_posix(), 'sha256': sha256(snapshot)}
-    with args.output.open('x', encoding='utf-8') as handle:
-        handle.write('{}\n')
-    save(args.output, report)
+        'before_case_count': len(report['cases']), 'budget_authorization': AUTHORIZATION,
+        'request_limit': 24, 'max_completion_tokens': 800,
+        'ledger_path_sha256': hashlib.sha256(str(budget.path.resolve()).encode()).hexdigest(),
+        'before_report': {'path': before_path.relative_to(path.parent).as_posix(), 'sha256': sha256(before_path)},
+        'runner_source': {'path': runner_path.relative_to(path.parent).as_posix(), 'sha256': sha256(runner_path)}})
+    save(path, report)
+
+
+def run_cases(site, index, dataset, report, budget, output, start_index=0):
     original_post = site.post_json
-    for case in dataset['cases']:
+    for case in dataset['cases'][start_index:]:
         started = time.perf_counter()
         chunks = index.search(case['question'])
         row = {'id': case['id'], 'question': case['question'],
@@ -220,7 +271,7 @@ def main(argv=None):
                 raise ValueError('Unexpected destination or output cap')
             budget.reserve(case['id'])
             report['provider_requests'] += 1
-            save(args.output, report)  # Persist attempt before network, including failure.
+            save(output, report)  # Persist attempt before network, including failure.
             before = time.perf_counter()
             try:
                 response = original_post(url, payload, token, timeout)
@@ -239,12 +290,81 @@ def main(argv=None):
         row.update(captured)
         row['elapsed_ms'] = round((time.perf_counter() - started) * 1000, 3)
         report['cases'].append(row)
-        save(args.output, report)
+        save(output, report)
         print(case['id'], row['status'], report['provider_requests'], '/ 24', flush=True)
         if row['status'] == 'error' and row.get('http_status') != 502:
             return 1
     print(json.dumps(report['summary'], sort_keys=True))
     return 0
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--live', action='store_true')
+    parser.add_argument('--env-file', type=Path)
+    parser.add_argument('--budget-ledger', type=Path)
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--verify-report', type=Path)
+    parser.add_argument('--resume', action='store_true', help='Continue only unattempted cases using the existing report and original ledger')
+    args = parser.parse_args(argv)
+    if args.verify_report:
+        if args.resume:
+            parser.error('--verify-report cannot be combined with --resume')
+        print(json.dumps(verify(args.verify_report), sort_keys=True))
+        return 0
+    if not args.live or not args.output or not args.budget_ledger or not args.env_file:
+        parser.error('Live runs require explicit --live, private --env-file, --budget-ledger and new --output')
+    if not args.output.parent.is_dir() or (args.output.exists() and not args.resume):
+        parser.error('Output must be a new file in an existing directory')
+    from evaluation.broader import validate_bundle
+    validate_bundle(require_review=True)  # Frozen reviewed source labels, before paid work.
+    dataset, corpus = load_dataset(ROOT / 'evaluation/broader_v1/heldout.json', ROOT / 'evaluation/broader_v1/corpus.json')
+    if len(dataset['cases']) != 24:
+        parser.error('Expected frozen 24-case heldout sample')
+    report, budget, start_index = None, None, 0
+    if args.resume:
+        try:
+            report, budget, start_index = prepare_resume(args.output, args.budget_ledger)
+        except (ValueError, OSError, KeyError, TypeError):
+            parser.error('Resume validation failed; existing report, snapshots and original ledger must agree. No requests sent.')
+    from dotenv import dotenv_values
+    values = dotenv_values(args.env_file)
+    key = values.get('OPENAI_API_KEY') or values.get('OPEN_AI_API_KEY')
+    if not key:
+        parser.error('Private provider credential unavailable; no requests sent')
+    os.environ.update(OPENAI_API_KEY=key, OPENAI_MODEL='gpt-6-luna', OPENAI_MAX_COMPLETION_TOKENS='800')
+    if os.getenv('STAGING_WORKLOAD_ENABLED') == '1':
+        parser.error('Refuse live evaluation with staging fixtures enabled')
+    if budget is None:
+        budget = RequestBudget(args.budget_ledger, authorization=AUTHORIZATION, limit=24, output_cap=800)
+        if budget.snapshot()['attempts']:
+            parser.error('This allowance already has attempts; explicit --resume with its original report is required')
+    sys.path.insert(0, str(ROOT / 'web'))
+    site = importlib.import_module('app')
+    from web.engine import Index
+    index = Index(chunks=corpus)
+    if args.resume:
+        attach_continuation(args.output, report, budget)
+        return run_cases(site, index, dataset, report, budget, args.output, start_index)
+    report = {'schema_version': 1, 'recorded_at_utc': datetime.now(timezone.utc).isoformat(),
+        'scope': 'Real provider generation with production answer guards and local ONNX retrieval over a separate frozen multi-domain diagnostic corpus. No hosted admission or real-user claim.',
+        'grading': 'Expected refusal decisions and citation-label membership proxies only. Semantic correctness and independent human evaluation remain unmeasured.',
+        'requested_model': 'gpt-6-luna', 'max_completion_tokens': 800, 'request_limit': 24,
+        'dataset_sha256': sha256(ROOT / 'evaluation/broader_v1/heldout.json'),
+        'corpus_sha256': sha256(ROOT / 'evaluation/broader_v1/corpus.json'),
+        'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+        'working_tree_dirty': bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip()),
+        'pricing': PRICING, 'provider_requests': 0, 'source_snapshots': {}, 'cases': []}
+    for name in SOURCE_FILES:
+        original = ROOT / name
+        snapshot = args.output.parent / 'sources' / (args.output.stem + '-' + name.replace('/', '_') + '.txt')
+        with snapshot.open('xb') as handle:
+            handle.write(original.read_bytes())
+        report['source_snapshots'][name] = {'path': snapshot.relative_to(args.output.parent).as_posix(), 'sha256': sha256(snapshot)}
+    with args.output.open('x', encoding='utf-8') as handle:
+        handle.write('{}\n')
+    save(args.output, report)
+    return run_cases(site, index, dataset, report, budget, args.output)
 
 
 if __name__ == '__main__':

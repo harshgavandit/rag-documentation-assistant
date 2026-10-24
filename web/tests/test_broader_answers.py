@@ -3,7 +3,9 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 from evaluation import broader_answers as live
 from evaluation.broader_answers import checks, summarize
@@ -34,7 +36,7 @@ class BroaderAnswerTests(unittest.TestCase):
         self.assertFalse(result['semantic_correctness_human_reviewed'])
 
 
-class BroaderAnswerVerificationTests(unittest.TestCase):
+class _BroaderAnswerReportFixture:
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
@@ -68,6 +70,8 @@ class BroaderAnswerVerificationTests(unittest.TestCase):
         selected['summary'] = summarize(selected['cases'])
         self.path.write_text(json.dumps(selected), encoding='utf-8')
 
+
+class BroaderAnswerVerificationTests(_BroaderAnswerReportFixture, unittest.TestCase):
     def test_valid_report_recomputes_from_raw_provider_output_without_provider_calls(self):
         self.save()
         self.assertTrue(live.verify(self.path)['verified'])
@@ -86,6 +90,109 @@ class BroaderAnswerVerificationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             live.verify(self.path)
 
+
+class BroaderAnswerResumeTests(_BroaderAnswerReportFixture, unittest.TestCase):
+    def prefix(self, count=10):
+        dataset, _ = load_dataset(ROOT/'evaluation/broader_v1/heldout.json', ROOT/'evaluation/broader_v1/corpus.json')
+        self.dataset = dataset
+        self.report['cases'] = []
+        for case in dataset['cases'][:count]:
+            row = copy.deepcopy(self.row)
+            row.update(id=case['id'], question=case['question'])
+            row['checks'] = checks(case, row['result'], self.chunks)
+            self.report['cases'].append(row)
+        if count:
+            self.report['cases'][-1] = {key: value for key, value in self.report['cases'][-1].items()
+                                       if key not in {'result', 'checks', 'usage', 'provider_output', 'finish_reason', 'returned_model'}}
+            self.report['cases'][-1].update(status='error', error_type='TimeoutError', http_status=None)
+        self.report['provider_requests'] = count
+        self.save()
+        self.ledger = self.path.parent/'private-budget.json'
+        budget = live.RequestBudget(self.ledger, authorization='user-approved-2026-10-25-24-additional', limit=24, output_cap=800)
+        for case in dataset['cases'][:count]:
+            budget.reserve(case['id'])
+        return budget
+
+    def test_resume_preflight_requires_exact_existing_ledger_and_preserves_prior_bytes(self):
+        self.prefix()
+        before = self.path.read_bytes()
+        report, budget, start = live.prepare_resume(self.path, self.ledger)
+        self.assertEqual(start, 10)
+        self.assertEqual(report['cases'][-1]['error_type'], 'TimeoutError')
+        self.assertEqual(self.path.read_bytes(), before)
+        absent = self.path.parent/'absent-ledger.json'
+        with self.assertRaises(ValueError):
+            live.prepare_resume(self.path, absent)
+        self.assertFalse(absent.exists())
+        ledger = json.loads(self.ledger.read_text())
+        for change in ('missing', 'wrong_case', 'authorization'):
+            changed = copy.deepcopy(ledger)
+            if change == 'missing':
+                changed['attempts'].pop()
+            elif change == 'wrong_case':
+                changed['attempts'][-1]['case_id'] = 'different-case'
+            else:
+                changed['authorization'] = 'different-approval'
+            self.ledger.write_text(json.dumps(changed))
+            with self.assertRaises(ValueError, msg=change):
+                live.prepare_resume(self.path, self.ledger)
+        self.assertEqual(self.path.read_bytes(), before)
+
+    def test_remaining_fourteen_calls_never_retry_timeout_and_cannot_replay_completed_budget(self):
+        self.prefix()
+        before = self.path.read_bytes()
+        prior_rows = copy.deepcopy(self.report['cases'])
+        archives = {name: (self.path.parent/entry['path']).read_bytes() for name, entry in self.report['source_snapshots'].items()}
+        report, budget, start = live.prepare_resume(self.path, self.ledger)
+        live.attach_continuation(self.path, report, budget)
+        segment = report['continuation_segments'][0]
+        self.assertEqual((self.path.parent/segment['before_report']['path']).read_bytes(), before)
+        attempted = []
+        site = SimpleNamespace()
+        def provider(url, payload, token, timeout=15):
+            attempted.append(payload['question'])
+            return {'model': 'gpt-6-luna', 'choices': [{'finish_reason': 'stop', 'message': {'content': 'A diagnostic fact. '+self.label}}],
+                    'usage': {'prompt_tokens': 100, 'completion_tokens': 10, 'total_tokens': 110,
+                              'prompt_tokens_details': {'cached_tokens': 0}, 'completion_tokens_details': {'reasoning_tokens': 0}}}
+        site.post_json = provider
+        def answer(question, chunks):
+            site.post_json('https://api.openai.com/v1/chat/completions', {'max_completion_tokens': 800, 'question': question}, 'offline-unused')
+            return {'answer': 'A diagnostic fact. '+self.label, 'citations': [self.label], 'refused': False}
+        site.answer = answer
+        index = SimpleNamespace(search=lambda question: self.chunks)
+        self.assertEqual(live.run_cases(site, index, self.dataset, report, budget, self.path, start), 0)
+        self.assertEqual(attempted, [c['question'] for c in self.dataset['cases'][10:]])
+        self.assertNotIn(self.dataset['cases'][9]['question'], attempted)
+        self.assertEqual(report['cases'][:10], prior_rows)
+        self.assertEqual(len(budget.snapshot()['attempts']), 24)
+        self.assertTrue(live.verify(self.path)['complete_sample'])
+        for name, entry in report['source_snapshots'].items():
+            self.assertEqual((self.path.parent/entry['path']).read_bytes(), archives[name])
+        with self.assertRaises(ValueError):
+            live.prepare_resume(self.path, self.ledger)
+        changed = copy.deepcopy(report)
+        changed['cases'][0]['provider_ms'] += 1
+        self.save(changed)
+        with self.assertRaises(ValueError):
+            live.verify(self.path)
+
+    def test_next_real_network_failure_consumes_one_distinct_slot_and_stops(self):
+        self.prefix()
+        report, budget, start = live.prepare_resume(self.path, self.ledger)
+        live.attach_continuation(self.path, report, budget)
+        site = SimpleNamespace()
+        def fail(*args, **kwargs):
+            raise TimeoutError('offline timeout fixture')
+        site.post_json = fail
+        site.answer = lambda question, chunks: site.post_json('https://api.openai.com/v1/chat/completions', {'max_completion_tokens': 800}, 'offline-unused')
+        self.assertEqual(live.run_cases(site, SimpleNamespace(search=lambda question: self.chunks), self.dataset, report, budget, self.path, start), 1)
+        self.assertEqual(report['provider_requests'], 11)
+        self.assertEqual(report['cases'][-1]['id'], self.dataset['cases'][10]['id'])
+        self.assertEqual(len(budget.snapshot()['attempts']), 11)
+        self.assertTrue(live.verify(self.path)['verified'])
+
+
+class BroaderAnswerUsageArchiveTests(_BroaderAnswerReportFixture, unittest.TestCase):
     def test_quote_wrapped_exact_refusal_follows_production_normalization(self):
         changed = copy.deepcopy(self.report)
         changed['cases'][0].update(provider_output='  "'+REFUSAL+'"  ',
