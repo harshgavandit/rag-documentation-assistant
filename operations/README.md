@@ -2,11 +2,11 @@
 
 Docwise can retain small aggregate measurements in the same configured Upstash Redis service used by public-demo admission. Collection is explicitly enabled by `OPS_ENABLED=1`; it creates no separate backend or database. This folder's collector performs only two read-only HTTP requests: public health and protected seven-day aggregates. It never asks a question, invokes an embedding/model provider, creates an issue or sends a message.
 
-The hosted setup is configured by the maintainer: production enablement, a generated server-only read token, the Actions secret and target origin. Public daily artifacts retain endpoint timing/readiness and aggregate-schema validation only. Full measurements remain behind the authenticated endpoint. Daily checks begin accumulating observations after enablement; they cannot establish an earlier uptime history.
+The hosted setup is configured by the maintainer: production enablement, a generated server-only read token, the Actions secret and target origin. Public artifacts from the six-hourly checks retain endpoint timing/readiness and aggregate-schema validation only. Full measurements remain behind the authenticated endpoint. Scheduled checks begin accumulating observations after enablement; they cannot establish an earlier uptime history.
 
 ## Recorded enablement and controls
 
-Monitoring was enabled on 24 October 2026. The first [read-only workflow run](https://github.com/harshgavandit/rag-documentation-assistant/actions/runs/40099653359) passed. Its [public health/schema artifact](results/public-health-2026-10-24.json) contains no private usage, token, feedback or cost totals. Future daily runs create dated observations; a single successful check is not an uptime history.
+Monitoring was enabled on 24 October 2026. The first [read-only workflow run](https://github.com/harshgavandit/rag-documentation-assistant/actions/runs/40099653359) passed. Its [public health/schema artifact](results/public-health-2026-10-24.json) contains no private usage, token, feedback or cost totals. Future six-hourly runs create dated observations; a single successful check is not an uptime history.
 
 The [live controls report](results/live-controls-2026-10-24.json) records six passing observations against actual Redis and deployed HTTP routes: unauthorized reads denied, authorized reads accepted, signed synthetic tickets issued, feedback accepted once with replay rejected, real ticket expiry rejected, and synthetic fixture events/feedback kept in their own cohort. No query endpoint or model call was exercised in this drill. Its two adapter events and one feedback click are explicitly synthetic, not real-user outcomes.
 

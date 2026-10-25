@@ -2,7 +2,7 @@
 
 A Python documentation assistant that combines keyword and vector retrieval, fuses their rankings, and generates answers with document/section citations. The repository contains a ChromaDB/LangGraph command-line pipeline and a lighter FastAPI/ONNX deployment of the same documentation workflow.
 
-[Live app](https://rag-documentation-assistant.vercel.app/) · [Evaluation](evaluation/README.md) · [Operations](operations/README.md) · [Tests](https://github.com/harshgavandit/rag-documentation-assistant/actions/workflows/evaluation.yml)
+[Live app](https://rag-documentation-assistant.vercel.app/) · [Evaluation](evaluation/README.md) · [Operations](operations/README.md) · [Tests](https://github.com/harshgavandit/rag-documentation-assistant/actions/workflows/evaluation.yml) · [Security](SECURITY.md)
 
 **Stack:** Python, FastAPI, LangGraph, ChromaDB, BM25, MiniLM, ONNX Runtime, OpenAI, Upstash Redis, Vercel.
 
@@ -45,6 +45,7 @@ Key implementation choices:
 - **Fuse complementary retrieval:** [`hybrid_search.py`](retrieval/hybrid_search.py) and [`web/engine.py`](web/engine.py) combine lexical and semantic rankings rather than relying on one score alone.
 - **Keep the hosted runtime small:** [`web/prepare.py`](web/prepare.py) downloads immutable model artifacts at build time and checks SHA-256 hashes from the manifest. Warm instances reuse the immutable retrieval index.
 - **Bound public requests:** [`web/app.py`](web/app.py) enforces body/question limits, same-origin browser requests, Redis client/shared minute and daily admission, and safe dependency errors. Redis failure stops the query before retrieval/generation.
+- **Constrain dependency transport:** Redis and model calls reject redirects before authorization can be forwarded, cap JSON responses at 1 MiB and reject non-object payloads. Transport failures return safe service errors; these guards are covered by offline regressions.
 - **Check source labels:** Generated labels must match retrieved document/section labels. A recognized refusal carries no citations; missing or invalid labels reject the answer. This checks provenance labels, not whether every sentence is entailed.
 
 ## Run the web app locally
@@ -133,7 +134,7 @@ A separate **18-request real model run** returned cited answers for 12 answerabl
 
 The [hosted preview workload](operations/HOSTED_WORKLOAD.md) exercises real Vercel, Redis admission, ONNX retrieval and usage accounting under an isolated deterministic provider. Its 16-query report retains individual timings and failure states, separate from real model performance. Preview credentials use temporary controls and separate Redis key prefixes; production has no public test bypass.
 
-[Daily observation snapshots](operations/README.md) collect protected, expiring aggregate latency, status, token and feedback counts. Signed checks remain separate from unsigned visitor requests. Collection retains no question text, answer text or visitor identity. Optional answer feedback uses fixed categories and one-use opaque tickets; it measures submitted helpfulness choices, not verified business impact. CI snapshots call no model and publish no secrets. Operational history and real feedback accumulate from actual use after enablement.
+[Operational observation snapshots](operations/README.md) collect protected, expiring aggregate latency, status, token and feedback counts. Signed checks remain separate from unsigned visitor requests. Collection retains no question text, answer text or visitor identity. Optional answer feedback uses fixed categories and one-use opaque tickets; it measures submitted helpfulness choices, not verified business impact. CI snapshots call no model and publish no secrets. Operational history and real feedback accumulate from actual use after enablement.
 
 ## Scope and tradeoffs
 

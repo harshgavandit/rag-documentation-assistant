@@ -9,7 +9,7 @@ import re
 import time
 from typing import Literal
 from urllib.error import HTTPError, URLError
-from urllib.request import Request as URLRequest, urlopen
+from urllib.request import HTTPRedirectHandler, Request as URLRequest, build_opener
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse, JSONResponse
@@ -115,11 +115,23 @@ def configuration() -> None:
         raise HTTPException(503,'The assistant is awaiting server configuration.')
 
 
+class NoCredentialRedirect(HTTPRedirectHandler):
+    """Never forward provider or Redis authorization to a redirect destination."""
+    def redirect_request(self,request,fp,code,message,headers,newurl):
+        raise HTTPError(request.full_url,code,'Credential-bearing redirects are disabled.',headers,fp)
+
+
 def post_json(url:str,payload:object,token:str,timeout:int=15) -> dict:
     """Send credentials only in headers; expose safe errors at the API boundary."""
     request=URLRequest(url,data=json.dumps(payload).encode(),headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'},method='POST')
-    with urlopen(request,timeout=timeout) as response:
-        return json.load(response)
+    with build_opener(NoCredentialRedirect()).open(request,timeout=timeout) as response:
+        body=response.read(1048577)
+    if len(body)>1048576:
+        raise ValueError('Dependency response exceeds the supported size.')
+    result=json.loads(body)
+    if not isinstance(result,dict):
+        raise ValueError('Dependency response must be a JSON object.')
+    return result
 
 
 def admit(identity:str) -> int:
@@ -157,8 +169,14 @@ def answer(question:str,chunks:list[dict]) -> dict:
         logging.warning('OpenAI request failed: HTTP %s',exc.code)
         raise HTTPException(503,'The model provider is temporarily unavailable. Please try again later.') from None
     ops.record_usage(ops.current_event(),result.get('usage'))
-    choice=result.get('choices',[{}])[0]
-    text=(choice.get('message',{}).get('content') or '').strip()
+    choices=result.get('choices')
+    if not isinstance(choices,list) or not choices or not isinstance(choices[0],dict):
+        raise HTTPException(502,'The model did not return a complete answer. Please try a more specific question.')
+    choice=choices[0]
+    message=choice.get('message')
+    if not isinstance(message,dict) or not isinstance(message.get('content'),str):
+        raise HTTPException(502,'The model did not return a complete answer. Please try a more specific question.')
+    text=message['content'].strip()
     if not text or choice.get('finish_reason')!='stop':
         raise HTTPException(502,'The model did not return a complete answer. Please try a more specific question.')
     citations=re.findall(r'\[Source: .+?, Section: .+?\]',text)

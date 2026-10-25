@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import sys
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from fastapi.testclient import TestClient
 import app as site
@@ -68,6 +68,47 @@ class WebTests(unittest.TestCase):
                     self.assertEqual(result['refused'],content==site.REFUSAL)
                 else:
                     with self.assertRaises(site.HTTPException):site.answer('test',chunks)
+
+    def test_credential_transport_never_follows_redirects(self):
+        request=site.URLRequest('https://provider.invalid/api',data=b'{}',headers={'Authorization':'Bearer private-test-token'})
+        for code in (301,302,303,307,308):
+            with self.subTest(code=code), self.assertRaises(site.HTTPError):
+                site.NoCredentialRedirect().redirect_request(request,None,code,'redirect',{},'https://other.invalid/collect')
+
+    def test_dependency_response_is_bounded_and_must_be_an_object(self):
+        for body,valid in [(b'{"result":[1,2,3]}',True),(b'[]',False),(b'null',False),
+                           (b'{',False),(b'x'*1048577,False)]:
+            response=MagicMock()
+            response.__enter__.return_value=response
+            response.read.return_value=body
+            opener=MagicMock()
+            opener.open.return_value=response
+            with self.subTest(size=len(body)),patch.object(site,'build_opener',return_value=opener) as build:
+                if valid:
+                    self.assertEqual(site.post_json('https://service.invalid',{},'private-test-token'),{'result':[1,2,3]})
+                else:
+                    with self.assertRaises(ValueError):
+                        site.post_json('https://service.invalid',{},'private-test-token')
+                self.assertIsInstance(build.call_args.args[0],site.NoCredentialRedirect)
+                response.read.assert_called_once_with(1048577)
+                self.assertEqual(opener.open.call_args.kwargs['timeout'],15)
+
+    def test_bad_dependency_json_fails_before_retrieval_without_exposing_values(self):
+        with patch.object(site,'post_json',side_effect=ValueError('private-test-token')),patch.object(site,'get_index') as index:
+            response=self.client.post('/api/query',json={'question':'How?'})
+        self.assertEqual(response.status_code,503)
+        self.assertNotIn('private-test-token',response.text)
+        index.assert_not_called()
+
+    def test_malformed_provider_shapes_are_explicit_incomplete_answers(self):
+        chunks=[{'content':'facts','metadata':{'doc_title':'a.md','section_title':'Tools'},'rank':1}]
+        for choices in (None,{},[],[None],[{'message':None}],[{'message':[]}],
+                        [{'message':{'content':['private-test-value']}}]):
+            with self.subTest(choices=choices),patch.object(site,'post_json',return_value={'choices':choices}):
+                with self.assertRaises(site.HTTPException) as caught:
+                    site.answer('test',chunks)
+                self.assertEqual(caught.exception.status_code,502)
+                self.assertNotIn('private-test-value',caught.exception.detail)
 
 
 if __name__=='__main__':unittest.main()
